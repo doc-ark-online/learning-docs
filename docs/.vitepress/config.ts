@@ -12,60 +12,72 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   ignoreDeadLinks: true,
   title: '教程',
   appearance: false,
-  description: '口袋方舟编辑器的产品文档',
+  description: '口袋方舟编辑器的教程文档',
   outDir: '../dist',
   head: [['link', { rel: 'icon', href: '/favicon_kd.ico' }]],
   themeConfig: {
     logo: '/logo.png',
     sidebar: [
       {
-        text: '1',
-        link: '/md/1.md',
-        collapsible: true,
-        collapsed: true,
+        text: 'index',
+        link: '/index.md',
+        collapsible: false,
+        collapsed: false,
         items: [
-          { text: '1.1', link: '/md/1.1.md' },
-          { text: '1.2', link: '/md/1.2.md' },
-          { text: '1.3', link: '/md/1.3.md' },
-          { text: '1.4', link: '/md/1.4.md' },
-          { text: '1.5', link: '/md/1.5.md' }
+          { text: '教程介绍', link: '/index.md' },
+          { text: '开始使用', link: '/md/1.md' },
         ]
       },
       {
-        text: '2.1',
+        text: '安装使用',
+        link: '/md/1.1.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '了解口袋方舟编辑器', link: '/md/1.1.md' },
+          { text: '安装与启动', link: '/md/1.2.md' },
+          { text: 'VSCode安装', link: '/md/1.3.md' },
+          { text: '游戏发布&更新&测试', link: '/md/1.4.md' },
+          { text: '编辑器界面', link: '/md/1.5.md' },
+          { text: '编辑器基本操作', link: '/md/1.6.md' }
+          { text: '导入第三方项目', link: '/md/1.7.md' }
+        ]
+      },
+      {
+        text: '脚本通信',
         link: '/md/2.1.md',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '2.1', link: '/md/2.1.md' },
-          { text: '2.2', link: '/md/2.2.md' },
-          { text: '2.3', link: '/md/2.3.md' },
-          { text: '2.4', link: '/md/2.4.md' },
-          { text: '2.5', link: '/md/2.5.md' },
-          { text: '2.6', link: '/md/2.6.md' }
+          { text: 'TypeScript学习', link: '/md/2.1.md' },
+          { text: '客户端与服务端', link: '/md/2.2.md' },
+          { text: '脚本执行逻辑', link: '/md/2.3.md' },
+          { text: '调试与输出', link: '/md/2.4.md' },
+          { text: '事件通信', link: '/md/2.5.md' },
+          { text: '服务端实时日志', link: '/md/2.6.md' }
         ]
       },
       {
-        text: '3.1',
+        text: '基础入门',
         link: '/md/3.1.md',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '3.0.1', link: '/md/3.0.1.md' },
-          { text: '3.0.2', link: '/md/3.0.2.md' },
-          { text: '3.1', link: '/md/3.1.md' },
-          { text: '3.2', link: '/md/3.2.md' },
-          { text: '3.3', link: '/md/3.3.md' },
-          { text: '3.4', link: '/md/3.4.md' },
-          { text: '3.5', link: '/md/3.5.md' },
-          { text: '3.6', link: '/md/3.6.md' },
-          { text: '3.8', link: '/md/3.8.md' },
-          { text: '3.9', link: '/md/3.9.md' }
+          { text: '3D坐标系', link: '/md/3.1.md' },
+          { text: '特效', link: '/md/3.2.md' },
+          { text: '音效', link: '/md/3.3.md' },
+          { text: '初生点', link: '/md/3.4.md' },
+          { text: '角色动画', link: '/md/3.5.md' },
+          { text: '游戏物体的使用', link: '/md/3.6.md' },
+          { text: '玩家与角色', link: '/md/3.8.md' },
+          { text: '角色编辑器', link: '/md/3.9.md' },
+          { text: '摄像机', link: '/md/3.0.1.md' },
+          { text: '数据持久化', link: '/md/3.0.2.md' }
         ]
       },
       {
-        text: '4',
-        link: '/md/4.md',
+        text: '跳一跳小游戏',
+        link: '/md/4.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -76,7 +88,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       },
       {
-        text: '5',
+        text: '游戏界面',
         link: '/md/5.md',
         collapsible: true,
         collapsed: true,
@@ -102,9 +114,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '6.1.2.2', link: '/md/6.1.2.2.md' },
           { text: '6.1.2.3', link: '/md/6.1.2.3.md' },
           { text: '6.1.2.4', link: '/md/6.1.2.4.md' },
-
           { text: '6.1.4', link: '/md/6.1.4.md' },
-
           { text: '6.1.6.1', link: '/md/6.1.2.1.md' },
           { text: '6.1.6.2', link: '/md/6.1.2.2.md' },
           { text: '6.1.6.3', link: '/md/6.1.2.3.md' },
@@ -126,8 +136,8 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       },
       {
-        text: '7',
-        link: '/md/7.md',
+        text: '炸弹人小游戏',
+        link: '/md/7.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -149,12 +159,12 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     siteTitle: '文档',
     nav: [
       {
-        text: '官网',
+        text: '创作者',
         link: 'https://creator.ark.online/'
       },
       {
-        text: '教程',
-        link: 'https://meta.feishu.cn/wiki/wikcnmY0MQweLdbnlywkJJiDucd'
+        text: '产品手册',
+        link: 'https://docs.ark.online/'
       },
       {
         text: 'API',
