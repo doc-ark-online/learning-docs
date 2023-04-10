@@ -12,16 +12,24 @@
 
 ## [脚本通信](https://learning.ark.online/md/1.1.html)
 
+口袋方舟编辑器选择 TypeScript 作为开发语言可以说在编程语言学习上降低了大量的学习成本，使用一到两天时间就可以完成 TypeScript 语言的学习。
+
 ## [基础入门](https://learning.ark.online/md/1.1.html)
+
+口袋方舟编辑器提供了大量的成品功能与模块，通过本章节快速上手编辑器核心功能，掌握游戏开发所需的必备知识。
 
 ## [跳一跳小游戏](https://learning.ark.online/md/1.1.html)
 
-终于要开发自己的首个多人联机小游戏了，本章节我们一起跟随教程完成有趣的跳一跳吧！（学习时可以尝试使用和教程中不同的素材去做，尝试搭建属于自己的关卡，属于自己的跳一跳）
+终于要开发自己的首个多人联机小游戏了，让我们一起跟随教程完成有趣的跳一跳吧！（学习时可以尝试使用不同资源去做，尝试搭建属于自己的跳一跳）
 
 ## [游戏界面](https://learning.ark.online/md/1.1.html)
 
-本小节展示了常用编辑器功能的基础教程，更多功能可以查看[产品手册-用户界面](https://docs.ark.online/UI/CreatingUserInterface(UI).html)
+本章节展示了常用编辑器功能的基础界面教程，更多功能可以查阅[产品手册-用户界面](https://docs.ark.online/UI/CreatingUserInterface(UI).html)。
 
 ## [常用代码片段](https://learning.ark.online/md/1.1.html)
 
+为了方便大家可以快速无代码的做出自己的游戏，通过一些常用的代码片段，快速上手实现简单的游戏逻辑。
+
 ## [炸弹人小游戏](https://learning.ark.online/md/1.1.html)
+
+我们准备了一个炸弹人小游戏示例模板，只需要跟随教程去学习模板的使用，你也可以快速创建出属于自己的游戏项目！
