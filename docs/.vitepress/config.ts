@@ -39,7 +39,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: 'VSCode安装', link: '/md/1.3.md' },
           { text: '游戏发布&更新&测试', link: '/md/1.4.md' },
           { text: '编辑器界面', link: '/md/1.5.md' },
-          { text: '编辑器基本操作', link: '/md/1.6.md' }
+          { text: '编辑器基本操作', link: '/md/1.6.md' },
           { text: '导入第三方项目', link: '/md/1.7.md' }
         ]
       },
@@ -125,7 +125,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '6.1.6.9', link: '/md/6.1.2.9.md' },
           { text: '6.1.6.11', link: '/md/6.1.2.11.md' },
           { text: '6.1.6.12', link: '/md/6.1.2.12.md' },
-
           { text: '6.2.1', link: '/md/6.2.1.md' },
           { text: '6.2.2', link: '/md/6.2.2.md' },
           { text: '6.2.3', link: '/md/6.2.3.md' },
