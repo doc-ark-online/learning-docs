@@ -30,7 +30,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '安装使用',
-        link: '/md/1.md',
+        link: '/md/1.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -45,7 +45,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '脚本通信',
-        link: '/md/2.md',
+        link: '/md/2.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -59,7 +59,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '基础入门',
-        link: '/md/3.md',
+        link: '/md/3.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -82,7 +82,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '跳一跳小游戏',
-        link: '/md/4.md',
+        link: '/md/4.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -96,7 +96,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '游戏界面',
-        link: '/md/5.md',
+        link: '/md/5.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -117,7 +117,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '常用代码片段',
-        link: '/md/6.2.md',
+        link: '/md/6.2.1.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -132,7 +132,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '炸弹人小游戏',
-        link: '/md/7.md',
+        link: '/md/7.1.md',
         collapsible: true,
         collapsed: true,
         items: [
