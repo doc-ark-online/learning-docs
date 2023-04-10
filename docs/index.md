@@ -24,12 +24,12 @@
 
 ## [游戏界面](https://learning.ark.online/md/1.1.html)
 
-本章节展示了常用编辑器功能的基础界面教程，更多功能可以查阅[产品手册-用户界面](https://docs.ark.online/UI/CreatingUserInterface(UI).html)。
+本章节展示了编辑器的基础界面功能教程，更多功能可以查阅[产品手册-用户界面](https://docs.ark.online/UI/CreatingUserInterface(UI).html)。
 
 ## [常用代码片段](https://learning.ark.online/md/1.1.html)
 
-为了方便大家可以快速无代码的做出自己的游戏，通过一些常用的代码片段，快速上手实现简单的游戏逻辑。
+为了方便大家可以快速无代码的做出自己的游戏，通过一些常用的代码片段，快速上手游戏开发。
 
 ## [炸弹人小游戏](https://learning.ark.online/md/1.1.html)
 
-我们准备了一个炸弹人小游戏示例模板，只需要跟随教程去学习模板的使用，你也可以快速创建出属于自己的游戏项目！
+我们准备了一个炸弹人小游戏示例模板，只需要跟随教程去学习模板，你也可以快速创建出属于自己的游戏！
