@@ -81,57 +81,42 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '4.1', link: '/md/4.1.md' },
-          { text: '4.2', link: '/md/4.2.md' },
-          { text: '4.3', link: '/md/4.3.md' },
-          { text: '4.4', link: '/md/4.4.md' }
+          { text: '创建工程', link: '/md/4.1.md' },
+          { text: '播放游戏音乐', link: '/md/4.2.md' },
+          { text: '添加角色特效', link: '/md/4.3.md' },
+          { text: '搭建跳跃场景', link: '/md/4.4.md' }
         ]
       },
       {
         text: '游戏界面',
-        link: '/md/5.md',
+        link: '/md/5.1.md',
         collapsible: true,
         collapsed: true,
         items: [
+          { text: '创建UI', link: '/md/5.1.md' },
+          { text: '图片', link: '/md/5.2.md' },
           { text: '5.0.1', link: '/md/5.0.1.md' },
           { text: '5.0.2', link: '/md/5.0.2.md' },
           { text: '5.0.3', link: '/md/5.0.3.md' },
           { text: '5.0.4', link: '/md/5.0.4.md' },
           { text: '5.0.5', link: '/md/5.0.5.md' },
           { text: '5.0.6', link: '/md/5.0.6.md' },
-          { text: '5.0.7', link: '/md/5.0.7.md' },
-          { text: '5.1', link: '/md/5.1.md' },
-          { text: '5.2', link: '/md/5.2.md' }
+          { text: '5.0.7', link: '/md/5.0.7.md' }
         ]
       },
       {
-        text: '6.1',
-        link: '/md/6.1.md',
+        text: '常用代码片段',
+        link: '/md/6.2.1.md',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '6.1.2.1', link: '/md/6.1.2.1.md' },
-          { text: '6.1.2.2', link: '/md/6.1.2.2.md' },
-          { text: '6.1.2.3', link: '/md/6.1.2.3.md' },
-          { text: '6.1.2.4', link: '/md/6.1.2.4.md' },
-          { text: '6.1.4', link: '/md/6.1.4.md' },
-          { text: '6.1.6.1', link: '/md/6.1.2.1.md' },
-          { text: '6.1.6.2', link: '/md/6.1.2.2.md' },
-          { text: '6.1.6.3', link: '/md/6.1.2.3.md' },
-          { text: '6.1.6.4', link: '/md/6.1.2.4.md' },
-          { text: '6.1.6.5', link: '/md/6.1.2.5.md' },
-          { text: '6.1.6.7', link: '/md/6.1.2.7.md' },
-          { text: '6.1.6.8', link: '/md/6.1.2.8.md' },
-          { text: '6.1.6.9', link: '/md/6.1.2.9.md' },
-          { text: '6.1.6.11', link: '/md/6.1.2.11.md' },
-          { text: '6.1.6.12', link: '/md/6.1.2.12.md' },
-          { text: '6.2.1', link: '/md/6.2.1.md' },
-          { text: '6.2.2', link: '/md/6.2.2.md' },
-          { text: '6.2.3', link: '/md/6.2.3.md' },
-          { text: '6.2.4', link: '/md/6.2.4.md' },
-          { text: '6.2.5', link: '/md/6.2.5.md' },
-          { text: '6.2.6', link: '/md/6.2.6.md' },
-          { text: '6.2.7', link: '/md/6.2.7.md' }
+          { text: '跳跃区', link: '/md/6.2.1.md' },
+          { text: '变速区', link: '/md/6.2.2.md' },
+          { text: '特效区', link: '/md/6.2.3.md' },
+          { text: '布娃娃区', link: '/md/6.2.4.md' },
+          { text: '换装区', link: '/md/6.2.5.md' },
+          { text: '消失地板', link: '/md/6.2.6.md' },
+          { text: '传送区', link: '/md/6.2.7.md' }
         ]
       },
       {
@@ -140,10 +125,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '7.1', link: '/md/7.1.md' },
-          { text: '7.2', link: '/md/7.2.md' },
-          { text: '7.3', link: '/md/7.3.md' },
-          { text: '7.6', link: '/md/7.6.md' }
+          { text: '创建工程', link: '/md/7.1.md' },
+          { text: '入口类与控制界面', link: '/md/7.2.md' },
+          { text: '炸弹预制体', link: '/md/7.3.md' },
+          { text: '添加游戏场景', link: '/md/7.6.md' }
         ]
       }
     ],
@@ -174,7 +159,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         link: 'https://forum.ark.online/'
       }
     ],
-    outline: [2, 4],
+    outline: [2, 3],
     editLink: {
       pattern:
         'https://github.com/prodigytech-doc/learning-docs/tree/main/docs/:path',
