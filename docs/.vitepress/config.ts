@@ -37,10 +37,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '了解口袋方舟编辑器', link: '/md/1.1.md' },
           { text: '安装与启动', link: '/md/1.2.md' },
           { text: 'VSCode安装', link: '/md/1.3.md' },
-          { text: '游戏发布&更新&测试', link: '/md/1.4.md' },
           { text: '编辑器界面', link: '/md/1.5.md' },
           { text: '编辑器基本操作', link: '/md/1.6.md' },
-          { text: '导入第三方项目', link: '/md/1.7.md' }
+          { text: '导入第三方项目', link: '/md/1.7.md' },
+          { text: '游戏发布&更新&测试', link: '/md/1.4.md' }
         ]
       },
       {
