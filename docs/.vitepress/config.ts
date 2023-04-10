@@ -1,5 +1,4 @@
 import type { DefaultTheme } from '../../viteTheme/shared'
-import { dealConfigSidebar, dealItem } from '../../utils'
 import { defineConfigWithTheme } from 'vitepress'
 
 export const sidebar: DefaultTheme.Config['sidebar'] = [
@@ -20,25 +19,122 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     logo: '/logo.png',
     sidebar: [
       {
-        text: '编辑器',
+        text: '1',
+        link: '/md/1.md',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '编辑器设置', link: '/Editor/EditorSettings.md' },
-          { text: '编辑器窗口操作', link: '/Editor/EditorWindowsOperation.md' },
-          {
-            text: '画质级别模拟与设置',
-            link: '/Editor/GraphicsQualitySettings.md'
-          },
-          { text: '预制体功能说明', link: '/Editor/Prefabs.md' },
-          { text: '游戏断线重连', link: '/Editor/GameReconnection.md' },
-          { text: '绘制模式', link: '/Editor/DrawMode.md' },
-          {
-            text: '横竖屏&分辨率模拟功能说明',
-            link: '/Editor/ScreenOrientation&ResolutionSimulation.md'
-          },
-          { text: '游戏发布流程', link: '/Editor/GameReleaseProcess.md' },
-          { text: '角色编辑工具', link: '/Editor/CharacterEditor.md' }
+          { text: '1.1', link: '/md/1.1.md' },
+          { text: '1.2', link: '/md/1.2.md' },
+          { text: '1.3', link: '/md/1.3.md' },
+          { text: '1.4', link: '/md/1.4.md' },
+          { text: '1.5', link: '/md/1.5.md' }
+        ]
+      },
+      {
+        text: '2.1',
+        link: '/md/2.1.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '2.1', link: '/md/2.1.md' },
+          { text: '2.2', link: '/md/2.2.md' },
+          { text: '2.3', link: '/md/2.3.md' },
+          { text: '2.4', link: '/md/2.4.md' },
+          { text: '2.5', link: '/md/2.5.md' },
+          { text: '2.6', link: '/md/2.6.md' }
+        ]
+      },
+      {
+        text: '3.1',
+        link: '/md/3.1.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '3.0.1', link: '/md/3.0.1.md' },
+          { text: '3.0.2', link: '/md/3.0.2.md' },
+          { text: '3.1', link: '/md/3.1.md' },
+          { text: '3.2', link: '/md/3.2.md' },
+          { text: '3.3', link: '/md/3.3.md' },
+          { text: '3.4', link: '/md/3.4.md' },
+          { text: '3.5', link: '/md/3.5.md' },
+          { text: '3.6', link: '/md/3.6.md' },
+          { text: '3.8', link: '/md/3.8.md' },
+          { text: '3.9', link: '/md/3.9.md' }
+        ]
+      },
+      {
+        text: '4',
+        link: '/md/4.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '4.1', link: '/md/4.1.md' },
+          { text: '4.2', link: '/md/4.2.md' },
+          { text: '4.3', link: '/md/4.3.md' },
+          { text: '4.4', link: '/md/4.4.md' }
+        ]
+      },
+      {
+        text: '5',
+        link: '/md/5.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '5.0.1', link: '/md/5.0.1.md' },
+          { text: '5.0.2', link: '/md/5.0.2.md' },
+          { text: '5.0.3', link: '/md/5.0.3.md' },
+          { text: '5.0.4', link: '/md/5.0.4.md' },
+          { text: '5.0.5', link: '/md/5.0.5.md' },
+          { text: '5.0.6', link: '/md/5.0.6.md' },
+          { text: '5.0.7', link: '/md/5.0.7.md' },
+          { text: '5.1', link: '/md/5.1.md' },
+          { text: '5.2', link: '/md/5.2.md' }
+        ]
+      },
+      {
+        text: '6.1',
+        link: '/md/6.1.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '6.1.2.1', link: '/md/6.1.2.1.md' },
+          { text: '6.1.2.2', link: '/md/6.1.2.2.md' },
+          { text: '6.1.2.3', link: '/md/6.1.2.3.md' },
+          { text: '6.1.2.4', link: '/md/6.1.2.4.md' },
+
+          { text: '6.1.4', link: '/md/6.1.4.md' },
+
+          { text: '6.1.6.1', link: '/md/6.1.2.1.md' },
+          { text: '6.1.6.2', link: '/md/6.1.2.2.md' },
+          { text: '6.1.6.3', link: '/md/6.1.2.3.md' },
+          { text: '6.1.6.4', link: '/md/6.1.2.4.md' },
+          { text: '6.1.6.5', link: '/md/6.1.2.5.md' },
+          { text: '6.1.6.7', link: '/md/6.1.2.7.md' },
+          { text: '6.1.6.8', link: '/md/6.1.2.8.md' },
+          { text: '6.1.6.9', link: '/md/6.1.2.9.md' },
+          { text: '6.1.6.11', link: '/md/6.1.2.11.md' },
+          { text: '6.1.6.12', link: '/md/6.1.2.12.md' },
+
+          { text: '6.2.1', link: '/md/6.2.1.md' },
+          { text: '6.2.2', link: '/md/6.2.2.md' },
+          { text: '6.2.3', link: '/md/6.2.3.md' },
+          { text: '6.2.4', link: '/md/6.2.4.md' },
+          { text: '6.2.5', link: '/md/6.2.5.md' },
+          { text: '6.2.6', link: '/md/6.2.6.md' },
+          { text: '6.2.7', link: '/md/6.2.7.md' }
+        ]
+      },
+      {
+        text: '7',
+        link: '/md/7.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: '7.1', link: '/md/7.1.md' },
+          { text: '7.2', link: '/md/7.2.md' },
+          { text: '7.3', link: '/md/7.3.md' },
+          { text: '7.6', link: '/md/7.6.md' }
         ]
       }
     ],

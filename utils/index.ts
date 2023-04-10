@@ -1,4 +1,4 @@
-import { readdirSync, readJSONSync } from 'fs-extra'
+import { readdirSync } from 'fs-extra'
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import { DefaultTheme } from '../viteTheme/shared'
@@ -11,59 +11,6 @@ export function dealItem(dir: string) {
   return paths.map((name) => {
     return { text: name.split('.')[0], link: `/${dir}/${name}` }
   })
-}
-
-interface GroupsItem {
-  file_name: string
-  file_path: string
-  name: string
-}
-interface GroupsConfig {
-  [key: string]: {
-    [key: string]: GroupsItem[]
-  }
-}
-
-/** 根据配置文件生成对应的侧边栏 */
-export function dealConfigSidebar() {
-  const json = readJSONSync(`./docs/configs/groups.json`) as GroupsConfig
-  const arr: DefaultTheme.SidebarGroup[] = []
-  let num = 0
-  for (const typeObj in json) {
-    const items: DefaultTheme.SidebarItem[] = []
-    for (const key in json[typeObj]) {
-      if (
-        ['Modules Functions', 'Modules Type Aliases', 'Enums'].includes(key)
-      ) {
-        continue
-      }
-      const item = json[typeObj][key]
-      items.push(
-        ...item.map((item) => {
-          num += 1
-          return {
-            text: item.name,
-            link: '/' + item.file_path
-          }
-        })
-      )
-    }
-    if (items.length > 0) {
-      arr.push({
-        text: typeObj,
-        collapsible: true,
-        collapsed: true,
-        link: `/groups/${typeObj}.${typeObj}.md`,
-        items: items
-      })
-    }
-  }
-  console.log('数量', num)
-  arr.forEach((item) => {
-    item.items.sort((a, b) => a.text.localeCompare(b.text))
-  })
-  arr.sort((a, b) => (a.text ?? '').localeCompare(b.text ?? ''))
-  return arr
 }
 
 /** 将目录从类型分类改为根据命名空间分类 */
@@ -126,18 +73,6 @@ function getMdNameInfo(mdName: string) {
   }
 }
 
-/**
- * ``` 处理为 ts 模式
- */
-export function tsCodeDeal(filePath: string) {
-  if (fs.existsSync(filePath)) {
-    const filestr = fs.readFileSync(filePath, 'utf-8')
-    const reg = /```(\n[\s\S]+?```)/g
-    const newStr = filestr.replace(reg, '```ts$1')
-    fs.writeFileSync(filePath, newStr, 'utf-8')
-  }
-}
-
 /** .md 文件初始化处理 */
 export function init() {
   const g = globSync('./docs/**/*.md', {
@@ -146,8 +81,5 @@ export function init() {
         return ['.vitepress', 'public'].includes(p.name)
       }
     }
-  })
-  g.forEach((path) => {
-    tsCodeDeal(path)
   })
 }
