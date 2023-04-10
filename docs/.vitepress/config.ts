@@ -140,7 +140,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     //     facetFilters: ['tags:product-docs']
     //   }
     // },
-    siteTitle: '文档',
+    siteTitle: '|教程',
     nav: [
       {
         text: '创作者',
