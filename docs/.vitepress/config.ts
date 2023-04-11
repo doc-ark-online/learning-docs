@@ -114,7 +114,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '进度条', link: '/md/5.0.5.md' },
           { text: '滚动框', link: '/md/5.0.6.md' },
           { text: '加载图', link: '/md/5.0.7.md' },
-          { text: '遥感', link: '/md/5.0.8.md' }
+          { text: '摇杆', link: '/md/5.0.8.md' }
         ]
       },
       {
