@@ -15,7 +15,7 @@ export function getHeaders(pageOutline: DefaultTheme.Config['outline']) {
   if (pageOutline === false) return []
   let updatedHeaders: MenuItem[] = []
   document
-    .querySelectorAll<HTMLHeadingElement>('h1, h2, h3, h4, h5, h6')
+    .querySelectorAll<HTMLHeadingElement>('h2, h3, h4, h5, h6')
     .forEach((el) => {
       if (el.textContent && el.id) {
         updatedHeaders.push({

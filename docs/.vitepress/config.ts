@@ -25,7 +25,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: false,
         items: [
           { text: '教程介绍', link: '/index.md' },
-          { text: '开始使用', link: '/md/1.md' },
+          { text: '开始使用', link: '/md/1.md' }
         ]
       },
       {
@@ -79,7 +79,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '冲量', link: '/md/3.0.3.md' },
           { text: '交互物', link: '/md/3.0.4.md' },
           { text: '射线检测', link: '/md/3.0.5.md' },
-          { text: '投掷物', link: '/md/3.0.6.md' }   
+          { text: '投掷物', link: '/md/3.0.6.md' }
         ]
       },
       {
@@ -148,14 +148,32 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       }
     ],
-    // algolia: {
-    //   appId: '89BNK6UU0A',
-    //   apiKey: 'f691939e4fa8b414f92c84c288d2097a',
-    //   indexName: 'all-docs',
-    //   searchParameters: {
-    //     facetFilters: ['tags:product-docs']
-    //   }
-    // },
+    algolia: {
+      appId: 'I2PHYUBLCN',
+      apiKey: '62ee775311415d26549e0e30fef5aa38',
+      indexName: 'api-docs_prodigytech',
+      project: {
+        active: 'learning-docs',
+        arr: [
+          {
+            key: 'learning-docs',
+            facetFilters: ['tags:learning-docs'],
+            name: '教程文档'
+          },
+          {
+            key: 'api-docs',
+            facetFilters: ['tags:api-docs'],
+            name: 'API文档'
+          },
+          {
+            key: 'product-docs',
+            facetFilters: ['tags:product-docs'],
+            name: '产品手册'
+          }
+        ]
+      },
+      searchPage: 'https://search.ark.online/#/search'
+    },
     siteTitle: '教程',
     nav: [
       {

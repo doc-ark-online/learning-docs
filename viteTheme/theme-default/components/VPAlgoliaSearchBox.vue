@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { DefaultTheme } from 'vitepress/theme'
-import docsearch from '@docsearch/js'
+// import docsearch from '@docsearch/js'
+import { docsearch } from '@metaapp/docsearch-react'
+import '@metaapp/docsearch-react/style/modal.css'
 import { onMounted } from 'vue'
 import { useRouter, useRoute, useData } from 'vitepress'
 
@@ -29,14 +31,14 @@ function poll() {
   }, 16)
 }
 
-const docsearch$ = docsearch.default ?? docsearch
+const docsearch$ = docsearch
 type DocSearchProps = Parameters<typeof docsearch$>[0]
 
 function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
   // note: multi-lang search support is removed since the theme
   // doesn't support multiple locales as of now.
   const options = Object.assign<{}, {}, DocSearchProps>({}, userOptions, {
-    container: '#docsearch',
+    container: 'docsearch',
 
     navigator: {
       navigate({ itemUrl }) {
@@ -60,32 +62,34 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
           url: getRelativePath(item.url)
         })
       })
-    },
-
-    // @ts-expect-error vue-tsc thinks this should return Vue JSX but it returns the required React one
-    hitComponent({ hit, children }) {
-      return {
-        __v: null,
-        type: 'a',
-        ref: undefined,
-        constructor: undefined,
-        key: undefined,
-        props: { href: hit.url, children }
-      }
     }
+    // // @ts-expect-error vue-tsc thinks this should return Vue JSX but it returns the required React one
+    // hitComponent({ hit, children }) {
+    //   return {
+    //     __v: null,
+    //     type: 'a',
+    //     ref: undefined,
+    //     constructor: undefined,
+    //     key: undefined,
+    //     props: { href: hit.url, children }
+    //   }
+    // }
   })
-
   docsearch$(options)
 }
 
 function getRelativePath(absoluteUrl: string) {
-  const { pathname, hash } = new URL(absoluteUrl)
-  return (
-    pathname.replace(
-      /\.html$/,
-      site.value.cleanUrls === 'disabled' ? '.html' : ''
-    ) + hash
-  )
+  const { pathname, hash, origin } = new URL(absoluteUrl)
+  if (origin === window.origin) {
+    return (
+      pathname.replace(
+        /\.html$/,
+        site.value.cleanUrls === 'disabled' ? '.html' : ''
+      ) + hash
+    )
+  } else {
+    return absoluteUrl
+  }
 }
 </script>
 
