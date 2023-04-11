@@ -72,6 +72,8 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '游戏物体父子级', link: '/md/3.7.md' },
           { text: '玩家与角色', link: '/md/3.8.md' },
           { text: '角色编辑器', link: '/md/3.9.md' },
+          { text: '触发器', link: '/md/3.10.md' },
+          { text: '预制体', link: '/md/3.11.md' },
           { text: '摄像机', link: '/md/3.0.1.md' },
           { text: '数据持久化', link: '/md/3.0.2.md' },
           { text: '冲量', link: '/md/3.0.3.md' },
