@@ -255,6 +255,15 @@ export namespace DefaultTheme {
     disableUserPersonalization?: boolean
     initialQuery?: string
     buttonText?: string
+    project?: {
+      active?: string
+      arr: {
+        key: string
+        name: string
+        facetFilters: string[]
+      }[]
+    }
+    searchPage: string
   }
 
   // carbon ads ----------------------------------------------------------------
