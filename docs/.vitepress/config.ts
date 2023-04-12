@@ -4,7 +4,7 @@ import { defineConfigWithTheme } from 'vitepress'
 export const sidebar: DefaultTheme.Config['sidebar'] = [
   {
     text: 'Index',
-    items: [{ text: '介绍', link: '/index.md' }]
+    items: [{ text: '介绍', link: 'https://search.ark.online/#/' }]
   }
 ]
 
