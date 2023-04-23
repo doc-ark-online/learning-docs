@@ -161,15 +161,15 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             name: '教程'
           },
           {
+            key: 'product-docs',
+            facetFilters: ['tags:product-docs'],
+            name: '产品手册'
+          },
+          {
             key: 'api-docs',
             facetFilters: ['tags:api-docs'],
             name: 'API'
           }
-          // {
-          //   key: 'product-docs',
-          //   facetFilters: ['tags:product-docs'],
-          //   name: '产品手册'
-          // }
         ]
       },
       searchPage: 'https://search.ark.online/#/search'
