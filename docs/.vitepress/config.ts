@@ -1,4 +1,4 @@
-import type { DefaultTheme } from '../../viteTheme/shared'
+import type { DefaultTheme } from 'metaapp-prodigytech-doc-theme'
 import { defineConfigWithTheme } from 'vitepress'
 
 export const sidebar: DefaultTheme.Config['sidebar'] = [
@@ -173,6 +173,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       },
       searchPage: 'https://search.ark.online/#/search'
+    },
+    pandora: {
+      type: 'learning'
     },
     siteTitle: '教程',
     nav: [
