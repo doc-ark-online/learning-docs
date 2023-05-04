@@ -24,8 +24,18 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: false,
         collapsed: false,
         items: [
-          { text: '教程介绍', link: '/index.md' },
-          { text: '开始使用', link: '/md/1.md' }
+          {
+            text: '教程介绍',
+            link: '/index.md',
+            items: [
+              {
+                text: '二级链接',
+                link: '/md/1.md',
+                items: [{ text: '三级链接', link: '/md/1.html' }]
+              }
+            ]
+          },
+          { text: '开始使用', link: '/md/1.2.html' }
         ]
       },
       {
