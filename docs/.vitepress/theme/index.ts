@@ -2,7 +2,7 @@ import VPTheme from 'metaapp-prodigytech-doc-theme'
 import { useRoute } from 'vitepress'
 import { watch, onMounted } from 'vue'
 import mediumZoom, { Zoom } from 'medium-zoom'
-import './index.css'
+import './style.css'
 
 export default {
   ...VPTheme,
