@@ -2071,10 +2071,10 @@ metaapp-pandora-sdk@^5.0.2:
     promise-polyfill "^8.2.0"
     whatwg-fetch "^3.5.0"
 
-metaapp-prodigytech-doc-theme@^1.0.30:
-  version "1.0.30"
-  resolved "https://api-web-registry.metaapp.cn/metaapp-prodigytech-doc-theme/-/metaapp-prodigytech-doc-theme-1.0.30.tgz#64452baf0b626737a9f4fdbe76e80d75a30170b8"
-  integrity sha512-uxWNkYI4xTb3vjKqaCAfBumL4oxGQFcy2Gs+xxH1WAVjpPcteye5ECrYR7a7rPc0Wnq356sO8+BnSt2rpWl/rw==
+metaapp-prodigytech-doc-theme@^1.1.1:
+  version "1.1.1"
+  resolved "https://api-web-registry.metaapp.cn/metaapp-prodigytech-doc-theme/-/metaapp-prodigytech-doc-theme-1.1.1.tgz#affc6645368316fc13f884fc093ac749d5b04983"
+  integrity sha512-sbJDlN/6Wr/P76bmrN2pDPCRPP4LzO8JalOxd9zfZNe4oftPWHYHB+YrBb3Cq3kWh0LrnBnWXuo4Av0KSD/jDg==
   dependencies:
     "@docsearch/css" "^3.3.0"
     "@docsearch/js" "^3.3.0"
@@ -2086,6 +2086,7 @@ metaapp-prodigytech-doc-theme@^1.0.30:
     detect-browser "^5.3.0"
     metaapp-pandora-sdk "^5.0.2"
     shiki "^0.12.1"
+    viewerjs "^1.11.3"
     vite "^4.0.2"
     vue "^3.2.45"
 
@@ -2874,6 +2875,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+viewerjs@^1.11.3:
+  version "1.11.3"
+  resolved "https://registry.npmmirror.com/viewerjs/-/viewerjs-1.11.3.tgz#6569c519590776190f86b531bf43a5888a7a472f"
+  integrity sha512-efG3U61Umuj/1x6JAtdvnY9m407C/RkrkFilsMcLEWKDivpjNU3/FeL+feCY1Vkur9aQeBJ+z6K4CCPP7hv6vA==
 
 vite@^4.0.0:
   version "4.0.2"
