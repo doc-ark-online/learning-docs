@@ -197,10 +197,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       {
         text: '论坛',
         link: 'https://forum.ark.online/'
-      },
-      {
-        text: '反馈',
-        link: 'https://github.com/prodigytech-doc/learning-docs/issues/new?assignees=&labels=documentation&template=bug_report.yml'
       }
     ],
     feedback: 'https://github.com/prodigytech-doc/learning-docs/',
