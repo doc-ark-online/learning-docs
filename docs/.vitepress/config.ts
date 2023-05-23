@@ -11,7 +11,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = [
 export default defineConfigWithTheme<DefaultTheme.Config>({
   ignoreDeadLinks: true,
   title: '教程',
-  appearance: false,
+  appearance: true,
   description: '口袋方舟编辑器的教程文档',
   outDir: '../dist',
   head: [['link', { rel: 'icon', href: '/favicon_kd.ico' }]],
@@ -197,10 +197,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       {
         text: '论坛',
         link: 'https://forum.ark.online/'
-      },
-      {
-        text: '反馈',
-        link: 'https://github.com/prodigytech-doc/learning-docs/issues/new?assignees=&labels=documentation&template=bug_report.yml'
       }
     ],
     feedback: 'https://github.com/prodigytech-doc/learning-docs/',
@@ -227,8 +223,11 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     ],
     lastUpdatedText: 'Updated Date',
     docFooter: {
-      prev: 'Pagina prior',
-      next: 'Proxima pagina'
-    }
-  }
+      prev: '上一篇',
+      next: '下一篇'
+    },
+  },
+  markdown: {
+    lineNumbers: true,
+  },
 })
