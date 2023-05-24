@@ -11,7 +11,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = [
 export default defineConfigWithTheme<DefaultTheme.Config>({
   ignoreDeadLinks: true,
   title: '教程',
-  appearance: true,
+  appearance: false,
   description: '口袋方舟编辑器的教程文档',
   outDir: '../dist',
   head: [['link', { rel: 'icon', href: '/favicon_kd.ico' }]],
