@@ -172,6 +172,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             key: 'api-docs',
             facetFilters: ['tags:api-docs'],
             name: 'API'
+          },
+          {
+            name: '论坛',
+            url: 'https://forum.ark.online/'
           }
         ]
       },
@@ -225,9 +229,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     docFooter: {
       prev: '上一篇',
       next: '下一篇'
-    },
+    }
   },
   markdown: {
-    lineNumbers: true,
-  },
+    lineNumbers: true
+  }
 })
