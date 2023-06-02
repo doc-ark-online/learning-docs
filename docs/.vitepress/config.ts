@@ -47,7 +47,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       },
       {
-        text: '脚本通信',
+        text: '基础概念',
         link: '/md/2.1.md',
         collapsible: true,
         collapsed: true,
