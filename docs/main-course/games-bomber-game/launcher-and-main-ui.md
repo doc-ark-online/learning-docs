@@ -1,0 +1,99 @@
+# 入口类与控制界面
+
+::: tip 阅读本文大概需要 5 分钟。
+
+GameStart 为我们提供了一个入口类与加载页面，所有的功能都会在该阶段进行初始化。
+
+:::
+
+## 1.加入控制界面
+首先在 UI 界面创建一个 UI，命名为“UIRoot”，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnCpimY1xZ4iI4fsBLclqENg.png)
+
+正常情况下，我们应该双击打开 UIRoot 并搭建 UI 了。这里我们使用 Odin 提供给我们的成品 UIRoot 代码，首先，右键“UIRoot”，选择“打开文件所在位置”，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnkvu3q6WvnCMIbQU8nLs2vc.png)
+
+打开文件夹后，看到“D.ui”文件，双击打开，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnssVL1JJgZPmQU0CXLZ3oif.png)
+
+双击“UIRoot.ui”文件后，选择 VSCode 或记事本等其他文本编辑软件打开，清空所有存在的代码，并将下列代码全部复制到 UIRoot.ui 中，代码如下：
+
+```ts
+{"MWUIWidgetBase_2147374120":{"MWCanvas_2147374118AC0E61CB4745687505415083C938DF68":{"MWVirtualJoystickPanelDesigner_2147374116C183BF8A48FC93807EAB75815401CD8B":{"Transform":{"Position":{"X":0,"Y":0},"Size":{"X":960,"Y":1080}},"Angle":0,"ZOrder":0,"AutoSize":false,"Constraint":{"MWUIConstraintH":4,"MWUIConstraintV":4},"HorizontalOrientation":4,"VerticalOrientation":4,"AutoLayoutChildPadding":{"Left":0,"Top":0,"Right":0,"Bottom":0},"Name":"MWVirtualJoystickPanelDesigner","ID":"611F111747812FAF108FF48C6165D10F","Enable":true,"Visible":0,"RenderPivot":{"X":0.5,"Y":0.5},"RenderShear":{"X":0,"Y":0},"RenderScale":{"X":1,"Y":1},"RenderOpacity":1,"JoyBackGrondImage":{"JoyStyleNormal":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"12513"},"JoyStyleTouch":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"12513"},"JoyStyleDisable":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"12513"}},"JoyCenterImage":{"JoyStyleNormal":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"12597"},"JoyStyleTouch":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"12597"},"JoyStyleDisable":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"12597"}},"JoyControlType":1,"JoyCenterSize":{"X":250,"Y":850},"JoyThumbSize":{"X":250,"Y":250},"JoyVisualSize":{"X":100,"Y":100},"JoyInputScalSize":{"X":1,"Y":1},"JoyActiveOpacity":1,"JoyInactiveOpacity":0.20000000298023224,"JoyTimeUnitDeactive":0,"JoyTimeUnitReset":0,"JoyPreventRecenter":false,"JoyControlByMouse":false},"MWTouchPadDesigner_21473741144E095D934866D7912D07F4B51116E2AA":{"Transform":{"Position":{"X":960,"Y":0},"Size":{"X":960,"Y":1080}},"Angle":0,"ZOrder":0,"AutoSize":false,"Constraint":{"MWUIConstraintH":4,"MWUIConstraintV":4},"HorizontalOrientation":4,"VerticalOrientation":4,"AutoLayoutChildPadding":{"Left":0,"Top":0,"Right":0,"Bottom":0},"Name":"MWTouchPadDesigner","ID":"F4FF585940CEE5FA160EA6B31101140A","Enable":true,"Visible":0,"RenderPivot":{"X":0.5,"Y":0.5},"RenderShear":{"X":0,"Y":0},"RenderScale":{"X":1,"Y":1},"RenderOpacity":1,"TouchPadInputScale":{"X":0.30000001192092896,"Y":0.30000001192092896},"JoyControlByMouse":false},"MWButton_21473741127682E5D2495BC5F54167589497AFEA10":{"Transform":{"Position":{"X":1546.3382568359375,"Y":723.6121826171875},"Size":{"X":240,"Y":240}},"Angle":0,"ZOrder":0,"AutoSize":false,"Constraint":{"MWUIConstraintH":1,"MWUIConstraintV":1},"HorizontalOrientation":1,"VerticalOrientation":1,"AutoLayoutChildPadding":{"Left":0,"Top":0,"Right":0,"Bottom":0},"Name":"jumpButton","ID":"CC6467B54B7F264E6D63779BB3C4506B","Enable":true,"Visible":0,"RenderPivot":{"X":0.5,"Y":0.5},"RenderShear":{"X":0,"Y":0},"RenderScale":{"X":1,"Y":1},"RenderOpacity":1,"Text":"","FontSize":24,"FontSpace":0,"Font":{"FontGlyph":0,"FontStrikeline":false,"FontUnderline":false,"ContentColor":{"R":0,"G":0,"B":0,"A":1},"ShadowColor":{"R":0,"G":0,"B":0,"A":1},"ShadowOffset":{"X":0,"Y":0},"TextAlign":1,"TextVerticalAlign":1,"TextOutlineColor":{"R":0,"G":0.80000001192092896,"B":0,"A":1},"TextOutlineSize":0},"RenderOffset":{"X":0,"Y":0},"RenderBlankSizeScale":1,"NormalTexture":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"14126"},"HasTransition":false,"PressedTexture":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"14126"},"DisabledTexture":{"ImageSize":{"X":32,"Y":32},"ImageColor":{"R":1,"G":1,"B":1,"A":1},"DrawAs":3,"Margin":{"Left":0,"Top":0,"Right":0,"Bottom":0},"FileGuid":"14126"},"OnClicked":{"EventDelegate":"OnClicked","EventBinds":""},"OnPressed":{"EventDelegate":"OnPressed","EventBinds":""},"OnReleased":{"EventDelegate":"OnReleased","EventBinds":""},"OnHovered":{"EventDelegate":"OnHovered","EventBinds":""},"OnUnhovered":{"EventDelegate":"OnUnhovered","EventBinds":""}},"Transform":{"Position":{"X":0,"Y":0},"Size":{"X":1920,"Y":1080}},"Angle":0,"ZOrder":0,"AutoSize":false,"Constraint":{"MWUIConstraintH":4,"MWUIConstraintV":4},"HorizontalOrientation":4,"VerticalOrientation":4,"AutoLayoutChildPadding":{"Left":0,"Top":0,"Right":0,"Bottom":0},"Name":"MWCanvas","ID":"D869DC1348068EF40AE0099619A6DAA6","Enable":true,"Visible":4,"RenderPivot":{"X":0.5,"Y":0.5},"RenderShear":{"X":0,"Y":0},"RenderScale":{"X":1,"Y":1},"RenderOpacity":1,"Cliping":false,"AutoLayoutEnable":false,"AutoLayout":{"AutoLayout":false,"AutoWrap":false,"Layout":0,"LayoutPacket":0,"LayoutSpace":0,"SubitemArrangementRules":{"HorizontalArrangement":0,"VerticalArrangement":0},"HugContent":{"HugContentW":0,"HugContentH":0},"Padding":{"Left":0,"Top":0,"Right":0,"Bottom":0}}},"Name":"Root","ID":"6C4AA84D43CD991451F2CA9B350056A8","Enable":true,"Visible":4,"Focus":false,"DesignSize":{"X":1920,"Y":1080},"OutSide":true,"TSScript":{"ScriptPath":"","ScriptGUID":"5FFEE8244167931CE09029B532B673C6"}}}
+```
+
+完成后，保存退出，这时候回到编辑器界面中，双击”UIRoot“打开 UI 编辑界面，如图
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnyxNeKbco3tGP85nVJNhWOd.png)
+
+点击 UI 编辑器右上角”导出所有脚本“按钮，将 UI 导出为脚本
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnFMSgqBzcdarOP478pbZCxe.png)
+
+::: warning 注意
+
+导出的脚本不能进行编辑，所有对该脚本的编辑都会被覆盖
+
+:::
+
+导出脚本的路径如下
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcntVaN2BIdLDTrobMHwQjIKb.png)
+
+接下来我们关联一下 ui 和脚本，在脚本中创建一个 ui 文件夹并在此文件夹新建脚本，取名为“RootUI”，如图所示
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn39AyajsBxn4uCUf3OFJrUc.png)
+
+双击“RootUI”,替换文件内容如下
+
+```typescript
+import UIRoot_Generate from "../ui-generate/UIRoot_generate";
+export class RootUI extends UIRoot_Generate {
+    /**
+     * UI 创建时调用
+     */
+    public onStart() {
+        this.jumpButton.onClicked.add(() => {
+            Gameplay.getCurrentPlayer().character.jump();
+        });
+    }
+}
+```
+
+## 2.设置入口类
+
+我们已经创建了控制界面,修改上一节中创建的入口类“GameStart”，修改后的脚本代码如下：
+
+```ts
+import { RootUI } from "./ui/RootUI";
+
+@Core.Class
+export default class GameStart extends Core.Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+       if (SystemUtil.isClient()) {
+            UI.UIManager.instance.show(RootUI);
+        }
+    }
+
+    /**
+     * 周期函数 每帧执行
+     * 此函数执行需要将 this.bUseUpdate 赋值为 true
+     * @param dt 当前帧与上一帧的延迟 / 秒
+     */
+    protected onUpdate(dt: number): void {
+    
+    }
+
+    /** 脚本被销毁时最后一帧执行完调用此函数 */
+    protected onDestroy(): void {
+
+    }
+}
+```
+
+这时候运行游戏，如果一切正常，点击攻击按钮，人物就会跳起来了！

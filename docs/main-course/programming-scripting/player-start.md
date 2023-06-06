@@ -1,0 +1,54 @@
+# 初生点
+
+::: tip 阅读本文大概需要 3 分钟。
+
+口袋方舟编辑器默认为每个玩家创建了一个可操控角色，那么游戏开始时，这个角色出生在哪里呢？这时初生点就派上用场了。
+
+:::
+
+更多初生点使用见产品文档：[初生点](https://docs.ark.online/GameplayObjects/SpawnPoint.html)
+
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=863312444&bvid=BV1uG4y1Q7ny&cid=978207160&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
+## 1. 什么是初生点
+
+在多人游戏开发中，所有客户端对应的玩家都会出生在一个地图中，但是玩家角色具体出现在地图的位置就由初生点来控制了，默认我们创建一个工程，都会自动生成一个初生点，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnplUoyen2MfY35BgCAHItgc.png)
+
+默认运行游戏后，玩家角色就会从该位置创建出来，那么角色被创建出来后，面向哪个方向呢？可以看到在初生点上有一个蓝色的箭头，该箭头就指向了角色创建出来后的朝向方向，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn3e9m8ZUpATt2t2y278Sclf.gif)
+
+## 2. 创建初生点
+
+除了默认的初生点，我们还可以往场景当中拖拽多个初生点，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnbjSa8ALjrW3BSMDBsB3obh.png)
+
+当游戏中存在多个初生点时，游戏运行后会随机选择一个初生点创建角色。如果场景中没有任何一个初生点时，游戏运行后，角色将会被创建在地图原点（0,0,0）。
+
+## 3. 使用初生点的注意事项
+
+一般来说新创建的场景 ，初生点都会在地面之上，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnuK74ObtGrfuVvsimKGqaHf.png)
+
+如果出现初生点移动到了地面的下边，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnobeRs47psTHv5DRFDzuOmf.png)
+
+就会出现角色一开场就往下落的情况，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnYB0TZJw8sDSQ20FH7iTFId.gif)
+
+- 场景中有多个出生点时，玩家角色将会随机一个初生点出生
+- 场景中一个初生点都没有时间，玩家角色将在（0，0，0）点出生，如果地面位置没变，结果就是会如上图一般开局往下落
+
+## 4. 拓展
+
+如上所说，地面相关设置也很重要，创建默认场景地面如图：用户可以设置位置，旋转，缩放等参数。
+
+如下图，可以看到 SM_Ground 的最右侧有一个锁住的图标，点击一下该图标，我们就能在主视口里选中地面了
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnHewmNO4T4R3CTVprPiECsh.png)

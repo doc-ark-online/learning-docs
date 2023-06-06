@@ -1,0 +1,133 @@
+# 投掷物
+
+::: tip 阅读本文大概需要 10 分钟。
+
+在射击游戏中，投掷物功能可以帮助我们快速的制作手雷一类的物品，投掷物主要包含投掷出去的力和方向以及当投掷物碰撞到物体时要产生的效果，接下来，我们就来一起制作一个会爆炸的投掷物吧！
+
+:::
+
+## 1. 什么是投掷物
+
+投掷物是编辑器封装的一个抛物线或者射线检测的类。
+
+## 2. 投掷物使用场景
+
+当发射子弹，丢弃物品，抛起一个物件，或者投掷手雷这些情况的时候就可以使用投掷物对象
+
+## 3. 使用投掷物示例
+
+创建一个新项目，在新项目中创建一个新脚本并挂载到游戏场景中，设置脚本代码如下：
+
+```ts
+@Core.Class
+export default class PlayerControl extends Core.Script {
+    @Core.Property()
+    preloadAssets = "20673,8351,14090,7822"
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        //客户端代码
+        if(Util.SystemUtil.isClient()){
+            //第一个客户端功能：按下 Q 键，给服务端发送 fire 事件，让服务端创建投掷物
+            InputUtil.onKeyDown(Type.Keys.Q, ()=>{
+                Events.dispatchToServer("fire")
+            })
+            //第二个客户端功能：监听服务端发来的 effect 事件，在客户端创建爆炸特效
+            Events.addServerListener("effect", this.playEffect.bind(this))
+        }
+        //服务端代码
+        if(Util.SystemUtil.isServer()){
+            //服务端功能：监听客户端发来的 fire 事件
+            Events.addClientListener("fire", this.fire.bind(this))
+        }
+    }
+
+    //创建投掷物方法，在服务端运行
+    private async fire(player: Gameplay.Player) {
+        //生成水晶用来作为投掷物模型
+        let go = await Core.GameObject.asyncSpawnGameObject("20673")
+        //将投掷物放到角色右手上
+        player.character.attach(go, Gameplay.SlotType.RightHand)
+        //取消投掷物模型的碰撞
+        go.setCollision(Type.PropertyStatus.Off)
+        //重置投掷物模型与右手的相对位置
+        go.setRelativeLocation(Type.Vector.zero)
+        //播放投掷动画
+        player.character.playAnimation("8351")
+
+        //生成投掷物对象（这里的投掷物对象是真正有投掷功能的，上面的水晶只是模型）
+        let projectile = await Core.GameObject.asyncSpawnGameObject("Projectile") as Gameplay.Projectile
+        //等待动画播放后
+        setTimeout(() => {
+            //设置投掷物位置为水晶位置
+            projectile.worldLocation = go.worldLocation
+            //解除水晶与手的绑定
+            go.detachFromGameObject()
+            //将水晶与投掷物绑定
+            go.attachToGameObject(projectile)
+            //重置投掷物与水晶模型的相对位置
+            go.setRelativeLocation(Type.Vector.zero)
+            //设置投掷物属性
+            //投掷物初始速度
+            projectile.initialSpeed = 500
+            //投掷物碰撞胶囊体长度
+            projectile.collisionLength = 10
+            //投掷物碰撞胶囊体半径
+            projectile.collisionRadius = 10
+            //投掷物开启物理模拟功能
+            projectile.simulatePhysics = true
+            //关闭投掷物默认自带的碰撞效果
+            projectile.setCollision(Type.PropertyStatus.Off)
+            //投掷物使用的重力
+            projectile.gravityScale = 0.8
+            //绑定使用投掷物的玩家（用于同步操作）
+            projectile.bindPlayer(player)
+            //获取玩家的旋转角度
+            let rotate = player.character.worldRotation
+            //旋转 90 度后，该角度就会朝向角色正前方，默认向上（未来版本更新后，可能会省略该旋转）
+            rotate.y -= 90
+            //设置投掷物的起始位置与起始旋转
+            projectile.setLocationAndRotation(player.character.worldLocation.add(Type.Vector.up.multiply(70)), rotate)
+            //设置投掷物碰到物体后的回调方法
+            projectile.onProjectileHit.add((HitActor: Core.GameObject, NormalImpulse: Type.Vector, HitResult: Gameplay.HitResult) => {
+                //进到这个方法证明投掷物碰到了其他物体
+                //如果碰到的不是角色对象
+                if (!(HitActor instanceof Gameplay.Character)) {
+                    //给客户端发送消息播放特效，并传递一个碰撞位置信息参数
+                    Events.dispatchToAllClient("effect", HitResult.location)
+                    //销毁水晶和投掷物
+                    go.destroy()
+                    projectile.destroy()
+                }
+            })
+            //运行投掷物！
+            projectile.launch()
+
+        }, 400);
+    }
+
+    //播放特效
+    async playEffect(location: Type.Vector){
+        //创建爆炸特效
+        let effect = await Core.GameObject.asyncSpawnGameObject("7822") as Gameplay.Particle
+        //等待爆炸特效准备完成
+        await effect.ready()
+        //设置特效位置在发生碰撞位置处
+        effect.worldLocation = location
+        //取消特效循环
+        effect.loop = false
+        //播放特效
+        effect.play()
+        //等待 1 秒后
+        setTimeout(() => {
+            //停止特效并销毁
+            effect.stop()
+            effect.destroy()
+        }, 1000);
+    }
+}
+```
+
+运行后，按下键盘的“Q”键，可以看到扔出一个投掷物，如图：
+
+![](https://cdn.233xyx.com/1681133793951_835.gif)
