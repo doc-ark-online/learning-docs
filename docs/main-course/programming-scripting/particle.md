@@ -101,8 +101,45 @@ export default class FXControl extends Core.Script {
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcntS0GvUU3RmjzKIiwBXNNvg.gif)
 
+想要在代码中更改特效的颜色怎么操作呢？
+
+发现上面的 `EffectService` 没有能更改特效颜色的函数？这个是正常的，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
+
+```typescript
+@Core.Class
+export default class FXControl extends Core.Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart() {
+        // 在客户端播放特效
+        if (SystemUtil.isClient()) {
+            // 异步创建特效资源
+            GameObject.asyncSpawn({ guid: "169403" }).then((go) => {
+                // 获取到特效，转换成特效对象
+                let effect = go as Gameplay.Particle;
+                // 设置特效位置
+                effect.setWorldLocation(new Vector(0, 0, 0));
+                // 设置特效的颜色，第一个参数是参数名称，第二个参数是颜色值
+                effect.setColor("Color", LinearColor.colorHexToLinearColor("#68FF6A"));
+                // 播放特效
+                effect.play();
+            });
+        }
+    }
+}
+```
+
+这个参数名是怎么来的呢？我们回到编辑器，把对应特效拖拽到场景中，然后选中该特效后看看属性面板：
+
+![image-20230606143901320](https://arkimg.ark.online/image-20230606143901320.png)
+
+在特效参数控制这里，可以看到支持哪些参数，字符串填写对应值即可。
+
+tips：如果特效属性面板没有对应的“特效参数控制”，那么就需要使用 `effect.color = LinearColor.colorHexToLinearColor("#68FF6A")`的方式来进行特效换色了，其他代码都没有任何区别。
+
 ## 5. 预览特效效果
 
 在具体特效资源的右上角，有一个 + 号按钮，点击后会弹出一个预览窗口，该功能能为我们省去拖入场景看效果的时间
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn6viST9RdrwBMFUbBVuD9qc.gif)
+
+更多信息参考：[产品手册-特效](https://docs.ark.online/GameplayObjects/Effects.html)
