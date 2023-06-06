@@ -149,7 +149,66 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '添加游戏场景', link: '/main-course/games-bomber-game/add-scene.md' },
           { text: '制作一个减速区域', link: '/main-course/games-bomber-game/build-decelerate-area.md' }
         ]
-      }
+      },
+      {
+        text: '闯关小游戏',
+        link: '/obby-course/Lesson1/1.1installing.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '第一节：快速实现闯关游戏', link: '/obby-course/Lesson1/1.1installing.md',
+            items: [
+              { text: '下载安装', link: '/obby-course/Lesson1/1.1installing.md' },
+              { text: '角色控制', link: '/obby-course/Lesson1/1.2player-control.md' },
+              { text: '场景搭建', link: '/obby-course/Lesson1/1.3build-scene.md' },
+            ]
+          },
+          {
+            text: '第二节：完善胜负逻辑', link: '/obby-course/Lesson2/2.1dead-rebirth.md',
+            items: [
+              { text: '死亡复活', link: '/obby-course/Lesson2/2.1dead-rebirth.md' },
+              { text: '检查点', link: '/obby-course/Lesson2/2.2check-point.md' },
+              { text: '终点胜利', link: '/obby-course/Lesson2/2.3win-point.md' },
+            ]
+          },
+          {
+            text: '第三节：发布游戏', link: '/obby-course/Lesson3/3.1character-editor.md',
+            items: [
+              { text: '角色编辑器', link: '/obby-course/Lesson3/3.1character-editor.md' },
+              { text: '发布游戏&测试', link: '/obby-course/Lesson3/3.2release-and-test.md' },
+            ]
+          },
+          {
+            text: '第四节：增强用户反馈', link: '/obby-course/Lesson4/4.1feedback-win.md',
+            items: [
+              { text: '胜利反馈', link: '/obby-course/Lesson4/4.1feedback-win.md' },
+              { text: '增加胜利提示UI', link: '/obby-course/Lesson4/4.2win-ui.md' },
+              { text: '增加倒计时UI', link: '/obby-course/Lesson4/4.3rebirth-ui.md' },
+              { text: '增加回到初生点按钮', link: '/obby-course/Lesson4/4.4back-starter-button.md' },
+            ]
+          },
+          {
+            text: '第五节：增加新的关卡', link: '/obby-course/Lesson5/5.1design-levels.md',
+            items: [
+              { text: '关卡设计思想', link: '/obby-course/Lesson5/5.1design-levels.md' },
+              { text: '跳关卡', link: '/obby-course/Lesson5/5.2jump-levels.md' },
+              { text: '扩展机关', link: '/obby-course/Lesson5/5.3extension-level.md' },
+              { text: '展示关卡数字', link: '/obby-course/Lesson5/5.4show-level-number.md' },
+            ]
+          },
+          {
+            text: '第六节：实现多人联机', link: '/obby-course/Lesson6/6.1conline-game.md',
+            items: [
+              { text: '联机游戏的基本概念', link: '/obby-course/Lesson6/6.1conline-game.md' },
+              { text: '场景物体的单双端设计', link: '/obby-course/Lesson6/6.2client-server-tips.md' },
+              { text: '存储通关记录', link: '/obby-course/Lesson6/6.3data-storage-level-number.md' },
+              { text: '单双端注意改动', link: '/obby-course/Lesson6/6.4client-server-wraning.md' },
+              { text: '发布游戏', link: '/obby-course/Lesson6/6.5release-game.md' },
+            ]
+          },
+        ]
+      },
     ],
     algolia: {
       appId: 'I2PHYUBLCN',
