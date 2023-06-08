@@ -152,7 +152,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '闯关小游戏',
-        link: '/obby-course/Lesson1/1.1installing.md',
+        link: '/obby-course/game-description.md',
         collapsible: true,
         collapsed: true,
         items: [
