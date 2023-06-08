@@ -157,7 +157,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text: '第一节：快速实现闯关游戏', link: '/obby-course/Lesson1/1.1installing.md',
+            text: '第一节：快速实现闯关游戏',
             items: [
               { text: '下载安装', link: '/obby-course/Lesson1/1.1installing.md' },
               { text: '角色控制', link: '/obby-course/Lesson1/1.2player-control.md' },
