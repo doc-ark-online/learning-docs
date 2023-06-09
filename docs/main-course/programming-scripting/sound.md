@@ -125,6 +125,6 @@ SoundService.getInstance().playSound(resId, loopNum, volume)
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnXKXIXwzoxi0O2lgruRGRDe.gif)
 
 * 在预览窗口中左上角会有一个播放按钮，点击即可播放音效来预览
-* 除此以外，还有一个预览多个音效的便利操作：
+* 除此以外，还有一个**预览多个音效**的便利操作：
   * 在点击预览窗口的情况下，不关闭预览窗口，直接再点击左边资源库的其他音效，即可直接切换音效预览。
   * 点击其他音效预览之后，键盘上的上下左右按键也可以切换其他音效的哦
