@@ -173,14 +173,19 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第三节：编辑角色形象&发布游戏', link: '/obby-course/Lesson3/3.1character-editor.md',
+            text: '第三节：角色编辑器', link: '/obby-course/Lesson3/3.1character-editor.md',
             items: [
               { text: '角色编辑器', link: '/obby-course/Lesson3/3.1character-editor.md' },
+            ]
+          },
+          {
+            text: '第四节：发布游戏', link: '/obby-course/Lesson3/3.2release-and-test.md',
+            items: [
               { text: '发布游戏&测试', link: '/obby-course/Lesson3/3.2release-and-test.md' },
             ]
           },
           {
-            text: '第四节：增强用户反馈', link: '/obby-course/Lesson4/4.1feedback-win.md',
+            text: '第五节：增强用户反馈', link: '/obby-course/Lesson4/4.1feedback-win.md',
             items: [
               { text: '胜利反馈', link: '/obby-course/Lesson4/4.1feedback-win.md' },
               { text: '增加胜利提示UI', link: '/obby-course/Lesson4/4.2win-ui.md' },
@@ -189,7 +194,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第五节：增加新的关卡', link: '/obby-course/Lesson5/5.1design-levels.md',
+            text: '第六节：增加新的关卡', link: '/obby-course/Lesson5/5.1design-levels.md',
             items: [
               { text: '关卡设计思想', link: '/obby-course/Lesson5/5.1design-levels.md' },
               { text: '跳关卡', link: '/obby-course/Lesson5/5.2jump-levels.md' },
@@ -198,7 +203,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第六节：实现多人联机', link: '/obby-course/Lesson6/6.1conline-game.md',
+            text: '第七节：实现多人联机', link: '/obby-course/Lesson6/6.1conline-game.md',
             items: [
               { text: '联机游戏的基本概念', link: '/obby-course/Lesson6/6.1conline-game.md' },
               { text: '场景物体的单双端设计', link: '/obby-course/Lesson6/6.2client-server-tips.md' },
