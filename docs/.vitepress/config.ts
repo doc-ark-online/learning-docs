@@ -173,7 +173,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第三节：发布游戏', link: '/obby-course/Lesson3/3.1character-editor.md',
+            text: '第三节：编辑角色形象&发布游戏', link: '/obby-course/Lesson3/3.1character-editor.md',
             items: [
               { text: '角色编辑器', link: '/obby-course/Lesson3/3.1character-editor.md' },
               { text: '发布游戏&测试', link: '/obby-course/Lesson3/3.2release-and-test.md' },
