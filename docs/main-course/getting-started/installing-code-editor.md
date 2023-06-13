@@ -10,7 +10,7 @@
 
 支持 TypeScript 语言的编辑器有 VisualStudioCode（以下简称 VSCode）是比较轻量级的，也是使用人数较多的一款编辑器，教程中均以该编辑器进行演示。
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV1pA411k761&vd_source=c94089b4804c1edb7b67c4629d433f6b" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV1pA411k761&vd_source=c94089b4804c1edb7b67c4629d433f6b&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ## 1.VSCode 下载与安装
 

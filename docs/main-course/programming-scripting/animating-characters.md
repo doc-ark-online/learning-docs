@@ -6,7 +6,7 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=905795054&bvid=BV14P4y1z71N&cid=978207056&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=905795054&bvid=BV14P4y1z71N&cid=978207056&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ## 1. 动画
 

@@ -8,7 +8,7 @@
 
 NPC 角色使用相关见产品文档：[非玩家对象](https://docs.ark.online/GameplayObjects/NPCs.html)
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=778296714&bvid=BV1iy4y1d798&cid=978207250&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=778296714&bvid=BV1iy4y1d798&cid=978207250&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ## 1. 玩家类
 
