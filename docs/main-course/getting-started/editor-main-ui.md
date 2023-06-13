@@ -71,7 +71,7 @@
   ![image-20230518185836882](https://arkimg.ark.online/image-20230518185836882.webp)
 
 
-- 设置：包含世界设置、环境设置、房间设置、玩家设置、编辑器设置、自动备份、快捷键设置、语言设置、画质分级模拟等等，更多细节：[产品手册 - 编辑器各设置](https://docs.ark.online/Editor/EditorSettings.html)。
+- 设置：包含世界设置、环境设置、房间设置、玩家设置、编辑器设置、自动备份、快捷键设置、语言设置、画质分级模拟等等。
 - ![image-20230518185920957](https://arkimg.ark.online/image-20230518185920957.webp)
 - ![image-20230518191046946](https://arkimg.ark.online/image-20230518191046946.webp)
 
