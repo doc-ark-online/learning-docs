@@ -1,12 +1,14 @@
-# 角色动画
+# 角色姿态&角色动画
 
-::: tip 阅读本文大概需要 5 分钟。
+::: tip 阅读本文大概需要 15 分钟。
 
 在游戏中，角色要在不同时刻播放不同的角色动画，才可以让角色看起来更加的鲜活生动，口袋方舟提供了大量的动画供玩家使用，请一定要多多尝试不同有趣的动画！
 
 :::
 
 <iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=905795054&bvid=BV14P4y1z71N&cid=978207056&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
+
 
 ## 1. 动画
 
