@@ -14,6 +14,8 @@
 
 请观看下方视频，展示了本系列课程制作的游戏的最终效果：
 
-<video controls src="https://arkimg.ark.online/1.1%E5%85%B3%E5%8D%A1%E5%B1%95%E7%A4%BA.mp4"></video>
+
+
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="https://player.bilibili.com/player.html?aid=272279212&bvid=BV14c411g7ra&cid=1163394704&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 祝您学习愉快！
