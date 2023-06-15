@@ -213,7 +213,7 @@ export default class PlayerControl extends Core.Script {
     protected onUpdate(dt: number): void { }
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy (): void {}
+    protected onDestroy(): void {}
 }
 ```
 
