@@ -48,17 +48,17 @@
 export default class PlayerControl extends Core.Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
 
     /**
      * 周期函数 每帧执行
      * 此函数执行需要将 this.useUpdate 赋值为 true
      * @param dt 当前帧与上一帧的延迟 / 秒
      */
-    protected onUpdate (dt: number): void { }
+    protected onUpdate(dt: number): void { }
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy (): void {}
+    protected onDestroy(): void {}
 }
 ```
 ---
@@ -92,7 +92,7 @@ export default class PlayerControl extends Core.Script {
 @Core.Class
 export default class PlayerControl extends Core.Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */   //[!code focus]
-    protected onStart (): void { //[!code focus]
+    protected onStart(): void { //[!code focus]
 
     } //[!code focus]
 
@@ -101,12 +101,12 @@ export default class PlayerControl extends Core.Script {
      * 此函数执行需要将 this.useUpdate 赋值为 true //[!code focus]
      * @param dt 当前帧与上一帧的延迟 / 秒 //[!code focus]
      */   //[!code focus]
-    protected onUpdate (dt: number): void {//[!code focus]
+    protected onUpdate(dt: number): void {//[!code focus]
 
     } //[!code focus]
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */   //[!code focus]
-    protected onDestroy (): void { //[!code focus]
+    protected onDestroy(): void { //[!code focus]
 
     } //[!code focus]
 }
@@ -148,7 +148,7 @@ export default class PlayerControl extends Core.Script {
     public speed: string = ""	//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
     //... 省略
 }
 ```
@@ -160,11 +160,11 @@ export default class PlayerControl extends Core.Script {
 ```typescript
 @Core.Class
 export default class PlayerControl extends Core.Script {
-    @Core.Property ()//[!code focus]
+    @Core.Property()//[!code focus]
     public speed: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
     //... 省略
 }
 ```
@@ -176,11 +176,11 @@ export default class PlayerControl extends Core.Script {
 ``` ts
 @Core.Class
 export default class PlayerControl extends Core.Script {
-    @Core.Property ({ displayName: "移动速度"})	//[!code focus]
+    @Core.Property({ displayName: "移动速度"})	//[!code focus]
     public speed: string = ""
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
 }
 ```
 
@@ -193,24 +193,24 @@ export default class PlayerControl extends Core.Script {
 ``` ts
 @Core.Class
 export default class PlayerControl extends Core.Script {
-    @Core.Property ({ displayName: "移动速度", group: "移动设置"})//[!code focus]
+    @Core.Property({ displayName: "移动速度", group: "移动设置"})//[!code focus]
     public speed: string = ""//[!code focus]
 
-    @Core.Property ({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
+    @Core.Property({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
     public loopCount: number = 1//[!code focus]
     
-    @Core.Property ({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
+    @Core.Property({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
     public objectGuid: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {this.useUpdate = true;}
+    protected onStart(): void {this.useUpdate = true;}
 
     /**
      * 周期函数 每帧执行
      * 此函数执行需要将 this.useUpdate 赋值为 true
      * @param dt 当前帧与上一帧的延迟 / 秒
      */
-    protected onUpdate (dt: number): void { }
+    protected onUpdate(dt: number): void { }
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */
     protected onDestroy (): void {}
