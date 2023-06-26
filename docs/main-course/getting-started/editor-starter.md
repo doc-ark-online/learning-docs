@@ -6,9 +6,23 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV1ps4y147a4&vd_source=c94089b4804c1edb7b67c4629d433f6b" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV1ps4y147a4&vd_source=c94089b4804c1edb7b67c4629d433f6b&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
-## 1. 使用游戏物体
+## 1. 主视口摄像机操作
+
+摄像机角度：在主视口中，按住鼠标右键拖动鼠标，可以操作主视口的摄像机进行旋转。
+
+摄像机移动：**按住鼠标右键**的同时，按键盘的 W、A、S、D 键可以进行摄像机的移动，配合鼠标右键的旋转可以移动到想要的位置。
+
+前后移动：直接使用鼠标的滚轮，可以前后移动摄像机（和按照鼠标右键，再按 W 键和 S 键效果相同）。
+
+加速移动：如果闲摄像机移动太慢，可以在操作上面的按键和鼠标时，按住键盘的 Shift 键就会变快。
+
+围绕指定物体旋转：选中物体按一下`F`键进行聚焦，然后按住 Alt 键，再使用鼠标左键进行拖拽就可以围绕这个物体进行摄像机转动了。
+
+
+
+## 2. 使用游戏物体
 
 使用游戏物体非常简单，首先在 “本地资源库” 中找到一个自己喜欢的静态物体或特效等，我们这里使用 “①美术资源 ->②静态模型 ->③道具饰品 ->④宝箱” 来作为演示，然后单击选中该物体，将资源下载到本地
 
@@ -32,11 +46,11 @@
 
 ![image-20230519095311700](https://arkimg.ark.online/image-20230519095311700.webp)
 
-## 2. 游戏物体的基本操作
+## 3. 游戏物体的基本操作
 
 在 “主视口” 中，选中我们创建的游戏物体，这里我们用一个宝箱物体作为示例，来演示一下游戏物体的移动、旋转、缩放功能。
 
-### 2.1 移动
+### 3.1 移动
 
 确保我们要操作的游戏物体是选中状态，然后在 “工具栏” 中，选中移动按钮，或者按下快捷键 W，如图，高亮状态表示当前已开启移动功能：
 
@@ -58,7 +72,7 @@
 
 ![](https://cdn.233xyx.com/1681111424111_580.gif)
 
-### 2.2 旋转
+### 3.2 旋转
 
 确保我们要操作的游戏物体是选中状态，然后在 “工具栏” 中，选中旋转按钮，或者按下快捷键 E，如图，高亮状态表示当前已开启旋转功能：
 
@@ -76,7 +90,7 @@
 
 ![](https://cdn.233xyx.com/1681111424400_012.gif)
 
-### 2.3 缩放
+### 3.3 缩放
 
 确保我们要操作的游戏物体是缩放状态，然后在 “工具栏” 中，选中缩放按钮，或者按下快捷键 R，如图，高亮状态表示当前已开启缩放功能：
 
@@ -106,7 +120,7 @@
 
 ![](https://cdn.233xyx.com/1681111424546_943.png)
 
-## 3. 编辑器主视口基本快捷键
+## 4. 编辑器主视口基本快捷键
 
 | **操作**                  | **快捷键**                                        |
 | --------------------------------- | --------------------------------------------------------- |

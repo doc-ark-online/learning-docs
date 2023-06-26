@@ -8,7 +8,7 @@
 
 了解更多本节内容见产品文档：[音效](https://docs.ark.online/GameplayObjects/SoundEffect.html)
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=778363922&bvid=BV17y4y197Ee&cid=978207053&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=778363922&bvid=BV17y4y197Ee&cid=978207053&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ## 1. 什么是音效
 
@@ -44,27 +44,30 @@
 
 接下来选中我们的声音对象，看一下包含了哪些可设置的属性，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnlomVQBowW1qfoxWY5JYuJn.png)
+![image-20230609184246710](https://arkimg.ark.online/image-20230609184246710.webp)
 
-常用声音属性如下（上图中单击三角按钮可以预览音效播放）：
+1. 播放按钮：播放预览音频
 
-自动启用：是否默认播放
+2. 自动启用、循环播放、音效空间化
 
-循环播放：该音效是否开启循环播放。
+   * 自动启用：游戏启动时是否自动播放该音频
 
-音效空间化：是否设置为 3D 音效。
+   * 循环播放：是否循环播放
+   * 音效空间化：是否设置为 3D 音效，3D 音效和 2D 音效区别：
+     * 3D 音效：会随距离远近而有音量大小的变化，且戴耳机时可以明显听出来该音效播放的位置，具有 3D 空间效果。
+     * 2D 音效：在任何位置都可以听到同样的音量大小，且不会有空间效果。
 
-音量内部半径：上图中小球体的半径，该半径内音量不会衰减，仅 3D 音效可用。
-
-衰减距离：上图中小球体边缘到大球体的距离，该距离会产生音量衰减，仅 3D 音效可用。
-
-音量比例：音量声音大小。
+3. 音效形状以及对应形状的设置（**仅开启音效空间化时生效**）
+   * 音效形状：球形、胶囊体、盒体、锥体
+   * 不同形状区域，代表音效的扩散&衰减的区域不同，实际使用需要根据游戏效果决定用什么形状
+4. 衰减距离（**仅开启音效空间化时生效**）：离得越远声音越小，这个距离可以远到什么位置，通过衰减距离来进行配置。
+5. 音量比例：就是声音大小，0-1 代表百分比，从 0-100%。
 
 ## 3. 播放音效
 
 勾选“自动启用”
 
-勾选“循环播放”，避免音效太短运行起来没听见。
+勾选“循环播放”（这里测试效果是避免音效太短运行起来没听见）
 
 运行游戏，就可以听到声音按照上面的属性设置播放了起来！
 
@@ -76,31 +79,21 @@
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcntyRF0TVsKoI9wFrjOfmyOb.png)
 
-新建一个脚本，这里命名为“SoundControl”，并将其挂载到对象列表上，如图：
+新建一个脚本，这里命名为“SoundControl”，并将其挂载到对象列表上（注意，**一定要挂载脚本**），如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnECrxU0NJCZc644WaZG6lag.png)
 
-双击打开脚本编写代码如下：
+双击打开脚本编写代码，使用 `SoundService` 来播放音效，如下：
 
 ```ts
 @Core.Class
 export default class SoundControl extends Core.Script {
-    @Core.Property()
-    preloadAssets: string = "118362"
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
-        //音频只需要在客户端播放即可
-        if(Util.SystemUtil.isClient()){
-            //通过 guid 加载想播放的音效对象
-            Core.GameObject.asyncSpawnGameObject("120840").then(object=>{
-                //把加载好的物体转成音效类型
-                let sound = object as Gameplay.Sound
-                //开启循环
-                sound.loop = true
-                //播放
-                sound.play()
-            })
+        if(SystemUtil.isClient()){
+            // 播放音效 id 为 118362 的背景音乐
+            SoundService.getInstance().playBGM("118362") //[!code focus]
         }
     }
 }
@@ -108,8 +101,30 @@ export default class SoundControl extends Core.Script {
 
 保存脚本，运行游戏，就可以听到声音按照上面的属性设置播放了起来！
 
+另外 `SoundService` 除了播放背景音乐的函数，也提供了其他播放 3D 音效的函数和普通音效的函数，都可以尝试下：
+
+```typescript
+// 播放背景音乐，resId 为资源 id，volume 为音量大小 0-1-volume 可不传
+SoundService.getInstance().playBGM(resId, volume)
+
+// 播放 3D 空间音效，resId 为资源 id，target 为想播放到哪个位置-可以直接传对象也可以传坐标，loopNum 为循环次数，volume 为音量大小 0-1
+SoundService.getInstance().play3DSound(resId, target, loopNum, volume)
+
+// 播放普通音效，resId 为资源 id，loopNum 为循环次数，volume 为音量大小 0-1
+SoundService.getInstance().playSound(resId, loopNum, volume)
+```
+
+
+
 ## 5. 预览音效效果
 
-在具体音效资源的右上角，有一个 + 号按钮，点击后会弹出一个预览窗口，该功能能为我们省去拖入场景听音效的时间
+除了刚才拖到场景里面的音效属性面板可以预览音效以外，还可以直接在资源库预览音效。
+
+在具体音效资源的右上角，有一个 + 号按钮(如果是下载按钮就点击一下资源就会自动下载)，点击后会弹出一个预览窗口，该功能能为我们省去拖入场景听音效的时间
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnXKXIXwzoxi0O2lgruRGRDe.gif)
+
+* 在预览窗口中左上角会有一个播放按钮，点击即可播放音效来预览
+* 除此以外，还有一个**预览多个音效**的便利操作：
+  * 在点击预览窗口的情况下，不关闭预览窗口，直接再点击左边资源库的其他音效，即可直接切换音效预览。
+  * 点击其他音效预览之后，键盘上的上下左右按键也可以切换其他音效的哦

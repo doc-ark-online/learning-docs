@@ -6,7 +6,7 @@
 
 了解更多本节内容见产品文档：[角色编辑工具](https://docs.ark.online/Editor/CharacterEditor.html)
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=435814758&bvid=BV1z3411R7Y2&cid=978221145&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=435814758&bvid=BV1z3411R7Y2&cid=978221145&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ## 1. 角色编辑器的使用
 
@@ -208,7 +208,7 @@ humanoidV2.setAppearanceData(["142187"], () => {
     player.character.setAppearance(Gameplay.HumanoidV2).appearanceSync()
 })
 ```
- 
+
 ::: warning <strong>loadSlotAndEditorDataByGuid() </strong><strong>和</strong><strong> setAppearanceData() 的</strong><strong>区分</strong>
 
 1. 服务端换装不会自动同步到客户端，需要手动同步

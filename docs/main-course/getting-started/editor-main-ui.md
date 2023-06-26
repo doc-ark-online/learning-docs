@@ -8,7 +8,7 @@
 
 参照产品手册：[主编辑器各窗口操作](https://docs.ark.online/Editor/EditorWindowsOperation.html)
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV14P4y1z7wk&vd_source=c94089b4804c1edb7b67c4629d433f6b" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV14P4y1z7wk&vd_source=c94089b4804c1edb7b67c4629d433f6b&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ![image-20230518191914129](https://arkimg.ark.online/image-20230518191914129.webp)
 
@@ -71,7 +71,7 @@
   ![image-20230518185836882](https://arkimg.ark.online/image-20230518185836882.webp)
 
 
-- 设置：包含世界设置、环境设置、房间设置、玩家设置、编辑器设置、自动备份、快捷键设置、语言设置、画质分级模拟等等，更多细节：[产品手册 - 编辑器各设置](https://docs.ark.online/Editor/EditorSettings.html)。
+- 设置：包含世界设置、环境设置、房间设置、玩家设置、编辑器设置、自动备份、快捷键设置、语言设置、画质分级模拟等等。
 - ![image-20230518185920957](https://arkimg.ark.online/image-20230518185920957.webp)
 - ![image-20230518191046946](https://arkimg.ark.online/image-20230518191046946.webp)
 
