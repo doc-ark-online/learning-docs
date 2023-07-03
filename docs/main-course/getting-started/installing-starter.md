@@ -12,9 +12,12 @@
 
 ## 1. 下载与安装
 
-### 1.1 安装 Launcher
+### 1.1 注册账号
+访问[口袋方舟](https://creator.ark.online/)点击开始创作，完成注册信息填写，下载launcher
 
-下载 [安装包(点击这里下载)](https://arkimg.ark.online/%E5%8F%A3%E8%A2%8B%E6%96%B9%E8%88%9F%20v1.0.4.zip)，下载完成后，双击打开该安装包，如图：
+![](https://cdn.233xyx.com/athena/online/7c8dfdb553ee48659c72e6a750038419_13136921.webp)
+
+### 1.2 安装 Launcher
 
 ![](https://arkimg.ark.online/MetaApp20230510-103211.jpg)
 
