@@ -17,7 +17,6 @@
 ![image-20230528091113880](https://arkimg.ark.online/image-20230528091113880.webp)
 
 * 点击 “新建脚本” 后，会新增一个脚本文件，同时处于可改名状态，此时输入文件名如 "PlayerControl" ，按下回车即可确定命名
-> 脚本文件命名，一般遵循大驼峰命名规则，也就是首个单词首字母使用**大写**开头，后面单词首字母也是大写开头
 
 ![image-20230528091322735](https://arkimg.ark.online/image-20230528091322735.webp)
 
@@ -139,8 +138,6 @@ export default class PlayerControl extends Core.Script {
 下面我们介绍，如何给脚本添加自定义属性，可视化的展示在属性面板中。
 
 1）在 'PlayerControl' 脚本代码中添加一个 string 类型的属性'speed' ，如下所示：
-
-> 变量名，一般都遵循小驼峰命名规则，也就是首个单词的首字母**小写**，后面单词首字母大写
 
 ```typescript
 @Core.Class
