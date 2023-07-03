@@ -13,7 +13,7 @@
 ## 1. 下载与安装
 
 ### 1.1 注册账号
-访问[口袋方舟](https://creator.ark.online/)点击开始创作，完成注册信息填写，下载launcher
+访问[口袋方舟](https://creator.ark.online/)点击"**开始创作**"，完成注册信息填写，下载 launcher
 
 ![](https://cdn.233xyx.com/athena/online/7c8dfdb553ee48659c72e6a750038419_13136921.webp)
 
