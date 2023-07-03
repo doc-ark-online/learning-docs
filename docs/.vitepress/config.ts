@@ -70,7 +70,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '特效', link: '/main-course/programming-scripting/particle.md' },
           { text: '音效', link: '/main-course/programming-scripting/sound.md' },
           { text: '初生点', link: '/main-course/programming-scripting/player-start.md' },
-          { text: '角色动画', link: '/main-course/programming-scripting/animating-characters-2.md' },
+          { text: '角色动画', link: '/main-course/programming-scripting/animating-characters.md' },
           { text: '游戏物体的使用', link: '/main-course/programming-scripting/gameobject.md' },
           { text: '游戏物体父子级', link: '/main-course/programming-scripting/layers.md' },
           { text: '玩家与角色', link: '/main-course/programming-scripting/player-and-character.md' },
