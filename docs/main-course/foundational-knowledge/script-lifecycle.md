@@ -17,7 +17,6 @@
 ![image-20230528091113880](https://arkimg.ark.online/image-20230528091113880.webp)
 
 * 点击 “新建脚本” 后，会新增一个脚本文件，同时处于可改名状态，此时输入文件名如 "PlayerControl" ，按下回车即可确定命名
-> 脚本文件命名，一般遵循大驼峰命名规则，也就是首个单词首字母使用**大写**开头，后面单词首字母也是大写开头
 
 ![image-20230528091322735](https://arkimg.ark.online/image-20230528091322735.webp)
 
@@ -48,17 +47,17 @@
 export default class PlayerControl extends Core.Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
 
     /**
      * 周期函数 每帧执行
      * 此函数执行需要将 this.useUpdate 赋值为 true
      * @param dt 当前帧与上一帧的延迟 / 秒
      */
-    protected onUpdate (dt: number): void { }
+    protected onUpdate(dt: number): void { }
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy (): void {}
+    protected onDestroy(): void {}
 }
 ```
 ---
@@ -92,7 +91,7 @@ export default class PlayerControl extends Core.Script {
 @Core.Class
 export default class PlayerControl extends Core.Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */   //[!code focus]
-    protected onStart (): void { //[!code focus]
+    protected onStart(): void { //[!code focus]
 
     } //[!code focus]
 
@@ -101,12 +100,12 @@ export default class PlayerControl extends Core.Script {
      * 此函数执行需要将 this.useUpdate 赋值为 true //[!code focus]
      * @param dt 当前帧与上一帧的延迟 / 秒 //[!code focus]
      */   //[!code focus]
-    protected onUpdate (dt: number): void {//[!code focus]
+    protected onUpdate(dt: number): void {//[!code focus]
 
     } //[!code focus]
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */   //[!code focus]
-    protected onDestroy (): void { //[!code focus]
+    protected onDestroy(): void { //[!code focus]
 
     } //[!code focus]
 }
@@ -140,15 +139,13 @@ export default class PlayerControl extends Core.Script {
 
 1）在 'PlayerControl' 脚本代码中添加一个 string 类型的属性'speed' ，如下所示：
 
-> 变量名，一般都遵循小驼峰命名规则，也就是首个单词的首字母**小写**，后面单词首字母大写
-
 ```typescript
 @Core.Class
 export default class PlayerControl extends Core.Script {
     public speed: string = ""	//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
     //... 省略
 }
 ```
@@ -160,11 +157,11 @@ export default class PlayerControl extends Core.Script {
 ```typescript
 @Core.Class
 export default class PlayerControl extends Core.Script {
-    @Core.Property ()//[!code focus]
+    @Core.Property()//[!code focus]
     public speed: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
     //... 省略
 }
 ```
@@ -176,11 +173,11 @@ export default class PlayerControl extends Core.Script {
 ``` ts
 @Core.Class
 export default class PlayerControl extends Core.Script {
-    @Core.Property ({ displayName: "移动速度"})	//[!code focus]
+    @Core.Property({ displayName: "移动速度"})	//[!code focus]
     public speed: string = ""
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {}
+    protected onStart(): void {}
 }
 ```
 
@@ -193,27 +190,27 @@ export default class PlayerControl extends Core.Script {
 ``` ts
 @Core.Class
 export default class PlayerControl extends Core.Script {
-    @Core.Property ({ displayName: "移动速度", group: "移动设置"})//[!code focus]
+    @Core.Property({ displayName: "移动速度", group: "移动设置"})//[!code focus]
     public speed: string = ""//[!code focus]
 
-    @Core.Property ({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
+    @Core.Property({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
     public loopCount: number = 1//[!code focus]
     
-    @Core.Property ({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
+    @Core.Property({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
     public objectGuid: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart (): void {this.useUpdate = true;}
+    protected onStart(): void {this.useUpdate = true;}
 
     /**
      * 周期函数 每帧执行
      * 此函数执行需要将 this.useUpdate 赋值为 true
      * @param dt 当前帧与上一帧的延迟 / 秒
      */
-    protected onUpdate (dt: number): void { }
+    protected onUpdate(dt: number): void { }
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy (): void {}
+    protected onDestroy(): void {}
 }
 ```
 
