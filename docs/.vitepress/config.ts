@@ -14,9 +14,17 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   appearance: false,
   description: '口袋方舟编辑器的教程文档',
   outDir: '../dist',
-  head: [['link', { rel: 'icon', href: '/favicon_kd.ico' }]],
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: 'https://wstatic-01-ali.233leyuan.com/xyc/metaverse-docs/tab-logo.png'
+      }
+    ]
+  ],
   themeConfig: {
-    logo: '/logo.png',
+    logo: 'https://wstatic-01-ali.233leyuan.com/xyc/metaverse-docs/kd-logo-black.svg',
     sidebar: [
       {
         text: 'index',
@@ -28,7 +36,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             text: '教程介绍',
             link: '/index.md'
           },
-          { text: '开始使用', link: '/main-course/getting-started/installing-starter.md' }
+          {
+            text: '开始使用',
+            link: '/main-course/getting-started/installing-starter.md'
+          }
         ]
       },
       {
@@ -37,13 +48,34 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '了解口袋方舟编辑器', link: '/main-course/getting-started/introduction.md' },
-          { text: '安装与启动', link: '/main-course/getting-started/installing-starter.md' },
-          { text: 'VSCode安装', link: '/main-course/getting-started/installing-code-editor.md' },
-          { text: '编辑器界面', link: '/main-course/getting-started/editor-main-ui.md' },
-          { text: '编辑器基本操作', link: '/main-course/getting-started/editor-starter.md' },
-          { text: '导入第三方项目', link: '/main-course/getting-started/import-project.md' },
-          { text: '游戏发布&更新&测试', link: '/main-course/getting-started/releasing.md' }
+          {
+            text: '了解口袋方舟编辑器',
+            link: '/main-course/getting-started/introduction.md'
+          },
+          {
+            text: '安装与启动',
+            link: '/main-course/getting-started/installing-starter.md'
+          },
+          {
+            text: 'VSCode安装',
+            link: '/main-course/getting-started/installing-code-editor.md'
+          },
+          {
+            text: '编辑器界面',
+            link: '/main-course/getting-started/editor-main-ui.md'
+          },
+          {
+            text: '编辑器基本操作',
+            link: '/main-course/getting-started/editor-starter.md'
+          },
+          {
+            text: '导入第三方项目',
+            link: '/main-course/getting-started/import-project.md'
+          },
+          {
+            text: '游戏发布&更新&测试',
+            link: '/main-course/getting-started/releasing.md'
+          }
         ]
       },
       {
@@ -52,12 +84,30 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: 'TypeScript学习', link: '/main-course/foundational-knowledge/learning-typescript.md' },
-          { text: '客户端与服务端', link: '/main-course/foundational-knowledge/client-and-server.md' },
-          { text: '脚本执行逻辑', link: '/main-course/foundational-knowledge/script-lifecycle.md' },
-          { text: '调试与输出', link: '/main-course/foundational-knowledge/debug-and-print.md' },
-          { text: '事件通信', link: '/main-course/foundational-knowledge/events.md' },
-          { text: '服务端实时日志', link: '/main-course/foundational-knowledge/server-log.md' }
+          {
+            text: 'TypeScript学习',
+            link: '/main-course/foundational-knowledge/learning-typescript.md'
+          },
+          {
+            text: '客户端与服务端',
+            link: '/main-course/foundational-knowledge/client-and-server.md'
+          },
+          {
+            text: '脚本执行逻辑',
+            link: '/main-course/foundational-knowledge/script-lifecycle.md'
+          },
+          {
+            text: '调试与输出',
+            link: '/main-course/foundational-knowledge/debug-and-print.md'
+          },
+          {
+            text: '事件通信',
+            link: '/main-course/foundational-knowledge/events.md'
+          },
+          {
+            text: '服务端实时日志',
+            link: '/main-course/foundational-knowledge/server-log.md'
+          }
         ]
       },
       {
@@ -66,23 +116,71 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '3D坐标系', link: '/main-course/programming-scripting/3d-coordinate-system.md' },
-          { text: '特效', link: '/main-course/programming-scripting/particle.md' },
+          {
+            text: '3D坐标系',
+            link: '/main-course/programming-scripting/3d-coordinate-system.md'
+          },
+          {
+            text: '特效',
+            link: '/main-course/programming-scripting/particle.md'
+          },
           { text: '音效', link: '/main-course/programming-scripting/sound.md' },
-          { text: '初生点', link: '/main-course/programming-scripting/player-start.md' },
-          { text: '角色动画', link: '/main-course/programming-scripting/animating-characters.md' },
-          { text: '游戏物体的使用', link: '/main-course/programming-scripting/gameobject.md' },
-          { text: '游戏物体父子级', link: '/main-course/programming-scripting/layers.md' },
-          { text: '玩家与角色', link: '/main-course/programming-scripting/player-and-character.md' },
-          { text: '角色编辑器', link: '/main-course/programming-scripting/character-editor.md' },
-          { text: '触发器', link: '/main-course/programming-scripting/trigger.md' },
-          { text: '预制体', link: '/main-course/programming-scripting/prefab.md' },
-          { text: '摄像机', link: '/main-course/programming-scripting/camera.md' },
-          { text: '数据持久化', link: '/main-course/programming-scripting/data-storage.md' },
-          { text: '冲量', link: '/main-course/programming-scripting/impulse.md' },
-          { text: '交互物', link: '/main-course/programming-scripting/interactors.md' },
-          { text: '射线检测', link: '/main-course/programming-scripting/line-trace.md' },
-          { text: '投掷物', link: '/main-course/programming-scripting/projectile.md' }
+          {
+            text: '初生点',
+            link: '/main-course/programming-scripting/player-start.md'
+          },
+          {
+            text: '角色动画',
+            link: '/main-course/programming-scripting/animating-characters.md'
+          },
+          {
+            text: '游戏物体的使用',
+            link: '/main-course/programming-scripting/gameobject.md'
+          },
+          {
+            text: '游戏物体父子级',
+            link: '/main-course/programming-scripting/layers.md'
+          },
+          {
+            text: '玩家与角色',
+            link: '/main-course/programming-scripting/player-and-character.md'
+          },
+          {
+            text: '角色编辑器',
+            link: '/main-course/programming-scripting/character-editor.md'
+          },
+          {
+            text: '触发器',
+            link: '/main-course/programming-scripting/trigger.md'
+          },
+          {
+            text: '预制体',
+            link: '/main-course/programming-scripting/prefab.md'
+          },
+          {
+            text: '摄像机',
+            link: '/main-course/programming-scripting/camera.md'
+          },
+          {
+            text: '数据持久化',
+            link: '/main-course/programming-scripting/data-storage.md'
+          },
+          {
+            text: '冲量',
+            link: '/main-course/programming-scripting/impulse.md'
+          },
+          {
+            text: '交互物',
+            link: '/main-course/programming-scripting/interactors.md'
+          },
+          {
+            text: '射线检测',
+            link: '/main-course/programming-scripting/line-trace.md'
+          },
+          {
+            text: '投掷物',
+            link: '/main-course/programming-scripting/projectile.md'
+          }
         ]
       },
       {
@@ -91,12 +189,30 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '创建工程', link: '/main-course/games-jump-jump-game/create-project.md' },
-          { text: '播放游戏音乐', link: '/main-course/games-jump-jump-game/play-game-music.md' },
-          { text: '添加角色特效', link: '/main-course/games-jump-jump-game/add-character-effect.md' },
-          { text: '搭建跳跃场景', link: '/main-course/games-jump-jump-game/build-jump-scene.md' },
-          { text: '添加失败区域', link: '/main-course/games-jump-jump-game/add-loser-area.md' },
-          { text: '添加胜利区域', link: '/main-course/games-jump-jump-game/add-win-area.md' }
+          {
+            text: '创建工程',
+            link: '/main-course/games-jump-jump-game/create-project.md'
+          },
+          {
+            text: '播放游戏音乐',
+            link: '/main-course/games-jump-jump-game/play-game-music.md'
+          },
+          {
+            text: '添加角色特效',
+            link: '/main-course/games-jump-jump-game/add-character-effect.md'
+          },
+          {
+            text: '搭建跳跃场景',
+            link: '/main-course/games-jump-jump-game/build-jump-scene.md'
+          },
+          {
+            text: '添加失败区域',
+            link: '/main-course/games-jump-jump-game/add-loser-area.md'
+          },
+          {
+            text: '添加胜利区域',
+            link: '/main-course/games-jump-jump-game/add-win-area.md'
+          }
         ]
       },
       {
@@ -127,11 +243,26 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           { text: '跳跃区', link: '/main-course/code-snippet/jump-area.md' },
-          { text: '变速区', link: '/main-course/code-snippet/change-speed-area.md' },
-          { text: '特效区', link: '/main-course/code-snippet/particle-area.md' },
-          { text: '布娃娃区', link: '/main-course/code-snippet/ragdoll-area.md' },
-          { text: '换装区', link: '/main-course/code-snippet/change-clothing.md' },
-          { text: '消失地板', link: '/main-course/code-snippet/vanishing-block.md' },
+          {
+            text: '变速区',
+            link: '/main-course/code-snippet/change-speed-area.md'
+          },
+          {
+            text: '特效区',
+            link: '/main-course/code-snippet/particle-area.md'
+          },
+          {
+            text: '布娃娃区',
+            link: '/main-course/code-snippet/ragdoll-area.md'
+          },
+          {
+            text: '换装区',
+            link: '/main-course/code-snippet/change-clothing.md'
+          },
+          {
+            text: '消失地板',
+            link: '/main-course/code-snippet/vanishing-block.md'
+          },
           { text: '传送区', link: '/main-course/code-snippet/portal.md' }
         ]
       },
@@ -141,13 +272,34 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '创建工程', link: '/main-course/games-bomber-game/create-project.md' },
-          { text: '入口类与控制界面', link: '/main-course/games-bomber-game/launcher-and-main-ui.md' },
-          { text: '炸弹预制体', link: '/main-course/games-bomber-game/bomber-prefab.md' },
-          { text: '主角释放炸弹', link: '/main-course/games-bomber-game/release-bomber.md' },
-          { text: '血量UI与数据', link: '/main-course/games-bomber-game/hp-ui-and-data.md' },
-          { text: '添加游戏场景', link: '/main-course/games-bomber-game/add-scene.md' },
-          { text: '制作一个减速区域', link: '/main-course/games-bomber-game/build-decelerate-area.md' }
+          {
+            text: '创建工程',
+            link: '/main-course/games-bomber-game/create-project.md'
+          },
+          {
+            text: '入口类与控制界面',
+            link: '/main-course/games-bomber-game/launcher-and-main-ui.md'
+          },
+          {
+            text: '炸弹预制体',
+            link: '/main-course/games-bomber-game/bomber-prefab.md'
+          },
+          {
+            text: '主角释放炸弹',
+            link: '/main-course/games-bomber-game/release-bomber.md'
+          },
+          {
+            text: '血量UI与数据',
+            link: '/main-course/games-bomber-game/hp-ui-and-data.md'
+          },
+          {
+            text: '添加游戏场景',
+            link: '/main-course/games-bomber-game/add-scene.md'
+          },
+          {
+            text: '制作一个减速区域',
+            link: '/main-course/games-bomber-game/build-decelerate-area.md'
+          }
         ]
       },
       {
@@ -159,61 +311,127 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '第一节：快速实现闯关游戏',
             items: [
-              { text: '下载安装', link: '/obby-course/Lesson1/1.1installing.md' },
-              { text: '角色控制', link: '/obby-course/Lesson1/1.2player-control.md' },
-              { text: '场景搭建', link: '/obby-course/Lesson1/1.3build-scene.md' },
+              {
+                text: '下载安装',
+                link: '/obby-course/Lesson1/1.1installing.md'
+              },
+              {
+                text: '角色控制',
+                link: '/obby-course/Lesson1/1.2player-control.md'
+              },
+              {
+                text: '场景搭建',
+                link: '/obby-course/Lesson1/1.3build-scene.md'
+              }
             ]
           },
           {
-            text: '第二节：完善胜负逻辑', link: '/obby-course/Lesson2/2.1dead-rebirth.md',
+            text: '第二节：完善胜负逻辑',
+            link: '/obby-course/Lesson2/2.1dead-rebirth.md',
             items: [
-              { text: '死亡复活', link: '/obby-course/Lesson2/2.1dead-rebirth.md' },
-              { text: '检查点', link: '/obby-course/Lesson2/2.2check-point.md' },
-              { text: '终点胜利', link: '/obby-course/Lesson2/2.3win-point.md' },
+              {
+                text: '死亡复活',
+                link: '/obby-course/Lesson2/2.1dead-rebirth.md'
+              },
+              {
+                text: '检查点',
+                link: '/obby-course/Lesson2/2.2check-point.md'
+              },
+              { text: '终点胜利', link: '/obby-course/Lesson2/2.3win-point.md' }
             ]
           },
           {
-            text: '第三节：角色编辑器', link: '/obby-course/Lesson3/3.1character-editor.md',
+            text: '第三节：角色编辑器',
+            link: '/obby-course/Lesson3/3.1character-editor.md',
             items: [
-              { text: '角色编辑器', link: '/obby-course/Lesson3/3.1character-editor.md' },
+              {
+                text: '角色编辑器',
+                link: '/obby-course/Lesson3/3.1character-editor.md'
+              }
             ]
           },
           {
-            text: '第四节：发布游戏', link: '/obby-course/Lesson3/3.2release-and-test.md',
+            text: '第四节：发布游戏',
+            link: '/obby-course/Lesson3/3.2release-and-test.md',
             items: [
-              { text: '发布游戏&测试', link: '/obby-course/Lesson3/3.2release-and-test.md' },
+              {
+                text: '发布游戏&测试',
+                link: '/obby-course/Lesson3/3.2release-and-test.md'
+              }
             ]
           },
           {
-            text: '第五节：增强用户反馈', link: '/obby-course/Lesson4/4.1feedback-win.md',
+            text: '第五节：增强用户反馈',
+            link: '/obby-course/Lesson4/4.1feedback-win.md',
             items: [
-              { text: '胜利反馈', link: '/obby-course/Lesson4/4.1feedback-win.md' },
-              { text: '增加胜利提示UI', link: '/obby-course/Lesson4/4.2win-ui.md' },
-              { text: '增加倒计时UI', link: '/obby-course/Lesson4/4.3rebirth-ui.md' },
-              { text: '增加回到初生点按钮', link: '/obby-course/Lesson4/4.4back-starter-button.md' },
+              {
+                text: '胜利反馈',
+                link: '/obby-course/Lesson4/4.1feedback-win.md'
+              },
+              {
+                text: '增加胜利提示UI',
+                link: '/obby-course/Lesson4/4.2win-ui.md'
+              },
+              {
+                text: '增加倒计时UI',
+                link: '/obby-course/Lesson4/4.3rebirth-ui.md'
+              },
+              {
+                text: '增加回到初生点按钮',
+                link: '/obby-course/Lesson4/4.4back-starter-button.md'
+              }
             ]
           },
           {
-            text: '第六节：增加新的关卡', link: '/obby-course/Lesson5/5.1design-levels.md',
+            text: '第六节：增加新的关卡',
+            link: '/obby-course/Lesson5/5.1design-levels.md',
             items: [
-              { text: '关卡设计思想', link: '/obby-course/Lesson5/5.1design-levels.md' },
-              { text: '跳关卡', link: '/obby-course/Lesson5/5.2jump-levels.md' },
-              { text: '扩展机关', link: '/obby-course/Lesson5/5.3extension-level.md' },
-              { text: '展示关卡数字', link: '/obby-course/Lesson5/5.4show-level-number.md' },
+              {
+                text: '关卡设计思想',
+                link: '/obby-course/Lesson5/5.1design-levels.md'
+              },
+              {
+                text: '跳关卡',
+                link: '/obby-course/Lesson5/5.2jump-levels.md'
+              },
+              {
+                text: '扩展机关',
+                link: '/obby-course/Lesson5/5.3extension-level.md'
+              },
+              {
+                text: '展示关卡数字',
+                link: '/obby-course/Lesson5/5.4show-level-number.md'
+              }
             ]
           },
           {
-            text: '第七节：实现多人联机', link: '/obby-course/Lesson6/6.1conline-game.md',
+            text: '第七节：实现多人联机',
+            link: '/obby-course/Lesson6/6.1conline-game.md',
             items: [
-              { text: '联机游戏的基本概念', link: '/obby-course/Lesson6/6.1conline-game.md' },
-              { text: '场景物体的单双端设计', link: '/obby-course/Lesson6/6.2client-server-tips.md' },
-              { text: '存储通关记录', link: '/obby-course/Lesson6/6.3data-storage-level-number.md' },
-              { text: '单双端注意改动', link: '/obby-course/Lesson6/6.4client-server-wraning.md' },
-              { text: '发布游戏', link: '/obby-course/Lesson6/6.5release-game.md' },
+              {
+                text: '联机游戏的基本概念',
+                link: '/obby-course/Lesson6/6.1conline-game.md'
+              },
+              {
+                text: '场景物体的单双端设计',
+                link: '/obby-course/Lesson6/6.2client-server-tips.md'
+              },
+              {
+                text: '存储通关记录',
+                link: '/obby-course/Lesson6/6.3data-storage-level-number.md'
+              },
+              {
+                text: '单双端注意改动',
+                link: '/obby-course/Lesson6/6.4client-server-wraning.md'
+              },
+              {
+                text: '发布游戏',
+                link: '/obby-course/Lesson6/6.5release-game.md'
+              }
             ]
-          },
+          }
         ]
-      },
+      }
     ],
     algolia: {
       appId: 'I2PHYUBLCN',
