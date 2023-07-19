@@ -16,6 +16,13 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   outDir: '../dist',
   head: [
     [
+      'meta',
+      {
+        name: 'docsearch:tags',
+        content: 'learning-docs'
+      }
+    ],
+    [
       'link',
       {
         rel: 'icon',
