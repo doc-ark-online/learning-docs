@@ -27,7 +27,7 @@ export default class TriggerControl extends Core.Script {
         let trigger = this.gameObject as Gameplay.Trigger
         //进入触发区域
         trigger.onEnter.add(()=>{
-            //角色加载捏人数据，捏人数据请看：https://meta.feishu.cn/wiki/wikcnoCcc4OC5SPWsqgy9LWL57b
+            //角色加载捏人数据，捏人数据请看：https://learning.ark.online/main-course/programming-scripting/character-editor.html
             player.character.loadSlotAndEditorDataByGuid("2FC9B86748B6300CE0B299936B45E1A2")
         })
     }
