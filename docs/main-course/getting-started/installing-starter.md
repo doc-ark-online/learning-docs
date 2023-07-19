@@ -23,7 +23,7 @@
 
 ### 1.2 安装 Launcher
 
-![](https://arkimg.ark.online/MetaApp20230510-103211.jpg)
+![](https://arkimg.ark.online/learn_1_1_downloadOver.webp)
 
 双击打开后，出现安装界面，目前的安装路径为不可更改的，勾选 “阅读协议” 按钮后，单击安装按钮即可安装，如图：
 
