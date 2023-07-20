@@ -1,0 +1,125 @@
+# 炸弹预设体
+
+::: tip 阅读本文大概需要 10 分钟。
+
+接下来，我们一起创建一个炸弹的预设体，以便于在后面使用脚本动态的生成炸弹，同时也要更加熟悉预设体的使用。
+
+:::
+
+## 1.创建预设体
+
+首先打开编辑器页面，创建一个预设体，命名为“Bomb”，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnowc5hv9Ziecd6fxbaISYXf.png)
+
+双击“Bomb”预设体，切换到预设体编辑界面，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnJlVpMi7cVeiCtSa1xeDpqf.png)
+
+在资源库中找一个喜欢的炸弹模型，拖拽为预设体的子物体，这里使用了炸药桶（49104）模型，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnLfrsmuPgh1lvbBjPpe2BIf.png)
+
+为了方便区分物体，将炸弹模型重命名为“BombObject”，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnZOhGUINJo1avJr6MY14vhe.png)
+
+这里默认炸弹模型是有碰撞的，但是我们这里希望炸弹模型与角色是没有碰撞的，所以选中“BombObject”，将碰撞属性“Collision”设置为“off”，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnWy3U5Nl276wlEpV8YvpkAe.png)
+
+## 2.添加爆炸特效
+
+接下来，我们添加一下爆炸效果，在编辑器资源库中，选择一个或多个自己喜欢的爆炸特效，这里示例中选择了两个爆炸特效（27421、27450），将这两个特效也添加到预设体中，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcneXc7k4LxBrPPQGXD6Q9GAe.png)
+
+同样修改两个特效的名称为“skill1”与“skill2”，将 skill1 和 skill2 都改为"S&C"端,如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn7tHzi17VIerMVwP5KwPIOh.png)
+
+接下来，选中“skill1”与“skill2”，并修改两个特效的属性面板，将默认的循环播放修改为仅播放一次，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnWh0is44BzrhIFjZj1NODFe.png)
+
+## 3.炸弹脚本编写
+
+接下来为炸弹创建一个脚本，并命名为“BombControl”，如图：
+
+这里我们先理清楚该脚本的功能，该脚本会获取炸弹物体以及两个炸弹特效，然后在 2 秒后播放爆炸特效并删除炸弹物体，然后这时周围 200 米如果有角色，就会向出一个该角色需要减血的事件，最后等待特效播放 1 秒后销毁整个预设体对象。
+
+点击新建脚本
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnojnCTt3UHDTbNI4XLTOgmc.png)
+
+接下来双击该脚本，编写代码如下：
+
+```ts
+@Core.Class
+export default class BombControl extends Core.Script {
+    //炸弹多长时间后爆炸
+    timer =  8000
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        
+        //服务端
+        if(SystemUtil.isServer()){
+            //获取炸药桶物体
+            let bombObject = this.gameObject.getChildByName("炸药桶")
+            
+            setTimeout(() => {
+                //销毁炸药桶
+                bombObject.destroy()
+                //炸到玩家，获取周围玩家，并发消息给他们
+                //获取球体范围内的游戏物体
+                let gameObjects = Gameplay.sphereOverlap(this.gameObject.worldLocation,200,false)
+                //对物体进行遍历
+                gameObjects.forEach(object=>{
+                    //判断当前遍历的物体是不是玩家角色
+                    if(object instanceof Gameplay.Character){
+                        //我们给玩家发受伤消息
+                        Events.dispatchToClient(object.player,"Event_HpChange")
+                    }
+                })
+                //要让所有客户端播放爆炸动画
+                let skill1guid = this.gameObject.getChildByName("skill1").guid
+                let skill2guid = this.gameObject.getChildByName("skill2").guid
+                //让所有客户端播放这两个特效
+                Events.dispatchToAllClient("Event_playEffext",[skill1guid,skill2guid])
+            }, this.timer);
+            
+            //销毁整个炸弹预制体
+            setTimeout(()=>{
+                this.gameObject.destroy()
+            },this.timer + 1000)
+            
+        }
+        //客户端
+        if(SystemUtil.isClient()){
+            //客户端监听播放特效事件
+            Events.addServerListener("Event_playEffext",(skillguids:string[])=>{
+                //播放特效 1
+                Core.GameObject.asyncFind(skillguids[0]).then((skill:Gameplay.Particle)=>{
+                    //播放
+                    skill.play()
+                })
+                //播放特效 2
+                Core.GameObject.asyncFind(skillguids[1]).then((skill:Gameplay.Particle)=>{
+                    //播放
+                    skill.play()
+                })
+            })
+        }
+    }
+
+}
+```
+
+保存当前脚本，并将脚本挂载到预设体中，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnzzQUols7Cqro4sm2o68AHg.png)
+
+至此，预设体就算编辑完成了，单击“场景”按钮切换回场景编辑界面，如弹出预设体保存提示，单击“保存”即可，如图：
+
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnqrvnfhKHOZydvJy0quVlyd.png)

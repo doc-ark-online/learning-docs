@@ -1,0 +1,115 @@
+# 主角释放炸弹
+
+::: tip 阅读本文大概需要 10 分钟。
+
+紧接着上一小节，接下来，我们通过代码来动态的生成炸弹预设体，完成学习后也要更熟练的使用代码来生成各类预设体哦！
+
+:::
+
+## 1. 创建释放炸弹按钮
+
+炸弹预设体已经创建完成了，接下来我们创建一个按钮，当点击按钮后会向玩家角色发送一个释放炸弹的消息。找到第二节创建的“UIRoot”
+
+![](https://cdn.233xyx.com/1681132940787_244.PNG)
+
+双击“UIRoot”打开 UI 编辑器，拖拽一个按钮到编辑器中，如图：
+
+![](https://cdn.233xyx.com/1681132940488_743.PNG)
+
+为了方便在代码中进行查找，重新命名“对象列表”中的名称如下：
+
+选中“Button”按钮，在属性面板中，修改对齐方式为水平靠右、垂直靠下的方式，这样无论屏幕分辨率如何变化，按钮永远会保持在右下角显示，如图：
+
+![](https://cdn.233xyx.com/1681132940504_362.PNG)
+
+将按钮设置为自己喜欢的颜色或图片，如图：
+
+![](https://cdn.233xyx.com/1681132940486_227.PNG)
+
+接下来保存 UI，导出所有脚本，如图：
+
+![](https://cdn.233xyx.com/1681132940559_093.PNG)
+
+双击打开第二节创建的“UIRoot”脚本，修改内容如下：
+
+![](https://cdn.233xyx.com/1681132940338_513.png)
+
+```TypeScript
+import UIRoot_Generate from "../ui-generate/UIRoot_generate";
+export class RootUI extends UIRoot_Generate {
+    //释放炸弹 cd，主要用来计时并控制 1 秒内允许释放一个炸弹
+    timer: number = 0
+
+    /**
+     * UI 创建时调用
+     */
+    public onStart() {
+        this.jumpButton.onClicked.add(() => {
+            Gameplay.getCurrentPlayer().character.jump();
+        });
+
+        this.bombButton.onClicked.add(() => {
+            this.bomb();
+        });
+    }
+
+    /**
+     * 释放炸弹
+     */
+    private bomb() {
+        if (this.timer == 0) {
+            //重置倒计时为 1000
+            this.timer = 1000
+            //通知玩家角色可以释放炸弹
+            Events.dispatchToServer("Event_Bomb")
+            //开始倒计时
+            setTimeout(() => {
+                //倒计时到期后设置时间
+                this.timer = 0
+            }, this.timer);
+        }
+    }
+}
+```
+
+## 2. 创建玩家控制脚本
+
+接下来为玩家创建一个脚本，命名为“PlayerControl”，该脚本主要接收炸弹按钮发送来的事件，并实例化一个炸弹预设体。创建脚本如图：
+
+![](https://cdn.233xyx.com/1681132940670_511.png)
+
+然后将该脚本挂载到场景上，如图:
+
+![](https://cdn.233xyx.com/1681132940610_448.png)
+
+这里我们首先要获取炸弹预设体的 GUID，方便脚本中动态生成，在炸弹预设体上，单击右键，在菜单中选择“复制 ID”即可，如图：
+
+![](https://cdn.233xyx.com/1681132940283_489.png)
+
+双击打开该脚本并编辑代码如下：
+
+```TypeScript
+@Core.Class
+export default class PlayerControl extends Core.Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        //监听按钮发来的放炸弹事件
+        Events.addClientListener("Event_Bomb", player => {
+           //动态生成炸弹预设体实例，这里参数字符串中粘贴上面复制的预设体 ID 即可，object 就是动态生成的炸弹实例
+            Core.GameObject.asyncSpawnGameObject("2D8C5C5D5EB5D85D", true).then(bomb => {
+                //获取玩家角色的位置
+                let pos = player.character.worldLocation
+                //重置 z 轴坐标为 0，防止 z 轴有数值而导致炸弹实例在空中或地下显示出来
+                pos.z = 0
+                //将修改后的位置赋值给炸弹实例位置
+                bomb.worldLocation = pos;
+            });
+        });
+    }
+}
+```
+
+运行游戏，单击释放炸弹按钮，可以看到炸弹已经会正常产生爆炸效果，如图：
+
+![](https://cdn.233xyx.com/1681132940731_642.gif)
