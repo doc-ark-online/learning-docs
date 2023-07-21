@@ -2,7 +2,7 @@
 
 ::: tip 阅读本文大概需要 10 分钟。
 
-游戏开发中，触发器可谓是无处不在，甚至很多游戏编辑器的主要开发手段就是触发器+事件，走到物品上拾取物品、走到某个区域触发某个剧情、走的陷阱上减少血量等等，太多功能可以使用触发器了，接下来我们就来一起看一下怎样使用触发器吧！
+游戏开发中，触发器可谓是无处不在，甚至很多游戏编辑器的主要开发手段就是触发器 + 事件，走到物品上拾取物品、走到某个区域触发某个剧情、走到陷阱上减少血量等等，太多功能可以使用触发器了，接下来我们就来一起看一下怎样使用触发器吧！
 
 :::
 
@@ -10,11 +10,11 @@
 
 ## 1. 创建触发器
 
-触发器用来设定一个区域，同时会对该区域进行检测，当有对象进入区域或离开该区域时，触发器就会发送对应的事件，开发者在接收到事件后制作对应的游戏逻辑即可完成各种各样的触发功能，例如设置一个道具触发器，玩家就可以进入该区域获取道具；设置一个河流区域，玩家进入后会降低移动速度；设置一个陷阱区域，玩家进入后就会持续掉血等。
+触发器用来设定一个区域，同时会对该区域进行检测，当有对象进入区域或离开该区域时，触发器就会发送对应的事件，开发者在接收到事件后制作对应的游戏逻辑即可完成各种各样的触发功能，例如设置一个道具触发器，玩家就可以进入该区域获取道具；设置一个沼泽区域，玩家进入后会降低移动速度；设置一个陷阱区域，玩家进入后就会持续掉血等。
 
 接下来我们创建一个触发器，在“游戏功能对象”窗口中，选中“逻辑对象”分类，将“方形触发器”拖拽到场景中，即可使用触发器，如图：
 
-![](https://cdn.233xyx.com/1681131296833_314.png)
+![image-20230721160009138](D:\Github\learning-docs（fork）\docs\main-course\programming-scripting\assets\image-20230721160009138.png)
 
 因为触发器只是一个区域，这里当我们运行游戏后，就找不到我们触发器所在位置了，所以为了方便，这里再拖拽任何一个物体到刚创建的触发器上，这样该物体和触发器就会处于同一位置，方便我们定位，示例中使用一个路标，如图：
 
@@ -32,16 +32,16 @@
 
 打开脚本编写代码，为触发器添加监听事件，代码如下：
 
-```ts
-@Core.Class
-export default class TriggerTest extends Core.Script {
+```typescript
+@Component
+export default class TriggerTest extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //这里在服务端进行示例
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //通过上面复制的 guid 获取触发器对象
-            let trigger = Core.GameObject.find("A790A341") as Gameplay.Trigger
+            const trigger = GameObject.findGameObjectById("2AD04B5E") as Trigger
             //为触发器绑定 有物体进入时 会触发的监听事件
             trigger.onEnter.add(this.OnTriggerEnter.bind(this))
             //为触发器绑定 有物体离开时 会触发的监听事件
@@ -50,24 +50,24 @@ export default class TriggerTest extends Core.Script {
     }
 
     //有物体进入了触发区域,other 为进入触发区域的物体对象
-    private OnTriggerEnter(other: Core.GameObject) {
+    private OnTriggerEnter(other: GameObject) {
         //这里判断一下进入区域的物体是不是一名角色
-        if(other instanceof Gameplay.Character){
+        if (other instanceof Character) {
             //是的话，转成角色类型
-            let character = other as Gameplay.Character
+            const character = other as Character;
             //修改角色名称
-            character.characterName = "进入区域"
+            character.displayName = "进入区域";
         }
     }
 
     //有物体离开了触发区域
-    private OnTriggerLeave(other: Core.GameObject) {
+    private OnTriggerLeave(other: GameObject) {
         //这里判断一下离开区域的物体是不是一名角色
-        if(other instanceof Gameplay.Character){
+        if (other instanceof Character) {
             //是的话，转成角色类型
-            let character = other as Gameplay.Character
+            const character = other as Character;
             //修改角色名称
-            character.characterName = "离开区域"
+            character.displayName = "离开区域";
         }
     }
 }
@@ -90,18 +90,18 @@ export default class TriggerTest extends Core.Script {
 
 触发器除了可以检测物体进入的瞬间与离开的瞬间外，还提供给开发者一个很好用的功能，就是判断某个物体是否在触发区域内，使用方法也非常简单，代码如下：
 
-```ts
-@Core.Class
-export default class TriggerTest extends Core.Script {
+```typescript
+@Component
+export default class TriggerTest extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //这里在服务端进行示例
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //通过上面复制的 guid 获取触发器对象
-            let trigger = Core.GameObject.find("A790A341") as Gameplay.Trigger
+            let trigger = GameObject.findGameObjectById("A790A341") as Trigger
             //通过触发器的方法，传入任意一个物体，就会返回 bool 值，代表该物体是否在触发区域内
-            let isIn = trigger.isInArea(this.gameObject)
+            let isIn = trigger.checkInArea(this.gameObject)
         }
     }
 }
