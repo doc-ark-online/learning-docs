@@ -2,37 +2,37 @@
 
 ::: tip 阅读本文大概需要 15 分钟。
 
-在游戏中，角色要在不同时刻播放不同的角色动画，才可以让角色看起来更加的鲜活生动，口袋方舟提供了大量的动画供玩家使用，请一定要多多尝试不同有趣的动画！
+在游戏中，角色要在不同时刻播放不同的角色动画，才可以让角色看起来更加的鲜活生动，口袋方舟提供了大量的动画供玩家使用，请一定要多多尝试不同的有趣的动画！
 
 :::
 
 <iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=905795054&bvid=BV14P4y1z71N&cid=978207056&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
-## 1. 基础认知
+## 基础认知
 
 一共有三种方式可以更改角色动作：**基础姿态**、**动画姿态**、**动画**
 
 ### 基础姿态
 
-角色的基本姿态，包含待机、下蹲、行走、奔跑、跳跃、飞行、游泳等一套基础动画！不能单个状态控制。下发演示了基础的跑步和跳跃动画：
+角色的基本姿态，包含待机、下蹲、行走、奔跑、跳跃、飞行、游泳等一套基础动画！不能单个状态控制。下发演示了基础的跑步和跳跃动画（注意左上角的那些按钮是演示用的，默认是不存在的，不用担心版本不同）：
 
 <video controls src="https://arkimg.ark.online/UE4_ST84tjsSV6.mp4"/>
 
 ### 动画姿态
 
-又叫**二级姿态**。在某一业务场景下的特定姿态，如持刀、持枪、趴下、瞄准、敬礼、爬梯、看书等等需要持续的状态！开发者**需要手动控制停止**，可以单独控制任意姿态，还能控制在上半身播放还是下半身播放或者全身播放，同时只能播放一个动画姿态。下面演示播放一个“对焦姿势”的二级姿态,并且只播放上半身和只播放下半身的演示：
+又叫**二级姿态**。在某一业务场景下的特定姿态，如持刀、持枪、趴下、瞄准、敬礼、爬梯、看书等等需要持续的状态！且部分姿态会根据用户的操作会播放不同的动画（如持枪姿态下，用户操作视角对着天空和对着地下，角色上半身会有对应的动画融合，使持枪对准的位置是天空或者地下）。开发者**需要手动控制停止**，可以单独控制任意姿态，还能控制在上半身播放还是下半身播放或者全身播放，同时只能播放一个动画姿态。下面演示播放一个“对焦姿势”的二级姿态,并且只播放上半身和只播放下半身的演示：
 
 <video controls src="https://arkimg.ark.online/Efh3HgqmIkdQ.mp4"/>
 
 ### 动画
 
-在某个业务场景下的动画，如扔手雷、换弹药、跳舞等！会自动结束。可以单独控制上半身播放还是下半身播放或者全身播放，同时只能播放一个动画。下方演示播放一个动画的效果，并且控制了只播放在上半身或下半身：
+在某个业务场景下的动画，如扔手雷、换弹药、跳舞等！会自动结束。可以单独控制上半身播放还是下半身播放或者全身播放，同时只能播放一个动画。下方演示播放一个动画的效果，并且控制了只播放在上半身或下半身（能看出来，动画播放完成后会自动回到姿态）：
 
 <video controls src="https://arkimg.ark.online/uiEQPyyt7xXc.mp4"/>
 
 ### 几种方式的优先级和区别
 
-以上**三种方式，可以同时存在**，但是**每个方式单独的同时只能存在一个**。如果同时存在时按照以下规则播放：
+以上**三种方式，可以同时存在**，但是**每种方式自身同时只能存在一个**。如果多种方式同时存在时按照以下规则播放：
 
 * 动画最优先，有动画时会播放动画，不管上半身还是下半身还是全身。
 * 然后是二级姿态优先，没有动画播放时，存在二级姿态则会播放二级姿态，不管上半身还是下半身还是全身。
@@ -46,7 +46,7 @@
 
 <video controls src="https://arkimg.ark.online/7QJsulOVYq3n.mp4"/>
 
-## 2. 基础姿态
+## 1. 基础姿态
 
 编辑器提供成套的基础姿态，可以在资源库的“基础姿态”中找到，如图：
 
@@ -66,7 +66,7 @@
 
 ![image-20230616193101525](https://arkimg.ark.online/image-20230616193101525.png)
 
-### 如何使用基础姿态
+### 使用基础姿态
 
 * 在资源库中，找到基础姿态，右键复制 guid，这里我们选择“写实\_男性\_基础姿态"复制 guid
 
@@ -74,7 +74,7 @@
 
 * 我们创建一个脚本来演示角色的姿态，新建脚本命名为“AnimationControl”，拖拽脚本**挂载到对象管理器**中，然后双击脚本编写代码。
 
-* 首先异步获取角色对象，获取到角色对象后，直接更改`basicStance`属性为我们刚才复制的 guid：119836，代码如下：
+* 首先异步获取角色对象，获取到角色对象后，直接更改 character 的`basicStance`属性为我们刚才复制的 guid：119836，代码如下：
 
 * ```typescript
   @Core.Class
@@ -98,232 +98,371 @@
 
 * 改回女生后，我们再运行游戏看看效果，能看到默认站立状态、走路状态、跳跃状态，都不是之前身娇体柔的小女生姿态了。
 
-* 然后我们对比一下看看，没有更改基础姿态的情况：
 
-<video controls src="https://arkimg.ark.online/7YAEoXlJQngM.mp4" />
-
-* 更改基础姿态为`119836` 的情况：
-
+* **更改基础姿态**为`119836` 的情况：
 <video controls src="https://arkimg.ark.online/kZaco5cdyVx3.mp4" />
 
+* 然后我们对比一下看看修改之前，**没有更改基础姿态**的情况：
+<video controls src="https://arkimg.ark.online/7YAEoXlJQngM.mp4" />
 
 
-## 3. 二级姿态
 
-基础姿态是玩家基础行为的动画，想进行更细微更自定义的姿态控制，如看书、开车、持枪、瞄准、爬梯等，就需要用上二级姿态了。可以在资源库的“动画姿态”找到所有的二级姿态。
+## 2. 二级姿态
+
+基础姿态是玩家基础行为的动画，想进行更细微更自定义的姿态控制，如看书、开车、持枪、瞄准、爬梯、扛东西等，就需要用上二级姿态了。可以在资源库的“动画姿态”找到所有的二级姿态。
 
 ![image-20230619163702538](https://arkimg.ark.online/image-20230619163702538.png)
 
-### 如何使用二级姿态
+### 播放二级姿态
 
-我这里使用“双手步枪姿态”的 guid`94258`来演示使用二级姿态。
+我这里使用“双手步枪探头瞄准姿态”的 guid`20308`来演示使用二级姿态。
 
-先在资源库选中
+先在资源库选中资源，右键`复制资源 ID`备用，打开刚才新建的`AnimationControl`脚本，在获取到角色对象后,需要先下载一下二级姿态的资源，然后使用 character 的`loadStance`函数加载二级姿态，然后通过返回的对象播放该姿态，代码如下：
 
-
-
-## 2. 动画
-
-动画是用来控制角色动作的一类资源，例如游戏当中的走路、跑步、攻击、跳跃、释放技能等都属于动画，编辑器提供了一系列完整的优质动画资源，供开发者选择使用。
-
-![](https://cdn.233xyx.com/1681130073761_442.PNG)
-
-动画的使用就非常简单了，这里我们创建一个脚本“PlayerControl”，并挂载到对象列表中，如图：
-
-![](https://cdn.233xyx.com/1681130073506_212.PNG)
-
-“本地资源库”中选择一个需要播放的动画，并记录 GUID，如图：
-
-![](https://cdn.233xyx.com/1681130073759_698.PNG)
-
-编写脚本代码如下：
-
-```ts
+```typescript
 @Core.Class
-export default class PlayerControl extends Core.Script {
+export default class AnimationControl extends Core.Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected async onStart(): Promise<void> {
+    protected onStart(): void {
         if (SystemUtil.isClient()) {
-            //下载并加载 122683 资源
-            await AssetUtil.asyncDownloadAsset("122683")//[!code focus]
-            //为了方便观看，先延迟 5 秒
-            setTimeout(() => {
-                //播放动画并返回动画对象，参数 1：播放 122683 号动画,参数 2：花费多长时间播放完当前动画，这里指的是使用 10 秒播放完一次完整的 122683 号动画
-                let animation = Gameplay.getCurrentPlayer().character.playAnimation("122683", 10)//[!code focus]
-                //如果需要，可以任何时间手动停止播放动画
-                //animation.stop()
-            }, 5000);
+            // 客户端，获取到当前角色对象
+            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
+                // 设置基础姿态为119836(写实-男性-基础姿态)
+                // player.character.basicStance = "119836"
+
+                // 定义一个放姿态 guid 的变量，后面引用
+                let stanceGuid = "20308" //[!code focus]
+                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+                await AssetUtil.asyncDownloadAsset(stanceGuid) //[!code focus]
+                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+                let subStance = player.character.loadStance(stanceGuid) //[!code focus]
+                // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+                subStance.blendMode = Gameplay.StanceBlendMode.WholeBody //[!code focus]
+                // 使用姿态对象调用播放接口
+                subStance.play() //[!code focus]
+            });
         }
     }
 }
 ```
 
-运行游戏，可以看到角色开始播放动画了，如图：
+运行效果视频：
+<video controls src="https://arkimg.ark.online/R0ZFp3HlBtKd.mp4" />
 
-![](https://cdn.233xyx.com/1681130073853_649.png)
+### 设置姿态混合模式
 
-**指定动画播放插槽**
+姿态混合模式可以控制角色的某个身体部位来播放姿态，下面讲解如何使用。
 
-![](https://cdn.233xyx.com/1681130073463_751.png)
+控制只播放上半身:
 
-```ts
-// 为玩家对象注册“按数字 1”的事件
-this.character.onSkill1Triggered.add(() => {
-    // 读取 4166 的动画
-    let anim = this.character.loadAnimation("4166")
-    // 设置默认插槽
-    anim.slot = Gameplay.AnimSlot.Default
-    // 播放动画
-    anim.play()
-});
-this.character.onSkill2Triggered.add(() => {
-    let anim = this.character.loadAnimation("4166")
-    anim.slot = Gameplay.AnimSlot.FullyBody
-    anim.play()
-});
-this.character.onSkill3Triggered.add(() => {
-    let anim = this.character.loadAnimation("4166")
-    // 设置上半身插槽
-    anim.slot = Gameplay.AnimSlot.Upper
-    anim.play()
-});
-this.character.onSkill4Triggered.add(() => {
-    let anim = this.character.loadAnimation("4166")
-    // 设置下半身插槽
-    anim.slot = Gameplay.AnimSlot.Lower
-    anim.play()
-})
-```
-
-AnimSlot 枚举对应四种情况的表现：
-
-![](https://cdn.233xyx.com/1681130073774_733.gif)
-
-## 3. 动画姿态
-
-动画姿态可以理解为角色的姿势限定，它会根据选择的姿势文件固定角色的某些骨骼。例如我们上面的跳舞动画，动画会管理全身的动作，所以如果想做到上半身跳着舞，下半身能跑步，这是不允许的，如图：
-
-![](https://cdn.233xyx.com/1681130073760_235.gif)
-
-这时候我们会想到，例如持枪动画，这种动画只要求上半身保持持枪动作，下半身可能站立不动，可能在跑步，可能在跳跃，这种需求怎么实现？那就需要用到动画姿态了，动画姿态可以理解为角色的姿势限定，它会根据姿态规则固定角色的某些骨骼，例如持枪姿态，就是只会限定上半身的动作为持枪而不去处理下半身的动作。编辑器同样给我们提供了大量的动画姿态供我们使用，如图：
-
-![](https://cdn.233xyx.com/1681130073541_516.png)
-
-这里找一个持枪动作姿态作为示例，如图：
-
-![](https://cdn.233xyx.com/1681130073814_179.png)
-
-修改上小节脚本内容如下：
-
-```ts
+```typescript
 @Core.Class
-export default class PlayerControl extends Core.Script {
+export default class AnimationControl extends Core.Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    async onStart() {   
-        //下载并加载 49098 号资源 
-        await AssetUtil.asyncDownloadAsset("49098")  
-        AssetUtil.loadAsset("49098") 
-        //只有客户端播放动画才有意义，我们才能在设备上看到玩家动画
-        if(Util.SystemUtil.isClient()){
-            //首先获取当前客户端的玩家对象
-            Gameplay.asyncGetCurrentPlayer().then(player=>{
-                //让玩家角色播放 49098 动画姿态
-                player.character.animationStance = "49098"
-            })
-       }
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            // 客户端，获取到当前角色对象
+            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
+                // 设置基础姿态为119836(写实-男性-基础姿态)
+                // player.character.basicStance = "119836"
+
+                // 定义一个放姿态 guid 的变量，后面引用
+                let stanceGuid = "20308"
+                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+                await AssetUtil.asyncDownloadAsset(stanceGuid)
+                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+                let subStance = player.character.loadStance(stanceGuid)
+                // 设置姿态播放模式为上半身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+                subStance.blendMode = Gameplay.StanceBlendMode.BlendUpper //[!code focus]
+                // 使用姿态对象调用播放接口
+                subStance.play()
+            });
+        }
     }
 }
 ```
 
-运行后可以看到，角色上半身保持了持枪动画姿态，而下半身依旧可以正常使用各种跑步、跳跃等动作，如图：
+效果截图：
 
-![](https://cdn.233xyx.com/1681130073425_401.gif)
+![image-20230721171030074](https://arkimg.ark.online/image-20230721171030074.png)
 
-除此之外，也可以使用姿态对象实现姿态功能，代码如下：
+* 看得出来，下半身就没有变化，是默认的基础姿态了
 
-```ts
-export default class Test extends Core.Script {
-    character: Gameplay.Character;
-    stanceProxy: Gameplay.SubStance;
+播放模式还可以设置如下几种方式：
 
-    /** 仅在游戏时间对非模板实例调用一次 */
-    protected onStart() {
-        //设置能否每帧触发 onUpdate
-        this.useUpdate = false;
+```typescript
+    enum StanceBlendMode {
+        /** 只混合上半身 */
+        BlendUpper = 0,
+        /** 只混合下半身 */
+        BlendLower = 1,
+        /** 全身混合 */
+        WholeBody = 2
+    }
+```
 
-        Gameplay.asyncGetCurrentPlayer().then((player) => {
-            this.character = player.character;
+### 停止二级姿态
 
-            // 延时 3 秒开始播放 49096（举枪姿势）
-            setTimeout(() => {
-                // 创建 guid 为 49096 的二级姿态对象
-                this.stanceProxy = this.character.loadStance("49096", true);
-                // 设置姿态混合模式为只混合上半身
-                this.stanceProxy.blendMode = Gameplay.StanceBlendMode.BlendUpper;
-                // 开始播放姿态
-                this.stanceProxy.play();
-            }, 3000);
+有时有需求会停止二级姿态，只需要将 loadStance 获取到的对象留着，后面需要停止时直接调用它的`stop`函数即可停止播放二级姿态。如：
 
-            // 延时 3 秒开始播放 122227（翘二郎腿姿势）
-            setTimeout(() => {
-                // 创建 guid 为 122227 的二级姿态对象
-                this.stanceProxy = this.character.loadStance("122227", true);
-                // 设置姿态混合模式为只混合下半身
-                this.stanceProxy.blendMode = Gameplay.StanceBlendMode.BlendLower;
-                // 开始播放姿态
-                this.stanceProxy.play();
-            }, 6000);
-        });
+```typescript
+subStance.stop()
+```
+
+### 使用姿态接口播放动画
+
+姿态接口，除了用来播放姿态以外，还可以利用动画资源来作为姿态播放。表现效果就是会循环播放该动画，某些动画只有固定动作的，就比较合适用来作为姿态使用了，比如使用 guid 为“8362”的坐下看书动画来作为姿态播放，更改动画 id 后的代码：
+
+```typescript
+@Core.Class
+export default class AnimationControl extends Core.Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            // 客户端，获取到当前角色对象
+            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
+                // 设置基础姿态为119836(写实-男性-基础姿态)
+                // player.character.basicStance = "119836"
+
+                // 定义一个放姿态 guid 的变量，后面引用
+                let stanceGuid = "8362" //[!code focus]
+                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+                await AssetUtil.asyncDownloadAsset(stanceGuid)
+                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+                let subStance = player.character.loadStance(stanceGuid)
+                // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+                subStance.blendMode = Gameplay.StanceBlendMode.WholeBody //[!code focus]
+                // 使用姿态对象调用播放接口
+                subStance.play()
+                
+            });
+        }
     }
 }
 ```
 
-**019 新增姿态对象**
+表现效果如下：
 
-* **Character.loadStance()**
-  * 创建一个二级姿态对象并返回, 可在任意端调用
-* **SubStance.blendMode**
-  * 姿态的混合模式, 可以理解为姿态的播放位置(上半身, 下半身, 全身)
-* **SubStance.play() / SubStance.stop()**
-  * 播放 / 停止这个姿态对象（当前持有的姿态）, 并返回执行结果
-* **Character.stopStance()**
-  * 停止任何正在播放的姿态, 当你不想保存执行 play()后的姿态对象时, 可以直接调用这个方法停止姿态（停止当前角色的所有姿态）
+![image-20230721171759756](https://arkimg.ark.online/image-20230721171759756.png)
 
-```TypeScript
-this.character.onSkill1Triggered.add(() => {
-    // 角色获取 guid 为 49096 的二级姿态
-    this.subStance = this.character.loadStance("49096", true);
-    // 设置姿态的混合模式为全身混合
-    this.subStance.blendMode = Gameplay.StanceBlendMode.WholeBody;
-    this.subStance.play();
-});
-this.character.onSkill2Triggered.add(() => {
-    let stanceProxy = this.character.loadStance("14493", false);
-    // 设置姿态的混合模式为只混合下半身
-    stanceProxy.blendMode = Gameplay.StanceBlendMode.BlendLower;
-    stanceProxy.play();
-});
-this.character.onSkill3Triggered.add(() => {
-    this.subStance.stop();
-});
-this.character.onSkill4Triggered.add(() => {
-    this.character.stopStance(false);
-})
+## 3. 动画
+
+动画是用来控制角色动作的一类资源，例如游戏当中的走路、跑步、攻击、跳跃、释放技能等都属于动画，编辑器提供了一系列完整的优质动画资源，供开发者选择使用。
+
+![image-20230721172241338](https://arkimg.ark.online/image-20230721172241338.png)
+
+### 播放动画
+
+前面讲完了基础姿态和二级姿态的使用，这里动画的使用就非常简单了。
+
+找到你想播放的动画，右键复制其资源 ID，等下在代码里面使用；我们这里选择"14497" 蛇舞动画来作为演示。
+
+依然还是 `AnimationControl` 脚本，在获取到角色对象后，延时5秒调用 character 的`loadAnimation`函数加载一个动画出来。
+
+> 为什么要延时5秒，因为动画播放会自动结束，很可能动画时长很短，启动起来之后闪一下就没了，所以延时来演示比较清楚。
+
+注释掉播放姿态的代码后，播放动画代码如下：
+
+```typescript
+@Core.Class
+export default class AnimationControl extends Core.Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            // 客户端，获取到当前角色对象
+            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
+                // // ====== 演示更换基础姿态的代码 START =======
+                // // 设置基础姿态为119836(写实-男性-基础姿态)
+                // player.character.basicStance = "119836"
+                // // ====== 演示更换基础姿态的代码 END =======
+
+
+                // // ====== 演示更换二级姿态的代码 START =======
+                // // 定义一个放姿态 guid 的变量，后面引用
+                // let stanceGuid = "8362"
+                // // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+                // await AssetUtil.asyncDownloadAsset(stanceGuid)
+                // // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+                // let subStance = player.character.loadStance(stanceGuid)
+                // // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+                // subStance.blendMode = Gameplay.StanceBlendMode.WholeBody
+                // // 使用姿态对象调用播放接口
+                // subStance.play()
+                // // ====== 演示更换二级姿态的代码 END =======
+                
+                // ====== 演示播放动画的代码 START =======
+                setTimeout(async () => { //[!code focus]
+                    let animId = "14497"    //[!code focus]
+                    // 下载动画资源
+                    await AssetUtil.asyncDownloadAsset(animId)  //[!code focus]
+                    // 加载动画对象
+                    let anim = player.character.loadAnimation(animId)  //[!code focus]
+                    // 播放动画
+                    anim.play()  //[!code focus]
+                }, 5000); //[!code focus]
+                // ====== 演示播放动画的代码 END =======
+            });
+        }
+    }
+}
 ```
 
-![](https://cdn.233xyx.com/1681130073761_302.gif)
+启动游戏，延时5秒后可以看到效果
+
+<video controls src="https://arkimg.ark.online/ZjR91JD1urg7.mp4"/>
+
+### 动画播放插槽
+
+改动下代码，只让角色下半身播放动画，将 anim 对象的 slot 属性设置为`AnimSlot.Lower`，代码如下：
+
+```typescript
+@Core.Class
+export default class AnimationControl extends Core.Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            // 客户端，获取到当前角色对象
+            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
+                // // ====== 演示更换基础姿态的代码 START =======
+                // // 设置基础姿态为119836(写实-男性-基础姿态)
+                // player.character.basicStance = "119836"
+                // // ====== 演示更换基础姿态的代码 END =======
+
+
+                // // ====== 演示更换二级姿态的代码 START =======
+                // // 定义一个放姿态 guid 的变量，后面引用
+                // let stanceGuid = "8362"
+                // // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+                // await AssetUtil.asyncDownloadAsset(stanceGuid)
+                // // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+                // let subStance = player.character.loadStance(stanceGuid)
+                // // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+                // subStance.blendMode = Gameplay.StanceBlendMode.WholeBody
+                // // 使用姿态对象调用播放接口
+                // subStance.play()
+                // // ====== 演示更换二级姿态的代码 END =======
+
+                // ====== 演示播放动画的代码 START =======
+                setTimeout(async () => {
+                    
+                    let animId = "14497"
+                    // 下载动画资源
+                    await AssetUtil.asyncDownloadAsset(animId)
+                    // 加载动画对象
+                    let anim = player.character.loadAnimation(animId)
+                    // 设置动画播放为下半身（要注意和姿态的接口不一样）
+                    anim.slot = AnimSlot.Lower  //[!code focus]
+                    // 播放动画
+                    anim.play()
+                }, 5000);
+                // ====== 演示播放动画的代码 END =======
+            });
+        }
+    }
+}
+```
+
+运行游戏后等待5秒，播放效果：
+
+<video controls src="https://arkimg.ark.online/NFbczeClu8mk.mp4"/>
+
+播放插槽列表如下：
+
+```typescript
+    enum AnimSlot {
+        /** 默认插槽 */
+        Default = 0,
+        /** 上半身插槽 */
+        Upper = 1,
+        /** 下半身插槽 */
+        Lower = 2,
+        /** 全身插槽 */
+        FullyBody = 3
+    }
+```
+
+### 停止动画
+
+使用`loadAnimation`获取的动画对象来调用`stop`函数即可，例：
+
+> warning：027版本以前，如果设置过动画的插槽，调用 stop 接口可能会不生效。
+
+```typescript
+anim.stop()
+```
+
+## 4. 组合二级姿态和动画
+
+二级姿态和动画的使用我们都学完了，上半身播姿态，下半身播动画的融合效果如下：
+<video controls src="https://arkimg.ark.online/lSJQtf4ThzTM.mp4"/>
+
+
+代码示例：
+
+```typescript
+@Core.Class
+export default class AnimationControl extends Core.Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            // 客户端，获取到当前角色对象
+            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
+                // // ====== 演示更换基础姿态的代码 START =======
+                // // 设置基础姿态为119836(写实-男性-基础姿态)
+                // player.character.basicStance = "119836"
+                // // ====== 演示更换基础姿态的代码 END =======
+
+
+                // ====== 演示更换二级姿态的代码 START =======
+                // 定义一个放姿态 guid 的变量，后面引用
+                let stanceGuid = "8362" //[!code focus]
+                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+                await AssetUtil.asyncDownloadAsset(stanceGuid) //[!code focus]
+                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+                let subStance = player.character.loadStance(stanceGuid) //[!code focus]
+                // 设置姿态播放模式为上半身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+                subStance.blendMode = Gameplay.StanceBlendMode.BlendUpper //[!code focus]
+                // 使用姿态对象调用播放接口
+                subStance.play() //[!code focus]
+                // ====== 演示更换二级姿态的代码 END =======
+
+                setTimeout(async () => { //[!code focus]
+                    // ====== 演示播放动画的代码 START =======
+                    let animId = "14497" //[!code focus]
+                    // 下载动画资源
+                    await AssetUtil.asyncDownloadAsset(animId) //[!code focus]
+                    // 加载动画对象
+                    let anim = player.character.loadAnimation(animId) //[!code focus]
+                    // 设置动画播放为下半身（要注意和姿态的接口不一样）
+                    anim.slot = AnimSlot.Lower  //[!code focus]
+                    // 播放动画
+                    anim.play() //[!code focus]
+                    // ====== 演示播放动画的代码 END =======
+                }, 5000); //[!code focus]
+            });
+        }
+    }
+}
+```
+
+
 
 ## 5. 预览动画效果
 
-在具体动画资源的右上角，有一个+号按钮，点击后会弹出一个预览窗口，该功能能为我们省去拖入场景看效果的时间
+在具体动画资源的右上角，有一个+号按钮，点击后会弹出一个预览窗口，该功能能为我们省去拖入场景看效果的时间。
+
+> 点出来预览窗口后，直接点击其他资源也可以直接预览，就不用每个资源都点一次放大镜了
 
 ![](https://cdn.233xyx.com/1681130073576_078.gif)
 
-|          | 姿态全身 | 姿态上身 | 姿态下身 |
-| -------- | -------- | -------- | -------- |
-| 动画默认 |          |          |          |
-| 动画全身 |          |          |          |
-| 动画上身 |          |          |          |
-| 动画下身 |          |          |          |
+
+
+## 演示项目代码
+
+[点击下载演示项目](https://arkimg.ark.online/MainCourseAnimationDemo.zip)

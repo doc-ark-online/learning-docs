@@ -138,7 +138,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '角色动画',
-            link: '/main-course/programming-scripting/animating-characters.md'
+            link: '/main-course/programming-scripting/animating-characters-2.md'
           },
           {
             text: '游戏物体的使用',
