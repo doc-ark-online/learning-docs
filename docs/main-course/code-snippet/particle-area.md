@@ -29,25 +29,29 @@ export default class TriggerControl extends Script {
         //获取当前脚本所挂载的触发器
         let trigger = this.gameObject as Trigger
         //进入触发区域
-        trigger.onEnter.add(async () => {
-            //创建特效
-            this.effect = await GameObject.asyncSpawn("4399") as Effect
-            //特效附着在角色根节点上
-            player.character.attachToSlot(this.effect, HumanoidSlotType.BackOrnamental)
-            //相对角色的偏移位置为 0,0,0
-            this.effect.localTransform.position = new Vector(0, 0, 0)
-            //准备特效
-            this.effect.asyncReady().then(() => {
-                //准备完成，播放特效
-                this.effect.play()
-            })
+        trigger.onEnter.add(async (other: GameObject) => {
+            if (other == player.character) {
+                //创建特效
+                this.effect = await GameObject.asyncSpawn("4399") as Effect
+                //特效附着在角色根节点上
+                player.character.attachToSlot(this.effect, HumanoidSlotType.BackOrnamental)
+                //相对角色的偏移位置为 0,0,0
+                this.effect.localTransform.position = new Vector(0, 0, 0)
+                //准备特效
+                this.effect.asyncReady().then(() => {
+                    //准备完成，播放特效
+                    this.effect.play()
+                })
+            }
         })
         //离开触发区域
-        trigger.onLeave.add(() => {
-            //解除附着
-            player.character.detachFromSlot(this.effect)
-            //销毁特效
-            this.effect.destroy()
+        trigger.onLeave.add((other: GameObject) => {
+            if (other == player.character) {
+                //解除附着
+                player.character.detachFromSlot(this.effect)
+                //销毁特效
+                this.effect.destroy()
+            }
         })
     }
 }
