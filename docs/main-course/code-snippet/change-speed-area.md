@@ -11,27 +11,27 @@
 ## 代码示例
 
 ```ts
-@Core.Class
-export default class TriggerControl extends Core.Script {
+@Component
+export default class TriggerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected async onStart() {
-        //服务端不做任何事
-        if(Gameplay.isServer()){
+    protected async onStart(): Promise<void> {
+        // 服务端不做任何事
+        if (SystemUtil.isServer()) {
             return
         }
         //以下为客户端逻辑
         //获取当前客户端玩家
-        let player = await Gameplay.asyncGetCurrentPlayer()
+        let player = await Player.asyncGetLocalPlayer()
         //获取当前脚本所挂载的触发器
-        let trigger = this.gameObject as Gameplay.Trigger
+        let trigger = this.gameObject as Trigger
         //进入触发区域
-        trigger.onEnter.add(()=>{
+        trigger.onEnter.add(() => {
             //角色变速
             player.character.maxWalkSpeed = 2000
         })
         //离开触发区域
-        trigger.onLeave.add(()=>{
+        trigger.onLeave.add(() => {
             //角色速度恢复
             player.character.maxWalkSpeed = 450
         })
