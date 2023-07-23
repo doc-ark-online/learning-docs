@@ -10,35 +10,47 @@
 
 ## 1. 游戏物体常用属性
 
-首先我们从编辑器的“本地资源库”中，拖拽一个静态模型到场景当中，这里示例拖拽了一个正方体到场景中，如图：
+首先我们从编辑器的“本地资源库”中，拖拽一个静态模型到场景当中，这里拖拽了一个正方体到场景中，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcni8UZ3YH3frq6HY4iGchL8b.png)
+![](https://arkimg.ark.online/image-20230723172017928.png)
 
 然后我们可以看到，属性面板中会显示出该游戏物体的相关属性，并且可以很方便的进行修改设置，这里我们把常用的属性列出来，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnlC6Q4Tr4iSwlMCmvU4eZTf.png)
+**基础属性：**
 
 Name：示例为“正方体”，我们可以在这里修改物体的名称，修改名称后，回车确定修改。
 
-变换：在这里可以修改物体三个轴向的位置、旋转和缩放，但是这里可以看到显示的都是相对数值，什么是相对数值呢？具体可以查看该小节：[游戏物体父子级](https://learning.ark.online/md/3.7.html)
-
-Tag：标签，默认为空，这里可以填写字符串生成标签，一般标签用来标识或区分游戏物体。
-
-静态状态：设置为静态物体，具体静态物体的效果可以查看 [客户端与服务端](https://learning.ark.online/md/2.2.html)
+Guid：在场景中的每个物体，都有一个唯一的Guid，我们可以通过Guid来查找对应的物体。
 
 网络状态：网络运行环境，具体运行环境的区别可以查看 [客户端与服务端](https://learning.ark.online/md/2.2.html)
 
+Tag：标签，默认为空，这里可以填写字符串生成标签，一般标签用来标识或区分游戏物体。
+
+![image-20230723172826548](https://arkimg.ark.online/image-20230723172826548.png)
+
+**变换：**
+
+变换：在这里可以修改物体三个轴向的位置、旋转和缩放，但是这里可以看到显示的都是相对数值，什么是相对数值呢？具体可以查看该小节：[游戏物体父子级](https://learning.ark.online/md/3.7.html)
+
+![image-20230723172904353](https://arkimg.ark.online/image-20230723172904353.png)
+
+**场景设置：**
+
 可见性：是否显示。包含三个选项，从父对象获取、开启、关闭
 
-碰撞：是否碰撞。与 Visible 选项相同，但是注意，只有设置为动态物体才能修改该选项
+碰撞：是否碰撞。包含三个选项，开启碰撞、关闭碰撞、仅开启检测
+
+![image-20230723172942802](https://arkimg.ark.online/image-20230723172942802.png)
+
+
+
+
 
 生存时间：倒计时销毁。填写一个秒数，当到达秒数时，会对该物体进行自动销毁。
 
 - 属性面板的每个节点位置我们都能通过右键点击弹出菜单，进行复制粘贴操作
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnZhvQwppfP2b90UVaosMHOe.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnuVQ8fGJAWlbjKiUug0a9Of.png)
+![image-20230723173533264](https://arkimg.ark.online/image-20230723173533264.png)
 
 ## 2. 脚本动态创建游戏物体
 
@@ -49,23 +61,22 @@ Tag：标签，默认为空，这里可以填写字符串生成标签，一般�
 创建并在场景当中挂载一个脚本，脚本代码如下：
 
 ```ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {   
+    protected async onStart(): Promise<void> {
         //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //创建圆柱模型
-            Core.GameObject.asyncSpawn({guid: "7671"}).then(object=>{
-                //设置模型位置
-                object.setWorldLocation(Type.Vector.zero)
-                //5 秒后
-                setTimeout(() => {
-                    //销毁该物体
-                    object.destroy()
-                }, 5000);
-            })
+            let object = await GameObject.asyncSpawn("7671")
+            //设置模型位置
+            object.worldTransform.position = Vector.zero
+            //5 秒后
+            setTimeout(() => {
+                //销毁该物体
+                object.destroy()
+            }, 5000);
         }
     }
 }
@@ -84,18 +95,17 @@ export default class PlayerControl extends Core.Script {
 ## 3. 更改物体位置
 
 ```ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {   
+    protected async onStart(): Promise<void> {
         //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //创建圆柱模型
-            Core.GameObject.asyncSpawn({guid: "7671"}).then(object=>{
-                //设置模型位置到 Vector(500,500,100)的位置
-                object.setWorldLocation(new Type.Vector(500, 500, 100))
-            })
+            let object = await GameObject.asyncSpawn("7671")
+            //设置模型位置到 Vector(500,500,100)的位置
+            object.worldTransform.position = new Vector(500, 500, 100)
         }
     }
 }
@@ -103,56 +113,26 @@ export default class PlayerControl extends Core.Script {
 
 ## 4. 更改物体颜色
 
-有时候我们需要对游戏物体的颜色进行修改，例如这里选中一个正方体物体，在属性中点击颜色进行修改，如图：
+有时候我们需要对游戏物体的颜色进行修改，主要是去修改物体的材质。
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnve2xyK70oNcfzye1G8D9th.png)
+因为我们并不能直接对物体的颜色进行修改，我们要理解一件事，物体的显示是基于材质的，而我们只能对材质进行颜色的修改，例如我们可以创建一个红色的材质，然后将这个材质应用于椅子、窗户等物体，那么我们就会拥有一个红色的椅子和一个红色的窗户了。
 
-这时候会提示需要为该物体创建一个材质，如图：
+那么我们来创建一个材质，选择需要更改颜色的物体，在属性中单击该按钮，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnaq9xfT2Lt8A9Lk267Vdu3e.png)
+![image-20230723184716188](https://arkimg.ark.online/image-20230723184716188.png)
 
-也就是说我们并不能直接对物体的颜色进行修改，我们要理解一件事，物体的显示是基于材质的，而我们只能对材质进行颜色的修改，例如我们可以创建一个红色的材质，然后将这个材质应用于椅子、窗户等物体，那么我们就会拥有一个红色的椅子和一个红色的窗户了。
+这时候会在重新弹出一个材质编辑窗口，我们在这里选择"BaseColor"，然后就可以通过"颜色"选项修改材质的基础颜色，修改好颜色后，点击"确认"，最后再进行保存。
 
-那么我们来创建一个材质，依然选择上面的正方体物体，在属性中单击该按钮，如图：
+![image-20230723185641626](https://arkimg.ark.online/image-20230723185641626.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnvTSjzGmkDNtuUEAzUcQS1K.png)
+保存后，回到主界面，就可以看到场景上的方块颜色发生改变了
 
-这时候会在“工程内容”窗口的“材质”分组中看到我们新创建的材质，并且这里重命名为红色材质，如图：
+![image-20230723185834673](https://arkimg.ark.online/image-20230723185834673.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnk8vKiA02mW324sfBsQljvg.png)
 
-这时候也会看到正方体物体也应用了该材质，如图：
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcngFKCw3EvRfvbxwVmNtHEod.png)
-
-这时候我们再去修改颜色就可以了，如图：
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnIrgkDpGnqzAnXGJ3PIUFZe.png)
-
-修改为红色，可以看到立方体就变成红色了，如图：
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnK2ibkFoDqrVl7Qycz8PwIe.png)
 
 如果其他物体也想改成红色，那么直接使用我们这个材质就可以了，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnvDdQqWjQFkTYS27dlltswK.png)
+![image-20230723185931634](https://arkimg.ark.online/image-20230723185931634.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnL599nBamAfKpfkRyCdWnof.png)
 
-## 5. 使物体与其它物体产生碰撞
-
-默认很多物体的“静态状态”是勾选上的 。
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnUQvcRzsVwqfAE25jzHNNlh.png)
-
-此时我们不可以修改“属性面板”里与“碰撞”相关的设置，玩家的角色此时走过物体会穿过它。
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn8ZEgRcgzMK44uGpgfgGb6c.png)
-
-当我们取消勾选“静态状态”，并在“碰撞”处选择“仅开启碰撞”
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnroHDIbJGiILv5SeUMH9UAd.png)
-
-如下图，左侧方块是“从父对象获取”，右侧是“仅开启碰撞”的效果
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnLeMtJ07Z4Q0MUC88RtPNpb.gif)
