@@ -11,42 +11,41 @@
 ## 代码示例
 
 ```ts
-@Core.Class
-export default class TriggerControl extends Core.Script {
-    effect: Gameplay.Particle
+@Component
+export default class TriggerControl extends Script {
+    effect: Effect
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected async onStart() {
-        //服务端不做任何事
-        if(Gameplay.isServer()){
+    protected async onStart(): Promise<void> {
+        // 服务端不做任何事
+        if (SystemUtil.isServer()) {
             return
         }
         //以下为客户端逻辑
         //下载并加载 4399 特效资源
-        await Core.asyncDownloadAsset("4399")
-        Core.loadAsset("4399")
+        AssetUtil.asyncDownloadAsset("4399")
         //获取当前客户端玩家
-        let player = await Gameplay.asyncGetCurrentPlayer()
+        let player = await Player.asyncGetLocalPlayer()
         //获取当前脚本所挂载的触发器
-        let trigger = this.gameObject as Gameplay.Trigger
+        let trigger = this.gameObject as Trigger
         //进入触发区域
-        trigger.onEnter.add(()=>{
+        trigger.onEnter.add(async () => {
             //创建特效
-            this.effect = Core.GameObject.spawnGameObject("4399") as Gameplay.Particle
-            //特效附着在角色身上
-            this.effect.attachToGameObject(player.character)
+            this.effect = await GameObject.asyncSpawn("4399") as Effect
+            //特效附着在角色根节点上
+            player.character.attachToSlot(this.effect, HumanoidSlotType.BackOrnamental)
             //相对角色的偏移位置为 0,0,0
-            this.effect.setRelativeLocation(new Type.Vector(0,0,0))
+            this.effect.localTransform.position = new Vector(0, 0, 0)
             //准备特效
-            this.effect.ready().then(()=>{
+            this.effect.asyncReady().then(() => {
                 //准备完成，播放特效
                 this.effect.play()
             })
         })
         //离开触发区域
-        trigger.onLeave.add(()=>{
+        trigger.onLeave.add(() => {
             //解除附着
-            this.effect.detachFromGameObject()
+            player.character.detachFromSlot(this.effect)
             //销毁特效
             this.effect.destroy()
         })
