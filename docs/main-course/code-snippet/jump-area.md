@@ -26,9 +26,11 @@ export default class TriggerControl extends Script {
         //获取当前脚本所挂载的触发器
         let trigger = this.gameObject as Trigger
         //进入触发区域
-        trigger.onEnter.add(() => {
-            //角色跳跃
-            player.character.jump()
+        trigger.onEnter.add((other: GameObject) => {
+            if (other == player.character) {
+                //角色跳跃
+                player.character.jump()
+            }
         })
     }
 }
