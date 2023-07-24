@@ -22,10 +22,10 @@
 
 点击该特效，等待下载完成后，拖拽到场景中。这个时候会发现，只有拖出来那一下播放了，然后就看不见了？
 
-这个是因为我们特效的属性，默认只播放一次的原因。在对象管理器选中刚拖到场景里面的特效，属性面板里面往下翻一翻
+这个是因为我们特效的属性，默认只播放一次的原因。在对象管理器选中刚拖到场景里面的特效，属性面板里面往下翻一翻。
 
-* 找到“自动启用”，勾选上。代表游戏运行时会自动开始播放该特效
-* 找到“循环”，勾选上。代表会循环播放该特效
+* 找到“自动启用”，勾选上。代表游戏运行时会自动开始播放该特效。
+* 找到“循环”单选框，将它勾选上。代表会循环播放该特效。
 
 ![image-20230602185524094](https://arkimg.ark.online/image-20230602185524094.webp)
 
@@ -55,11 +55,11 @@
 
 ![image-20230602191154001](https://arkimg.ark.online/image-20230602191154001.webp)
 
-* 点击红色圆圈部分的小图标，会弹出来一个取色器，选择对应颜色后点击确认即可
+* 点击红色圆圈部分的小图标，会弹出来一个取色器，选择对应颜色后点击确认即可。
 
 ![image-20230602191725960](https://arkimg.ark.online/image-20230602191725960.webp)
 
-这里我们看到，火焰的颜色已经偏浅蓝色了。
+这里我们可以看到，火焰的颜色已经改为浅蓝色了。
 
 ## 4. 动态播放特效
 
@@ -67,15 +67,15 @@
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnT6WAVbLaHsmtpR1u1aTVMe.png)
 
-新建一个脚本，这里命名为“FXControl”，并将其挂载到对象列表，如图：
+新建一个脚本，命名为 `FXControl`，之后将其挂载到对象列表中，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcndcn9iE3QFLqM4zfEBCq07c.png)
 
 双击打开脚本，我们在代码中，使用 `EffectService` 来播放特效，这个服务在客户端和服务端都可以调用，客户端调用是只会在当前客户端播放，如果在服务端播放就是给所有玩家播放该特效。这里演示我们只在当前客户端播放即可，编写代码如下：
 
-``` ts
-@Core.Class
-export default class FXControl extends Core.Script {
+``` typescript
+@Component
+export default class FXControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart() {
         // 在客户端播放特效
@@ -84,13 +84,13 @@ export default class FXControl extends Core.Script {
             AssetUtil.asyncDownloadAsset("7786").then((result) => {
                 if (!result) {
                     // 如果资源加载失败，就不播放特效了
-                    return
+                    return;
                 }
                 // 为了方便观看特效，这里使用 setTimeout 延迟 3 秒播放
                 setTimeout(() => {
-                    // 播放特效//[!code focus]
-                    EffectService.getInstance().playEffectAtLocation("7786", new Vector(0, 0, 0))//[!code focus]
-                }, 3000)
+                    // 播放特效
+                    EffectService.playAtPosition("7786", new Vector(0, 0, 0));
+                }, 3000);
             });
         }
     }
@@ -103,21 +103,21 @@ export default class FXControl extends Core.Script {
 
 想要在代码中更改特效的颜色怎么操作呢？
 
-发现上面的 `EffectService` 没有能更改特效颜色的函数？这个是正常的，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
+我们发现上面的 `EffectService` 中并没有能更改特效颜色的函数，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
 
 ```typescript
-@Core.Class
-export default class FXControl extends Core.Script {
+@Component
+export default class FXControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart() {
         // 在客户端播放特效
         if (SystemUtil.isClient()) {
             // 异步创建特效资源
-            GameObject.asyncSpawn({ guid: "169403" }).then((go) => {
+            GameObject.asyncSpawn("169403").then((go) => {
                 // 获取到特效，转换成特效对象
-                let effect = go as Gameplay.Particle;
+                const effect = go as Effect;
                 // 设置特效位置
-                effect.setWorldLocation(new Vector(0, 0, 0));
+                effect.worldTransform.position = new Vector(0, 0, 0);
                 // 设置特效的颜色，第一个参数是参数名称，第二个参数是颜色值
                 effect.setColor("Color", LinearColor.colorHexToLinearColor("#68FF6A"));
                 // 播放特效
@@ -134,11 +134,15 @@ export default class FXControl extends Core.Script {
 
 在特效参数控制这里，可以看到支持哪些参数，字符串填写对应值即可。
 
-tips：如果特效属性面板没有对应的“特效参数控制”，那么就需要使用 `effect.color = LinearColor.colorHexToLinearColor("#68FF6A")`的方式来进行特效换色了，其他代码都没有任何区别。
+::: tip
+
+如果特效属性面板没有对应的“特效参数控制”，那么就需要使用 `effect.color = LinearColor.colorHexToLinearColor("#68FF6A")`的方式来进行特效换色了，其他代码都没有任何区别。
+
+:::
 
 ## 5. 预览特效效果
 
-在具体特效资源的右上角，有一个 + 号按钮，点击后会弹出一个预览窗口，该功能能为我们省去拖入场景看效果的时间
+资源库中，每个特效资源的右上角都有一个 + 号按钮，点击后会弹出一个预览窗口，这时在编辑器中就可以预览特效了。该功能为我们省去了将特效拖入场景看效果的时间。
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn6viST9RdrwBMFUbBVuD9qc.gif)
 
