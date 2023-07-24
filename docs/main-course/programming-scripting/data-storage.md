@@ -15,17 +15,17 @@
 口袋方舟编辑器中使用数据存储非常简单，示例代码如下：
 
 ```ts
-@Core.Class
-export default class DataTest extends Core.Script {
+@Component
+export default class DataTest extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //储存数据只在服务端生效
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //保存数据 参数 1：保存数据的 key， 参数 2：需要保存的内容
-            DataStorage.asyncSetCustomData("score", 100).then(state=>{
+            DataStorage.asyncSetData("score", 100).then(state => {
                 //判断是否储存成功
-                if(state == DataStorage.DataStorageResultCode.Success){
+                if (state == DataStorageResultCode.Success) {
                     console.log("数据储存成功")
                 } else {
                     console.log("数据储存失败")
@@ -34,10 +34,10 @@ export default class DataTest extends Core.Script {
 
             //5 秒后，读取数据
             setTimeout(() => {
-                 //保存数据 参数 1：保存数据的 key
-                DataStorage.asyncGetCustomData("score").then(score=>{
+                //保存数据 参数 1：保存数据的 key
+                DataStorage.asyncGetData("score").then(score => {
                     console.log("读取数据成功")
-                    console.log(score)
+                    console.log(score.data)
                 })
             }, 5000);
         }
@@ -50,21 +50,21 @@ export default class DataTest extends Core.Script {
 在我们开发游戏的过程中，除了通用数据需要保存外，常常还要保存每个玩家自己的数据，例如需要保存每名玩家的角色名称、血量、金钱、装备、状态等等，这时候使用通用数据持久化方式进行储存就会有些复杂，口袋方舟为我们提供了一个玩家数据存储的专用 API，使用方法与通用类似，只是需要多传递一个玩家对象，来表示该数据为谁而存，具体使用示例如下：
 
 ```ts
-@Core.Class
-export default class DataTest extends Core.Script {
+@Component
+export default class DataTest extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //储存数据只在服务端生效
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //等待 5 秒
             setTimeout(() => {
                 //从当前所有客户端中，获取一名客户端玩家作为示例
-                let player = Gameplay.getAllPlayers()[0]
-                //保存数据 参数 1：保存数据的玩家， 参数 2：需要保存的内容
-                DataStorage.asyncSetPlayerData(player, 99).then(state=>{
+                let player = Player.getAllPlayers()[0]
+                //保存数据 参数 1：保存数据的玩家的userID， 参数 2：需要保存的内容
+                DataStorage.asyncSetData(player.userId, 99).then(state => {
                     //判断是否储存成功
-                    if(state == DataStorage.DataStorageResultCode.Success){
+                    if (state == DataStorageResultCode.Success) {
                         console.log("数据储存成功")
                     } else {
                         console.log("数据储存失败")
@@ -74,9 +74,9 @@ export default class DataTest extends Core.Script {
                 //5 秒后，读取数据
                 setTimeout(() => {
                     //保存数据 参数 1：保存数据的玩家
-                    DataStorage.asyncGetPlayerData(player).then(score=>{
+                    DataStorage.asyncGetData(player.userId).then(score => {
                         console.log("读取数据成功")
-                        console.log(score)
+                        console.log(score.data)
                     })
                 }, 5000);
             }, 5000);
