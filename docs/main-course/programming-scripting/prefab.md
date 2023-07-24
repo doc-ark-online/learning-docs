@@ -111,17 +111,17 @@
 修改脚本代码如下：
 
 ```ts
-@Core.Class
-export default class Test extends Core.Script {
+@Component
+export default class Test extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //服务端，因为预制体默认是服务端&客户端的，所以生成代码要写到服务端代码中，这样会在服务端中生成并且同步到客户端，如果在客户端代码中生成预制体实例则会失败
-        if(Util.SystemUtil.isServer()){
+        if (SystemUtil.isServer()) {
             //生成预制体，填写的 ID 就为刚才复制的 ID
-            let object = Core.GameObject.spawn({guid: "8258142749883E47DF83FDBD6F780011"})
+            let object = GameObject.spawn("8258142749883E47DF83FDBD6F780011")
             //设置预制体实例位置
-            object.setWorldLocation(Type.Vector.zero)
+            object.worldTransform.position = Vector.zero
         }
     }
 }
@@ -140,17 +140,17 @@ export default class Test extends Core.Script {
 这时候如果想动态创建该预制体，就需要修改上面代码如下：
 
 ```ts
-@Core.Class
-export default class Test extends Core.Script {
+@Component
+export default class Test extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //纯客户端的预制体生成代码需要写在客户端中，才会正常显示
-        if(Util.SystemUtil.isClient()){
+        if (SystemUtil.isClient()) {
             //生成预制体，填写的 ID 就为刚才复制的 ID
-            let object = Core.GameObject.spawn({guid: "8258142749883E47DF83FDBD6F780011"})
+            let object = GameObject.spawn("8258142749883E47DF83FDBD6F780011")
             //设置预制体实例位置
-            object.setWorldLocation(Type.Vector.zero)
+            object.worldTransform.position = Vector.zero
         }
     }
 }
