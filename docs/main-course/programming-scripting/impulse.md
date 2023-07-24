@@ -1,6 +1,6 @@
 # 冲量与冲量对象
 
-::: tip 阅读本文大概需要 15 分钟。
+::: tip 阅读本文大概需要 20 分钟。
 
 游戏开发中，我们常常需要给角色或者物体施加一个冲击力，让其产生位移，这个力就是冲量，接下来我们来看下冲量是如何使用的。
 
@@ -95,11 +95,11 @@ export default class PlayerAddImpulse extends Core.Script {
 
 ![image-20230723114344818](https://arkimg.ark.online/image-20230723114344818.webp)
 
-①：场景上的触发器，用来检测玩家进入指定区域，测试代码中的触发器 GUID 就是它的。
+① 场景上的触发器，用来检测玩家进入指定区域，测试代码中的触发器 GUID 就是它的。
 
-②：一个平面静态模型，用来在运行时方便定位触发器位置。
+② 一个平面静态模型，用来在运行时方便定位触发器位置。
 
-③：测试代码的脚本文件。
+③ 测试代码的脚本文件。
 
 **演示效果**
 
@@ -110,8 +110,6 @@ export default class PlayerAddImpulse extends Core.Script {
 ### 什么是物理冲量?
 
 物理冲量和角色冲量其实实现的效果是一致的，只是此处的物理冲量是描述场景中，需要模拟物理的其它场景物件。
-
-### 什么是冲量对象？
 
 ### 什么是推进器？
 
@@ -183,5 +181,82 @@ export default class Thruster extends Script {
 
 <video controls="" src="https://arkimg.ark.online/1690092067266.mp4"></video>
 
-## 3. 冲量对象 & 推进器 Thruster
+### 什么是冲量对象？
 
+冲量对象是一种冲量力的集合，可以对角色或开启物理模拟的静态模型施加冲量力，使其发生物理运动。冲量对象有两个冲量类型，大家可以根据项目需求选择合适的类型。
+
+| 冲量类型 | 说明                                                 |
+| -------- | ---------------------------------------------------- |
+| 绝对冲量 | 不受其他物理效果影响，以设置属性为标准执行冲量运动； |
+| 相对冲量 | 受其他物理效果影响，通过计算后执行冲量运动；         |
+
+除了冲量类型以外，我们还需要关注的一个属性是冲量力类型。
+
+| 冲量力类型 | 说明                         |
+| ---------- | ---------------------------- |
+| ① 径向力   | 以圆心向外施加一定大小的力； |
+| ② 矢量力   | 向某个方向施加一定大小的力； |
+
+![image-20230724104020878](https://arkimg.ark.online/image-20230724104020878.webp)
+
+**使用场景**
+
+冲量对象效果与使用冲量接口的效果一致，但是它可以提前放置于场景上并且设置好参数。主要用于一些固定位置和参数的机关，比如在某个固定位置每隔一段时间爆炸一次的炸弹、撞到就会被弹开的弹簧机关等。
+
+**测试代码**
+
+```typescript
+@Component
+export default class ImpulseBomb extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected async onStart(): Promise<void> {
+        // 查询冲量对象
+        // 服务器以及客户端都会执行
+        const impulseGo = await GameObject.asyncFindGameObjectById("393E5AA9") as Impulse;
+
+        // 默认关闭冲量对象
+        impulseGo.enable = false;
+
+        // 客户端执行
+        if (SystemUtil.isClient()) {
+            // 监听 键盘按键 1
+            InputUtil.onKeyDown(Keys.One, () => {
+                // 向服务器发送网络事件 open
+                Event.dispatchEventToServer("open");
+            });
+        }
+
+        // 服务器执行
+        if (SystemUtil.isServer()) {
+            // 监听 网络事件 fire
+            Event.addClientListener("open", (player: Player) => {
+                // 激活冲量对象
+                impulseGo.enable = true;
+                // 100 毫秒后 关闭冲量对象
+                setTimeout(() => {
+                    impulseGo.enable = false;
+                }, 100);
+            })
+        }
+    }
+}
+```
+
+上述代码实现了玩家在场景中按下 1 ，动态激活服务端的冲量对象。
+
+![image-20230724095930621](https://arkimg.ark.online/image-20230724095930621.webp)
+
+① 将一个炮弹模型拖动到场景上，用于标记位置，因为冲量对象在游戏运行时是不可见的。
+
+② 将冲量对象放在炸弹周围合适位置。
+
+③ 将刚刚编写好的代码直接拖到场景上。
+
+④ 将冲量对象的冲量类型设置为想对冲量，这里为了将玩家的质量等物理参数加入运算，更真实。
+
+⑤ 设置好冲量方向，冲量对象会有一个箭头，可视化标识当前冲量方向。
+
+**演示效果**
+
+<video controls src="https://arkimg.ark.online/1690164690029.mp4"></video>
