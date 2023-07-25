@@ -10,7 +10,7 @@
 
 ## 代码示例
 
-```ts
+```typescript
 @Component
 export default class TriggerControl extends Script {
 
@@ -28,7 +28,7 @@ export default class TriggerControl extends Script {
         //进入触发区域
         trigger.onEnter.add(() => {
             //角色加载捏人数据，捏人数据请看：https://learning.ark.online/main-course/programming-scripting/character-editor.html
-            Player.localPlayer.character.setDescription("A96C75BB40732293D69B42AEA93F6011");
+            Player.localPlayer.character.setDescription(["A96C75BB40732293D69B42AEA93F6011"]);
         });
     }
 }
