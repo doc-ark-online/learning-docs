@@ -12,51 +12,55 @@
 
 首先，在“对象管理器”面板中选中“Player”，也就是我们的主角，然后在属性面板中，单击“编辑玩家形象”按钮，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnAxlbKcpYAFsIX4BwzPE2Ng.png)
+![image-20230725162612188](https://arkimg.ark.online/image-20230725162612188.png)
 
 操作完成即可打开我们主角的角色编辑器，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnNuno2cIVSK1au6eghJAP0g.png)
+![image-20230725162718873](https://arkimg.ark.online/image-20230725162718873.png)
 
 ### 1.1 角色形象
 
-角色编辑器的使用非常简单，首先在右侧的“属性形象窗口”中，在角色设定中可以切换不同类型的角色，如图：
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnkiYl2KF309xn1gFnflxT2b.png)
+角色编辑器的使用非常简单，首先在右侧的“属性形象窗口”中，在角色设定中可以切换不同类型的角色。
 
 这里展示一个 Lowpoly 男性角色，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnfbNsXyp7cCx3zt7eO88vmh.png)
+![image-20230725162852819](https://arkimg.ark.online/image-20230725162852819.png)
 
-### 1.2 面部相关
+### 1.2 头部相关
 
-在面部修改界面中，可以看到除了面部整体外，还包括五官、化妆等多处参数可供我们进行修改，方便我们捏出自己喜欢的人物面部，如图：
+在面部修改界面中，可以看到除了面部整体外，还包括五官、表情等多处参数可供我们进行修改，方便我们捏出自己喜欢的人物面部，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn5y9lBArBgFG2s23wgfAqse.png)
+![image-20230725163014984](https://arkimg.ark.online/image-20230725163014984.png)
 
-### 1.3 身材相关
+### 1.3 身体相关
 
-在身材修改面部中，可以看到包括身体、四肢、纹身等内容的修改，可以让你轻松修改为自己需要的身材比例，如图：
+在身体修改界面中，可以看到包括身体、四肢等内容的修改，可以让你轻松的修改角色的身材比例，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn85K00D4yT4aIP1NdXSCKhd.png)
+![image-20230725163101398](https://arkimg.ark.online/image-20230725163101398.png)
 
-### 1.4 发型相关
+### 1.4化妆相关
+
+在身体修改界面中，可以看到包括肤色、口红、贴花等各种设置，可以让你轻松的给角色进行化妆，如图：
+
+![image-20230725163240218](https://arkimg.ark.online/image-20230725163240218.png)
+
+### 1.5 发型相关
 
 在发型面板中，我们可以为我们的角色更换前发与后发，这里我们来操作一下，首先更换一个前发，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnywZ5wNN3gYXCApIxRetdYd.png)
+![image-20230725163907822](https://arkimg.ark.online/image-20230725163907822.png)
 
 接下来，再更换一个后发，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnjpzWJBvPQNkHm5pw5oZ1Gh.png)
+![image-20230725164131457](https://arkimg.ark.online/image-20230725164131457.png)
 
-### 1.5 服饰相关
+### 1.6 服饰相关
 
 与发型修改相同，我们可以在这里修改上衣、下衣、手套、鞋的相关资源，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn0wBtIkWNXuMtmdlFcewp0c.png)
+![image-20230725164710059](https://arkimg.ark.online/image-20230725164710059.png)
 
-## 2. 保存与加载角色编辑数据
+## 2. 保存与加载角色形象数据
 
 在角色编辑器中，我们通过“另存为”会将当前角色的搭配数据存到本地，本节我们就来尝试下在脚本中动态的加载搭配数据吧！
 
@@ -64,17 +68,17 @@
 
 打开角色编辑器，进行角色创作，在菜单栏单击“工程-保存”按钮，即可将当前人物形象保存为主角形象，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnHfNQMZzXSqr9CEK9mtFCDc.png)
+![image-20230725171419364](https://arkimg.ark.online/image-20230725171419364.png)
 
 运行游戏后，可以看到主角已经变成我们捏出的角色了，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnov1GQHJJOEKncitYc37PBe.gif)
 
-### 2.2 保存捏人数据
+### 2.2 保存角色形象数据
 
 有时候，我们并不想立刻使用捏好的角色形象，而是喜欢在游戏中的某个时刻，动态的进行角色外观更换，这时候就需要将捏好的数据保存下来，单击“另存为按钮”，在弹出窗口中，选择自己需要保存的数据，示例中只保存了发型、上衣、下衣数据，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnGMbe5m1wbQeplDoQnuzMLg.png)
+![image-20230725172406582](https://arkimg.ark.online/image-20230725172406582.png)
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcndT459Wz4XK2a5AWOaUi9rd.png)
 
@@ -84,61 +88,45 @@
 
 单击“确定”按钮，就可以看到生成了一个角色资源文件，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnC6Gk7gneQNI98LPBPva6Kl.png)
+![image-20230725172453667](https://arkimg.ark.online/image-20230725172453667.png)
 
 关闭角色编辑器，在弹出的提示框中选择“不保存”，因为我们不希望立刻应用当前新的服饰内容，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnpmYHv6eWc7ZkIw7RA2e5ub.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnYPXDwVDFkpkm2hskFLbB6d.png)
+![image-20230725172549083](https://arkimg.ark.online/image-20230725172549083.png)
 
 在“工程内容”窗口中的“角色”选项中，选中我们刚保存的角色数据文件，右键菜单中选择“复制工程内容 ID”即可复制角色数据的 ID，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnb7OBy0D7x5Huzm4QboIhqf.png)
 
-### 2.3 导入导出
+### 2.3 加载角色形象数据
 
-在功能“工程内容”里找到已经存在的角色数据文件，右键可以选中导出按钮进行导出，其他项目也能使用该数据
+- 方法一：在角色编辑器中加载角色形象数据
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnRnmasQedE48FhImEj1Vjre.png)
+  打开角色编辑器后，将角色形象数据拖动到角色上后即可完成加载
 
-在功能“工程内容”里找到并点击“导入角色形象数据”
+  ![img](https://arkimg.ark.online/PRAKKGxRqW.gif)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnqym80T05f1cGFRgJNG6T9f.png)
+  如果是想应用到当前角色上，记得点击保存哦！
 
-选择存储的数据并打开
+- 方法二：使用代码加载角色形象数据
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn6YW9FrxBRR5cOgWav0g2be.png)
-
-已成功添加
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnAxdVqWZ0uLW2tMDE144zzd.png)
-
-### 2.4 玩家角色使用数据
-
-- 方法一：
-
-首先运行游戏，当前角色并没有使用我们的角色数据，如图：
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnrF2akkjIGFbh7OPf1xZi1e.png)
-
-创建一个脚本挂载到场景中，编写脚本代码如下：
+  创建一个脚本挂载到场景中，编写脚本代码如下：
 
 ```ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart() {  
+    protected onStart(): void {
         //只有在客户端中才能获取该客户端对应的玩家 
-        if(Util.SystemUtil.isClient()){
+        if (SystemUtil.isClient()) {
             //异步获取当前客户端对应的玩家对象
-           Gameplay.asyncGetCurrentPlayer().then(player=>{
+            Player.asyncGetLocalPlayer().then((player) => {
                 setTimeout(() => {
                     //5 秒后进行换装操作,这里的参数就粘贴我们在上一小节中最后复制的角色资源 ID
-                    player.character.loadSlotAndEditorDataByGuid("1D4DEBAC4305D268DD0F5C8118F356E8")
+                    player.character.setDescription(["012D5D934581C29E3BEDADB2A754E019"])
                 }, 5000);
-           })
+            })
         }
     }
 }
@@ -146,46 +134,48 @@ export default class PlayerControl extends Core.Script {
 
 运行游戏，5 秒后主角就会动态使用我们的数据了，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnhjC5dLk1fvs2USeQawsTPc.gif)
+![img](https://arkimg.ark.online/20230725173213_rec_.gif)
 
-- 方法二：
 
-编辑玩家形象后，取消勾选<strong>使用平台角色形象</strong>
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnTwjlWMA0mbNFUTfrOXZbEd.png)
+### 2.4 NPC 加载角色形象数据
 
-如果在编辑器创建了其他角色形象，想要应用到 Player 里，那么可以通过将工程内容里的角色拖拽到主视口里达到替换的目的
+除了玩家控制的角色以外，其他角色被称为“NPC”
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnuObx7oAWObiuCWUVQQwzpg.png)
+- 方法一：在角色编辑器中加载形象数据
 
-最后需要记得保存修改
+  在当前项目中，向场景中拖拽一个角色，并打开角色编辑器，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnUrVv2lxpf4N1WuwnjN0Xzd.png)
+  ![image-20230725175635230](https://arkimg.ark.online/image-20230725175635230.png)
 
-### 2.5 NPC 角色使用数据
+  接着将角色形象数据拖动到NPC身上，然后点击保存即可
 
-在当前项目中，向场景中拖拽一个人型对象 V2，如图：
+  ![image-20230725175746066](https://arkimg.ark.online/image-20230725175746066.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnd9MRPdAV6x7ydtmsqZlYhc.png)
+  可以看到，角色形象数据成功的应用到了NPC身上
 
-创建一个脚本，并挂载到人型对象下方，如图：
+  ![image-20230725175836819](https://arkimg.ark.online/image-20230725175836819.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnFL4zlRVuWrBQGoxmDgoCzd.png)
+- 方法二：使用代码给NPC加载角色形象数据
 
-- 方法一：
+  创建一个脚本，并挂载到人型对象下方，如图：
+
+  ![image-20230725175128590](https://arkimg.ark.online/image-20230725175128590.png)
+
+  编写脚本如下：
 
 ```ts
-@Core.Class
-export default class NPCControl extends Core.Script {
+@Component
+export default class NPCControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         //在客户端中给 NPC 换装
-        if(Util.SystemUtil.isClient()){
+        if (SystemUtil.isClient()) {
             //首先获取当前人型对象
-            let humanoid = this.gameObject as Gameplay.Humanoid
+            let npc = this.gameObject as Character
             //加载玩家角色的角色 ID，把上面复制的角色 ID 粘到这里就好
-            humanoid.loadSlotAndEditorDataByGuid("1D4DEBAC4305D268DD0F5C8118F356E8")
+            npc.setDescription(["012D5D934581C29E3BEDADB2A754E019"]);
         }
     }
 }
@@ -193,60 +183,4 @@ export default class NPCControl extends Core.Script {
 
 运行游戏，可以看到后面的人型角色已经使用了我们的角色数据，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnXfJSiFIAj7vDqPpdMI3mxc.png)
-
-- 方法二：
-
-```ts
-// 异步获取当前玩家，避免获取失败
-let player = await Gameplay.asyncGetCurrentPlayer();
-// 设置外观修改功能，并获取到 HumanoidV2 对象
-let humanoidV2 = player.character.setAppearance(Gameplay.HumanoidV2)
-// 通过角色数据设置外观
-humanoidV2.setAppearanceData(["142187"], () => {
-    // 不调用这一行，其他玩家将看不到自己换装
-    player.character.setAppearance(Gameplay.HumanoidV2).appearanceSync()
-})
-```
-
-::: warning <strong>loadSlotAndEditorDataByGuid() </strong><strong>和</strong><strong> setAppearanceData() 的</strong><strong>区分</strong>
-
-1. 服务端换装不会自动同步到客户端，需要手动同步
-2. loadSlotAndEditorDataByGuid 能加载装扮和插槽
-3. setAppearanceData 只能加载装扮
-
-:::
-
-客户端情况下：
-character.loadSlotAndEditorDataByGuid() 能够成功加载外观和插槽
-humanoidV2.setAppearanceData() 只能够加载外观，不能加载插槽。如果要加载插槽，只能单独调用一次 humanoidV2.setSlot()
-
-服务端情况下:
-character.loadSlotAndEditorDataByGuid() 只能加载插槽
-humanoidV2.setAppearanceData() 什么都加载不出来
-不过可以在 setAppearanceData 之后调用一次 appearanceSync()，就能够看见装扮了；另外插槽依旧是需要单独调用一次 humanoidV2.setSlot()
-
-::: warning <strong>按部位换装 </strong><strong>和</strong><strong> 通过角色数据换装 的</strong><strong>区别</strong>
-
-按部位换装：
-
-按部位换装，传入的 GUID<strong>只能是</strong>MWEditor 左侧资源列表里面的 GUID
-
-代表 API：
-
-```ts
-         humanoidV2.部位.setMesh()
-            humanoidV2.setSuit()
-```
-
-通过角色数据换装：
-
-通过角色数据换装，传入的 GUID<strong>只能是</strong>通过角色编辑器编辑后导出的角色数据的 GUID
-
-代表 API：
-
-```ts
-     character.loadSlotAndEditorDataByGuid()
-            humanoidV2.setAppearanceData()
-```
-:::
+![image-20230725180620428](https://arkimg.ark.online/image-20230725180620428.png)
