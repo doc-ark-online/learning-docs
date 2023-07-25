@@ -10,26 +10,26 @@
 
 ## 代码示例
 
-```ts
-@Core.Class
-export default class TriggerControl extends Core.Script {
+```typescript
+@Component
+export default class TriggerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected async onStart() {
         //服务端不做任何事
-        if(Gameplay.isServer()){
-            return
+        if (SystemUtil.isServer()) {
+            return;
         }
+
         //以下为客户端逻辑
-        //获取当前客户端玩家
-        let player = await Gameplay.asyncGetCurrentPlayer()
+
         //获取当前脚本所挂载的触发器
-        let trigger = this.gameObject as Gameplay.Trigger
+        const trigger = this.gameObject as Trigger;
         //进入触发区域
-        trigger.onEnter.add(()=>{
+        trigger.onEnter.add(() => {
             //角色加载捏人数据，捏人数据请看：https://learning.ark.online/main-course/programming-scripting/character-editor.html
-            player.character.loadSlotAndEditorDataByGuid("2FC9B86748B6300CE0B299936B45E1A2")
-        })
+            Player.localPlayer.character.setDescription(["A96C75BB40732293D69B42AEA93F6011"]);
+        });
     }
 }
 ```
