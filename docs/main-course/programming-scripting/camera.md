@@ -18,11 +18,13 @@
 
 在我们编辑器的“对象管理器”窗口中，可以看到一个游戏物体叫做 Camera，该游戏物体就是我们当前游戏使用的摄像机了，鼠标单击选中“Camera”，可以看到在属性面板中包含了大量的摄像机设置，可以根据自己的需要进行设置修改，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn6yuewhGzg7KLuI8UDI7jde.png)
+![image-20230726105221009](https://arkimg.ark.online/image-20230726105221009.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnEKCe1yzsiTQeUCRH9FQEWh.png)
 
-## 2. 摄像机模式
+
+## 2. 摄像机预设
+
+**预设种类：**
 
 | 模式         | 英文名称             | 枚举值 | 说明                         |
 | ------------ | -------------------- | ------ | ---------------------------- |
@@ -32,5 +34,23 @@
 | 默认         | Default              | 3      | 类似樱花校园模拟器的默认效果 |
 | TPS 过肩视角 | TPSOverShoulderAngle | 4      | 第三人称过肩视角的摄像机效果 |
 | FPS 射击视角 | FPSShootingAngle     | 5      | 第一人称射击视角的摄像机效果 |
+
+**切换摄像机预设的代码：**
+
+```typescript
+@Component
+export default class CameraControl extends Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        //客户端才能获取到相机
+        if (SystemUtil.isClient()) {
+            // 获取当前摄像机
+            let cs = Camera.currentCamera;
+            // 切换摄像机预设
+            cs.preset = CameraPreset.FirstPerson
+        }
+    }
+}
+```
 
 <video controls src="https://cdn.233xyx.com/1681124470620_938.mp4"></video>
