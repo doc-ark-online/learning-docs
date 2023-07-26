@@ -2,7 +2,7 @@
 
 ::: tip 阅读本文大概需要 8 分钟。
 
-游戏开发中，父子级的嵌套是十分常见的，当两个物体生成父子级关系后，子物体会随着父物体进行移动旋转等操作，用起来十分方便，接下来我们就来看下游戏物体的父子级如何使用（注意：父子级关系只在服务端维护）。
+游戏开发中，父子级的嵌套是十分常见的，当两个物体生成父子级关系后，子物体会随着父物体进行移动旋转等操作，用起来十分方便，接下来我们就来看下游戏物体的父子级如何使用。
 
 :::
 
@@ -18,15 +18,15 @@
 
 ![](https://cdn.233xyx.com/1681130643019_770.gif)
 
-这时候，立方体与椎体便形成了一个父子关系，之后，椎体便会跟随立方体进行移动等操作，如图：
+这时候，立方体与椎体便形成了一个父子关系，之后锥体便会跟随立方体进行移动等操作，如视频：
 
-![](https://cdn.233xyx.com/1681130643179_059.gif)
+<video controls src="https://arkimg.ark.online/1690363082765.mp4"></video>
 
 ::: warning 注意 
 
 编辑器中，我们常用[空锚点](https://docs.ark.online/GameplayObjects/Anchor.html)作为顶层父节点
 
-**文件夹**只能用来管理，不能用它来进行父子结点获取
+**文件夹**、**Group** 只能用来管理，不能用它来进行父子结点获取。
 
 :::
 
@@ -44,46 +44,42 @@
 
 ## 3. 脚本查看父子关系
 
-我们可以通过 GameObject 的 GetChildren 方法来获取该物体下的子物体，但是这里要注意，编辑器中服务端或客户端物体均会维护父子关系，但是如果是双端物体，需要从服务端上来获取父子关系，代码如下：
+我们可以通过 GameObject 的 `getChildren` 方法来获取该物体下的子物体，但是这里要注意，编辑器中服务端或客户端物体均会维护父子关系，但是如果是双端物体，需要从服务端上来获取父子关系，代码如下：
 
-```ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
-
+```typescript
+@Component
+export default class Test extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart() {   
-        if(Util.SystemUtil.isServer()){
-            //通过立方体的 guid 找到立方体
-            let object = Core.GameObject.find("1EB0BD86D97D7EAD")
-            //获取立方体有几个子物体（当前只有一个圆锥体）
-            console.log("子物体个数:" + object.getChildren().length)
+    protected onStart() {
+        if (SystemUtil.isServer()) {
+            // 通过立方体的 guid 找到立方体
+            const object = GameObject.findGameObjectById("1EB0BD86D97D7EAD");
+            // 获取立方体有几个子物体（当前只有一个圆锥体）
+            console.log("子物体个数:" + object.getChildren().length);
         }
     }
 }
 ```
 
-我们无法查找到**勾选**了**静态状态**的对象
-
 ## 4. 物体附着
 
 除了我们在编辑器界面进行物体的父子级操作，以便让子物体随着父物体进行移动旋转外，有时我们在脚本中也希望动态使用该功能。这时候我们就可以使用物体附着功能了，通过代码将一个物体附着到另一个物体上，那么该物体也会随着另一个物体进行移动旋转了，示例代码如下：
 
-```ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
-
+```typescript
+@Component
+export default class Test extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart() {   
-        if(Util.SystemUtil.isServer()){
-            //通过立方体的 guid 找到立方体
-            let cube = Core.GameObject.find("039156004120900C1EB0BD86D97D7EAD")
-            //通过圆锥体的 guid 找到立方体
-            let object = Core.GameObject.find("488625BB445CA70D372B15B02D9F899E")
-            //将圆锥体附着到立方体上
-            object.attachToGameObject(cube)
-            //5 秒后解除附着
+    protected onStart() {
+        if (SystemUtil.isServer()) {
+            // 通过立方体的 guid 找到立方体
+            const cube = GameObject.findGameObjectById("3F33A316");
+            // 通过锥体的 guid 找到锥体
+            const cone = GameObject.findGameObjectById("20A292B3");
+            // 将锥体附着到立方体上
+            cone.parent = cube;
+            // 5000 毫秒后解除附着
             setTimeout(() => {
-                object.detachFromGameObject()
+                cone.parent = null;
             }, 5000);
         }
     }
