@@ -83,7 +83,8 @@
       protected onStart(): void {
           if (SystemUtil.isClient()) {
               // 设置基础姿态为119836
-              Player.localPlayer.character.loadStance("119836");  //[!code focus]
+              const stance = Player.localPlayer.character.loadStance("119836"); //[!code focus]
+              stance.play(); //[!code focus]
           }
       }
   }
