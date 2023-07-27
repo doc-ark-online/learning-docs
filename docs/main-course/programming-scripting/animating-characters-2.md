@@ -50,17 +50,17 @@
 
 编辑器提供成套的基础姿态，可以在资源库的“基础姿态”中找到，如图：
 
-![image-20230616155957563](https://arkimg.ark.online/image-20230616155957563.png)
+![image-20230616155957563](https://arkimg.ark.online/image-20230616155957563.webp)
 
 在选择不同的默认“体型类型”时，编辑器会自动切换为对应体型的角色基础姿态。
 
 如，我们这里在对象管理器选中“Player”对象，属性面板中修改“体型类型”为"二次元成年男性",如图：
 
-![image-20230616193004043](https://arkimg.ark.online/image-20230616193004043.png)
+![image-20230616193004043](https://arkimg.ark.online/image-20230616193004043.webp)
 
 再确定一下“使用平台角色形象”为不勾选状态（如果勾选中，则取消勾选）：
 
-![image-20230620092025146](https://arkimg.ark.online/image-20230620092025146.png)
+![image-20230620092025146](https://arkimg.ark.online/image-20230620092025146.webp)
 
 我们此时运行起来游戏，会发现默认角色对象就变成一位男性了，且默认姿态也是男性的默认姿态了。如图：
 
@@ -68,29 +68,25 @@
 
 ### 使用基础姿态
 
-* 在资源库中，找到基础姿态，右键复制 guid，这里我们选择“写实\_男性\_基础姿态"复制 guid
+* 在资源库中，找到基础姿态，右键复制资源ID ，这里我们选择“写实\_男性\_基础姿态"复制资源ID
 
-* ![image-20230619112304310](https://arkimg.ark.online/image-20230619112304310.png)
+* ![image-20230619112304310](https://arkimg.ark.online/image-20230619112304310.webp)
 
-* 我们创建一个脚本来演示角色的姿态，新建脚本命名为“AnimationControl”，拖拽脚本**挂载到对象管理器**中，然后双击脚本编写代码。
+* 我们创建一个脚本来演示角色的姿态，新建脚本命名为 `AnimationControl`，拖拽脚本**挂载到对象管理器**中，然后双击脚本编写代码。
 
-* 首先异步获取角色对象，获取到角色对象后，直接更改 character 的`basicStance`属性为我们刚才复制的 guid：119836，代码如下：
+* 首先异步获取角色对象，获取到角色对象后，直接更改 character 的`basicStance`属性为我们刚才复制的 assetId ：119836，代码如下：
 
 * ```typescript
-  @Core.Class
-  export default class AnimationControl extends Core.Script {
-  
+  @Component
+  export default class AnimationControl extends Script {
       /** 当脚本被实例后，会在第一帧更新前调用此函数 */
       protected onStart(): void {
           if (SystemUtil.isClient()) {
-              // 客户端，获取到当前角色对象
-              Gameplay.asyncGetCurrentPlayer().then((player: Gameplay.Player) => {
-                  // 设置基础姿态为119836
-                  player.character.basicStance = "119836" //[!code focus]
-              });
+              // 设置基础姿态为119836
+              const stance = Player.localPlayer.character.loadStance("119836"); //[!code focus]
+              stance.play(); //[!code focus]
           }
       }
-  
   }
   ```
   
@@ -111,37 +107,34 @@
 
 基础姿态是玩家基础行为的动画，想进行更细微更自定义的姿态控制，如看书、开车、持枪、瞄准、爬梯、扛东西等，就需要用上二级姿态了。可以在资源库的“动画姿态”找到所有的二级姿态。
 
-![image-20230619163702538](https://arkimg.ark.online/image-20230619163702538.png)
+![image-20230619163702538](https://arkimg.ark.online/image-20230619163702538.webp)
 
 ### 播放二级姿态
 
-我这里使用“双手步枪探头瞄准姿态”的 guid`20308`来演示使用二级姿态。
+我这里使用“双手步枪探头瞄准姿态”的 assetId `20308` 来演示使用二级姿态。
 
-先在资源库选中资源，右键`复制资源 ID`备用，打开刚才新建的`AnimationControl`脚本，在获取到角色对象后,需要先下载一下二级姿态的资源，然后使用 character 的`loadStance`函数加载二级姿态，然后通过返回的对象播放该姿态，代码如下：
+先在资源库选中资源，右键`复制资源 ID`备用，打开刚才新建的`AnimationControl`脚本，在获取到角色对象后,需要先下载一下二级姿态的资源，然后使用 character 的`loadSubStance`函数加载二级姿态，然后通过返回的对象播放该姿态，代码如下：
 
 ```typescript
-@Core.Class
-export default class AnimationControl extends Core.Script {
-
+@Component
+export default class AnimationControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {
+    protected async onStart(): Promise<void> {
         if (SystemUtil.isClient()) {
-            // 客户端，获取到当前角色对象
-            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
-                // 设置基础姿态为119836(写实-男性-基础姿态)
-                // player.character.basicStance = "119836"
+            // 设置基础姿态为 119836 (写实-男性-基础姿态)
+            // const stance = Player.localPlayer.character.loadStance("119836");
+            // stance.play();
 
-                // 定义一个放姿态 guid 的变量，后面引用
-                let stanceGuid = "20308" //[!code focus]
-                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
-                await AssetUtil.asyncDownloadAsset(stanceGuid) //[!code focus]
-                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
-                let subStance = player.character.loadStance(stanceGuid) //[!code focus]
-                // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
-                subStance.blendMode = Gameplay.StanceBlendMode.WholeBody //[!code focus]
-                // 使用姿态对象调用播放接口
-                subStance.play() //[!code focus]
-            });
+            // 定义一个放姿态 assetId 的变量，后面引用
+            const stanceGuid = "20308"; //[!code focus]
+            // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+            await AssetUtil.asyncDownloadAsset(stanceGuid); //[!code focus]
+            // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+            const subStance = Player.localPlayer.character.loadSubStance(stanceGuid); //[!code focus]
+            // 设置姿态播放模式为全身播放(StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+            subStance.blendMode = StanceBlendMode.WholeBody; //[!code focus]
+            // 使用姿态对象调用播放接口
+            subStance.play(); //[!code focus]
         }
     }
 }
@@ -157,28 +150,25 @@ export default class AnimationControl extends Core.Script {
 控制只播放上半身:
 
 ```typescript
-@Core.Class
-export default class AnimationControl extends Core.Script {
-
+@Component
+export default class AnimationControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {
+    protected async onStart(): Promise<void> {
         if (SystemUtil.isClient()) {
-            // 客户端，获取到当前角色对象
-            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
-                // 设置基础姿态为119836(写实-男性-基础姿态)
-                // player.character.basicStance = "119836"
+            // 设置基础姿态为 119836 (写实-男性-基础姿态)
+            // const stance = Player.localPlayer.character.loadStance("119836");
+            // stance.play();
 
-                // 定义一个放姿态 guid 的变量，后面引用
-                let stanceGuid = "20308"
-                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
-                await AssetUtil.asyncDownloadAsset(stanceGuid)
-                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
-                let subStance = player.character.loadStance(stanceGuid)
-                // 设置姿态播放模式为上半身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
-                subStance.blendMode = Gameplay.StanceBlendMode.BlendUpper //[!code focus]
-                // 使用姿态对象调用播放接口
-                subStance.play()
-            });
+            // 定义一个放姿态 assetId 的变量，后面引用
+            const stanceGuid = "20308";
+            // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+            await AssetUtil.asyncDownloadAsset(stanceGuid);
+            // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+            const subStance = Player.localPlayer.character.loadSubStance(stanceGuid);
+            // 设置姿态播放模式为上半身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+            subStance.blendMode = StanceBlendMode.BlendUpper; //[!code focus]
+            // 使用姿态对象调用播放接口
+            subStance.play();
         }
     }
 }
@@ -193,14 +183,14 @@ export default class AnimationControl extends Core.Script {
 播放模式还可以设置如下几种方式：
 
 ```typescript
-    enum StanceBlendMode {
-        /** 只混合上半身 */
-        BlendUpper = 0,
-        /** 只混合下半身 */
-        BlendLower = 1,
-        /** 全身混合 */
-        WholeBody = 2
-    }
+enum StanceBlendMode {
+    /** 只混合上半身 */
+    BlendUpper = 0,
+    /** 只混合下半身 */
+    BlendLower = 1,
+    /** 全身混合 */
+    WholeBody = 2
+}
 ```
 
 ### 停止二级姿态
@@ -213,32 +203,28 @@ subStance.stop()
 
 ### 使用姿态接口播放动画
 
-姿态接口，除了用来播放姿态以外，还可以利用动画资源来作为姿态播放。表现效果就是会循环播放该动画，某些动画只有固定动作的，就比较合适用来作为姿态使用了，比如使用 guid 为“8362”的坐下看书动画来作为姿态播放，更改动画 id 后的代码：
+姿态接口，除了用来播放姿态以外，还可以利用动画资源来作为姿态播放。表现效果就是会循环播放该动画，某些动画只有固定动作的，就比较合适用来作为姿态使用了，比如使用 assetId 为“8362”的坐下看书动画来作为姿态播放，更改动画 id 后的代码：
 
 ```typescript
-@Core.Class
-export default class AnimationControl extends Core.Script {
-
+@Component
+export default class AnimationControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {
+    protected async onStart(): Promise<void> {
         if (SystemUtil.isClient()) {
-            // 客户端，获取到当前角色对象
-            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
-                // 设置基础姿态为119836(写实-男性-基础姿态)
-                // player.character.basicStance = "119836"
+            // 设置基础姿态为 119836 (写实-男性-基础姿态)
+            // const stance = Player.localPlayer.character.loadStance("119836");
+            // stance.play();
 
-                // 定义一个放姿态 guid 的变量，后面引用
-                let stanceGuid = "8362" //[!code focus]
-                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
-                await AssetUtil.asyncDownloadAsset(stanceGuid)
-                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
-                let subStance = player.character.loadStance(stanceGuid)
-                // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
-                subStance.blendMode = Gameplay.StanceBlendMode.WholeBody //[!code focus]
-                // 使用姿态对象调用播放接口
-                subStance.play()
-                
-            });
+            // 定义一个放姿态 assetId 的变量，后面引用
+            const stanceGuid = "8362"; //[!code focus]
+            // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+            await AssetUtil.asyncDownloadAsset(stanceGuid);
+            // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+            const subStance = Player.localPlayer.character.loadSubStance(stanceGuid);
+            // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+            subStance.blendMode = StanceBlendMode.WholeBody; //[!code focus]
+            // 使用姿态对象调用播放接口
+            subStance.play();
         }
     }
 }
@@ -246,13 +232,13 @@ export default class AnimationControl extends Core.Script {
 
 表现效果如下：
 
-![image-20230721171759756](https://arkimg.ark.online/image-20230721171759756.png)
+![image-20230721171759d756](https://arkimg.ark.online/image-20230721171759756.webp)
 
 ## 3. 动画
 
 动画是用来控制角色动作的一类资源，例如游戏当中的走路、跑步、攻击、跳跃、释放技能等都属于动画，编辑器提供了一系列完整的优质动画资源，供开发者选择使用。
 
-![image-20230721172241338](https://arkimg.ark.online/image-20230721172241338.png)
+![image-20230721172241338](https://arkimg.ark.online/image-20230721172241338.webp)
 
 ### 播放动画
 
@@ -260,52 +246,48 @@ export default class AnimationControl extends Core.Script {
 
 找到你想播放的动画，右键复制其资源 ID，等下在代码里面使用；我们这里选择"14497" 蛇舞动画来作为演示。
 
-依然还是 `AnimationControl` 脚本，在获取到角色对象后，延时5秒调用 character 的`loadAnimation`函数加载一个动画出来。
+依然还是 `AnimationControl` 脚本，在获取到角色对象后，延时5000毫秒调用 character 的`loadAnimation`函数加载一个动画出来。
 
-> 为什么要延时5秒，因为动画播放会自动结束，很可能动画时长很短，启动起来之后闪一下就没了，所以延时来演示比较清楚。
+> 为什么要延时5000毫秒，因为动画播放会自动结束，很可能动画时长很短，启动起来之后闪一下就没了，所以延时来演示比较清楚。
 
 注释掉播放姿态的代码后，播放动画代码如下：
 
 ```typescript
-@Core.Class
-export default class AnimationControl extends Core.Script {
-
+@Component
+export default class AnimationControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {
+    protected async onStart(): Promise<void> {
         if (SystemUtil.isClient()) {
-            // 客户端，获取到当前角色对象
-            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
-                // // ====== 演示更换基础姿态的代码 START =======
-                // // 设置基础姿态为119836(写实-男性-基础姿态)
-                // player.character.basicStance = "119836"
-                // // ====== 演示更换基础姿态的代码 END =======
+            // ====== 演示更换基础姿态的代码 START =======
+            // const stance = Player.localPlayer.character.loadStance("119836");
+            // stance.play();
+            // ====== 演示更换基础姿态的代码 END =======
 
 
-                // // ====== 演示更换二级姿态的代码 START =======
-                // // 定义一个放姿态 guid 的变量，后面引用
-                // let stanceGuid = "8362"
-                // // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
-                // await AssetUtil.asyncDownloadAsset(stanceGuid)
-                // // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
-                // let subStance = player.character.loadStance(stanceGuid)
-                // // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
-                // subStance.blendMode = Gameplay.StanceBlendMode.WholeBody
-                // // 使用姿态对象调用播放接口
-                // subStance.play()
-                // // ====== 演示更换二级姿态的代码 END =======
-                
-                // ====== 演示播放动画的代码 START =======
-                setTimeout(async () => { //[!code focus]
-                    let animId = "14497"    //[!code focus]
-                    // 下载动画资源
-                    await AssetUtil.asyncDownloadAsset(animId)  //[!code focus]
-                    // 加载动画对象
-                    let anim = player.character.loadAnimation(animId)  //[!code focus]
-                    // 播放动画
-                    anim.play()  //[!code focus]
-                }, 5000); //[!code focus]
-                // ====== 演示播放动画的代码 END =======
-            });
+            // ====== 演示更换二级姿态的代码 START =======
+            // // 定义一个放姿态 assetId 的变量，后面引用
+            // const stanceGuid = "8362" 
+            // // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+            // await AssetUtil.asyncDownloadAsset(stanceGuid);
+            // // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+            // const subStance = Player.localPlayer.character.loadSubStance(stanceGuid);
+            // // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+            // subStance.blendMode = StanceBlendMode.WholeBody; 
+            // // 使用姿态对象调用播放接口
+            // subStance.play();
+            // ====== 演示更换二级姿态的代码 END =======
+
+            // ====== 演示播放动画的代码 START =======
+            setTimeout(async () => { //[!code focus]
+                const animId = "14497"//[!code focus]
+                // 下载动画资源//[!code focus]
+                await AssetUtil.asyncDownloadAsset(animId);//[!code focus]
+                // 加载动画对象//[!code focus]
+                const anim = Player.localPlayer.character.loadAnimation(animId);//[!code focus]
+                // 播放动画//[!code focus]
+                anim.play();//[!code focus]
+            }, 5000);//[!code focus]
+            // ====== 演示播放动画的代码 END =======
         }
     }
 }
@@ -320,48 +302,43 @@ export default class AnimationControl extends Core.Script {
 改动下代码，只让角色下半身播放动画，将 anim 对象的 slot 属性设置为`AnimSlot.Lower`，代码如下：
 
 ```typescript
-@Core.Class
-export default class AnimationControl extends Core.Script {
-
+@Component
+export default class AnimationControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {
+    protected async onStart(): Promise<void> {
         if (SystemUtil.isClient()) {
-            // 客户端，获取到当前角色对象
-            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
-                // // ====== 演示更换基础姿态的代码 START =======
-                // // 设置基础姿态为119836(写实-男性-基础姿态)
-                // player.character.basicStance = "119836"
-                // // ====== 演示更换基础姿态的代码 END =======
+            // ====== 演示更换基础姿态的代码 START =======
+            // const stance = Player.localPlayer.character.loadStance("119836");
+            // stance.play();
+            // ====== 演示更换基础姿态的代码 END =======
 
 
-                // // ====== 演示更换二级姿态的代码 START =======
-                // // 定义一个放姿态 guid 的变量，后面引用
-                // let stanceGuid = "8362"
-                // // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
-                // await AssetUtil.asyncDownloadAsset(stanceGuid)
-                // // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
-                // let subStance = player.character.loadStance(stanceGuid)
-                // // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
-                // subStance.blendMode = Gameplay.StanceBlendMode.WholeBody
-                // // 使用姿态对象调用播放接口
-                // subStance.play()
-                // // ====== 演示更换二级姿态的代码 END =======
+            // ====== 演示更换二级姿态的代码 START =======
+            // // 定义一个放姿态 assetId 的变量，后面引用
+            // const stanceGuid = "8362" 
+            // // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+            // await AssetUtil.asyncDownloadAsset(stanceGuid);
+            // // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+            // const subStance = Player.localPlayer.character.loadSubStance(stanceGuid);
+            // // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+            // subStance.blendMode = StanceBlendMode.WholeBody; 
+            // // 使用姿态对象调用播放接口
+            // subStance.play();
+            // ====== 演示更换二级姿态的代码 END =======
 
-                // ====== 演示播放动画的代码 START =======
-                setTimeout(async () => {
-                    
-                    let animId = "14497"
-                    // 下载动画资源
-                    await AssetUtil.asyncDownloadAsset(animId)
-                    // 加载动画对象
-                    let anim = player.character.loadAnimation(animId)
-                    // 设置动画播放为下半身（要注意和姿态的接口不一样）
-                    anim.slot = AnimSlot.Lower  //[!code focus]
-                    // 播放动画
-                    anim.play()
-                }, 5000);
-                // ====== 演示播放动画的代码 END =======
-            });
+            // ====== 演示播放动画的代码 START =======
+            setTimeout(async () => {
+                const animId = "14497"
+                // 下载动画资源
+                await AssetUtil.asyncDownloadAsset(animId);
+                // 加载动画对象
+                const anim = Player.localPlayer.character.loadAnimation(animId);
+                // 设置动画播放为下半身（要注意和姿态的接口不一样）
+                anim.slot = AnimSlot.Lower;  //[!code focus]
+                // 播放动画
+                anim.play();
+            }, 5000);
+            // ====== 演示播放动画的代码 END =======
         }
     }
 }
@@ -374,23 +351,21 @@ export default class AnimationControl extends Core.Script {
 播放插槽列表如下：
 
 ```typescript
-    enum AnimSlot {
-        /** 默认插槽 */
-        Default = 0,
-        /** 上半身插槽 */
-        Upper = 1,
-        /** 下半身插槽 */
-        Lower = 2,
-        /** 全身插槽 */
-        FullyBody = 3
-    }
+enum AnimSlot {
+    /** 默认插槽 */
+    Default = 0,
+    /** 上半身插槽 */
+    Upper = 1,
+    /** 下半身插槽 */
+    Lower = 2,
+    /** 全身插槽 */
+    FullyBody = 3
+}
 ```
 
 ### 停止动画
 
 使用`loadAnimation`获取的动画对象来调用`stop`函数即可，例：
-
-> warning：027版本以前，如果设置过动画的插槽，调用 stop 接口可能会不生效。
 
 ```typescript
 anim.stop()
@@ -405,47 +380,44 @@ anim.stop()
 代码示例：
 
 ```typescript
-@Core.Class
-export default class AnimationControl extends Core.Script {
+@Component
+export default class AnimationControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {
+    protected async onStart(): Promise<void> {
         if (SystemUtil.isClient()) {
-            // 客户端，获取到当前角色对象
-            Gameplay.asyncGetCurrentPlayer().then(async (player: Gameplay.Player) => {
-                // // ====== 演示更换基础姿态的代码 START =======
-                // // 设置基础姿态为119836(写实-男性-基础姿态)
-                // player.character.basicStance = "119836"
-                // // ====== 演示更换基础姿态的代码 END =======
+            // // ====== 演示更换基础姿态的代码 START =======
+            // const stance = Player.localPlayer.character.loadStance("119836");
+            // stance.play();
+            // // ====== 演示更换基础姿态的代码 END =======
 
 
-                // ====== 演示更换二级姿态的代码 START =======
-                // 定义一个放姿态 guid 的变量，后面引用
-                let stanceGuid = "8362" //[!code focus]
-                // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
-                await AssetUtil.asyncDownloadAsset(stanceGuid) //[!code focus]
-                // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
-                let subStance = player.character.loadStance(stanceGuid) //[!code focus]
-                // 设置姿态播放模式为上半身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
-                subStance.blendMode = Gameplay.StanceBlendMode.BlendUpper //[!code focus]
-                // 使用姿态对象调用播放接口
-                subStance.play() //[!code focus]
-                // ====== 演示更换二级姿态的代码 END =======
+            // ====== 演示更换二级姿态的代码 START =======
+            // 定义一个放姿态 assetId 的变量，后面引用
+            const stanceGuid = "8362"; //[!code focus]
+            // 因为姿态是属于资源类型，在远程资源库中，所以使用前先下载资源到本地(await 关键词的作用就是等待资源下载完成后再执行后面的代码)
+            await AssetUtil.asyncDownloadAsset(stanceGuid); //[!code focus]
+            // 使用角色的加载姿态接口，将姿态资源信息给角色对象, 生成姿态对象来控制
+            const subStance = Player.localPlayer.character.loadSubStance(stanceGuid); //[!code focus]
+            // 设置姿态播放模式为全身播放(Gameplay.StanceBlendMode 中有全身、上半身、下半身三种播放模式）
+            subStance.blendMode = StanceBlendMode.BlendUpper;  //[!code focus]
+            // 使用姿态对象调用播放接口
+            subStance.play(); //[!code focus]
+            // ====== 演示更换二级姿态的代码 END =======
 
-                setTimeout(async () => { //[!code focus]
-                    // ====== 演示播放动画的代码 START =======
-                    let animId = "14497" //[!code focus]
-                    // 下载动画资源
-                    await AssetUtil.asyncDownloadAsset(animId) //[!code focus]
-                    // 加载动画对象
-                    let anim = player.character.loadAnimation(animId) //[!code focus]
-                    // 设置动画播放为下半身（要注意和姿态的接口不一样）
-                    anim.slot = AnimSlot.Lower  //[!code focus]
-                    // 播放动画
-                    anim.play() //[!code focus]
-                    // ====== 演示播放动画的代码 END =======
-                }, 5000); //[!code focus]
-            });
+            setTimeout(async () => { //[!code focus]
+                // ====== 演示播放动画的代码 START =======
+                const animId = "14497"; //[!code focus]
+                // 下载动画资源
+                await AssetUtil.asyncDownloadAsset(animId); //[!code focus]
+                // 加载动画对象
+                const anim = Player.localPlayer.character.loadAnimation(animId); //[!code focus]
+                // 设置动画播放为下半身（要注意和姿态的接口不一样）
+                anim.slot = AnimSlot.Lower; //[!code focus]
+                // 播放动画
+                anim.play(); //[!code focus]
+                // ====== 演示播放动画的代码 END =======
+            }, 5000); //[!code focus]
         }
     }
 }
@@ -461,8 +433,6 @@ export default class AnimationControl extends Core.Script {
 
 ![](https://cdn.233xyx.com/1681130073576_078.gif)
 
-
-
 ## 演示项目代码
 
-[点击下载演示项目](https://arkimg.ark.online/MainCourseAnimationDemo.zip)
+[点击下载演示项目](https://arkimg.ark.online/MainCourseAnimationDemo-027.zip)
