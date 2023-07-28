@@ -173,7 +173,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/main-course/programming-scripting/data-storage.md'
           },
           {
-            text: '冲量',
+            text: '冲量与冲量对象',
             link: '/main-course/programming-scripting/impulse.md'
           },
           {
@@ -187,6 +187,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '投掷物',
             link: '/main-course/programming-scripting/projectile.md'
+          },
+          {
+            text:'运动器',
+            link: '/main-course/programming-scripting/physicsSports.md'
           }
         ]
       },
