@@ -296,7 +296,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/bomberman-course/1-create-project.md'
               },
               {
-                text: '添加空气墙与出生点',
+                text: '添加空气墙',
                 link: '/bomberman-course/2-add-Point.md'
               }
             ]
