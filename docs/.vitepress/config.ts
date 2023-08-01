@@ -112,8 +112,8 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/main-course/foundational-knowledge/events.md'
           },
           {
-            text: '服务端实时日志',
-            link: '/main-course/foundational-knowledge/server-log.md'
+            text: '日志查看',
+            link: '/main-course/foundational-knowledge/checklog.md'
           }
         ]
       },
@@ -191,38 +191,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text:'运动器',
             link: '/main-course/programming-scripting/physicsSports.md'
-          }
-        ]
-      },
-      {
-        text: '跳一跳小游戏',
-        link: '/main-course/games-jump-jump-game/create-project.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: '创建工程',
-            link: '/main-course/games-jump-jump-game/create-project.md'
-          },
-          {
-            text: '播放游戏音乐',
-            link: '/main-course/games-jump-jump-game/play-game-music.md'
-          },
-          {
-            text: '添加角色特效',
-            link: '/main-course/games-jump-jump-game/add-character-effect.md'
-          },
-          {
-            text: '搭建跳跃场景',
-            link: '/main-course/games-jump-jump-game/build-jump-scene.md'
-          },
-          {
-            text: '添加失败区域',
-            link: '/main-course/games-jump-jump-game/add-loser-area.md'
-          },
-          {
-            text: '添加胜利区域',
-            link: '/main-course/games-jump-jump-game/add-win-area.md'
           }
         ]
       },
