@@ -189,7 +189,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/main-course/programming-scripting/projectile.md'
           },
           {
-            text:'运动器',
+            text: '运动器',
             link: '/main-course/programming-scripting/physicsSports.md'
           }
         ]
@@ -279,6 +279,84 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             text: '制作一个减速区域',
             link: '/main-course/games-bomber-game/build-decelerate-area.md'
           }
+        ]
+      },
+      {
+        text: '炸弹人小游戏新版',
+        link: '/bomberman-course/1-create-project.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '搭建场景',
+            link: '/bomberman-course/1-create-project.md',
+            items: [
+              {
+                text: '创建工程并导入场景',
+                link: '/bomberman-course/1-create-project.md'
+              },
+              {
+                text: '添加空气墙',
+                link: '/bomberman-course/2-add-Point.md'
+              }
+            ]
+          },
+          {
+            text: '搭建UI',
+            link: '/bomberman-course/3-create-ctrl-ui.md',
+            items: [
+              {
+                text: '创建控制UI',
+                link: '/bomberman-course/3-create-ctrl-ui.md'
+              },
+              {
+                text: '创建血条UI',
+                link: '/bomberman-course/4-create-hp-ui.md'
+              },
+              {
+                text: '导出UI并使用代码显示UI',
+                link: '/bomberman-course/5-export-ui.md'
+              }
+            ]
+          },
+          {
+            text: '创建炸弹预制体',
+            link: '/bomberman-course/6-create-prefab.md',
+            items: [
+              {
+                text: '放置模型和特效',
+                link: '/bomberman-course/6-create-prefab.md'
+              },
+              {
+                text: '编写脚本',
+                link: '/bomberman-course/7-create-boom-scripts.md'
+              }
+            ]
+          },
+          {
+            text: '控制释放炸弹',
+            link: '/bomberman-course/8-server-create-boom.md',
+            items: [
+              {
+                text: '使用服务端创建炸弹',
+                link: '/bomberman-course/8-server-create-boom.md'
+              },
+              {
+                text: '玩家死亡与复活功能',
+                link: '/bomberman-course/9-respawn-player.md'
+              }
+            ]
+          },
+          {
+            text: '运行测试游戏',
+            link: '/bomberman-course/10-test-game.md',
+            items: [
+              {
+                text: '使用编辑器模拟人多游戏',
+                link: '/bomberman-course/10-test-game.md'
+              }
+            ]
+          },
         ]
       },
       {
