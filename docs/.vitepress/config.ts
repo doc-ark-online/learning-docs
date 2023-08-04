@@ -314,7 +314,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/bomberman-course/4-create-hp-ui.md'
               },
               {
-                text: '导出UI并添加入入口类',
+                text: '导出UI并使用代码显示UI',
                 link: '/bomberman-course/5-export-ui.md'
               }
             ]
