@@ -476,8 +476,12 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     siteTitle: '教程',
     nav: [
       {
-        text: '创作者',
+        text: '官网',
         link: 'https://creator.ark.online/'
+      },
+      {
+        text: '论坛',
+        link: 'https://forum.ark.online/'
       },
       {
         text: '产品手册',
@@ -488,8 +492,8 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         link: 'https://api-docs.ark.online/'
       },
       {
-        text: '论坛',
-        link: 'https://forum.ark.online/'
+        text: '创作者',
+        link: 'https://portal.ark.online/'
       }
     ],
     feedback: 'https://github.com/prodigytech-doc/learning-docs/',
