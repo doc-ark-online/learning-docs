@@ -14,6 +14,11 @@
 
 请观看下方视频，展示了本系列课程制作的游戏的最终效果：
 
-<video controls src="https://arkimg.ark.online/1.1%E5%85%B3%E5%8D%A1%E5%B1%95%E7%A4%BA.mp4"></video>
+
+
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="https://player.bilibili.com/player.html?aid=573927757&bvid=BV1sz4y1x7w4&cid=1209554300&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 祝您学习愉快！
+
+## 完整Demo下载
+https://arkimg.ark.online/ObbyCourse.rar

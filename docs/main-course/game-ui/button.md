@@ -62,7 +62,7 @@ export default class MyUI extends UI.UIBehavior {
     
     protected onStart() {
         //通过路径查找 Button_1 按钮
-        let button = this.uiWidgetBase.findChildByPath("Button") as UI.Button
+        let button = this.uiWidgetBase.findChildByPath("RootCanvas/Button_1") as UI.Button
         //为按钮关联点击事件
         button.onClicked.add(this.onClick.bind(this))
     }
