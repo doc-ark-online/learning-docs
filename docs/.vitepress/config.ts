@@ -214,6 +214,124 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
         ]
       },
+      {
+        text: '美术资源制作教程',
+        link: '/ArtResource-course/000-PGC.md',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '第一节：环境配置', link: '/ArtResource-course/001-Environment-configuration.md'
+          },
+          {
+            text: '第二节：3D角色制作流程',
+            link: '/ArtResource-course/Character/0-0-0-3D-character-production-process.md',
+            items: [
+              { text: '角色分类', link: '/ArtResource-course/Character/1-1-0-Role-Classification.md' },
+              {
+                text: '模型规范', link: '/ArtResource-course/Character/2-0-0-Model-Specification.md',
+                items: [
+                  {
+                    text: '1. 基础人形形象', link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md',
+                    items: [
+                      { text: '1.1 基础PBR贴图', link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md' },
+                    ],
+                  },
+                  {
+                    text: '2. 高级人形形象', link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md',
+                    items: [
+                      {
+                        text: '2.1 二次元风格', link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md',
+                        items: [
+                          { text: '服装制作规范', link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md' },
+                          { text: '头发制作规范', link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md' },
+                        ],
+                      },
+                      { text: '2.2 通用制作规范', link: '/ArtResource-course/Character/2-2-2-general-specification.md' },
+                    ],
+                  },
+                  {
+                    text: '3. 资源基础规格', link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md',
+                    items: [
+                      { text: '3.1 通用命名', link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md' },
+                      { text: '3.2 资源编号', link: '/ArtResource-course/Character/2-3-2-resource-number.md' },
+                    ],
+                  },
+                ],
+              },
+              {
+                text: '角色绑定', link: '/ArtResource-course/Character/3-0-0-Riginng.md',
+                items: [
+                  { text: '1. 基础人形形象', link: '/ArtResource-course/Character/3-1-0-Basic-Human.md' },
+                  {
+                    text: '2. 高级人形形象', link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md',
+                    items: [
+                      {
+                        text: '2.1 基础动态服装部件', link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md',
+                        items: [
+                          { text: ' 服装接缝处权重规范', link: '/ArtResource-course/Character/3-2-2-Clothing-Weight-Specification.md' },
+                        ],
+                      },
+                      { text: '2.2 高级动态服装部件', link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md' },
+                    ],
+                  },
+                ],
+              },
+              { text: '角色导出', link: '/ArtResource-course/Character/4-0-0-Riginng-Export.md' },
+              { text: '资源提交', link: '/ArtResource-course/Character/100-Resource-Submission.md' },
+            ],
+          },
+          {
+            text: '第三节：3D动画制作流程',
+            link: '/ArtResource-course/Animation/0-Amimation-Process.md',
+            items: [
+              {
+                text: '动画制作', link: '/ArtResource-course/Animation/1-Amimation-production.md',
+                items: [
+                  { text: '1. 人形动画', link: '/ArtResource-course/Animation/2-Human-Amimation.md' },
+                ],
+              },
+              { text: '动画导出', link: '/ArtResource-course/Animation/4-Amimation-Export.md' },
+              { text: '资源提交', link: '/ArtResource-course/Animation/5-Resource-Submission.md' },
+            ],
+          },
+          {
+            text: '第四节：3D场景/道具资源制作流程', link: '/ArtResource-course/Scene/0-0-Scene-process.md',
+            items: [
+              {
+                text: '资源规范', link: '/ArtResource-course/Scene/0-resource-specification.md',
+                items: [
+                  { text: '1. 命名规范', link: '/ArtResource-course/Scene/1-Naming-Conventions.md' },
+                  { text: '2. 模型规范', link: '/ArtResource-course/Scene/2-model-specification.md' },
+                  { text: '3. 面数推荐', link: '/ArtResource-course/Scene/3-face-recommended.md' },
+                  { text: '4. UV规范', link: '/ArtResource-course/Scene/4-UV-specification.md' },
+                  { text: '5. 贴图规范', link: '/ArtResource-course/Scene/5-texture-specification.md' },
+                  { text: '6. LOD规范', link: '/ArtResource-course/Scene/5-U-LOD.md' },
+                  { text: '7. FBX导出设置', link: '/ArtResource-course/Scene/6-FBX-export-settings.md' },
+                ],
+              },
+              { text: '资源提交', link: '/ArtResource-course/Scene/16-export-engine.md' },
+              {
+                text: '相关资产链接',
+                items: [
+                  { text: '1. 开发者ID', link: '/ArtResource-course/Scene/DeveloperID.md' },
+                  { text: '2. 分类', link: '/ArtResource-course/Scene/Classification.md' },
+                  { text: '3. 风格', link: '/ArtResource-course/Scene/artistic-style.md' },
+                ],
+              },
+            ],
+          },
+          {
+            text: '第五节：UI制作流程',
+            items: [
+              { text: '基础规范', link: '/ArtResource-course/UI/UITex-BaseRule.md' },
+              { text: '去重标准', link: '/ArtResource-course/UI/UITex-BaseRule02.md' },
+              { text: '质量规范', link: '/ArtResource-course/UI/UITex-BaseRule03.md' },
+              { text: '编辑器配置', link: '/ArtResource-course/UI/UITex-BaseRule04.md' },
+            ]
+          },
+        ]
+      },
     ],
     algolia: {
       appId: 'I2PHYUBLCN',
