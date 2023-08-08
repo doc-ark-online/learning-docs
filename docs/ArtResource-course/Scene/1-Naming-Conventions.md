@@ -56,11 +56,12 @@ AB0001 ,AAAB02 .....
 
 - 支持多维质材质，如果有一个模型多个材质id，命名在资源编号后面_a  _b  _c  .....，例如：
   - MI_Cartoon_Sofa_100000001_CWD_AA001_a
-    - T_Cartoon_Sofa_100000001_CWD_AA001_a_D
-  -  MI_Cartoon_Sofa_100000001_CWD_AA001_b
-    - T_Cartoon_Sofa_100000001_CWD_AA001_b_D
-
-​            ...
+  
+    T_Cartoon_Sofa_100000001_CWD_AA001_a_D
+  
+  - MI_Cartoon_Sofa_100000001_CWD_AA001_b
+  
+    T_Cartoon_Sofa_100000001_CWD_AA001_b_D 
 
 (建议不超过3个材质id)
 

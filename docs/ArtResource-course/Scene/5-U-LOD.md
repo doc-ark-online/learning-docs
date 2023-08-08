@@ -2,7 +2,7 @@
 
 ## LOD介绍视频
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="https://player.bilibili.com/player.html?aid=357161994&bvid=BV1dX4y1t7Q8&cid=1161376703&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<video controls src="https://arkimg.ark.online/02%E5%9C%BA%E6%99%AF%E7%AF%87%EF%BC%9A%E6%A8%A1%E5%9E%8BLOD%E4%BB%8B%E7%BB%8D.mp4" />
 
 
 

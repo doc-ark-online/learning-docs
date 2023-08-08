@@ -28,7 +28,7 @@
 
 -  **3dsMax**
 
-![img](https://arkimg.ark.online/1689238733631-3.png)
+![img](https://arkimg.ark.online/1691465334372-1.png)
 
 - **Maya：**
 
@@ -47,7 +47,7 @@
 
 - 资源通用包
   
-  [点此下载](https://arkimg.ark.online/%E8%B4%B4%E5%9B%BE%E5%88%B6%E4%BD%9C%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.zip) 
+  [点此下载](![](https://arkimg.ark.online/%E8%B4%B4%E5%9B%BE%E5%88%B6%E4%BD%9C%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.zip)) 
 - 将Assets文件夹复制到SP安装路径下,直接替换即可。不会影响本地保存的文件
 
 ![img](https://arkimg.ark.online/1689238733631-6.png)

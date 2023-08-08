@@ -2,7 +2,7 @@
 
 ## 静态模型资源规范视频
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="https://player.bilibili.com/player.html?aid=487166096&bvid=BV1xN411k76f&cid=1161330777&page=0&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<video controls src="https://arkimg.ark.online/02%E5%9C%BA%E6%99%AF%E7%AF%87%EF%BC%9A%E9%9D%99%E6%80%81%E6%A8%A1%E5%9E%8B%E8%B5%84%E6%BA%90%E8%A7%84%E8%8C%83.mp4" />
 
 ## 模型基本规范
 
