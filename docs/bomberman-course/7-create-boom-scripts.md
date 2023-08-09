@@ -39,7 +39,7 @@ export default class BombControl extends Script {
                     //判断当前遍历的物体是不是玩家角色
                     if (object instanceof Character) {
                         //我们给玩家发受伤消息
-                        Event.dispatchEventToClient(object.player, "Event_HpChange")
+                        Event.dispatchToClient(object.player, "Event_HpChange");
                     }
                 })
             }, 3000);
@@ -55,6 +55,8 @@ export default class BombControl extends Script {
                 bombEffect.setVisibility(false);
                 // 显示爆炸特效
                 const explodeEffect = this.gameObject.getChildByName("炸弹爆炸") as Effect;
+                // 关闭炸弹特效的循环播放
+                explodeEffect.loop = false;
                 explodeEffect.play();
                 // 播放音效
                 const explodeSound = this.gameObject.getChildByName("火炮爆炸") as Sound;
@@ -70,3 +72,4 @@ export default class BombControl extends Script {
 ![UE4_flOr6tmyjK](https://arkimg.ark.online/UE4_flOr6tmyjK.webp)
 
 这样我们的炸弹预制体就制作完毕了。
+
