@@ -8,9 +8,9 @@
 
 ## 1.创建按钮
 
-按钮可以说是最常用的控件之一了，无论是游戏中还是应用中，按钮到处可见，我们不断点击各种按钮进行各类事件的触发。接下来，我们就来创建一个按钮，双击我们创建的“MyUI”文件打开 UI 编辑器，从“组件”窗口中选中“按钮”并拖拽到画布中来，如图：
+按钮可以说是最常用的控件之一了，无论是游戏中还是应用中，按钮到处可见，我们不断点击各种按钮进行各类事件的触发。接下来，我们就来创建一个按钮，双击我们创建的“MyUI”文件打开 UI 编辑器，从“控件”窗口中选中“按钮”并拖拽到画布中来，如图：
 
-![](https://cdn.233xyx.com/1681134748248_752.png)
+![UE4_XA56h5qR4c](https://arkimg.ark.online/UE4_XA56h5qR4c.webp)
 
 在按钮的“对象属性”窗口中可以看到，对按钮来说最重要的三组属性，分别是样式、过渡模式、事件，如图：
 
@@ -22,13 +22,31 @@
 
 按钮支持添加文本子物体，以支持按钮中显示文字，可以将文本控件直接拖拽到按钮上，如图：
 
-![](https://cdn.233xyx.com/1681134748504_485.png)
+![UE4_OYmmX04mRK](https://arkimg.ark.online/UE4_OYmmX04mRK.webp)
 
 接下来选中拖拽进来的文本控件，修改文字内容和颜色等内容，按钮就可以显示出文字了，如图：
 
-![](https://cdn.233xyx.com/1681134748197_970.png)
+![UE4_LmM7tCuThR](https://arkimg.ark.online/UE4_LmM7tCuThR.webp)
 
-## 3.过渡模式
+## 3. 文本按钮
+
+为了简化上述添加文本的流程，编辑器直接提供了一个带有文本属性的按钮控件："文本按钮"，这样就可以直接在按钮上修改文本了。
+
+![UE4_Wst28rSm9N](https://arkimg.ark.online/UE4_Wst28rSm9N.webp)
+
+我们可以直接双击设计器中的 “文本按钮” 组件，快速编辑文字。
+
+![UE4_jAsNwo8BAR](https://arkimg.ark.online/UE4_jAsNwo8BAR.webp)
+
+也可以选中它，之后再对象属性中的 “文本” 属性，填入文本：
+
+![UE4_oecVQGQBYi](https://arkimg.ark.online/UE4_oecVQGQBYi.webp)
+
+最后效果如下：
+
+![UE4_8nhSNcT9FL](https://arkimg.ark.online/UE4_8nhSNcT9FL.webp)
+
+## 4.过渡模式
 
 这里为了显示效果好点，首先删除按钮上的文本，然后给按钮添加一个图片，如图：
 
@@ -46,7 +64,7 @@
 
 ![](https://cdn.233xyx.com/1681134748405_950.gif)
 
-## 4.按钮事件
+## 5.按钮事件
 
 按钮控件，最重要的事情，那就是和事件进行关联了，按钮控件给我们提供了很多事件触发方式，例如：点击按钮触发、按下按钮触发、松开按钮触发等，这里面最常用的就是点击按钮触发事件了，接下来我们就来说下如何为按钮添加事件的方式。
 
@@ -56,25 +74,25 @@
 
 接下来我们使用纯代码方式如何添加事件，这里打开我们的 MyUI 脚本，编写代码如下：
 
-```ts
-export default class MyUI extends UI.UIBehavior {
-
-    
+```typescript
+export default class MyUI extends UIScript {
     protected onStart() {
-        //通过路径查找 Button_1 按钮
-        let button = this.uiWidgetBase.findChildByPath("Button") as UI.Button
-        //为按钮关联点击事件
-        button.onClicked.add(this.onClick.bind(this))
+        // 设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        // 通过路径查找 Button_1 按钮
+        let button = this.uiWidgetBase.findChildByPath("RootCanvas/Button_1") as Button;
+        // 为按钮关联点击事件
+        button.onClicked.add(this.onClick.bind(this));
     }
- 
-    //关联的按钮点击事件
+
+    // 关联的按钮点击事件
     public onClick(){
-        console.log("被点击了")
+        console.log("被点击了")；
     }
-    
 }
 ```
 
-读完上述代码和注释应该就能了解到，该代码主要做了三件事，首先通过 UI 编辑器“对象列表”面板的父子关系路径获取到按钮对象，然后为按钮添加了一个事件，也就是上述代码的 buttonClick 方法，最后当用户点击按钮就会触发该方法，在该方法中，我们输出了文本，运行游戏后，点击按钮，可以看到：
+读完上述代码和注释应该就能了解到，该代码主要做了三件事，首先通过 UI 编辑器“对象列表”面板的父子关系路径获取到按钮对象，然后为按钮添加了一个事件，也就是上述代码的 `onClick` 方法，最后当用户点击按钮就会触发该方法，在该方法中，我们输出了文本，运行游戏后，点击按钮，可以看到：
 
-![](https://cdn.233xyx.com/1681134748557_322.png)
+![UE4_AW9UMtAOMI](https://arkimg.ark.online/UE4_AW9UMtAOMI.webp)
