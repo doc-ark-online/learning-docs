@@ -8,9 +8,9 @@
 
 ## 1.创建图片控件
 
-图片控件就是用来显示图像资源的，并给与了三种图像绘制模式，使用起来非常简单方便。双击我们创建的“MyUI”文件打开 UI 编辑器，将“组件”中的“图片”拖拽到画布上来，如图：
+图片控件就是用来显示图像资源的，并给与了三种图像绘制模式，使用起来非常简单方便。双击我们创建的“MyUI”文件打开 UI 编辑器，将“控件”中的“图片”拖拽到画布上来，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnsqD7qbNl5xyUDEpFFxyTle.png)
+![UE4_9ED68Rpcfo](https://arkimg.ark.online/UE4_9ED68Rpcfo.webp)
 
 单击选中该图片，在“对象属性”面板中显示如下：
 
@@ -20,9 +20,9 @@
 
 先来说一下什么是 UI 资源，UI 资源本质上为 UI 贴图资源，是贴图资源的一部分，也是一张图片，特点在于 UI 资源一般情况下仅用于 UI 设计，而不用于静态模型的贴图表现。口袋方舟提供了大量的 UI 资源，供开发者使用。
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnmSiLDJ8IDAAE13MSijn1kd.png)
+![UE4_3DljstxLZb](https://arkimg.ark.online/UE4_3DljstxLZb.webp)
 
-在“本地资源库”中，找一个 UI 类型的资源，注意，图片控件只支持显示 UI 贴图类型的资源，不支持显示图片类型的资源。如图：
+在“资源库”中，找一个 UI 类型的资源，注意，图片控件只支持显示 UI 贴图类型的资源，不支持显示图片类型的资源。如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnCFFTMDb5QxK6pVcjIwZD7d.png)
 
