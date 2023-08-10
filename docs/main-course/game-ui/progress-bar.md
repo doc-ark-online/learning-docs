@@ -47,19 +47,21 @@
 进度条事件也非常常用，因为当玩家拖拽进度条后我们并不知道当前进度条数值是多少，所以就需要监听进度条给我们提供的事件，只要进度条数值发生改变就来通知我们，事件使用和按钮按下事件类似，代码示例：
 
 ```ts
-export default class MyUI extends UI.UIBehavior {
-
+export default class MyUI extends UIScript {
     protected onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
         //找到进度条控件
-        let progressBar = this.uiWidgetBase.findChildByPath("ProgressBar_1") as UI.ProgressBar
+        const progressBar = this.uiWidgetBase.findChildByPath("RootCanvas/ProgressBar_1") as ProgressBar;
         //绑定一个当进度条数值发生改变会调用的方法
-        progressBar.onSliderValueChanged.add(this.onValueChange.bind(this))
+        progressBar.onSliderValueChanged.add(this.onValueChange.bind(this));
     }
- 
-     //该方法若被调用，证明用户正在拖拽进度条，修改了当前数值
-     private onValueChange(value: number){
+
+    //该方法若被调用，证明用户正在拖拽进度条，修改了当前数值
+    private onValueChange(value: number) {
         //value 就是当前进度条数值，就可以拿 value 去做对应的操作了，这里示例仅打印了一个日志
-        console.log(value)
+        console.log(value);
     }
 }
 ```
