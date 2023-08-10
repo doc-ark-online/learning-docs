@@ -18,23 +18,26 @@
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnFXT2D5yAfYW2ULA8BeRBqh.gif)
 
-```ts
-export default class MyUI extends UI.UIBehavior {
+```typescript
+export default class MyUI extends UIScript {
 
-    protected onStart() {
-        //通过路径查找 Button_1 按钮
-       let button = this.uiWidgetBase.findChildByPath("Button_1") as UI.Button
-       //通过路径查找 Canvas_1 对象
-       let canvas = this.uiWidgetBase.findChildByPath("Canvas_1") as UI.Canvas
-       //为按钮关联点击事件
-       button.onClicked.add(()=>{
-        if(canvas.visible == true){
-            canvas.visibility = UI.SlateVisibility.Collapsed
-        } else {
-            canvas.visibility = UI.SlateVisibility.Visible
-        }
-       })
-    }
+	protected onStart() {
+		//设置能否每帧触发onUpdate
+		this.canUpdate = false;
+		this.layer = UILayerMiddle;
+		//通过路径查找 Button_1 按钮
+		let button = this.uiWidgetBase.findChildByPath("RootCanvas/Button_1") as Button;
+		//通过路径查找 Canvas_1 对象
+		let canvas = this.uiWidgetBase.findChildByPath("RootCanvas/Canvas_1") as Canvas;
+		//为按钮关联点击事件
+		button.onClicked.add(() => {
+			if (canvas.visible == true) {
+				canvas.visibility = SlateVisibility.Collapsed;
+			} else {
+				canvas.visibility = SlateVisibility.Visible;
+			}
+		});
+	}
 }
 ```
 
