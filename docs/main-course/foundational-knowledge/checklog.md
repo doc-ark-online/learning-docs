@@ -59,13 +59,13 @@
 
 :::
 
-① 在游戏数据下拉框中选中“总崩溃数据”。
+① 在游戏数据下拉框中选中“性能数据”。
 
 ② 选择要查阅的时间区间。
 
 ③ 对于某个置指定游戏，可以点击查看打开详情页。
 
-![msedge_V3KJ5itWzq](https://arkimg.ark.online/msedge_V3KJ5itWzq.webp)
+![msedge_bCAJcE5Qqk](https://arkimg.ark.online/msedge_bCAJcE5Qqk.webp)
 
 打开详情后，可以在下方游戏数据中找到崩溃得堆栈详情，这里可以查到错误具体是哪一行代码抛出的。
 
