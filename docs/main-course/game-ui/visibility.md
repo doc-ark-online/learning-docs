@@ -20,7 +20,6 @@
 
 ```typescript
 export default class MyUI extends UIScript {
-
 	protected onStart() {
 		//设置能否每帧触发onUpdate
 		this.canUpdate = false;
