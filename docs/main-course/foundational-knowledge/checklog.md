@@ -63,7 +63,7 @@
 
 ② 选择要查阅的时间区间。
 
-③ 对于某个置指定游戏，可以点击查看打开详情页。
+③ 对于某个指定游戏，可以点击“详细数据”打开详情页。
 
 ![msedge_bCAJcE5Qqk](https://arkimg.ark.online/msedge_bCAJcE5Qqk.webp)
 
