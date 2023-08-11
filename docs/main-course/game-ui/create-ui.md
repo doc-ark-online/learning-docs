@@ -15,7 +15,7 @@ UI 也是游戏开发中很重要的一项内容，尤其是在手游中，我�
 
 ## 1.创建 UI 文件
 
-UI(User Interface)就是我们在游戏进行中时在屏幕中显示的用户界面，如游戏中的头像、血条、背包、技能按钮等。在 MW 编辑器中，为了方便开发者方便区分游戏逻辑与 UI 逻辑，所以将 UI 开发部分进行了分离。当我们创建 UI 时，首先要在编辑器界面创建一个独立的 UI 文件进行开发，具体步骤如下。
+UI (User Interface) 就是我们在游戏中在屏幕上显示的用户界面，如游戏中的头像、血条、背包、技能按钮等。在口袋方舟编辑器中，为了方便开发者方便区分游戏逻辑与 UI 逻辑，所以将 UI 开发部分进行了分离。当我们创建 UI 时，首先要在编辑器界面创建一个独立的 UI 文件进行开发，具体步骤如下。
 
 在“工程窗口”单击 UI 选项切换到 UI 资源窗口，然后单击“新建 UI”按钮，编辑器会给我们创建一个 UI 文件，这里命名为“MyUI”，如图：
 
@@ -23,7 +23,7 @@ UI(User Interface)就是我们在游戏进行中时在屏幕中显示的用户�
 
 双击“MyUI”文件，打开 UI 编辑器，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnqfyqcKVGfQ1uqDhY9AJMmb.png)
+![UE4_OePpn02DOm](https://arkimg.ark.online/UE4_OePpn02DOm.webp)
 
 在编辑器的工具栏中，包含一个“保存”按钮，每次我们在 UI 编辑器中操作后，都一定要在这里单击“保存”按钮，才会把修改信息保存到 UI 文件中，如图：
 
@@ -31,15 +31,15 @@ UI(User Interface)就是我们在游戏进行中时在屏幕中显示的用户�
 
 在编辑器左侧的“组件”窗口中包含了我们常用的 UI 元素，例如：按钮、输入框、图片等，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn5AfrLaRmflXvVJCCeiSMEb.png)
+![UE4_Y89VIp5nTB](https://arkimg.ark.online/UE4_Y89VIp5nTB.webp)
 
 在编辑器中间，就是我们 UI 的“设计器”窗口了，该窗口中包含一个直线围起来的矩形面板，该矩形面板就代表了我们游戏中的屏幕，后面我们主要就是将 UI 元素拖拽到该矩形面板中进行使用了，除此外也能在此设置 UI 的分辨率与横竖屏显示，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnb9kjPNUMLIWw3Cp5GokUgb.png)
 
-在“设计器”右侧，是“对象列表”窗口，该列表中的每一项都对应我们“设计器”窗口中的一个 UI 元素，默认情况下根节点“Root”会包含一个“Canvas”容器，“Canvas”容器相当于存放 UI 的根部容器，我们创建的其他 UI 元素都是放到“Canvas”下，如图：
+在 “设计器” 右侧，是 “对象管理器” 窗口，该列表中的每一项都对应我们 “设计器” 窗口中的一个 UI 元素，默认情况下根节点 “Root” 会包含一个 “RootCanvas” 容器，“RootCanvas” 容器相当于存放 UI 的根部容器，我们创建的其他 UI 元素都是放到 “RootCanvas” 下，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnynHxbxOVmnEZzcEC6YGZxc.png)
+![UE4_sNL21MExwF](https://arkimg.ark.online/UE4_sNL21MExwF.webp)
 
 在“对象属性”下方，会显示当前在“对象列表”面板中选中节点的对应属性，如图：
 
@@ -47,50 +47,48 @@ UI(User Interface)就是我们在游戏进行中时在屏幕中显示的用户�
 
 ## 2.UI 层级关系
 
-尝试拖拽三个按钮到我们的“设计器”面板中，可以看到后创建的按钮会覆盖前面创建的按钮，如图：
+尝试拖拽三个文本按钮到我们的“设计器”面板中，可以看到后创建的按钮会覆盖前面创建的按钮，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnhdCTD2xi5OURZLStSQq3Gh.png)
+![UE4_4bXe9k8sgi](https://arkimg.ark.online/UE4_4bXe9k8sgi.webp)
 
-那么我们怎么修改它们的层级属性呢？例如我想将中间的按钮放置于最顶层应该怎么做呢？其实，在“对象列表”窗口中，显示的前后顺序就是我们的 UI 层级了，越靠近上方，越靠近屏幕内侧，如图：
+那么我们怎么修改它们的层级属性呢？例如我想将中间的按钮放置于最顶层应该怎么做呢？其实，在“对象管理器”窗口中，显示的前后顺序就是我们的 UI 层级了，越靠近上方，越靠近屏幕内侧，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnY2KzJsrBRphFabaClLHYad.png)
+![UE4_NA5DnEY5ot](https://arkimg.ark.online/UE4_NA5DnEY5ot.webp)
 
-在上图中我们可以看到，目前第三个按钮会遮盖住第二个按钮，第二个按钮会遮盖住第一个按钮，那么如果我们想把第二个按钮放到顶层呢？也很简单，我们直接单击“Button_2”节点，将其拖拽到“Button_3”的下方，如图：
+在上图中我们可以看到，目前第三个按钮会遮盖住第二个按钮，第二个按钮会遮盖住第一个按钮，那么如果我们想把第二个按钮放到顶层呢？也很简单，我们直接单击 “Button_2” 节点，将其拖拽到 “Button_3” 的下方，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnb2r2RYsohRAzPFge5vOuBh.png)
+![UE4_IxIvtSeyxV](https://arkimg.ark.online/UE4_IxIvtSeyxV.webp)
 
-这时候，再看我们的“设计器”页面，可以发现第二个按钮已经显示在最上方了，如图：
+这时候，再看我们的 “设计器” 页面，可以发现第二个按钮已经显示在最上方了，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcniVr3SJApjSKFyqBp41SrCe.png)
+![UE4_JelsGjSFiN](https://arkimg.ark.online/UE4_JelsGjSFiN.webp)
 
 除了使用上述方法外，我们还可以通过“Z 系数”调整覆盖关系，Z 系数是一个数值，每个 UI 元素默认数值为 0，该数值越小，越靠近屏幕内部，也就是数值大的会覆盖数值小的。这里我
 
-们希望将第一个按钮使用调整“Z 系数”的方式显示到屏幕最上方，首先选中“Button_1”，在对象属性面板中，修改该按钮的“Z 系数”为 10，如图：
+们希望将第一个按钮使用调整 “Z 系数” 的方式显示到屏幕最上方，首先选中 “Button_1”，在对象属性面板中，修改该按钮的 “Z 系数” 为 10，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnvCrYOCTJTjj01AiZwhONvd.png)
 
 这时“对象列表”并没有发生变化，依旧如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnea00ea1cNPv4z2YkzeZUMh.png)
+![UE4_IxIvtSeyxV](https://arkimg.ark.online/UE4_IxIvtSeyxV-1691658670383-8.webp)
 
-但是“设计器”面板中，“MWButton_1”已经显示到了屏幕最上方了，如图：
+但是“设计器”面板中，“Button_1” 已经显示到了屏幕最上方了，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn9fyL3SS0YKdI2SBucISwGe.png)
+![UE4_mZpIOrB4Jg](https://arkimg.ark.online/UE4_mZpIOrB4Jg.webp)
 
 ## 3.关联 UI 脚本
 
-在上面我们添加了三个按钮，那么如果我们需要点击按钮产生游戏事件，该怎么做呢？所以 UI 控件必然会有与之对应的脚本来实现 UI 的功能，这里我们只需要创建一个新的 UI 脚本，并关联到 UI 界面“Root”节点的“TS 脚本”属性中，如图。
+在上面我们添加了三个按钮，那么如果我们需要点击按钮产生游戏事件，该怎么做呢？所以 UI 控件必然会有与之对应的脚本来实现 UI 的功能，这里我们只需要创建一个新的 UI 脚本，并关联到 UI 界面 “Root” 节点的 “TS 脚本” 属性中。
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn5yswakBBvsufppF56AQaXc.png)
+![UE4_2a7YOMViPe](https://arkimg.ark.online/UE4_2a7YOMViPe.webp)
 
-这里选择“Root”节点，可以看到脚本已经关联，然后只需要单击一下保存按钮，就可以保存 UI 脚本的关联状态了，如图：
+创建好后切换回 UI 编辑器，① 选中 “Root” 节点  -->  在对象属性中拉到最下面，找到  ② “TS 脚本” 属性 --> ③ 在资源库中选中脚本，将刚刚创建好的脚本拖进去。
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnqasM1ObrKvHxwlTXkMQslb.png)
+![UE4_nLwN72TyaM](https://arkimg.ark.online/UE4_nLwN72TyaM.webp)
 
 ## 4.使用 UI
 
-在“工程窗口”单击 UI 选项切换到 UI 资源窗口，将我们创建的“MyUI”拖拽到“对象管理器”面板的对象节点上，可以看到多了一个新节点叫做“MyUI”，同时场景中也显示出我们设计的 UI 界面了，如图：
+在“工程窗口”单击 UI 选项切换到 UI 窗口，将我们创建的 “MyUI” 拖拽到“对象管理器”面板的对象节点上，可以看到多了一个新节点叫做 “MyUI”，同时场景中也显示出我们设计的 UI 界面了，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnpntEIjz3y4iCBJ4jG2gq8g.png)
-
-后续 UI 的教学小节我们均使用“MyUI”文件与“MyUI”脚本进行制作。
+![UE4_K2dIGo8e1r](https://arkimg.ark.online/UE4_K2dIGo8e1r.webp)

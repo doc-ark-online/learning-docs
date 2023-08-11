@@ -76,6 +76,8 @@ UI 编辑器的布局非常简单，但是要做到 UI 控件的精细布局就�
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnqbek3sO8XBHsz8p83nxDJg.png)
 
-::: precautions 需要注意当有多个控件需要对齐时，对齐位置会根据选中的第一个控件作为对齐标准
+:::  tip
+
+ 需要注意当有多个控件需要对齐时，对齐位置会根据选中的第一个控件作为对齐标准
 
 :::
