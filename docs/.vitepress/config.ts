@@ -424,27 +424,27 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '第一节：搭建场景',
             items: [
-              { text: '创建项目', link: '/tycoon-course/Lesson2/2.1create-project.md' },
-              { text: '搭建场景', link: '/tycoon-course/Lesson3/3.1make-scene.md' }
+              { text: '搭建场景', link: '/tycoon-course/2.1make-scene.md' }
             ]
           },
           {
             text: '第二节：实现游戏逻辑',
             items: [
-              { text: '制作购买按钮', link: '/tycoon-course/Lesson4/4.1buy-button.md' },
-              { text: '显示可购买物品功能', link: '/tycoon-course/Lesson4/4.2buy-item.md' },
-              { text: '优化显示效果', link: '/tycoon-course/Lesson4/4.3optimization.md' },
-              { text: '实现购买按钮上金币显示', link: '/tycoon-course/Lesson4/4.4show-gold.md' },
-              { text: '实现购买建筑功能', link: '/tycoon-course/Lesson4/4.5buy-build.md' },
-              { text: '实现邮箱产出金币功能', link: '/tycoon-course/Lesson4/4.6email-item.md' },
-              { text: '存储玩家数据功能', link: '/tycoon-course/Lesson4/4.7player-data.md' }
+              { text: '制作购买按钮', link: '/tycoon-course/3.1buy-button.md' },
+              { text: '显示可购买物品功能', link: '/tycoon-course/3.2buy-item.md' },
+              { text: '优化显示效果', link: '/tycoon-course/3.3optimization.md' },
+              { text: '实现购买按钮上金币显示', link: '/tycoon-course/3.4show-gold.md' },
+              { text: '实现购买建筑功能', link: '/tycoon-course/3.5buy-build.md' },
+              { text: '实现邮箱产出金币功能', link: '/tycoon-course/3.6email-item.md' },
+              { text: '存储玩家数据功能', link: '/tycoon-course/3.7player-data.md' }
             ]
           },
           {
             text: '第三节：实现联机家园系统',
             items: [
-              { text: '实现家园系统', link: '/tycoon-course/Lesson5/5.1home-system.md' },
-              { text: '运行测试游戏', link: '/tycoon-course/Lesson5/5.2test-project.md' }
+              { text: '实现家园系统(1)', link: '/tycoon-course/4.1home-system.md' },
+              { text: '实现家园系统(2)', link: '/tycoon-course/4.2home-system2.md' },
+              { text: '运行测试游戏', link: '/tycoon-course/4.2test-project.md' }
             ]
           },
         ]
