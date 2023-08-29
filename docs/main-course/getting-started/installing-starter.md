@@ -18,6 +18,8 @@
 ![](https://cdn.233xyx.com/athena/online/7c8dfdb553ee48659c72e6a750038419_13136921.webp)
 <p align="center"> （进入网页点击左下角开始创作，完成注册信息填写） </p>
 
+![](https://arkimg.ark.online/learn_1_1_download.webp)
+<p align="center"> （在新网页中选择左下角口袋方舟Studio进行launcher的下载） </p>
 
 ### 1.2 安装 Launcher
 
