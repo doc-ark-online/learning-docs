@@ -402,16 +402,12 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/obby-course/9.saved-game.md',
           },
           {
-            text: '10.发布游戏',
-            link: '/obby-course/10.release-game.md',
+            text: '10.排行榜',
+            link: '/obby-course/10.rangking-list.md',
           },
           {
-            text: '11.接入广告',
-            link: '/obby-course/11.access-advertising.md',
-          },
-          {
-            text: '12.知识点补充',
-            link: '/obby-course/12.knowledge-supplement.md',
+            text: '11.发布游戏',
+            link: '/obby-course/11.release-game.md',
           }
         ]
       },
