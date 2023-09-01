@@ -18,10 +18,6 @@
 
 口袋方舟编辑器提供了大量的成品功能与模块，通过本章节快速上手编辑器核心功能，掌握游戏开发所需的必备知识。
 
-## [跳一跳小游戏](https://learning.ark.online/main-course/games-jump-jump-game/create-project.html)
-
-终于要开发自己的首个多人联机小游戏了，让我们一起跟随教程完成有趣的跳一跳吧！（学习时可以尝试使用不同资源去做，尝试搭建属于自己的跳一跳）
-
 ## [游戏界面](https://learning.ark.online/main-course/game-ui/create-ui.html)
 
 本章节展示了编辑器的基础界面功能教程，更多功能可以查阅[产品手册-用户界面](https://docs.ark.online/UI/CreatingUserInterface(UI).html)。
