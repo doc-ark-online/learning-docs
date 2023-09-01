@@ -45,200 +45,200 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '开始使用',
-            link: '/main-course/getting-started/installing-starter.md'
+            link: '/getting-started/installing-starter.md'
           }
         ]
       },
       {
         text: '安装使用',
-        link: '/main-course/getting-started/introduction.md',
+        link: '/getting-started/introduction.md',
         collapsible: true,
         collapsed: true,
         items: [
           {
             text: '了解口袋方舟编辑器',
-            link: '/main-course/getting-started/introduction.md'
+            link: '/getting-started/introduction.md'
           },
           {
             text: '安装与启动',
-            link: '/main-course/getting-started/installing-starter.md'
+            link: '/getting-started/installing-starter.md'
           },
           {
             text: 'VSCode安装',
-            link: '/main-course/getting-started/installing-code-editor.md'
+            link: '/getting-started/installing-code-editor.md'
           },
           {
             text: '编辑器界面',
-            link: '/main-course/getting-started/editor-main-ui.md'
+            link: '/getting-started/editor-main-ui.md'
           },
           {
             text: '编辑器基本操作',
-            link: '/main-course/getting-started/editor-starter.md'
+            link: '/getting-started/editor-starter.md'
           },
           {
             text: '导入第三方项目',
-            link: '/main-course/getting-started/import-project.md'
+            link: '/getting-started/import-project.md'
           },
           {
             text: '游戏发布&更新&测试',
-            link: '/main-course/getting-started/releasing.md'
+            link: '/getting-started/releasing.md'
           }
         ]
       },
       {
         text: '基础概念',
-        link: '/main-course/foundational-knowledge/learning-typescript.md',
+        link: '/foundational-knowledge/learning-typescript.md',
         collapsible: true,
         collapsed: true,
         items: [
           {
             text: 'TypeScript学习',
-            link: '/main-course/foundational-knowledge/learning-typescript.md'
+            link: '/foundational-knowledge/learning-typescript.md'
           },
           {
             text: '客户端与服务端',
-            link: '/main-course/foundational-knowledge/client-and-server.md'
+            link: '/foundational-knowledge/client-and-server.md'
           },
           {
             text: '脚本执行逻辑',
-            link: '/main-course/foundational-knowledge/script-lifecycle.md'
+            link: '/foundational-knowledge/script-lifecycle.md'
           },
           {
             text: '调试与输出',
-            link: '/main-course/foundational-knowledge/debug-and-print.md'
+            link: '/foundational-knowledge/debug-and-print.md'
           },
           {
             text: '事件通信',
-            link: '/main-course/foundational-knowledge/events.md'
+            link: '/foundational-knowledge/events.md'
           },
           {
             text: '日志查看',
-            link: '/main-course/foundational-knowledge/checklog.md'
+            link: '/foundational-knowledge/checklog.md'
           }
         ]
       },
       {
         text: '基础入门',
-        link: '/main-course/programming-scripting/3d-coordinate-system.md',
+        link: '/programming-scripting/3d-coordinate-system.md',
         collapsible: true,
         collapsed: true,
         items: [
           {
             text: '3D坐标系',
-            link: '/main-course/programming-scripting/3d-coordinate-system.md'
+            link: '/programming-scripting/3d-coordinate-system.md'
           },
           {
             text: '特效',
-            link: '/main-course/programming-scripting/particle.md'
+            link: '/programming-scripting/particle.md'
           },
-          { text: '音效', link: '/main-course/programming-scripting/sound.md' },
+          { text: '音效', link: '/programming-scripting/sound.md' },
           {
             text: '初生点',
-            link: '/main-course/programming-scripting/player-start.md'
+            link: '/programming-scripting/player-start.md'
           },
           {
             text: '角色动画',
-            link: '/main-course/programming-scripting/animating-characters-2.md'
+            link: '/programming-scripting/animating-characters-2.md'
           },
           {
             text: '游戏物体的使用',
-            link: '/main-course/programming-scripting/gameobject.md'
+            link: '/programming-scripting/gameobject.md'
           },
           {
             text: '游戏物体父子级',
-            link: '/main-course/programming-scripting/layers.md'
+            link: '/programming-scripting/layers.md'
           },
           {
             text: '玩家与角色',
-            link: '/main-course/programming-scripting/player-and-character.md'
+            link: '/programming-scripting/player-and-character.md'
           },
           {
             text: '角色编辑器',
-            link: '/main-course/programming-scripting/character-editor.md'
+            link: '/programming-scripting/character-editor.md'
           },
           {
             text: '触发器',
-            link: '/main-course/programming-scripting/trigger.md'
+            link: '/programming-scripting/trigger.md'
           },
           {
             text: '预制体',
-            link: '/main-course/programming-scripting/prefab.md'
+            link: '/programming-scripting/prefab.md'
           },
           {
             text: '摄像机',
-            link: '/main-course/programming-scripting/camera.md'
+            link: '/programming-scripting/camera.md'
           },
           {
             text: '数据持久化',
-            link: '/main-course/programming-scripting/data-storage.md'
+            link: '/programming-scripting/data-storage.md'
           },
           {
             text: '冲量与冲量对象',
-            link: '/main-course/programming-scripting/impulse.md'
+            link: '/programming-scripting/impulse.md'
           },
           {
             text: '交互物',
-            link: '/main-course/programming-scripting/interactors.md'
+            link: '/programming-scripting/interactors.md'
           },
           {
             text: '射线检测',
-            link: '/main-course/programming-scripting/line-trace.md'
+            link: '/programming-scripting/line-trace.md'
           },
           {
             text: '运动器',
-            link: '/main-course/programming-scripting/physicsSports.md'
+            link: '/programming-scripting/physicsSports.md'
           }
         ]
       },
       {
         text: '游戏界面',
-        link: '/main-course/game-ui/create-ui.md',
+        link: '/game-ui/create-ui.md',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '创建UI', link: '/main-course/game-ui/create-ui.md' },
-          { text: '图片', link: '/main-course/game-ui/image.md' },
-          { text: '文本', link: '/main-course/game-ui/text.md' },
-          { text: '按钮', link: '/main-course/game-ui/button.md' },
-          { text: '容器', link: '/main-course/game-ui/container.md' },
-          { text: '快速布局', link: '/main-course/game-ui/quick-layout.md' },
-          { text: 'UI自适应对齐', link: '/main-course/game-ui/auto-layout.md' },
-          { text: 'UI显示/隐藏', link: '/main-course/game-ui/visibility.md' },
-          { text: '输入框', link: '/main-course/game-ui/text-input.md' },
-          { text: '进度条', link: '/main-course/game-ui/progress-bar.md' },
-          { text: '滚动框', link: '/main-course/game-ui/scroll-view.md' },
-          { text: '加载图', link: '/main-course/game-ui/loading-img.md' },
-          { text: '摇杆', link: '/main-course/game-ui/joystick.md' }
+          { text: '创建UI', link: '/game-ui/create-ui.md' },
+          { text: '图片', link: '/game-ui/image.md' },
+          { text: '文本', link: '/game-ui/text.md' },
+          { text: '按钮', link: '/game-ui/button.md' },
+          { text: '容器', link: '/game-ui/container.md' },
+          { text: '快速布局', link: '/game-ui/quick-layout.md' },
+          { text: 'UI自适应对齐', link: '/game-ui/auto-layout.md' },
+          { text: 'UI显示/隐藏', link: '/game-ui/visibility.md' },
+          { text: '输入框', link: '/game-ui/text-input.md' },
+          { text: '进度条', link: '/game-ui/progress-bar.md' },
+          { text: '滚动框', link: '/game-ui/scroll-view.md' },
+          { text: '加载图', link: '/game-ui/loading-img.md' },
+          { text: '摇杆', link: '/game-ui/joystick.md' }
         ]
       },
       {
         text: '常用代码片段',
-        link: '/main-course/code-snippet/jump-area.md',
+        link: '/code-snippet/jump-area.md',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '跳跃区', link: '/main-course/code-snippet/jump-area.md' },
+          { text: '跳跃区', link: '/code-snippet/jump-area.md' },
           {
             text: '变速区',
-            link: '/main-course/code-snippet/change-speed-area.md'
+            link: '/code-snippet/change-speed-area.md'
           },
           {
             text: '特效区',
-            link: '/main-course/code-snippet/particle-area.md'
+            link: '/code-snippet/particle-area.md'
           },
           {
             text: '布娃娃区',
-            link: '/main-course/code-snippet/ragdoll-area.md'
+            link: '/code-snippet/ragdoll-area.md'
           },
           {
             text: '换装区',
-            link: '/main-course/code-snippet/change-clothing.md'
+            link: '/code-snippet/change-clothing.md'
           },
           {
             text: '消失地板',
-            link: '/main-course/code-snippet/vanishing-block.md'
+            link: '/code-snippet/vanishing-block.md'
           },
-          { text: '传送区', link: '/main-course/code-snippet/portal.md' }
+          { text: '传送区', link: '/code-snippet/portal.md' }
         ]
       },
       {
@@ -377,18 +377,20 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '大亨小游戏',
-        link: '/tycoon-course/Lesson1/1.1game-description.md',
+        link: '/tycoon-course/1.1game-description.md',
         collapsible: true,
         collapsed: true,
         items: [
           {
             text: '第一节：搭建场景',
+            link: '/tycoon-course/2.1make-scene.md',
             items: [
               { text: '搭建场景', link: '/tycoon-course/2.1make-scene.md' }
             ]
           },
           {
             text: '第二节：实现游戏逻辑',
+            link: '/tycoon-course/3.1buy-button.md',
             items: [
               { text: '制作购买按钮', link: '/tycoon-course/3.1buy-button.md' },
               { text: '显示可购买物品功能', link: '/tycoon-course/3.2buy-item.md' },
@@ -401,6 +403,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '第三节：实现联机家园系统',
+            link: '/tycoon-course/4.1home-system.md',
             items: [
               { text: '实现家园系统(1)', link: '/tycoon-course/4.1home-system.md' },
               { text: '实现家园系统(2)', link: '/tycoon-course/4.2home-system2.md' },
