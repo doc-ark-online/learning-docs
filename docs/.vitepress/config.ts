@@ -185,10 +185,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/main-course/programming-scripting/line-trace.md'
           },
           {
-            text: '投掷物',
-            link: '/main-course/programming-scripting/projectile.md'
-          },
-          {
             text: '运动器',
             link: '/main-course/programming-scripting/physicsSports.md'
           }
@@ -247,42 +243,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '炸弹人小游戏',
-        link: '/main-course/games-bomber-game/create-project.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: '创建工程',
-            link: '/main-course/games-bomber-game/create-project.md'
-          },
-          {
-            text: '入口类与控制界面',
-            link: '/main-course/games-bomber-game/launcher-and-main-ui.md'
-          },
-          {
-            text: '炸弹预制体',
-            link: '/main-course/games-bomber-game/bomber-prefab.md'
-          },
-          {
-            text: '主角释放炸弹',
-            link: '/main-course/games-bomber-game/release-bomber.md'
-          },
-          {
-            text: '血量UI与数据',
-            link: '/main-course/games-bomber-game/hp-ui-and-data.md'
-          },
-          {
-            text: '添加游戏场景',
-            link: '/main-course/games-bomber-game/add-scene.md'
-          },
-          {
-            text: '制作一个减速区域',
-            link: '/main-course/games-bomber-game/build-decelerate-area.md'
-          }
-        ]
-      },
-      {
-        text: '炸弹人小游戏新版',
         link: '/bomberman-course/1-create-project.md',
         collapsible: true,
         collapsed: true,
