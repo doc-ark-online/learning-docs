@@ -243,13 +243,12 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '炸弹人小游戏',
-        link: '/bomberman-course/1-create-project.md',
+        link: '/bomberman-course/0-description.md',
         collapsible: true,
         collapsed: true,
         items: [
           {
             text: '搭建场景',
-            link: '/bomberman-course/1-create-project.md',
             items: [
               {
                 text: '创建工程并导入场景',
@@ -263,7 +262,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '搭建UI',
-            link: '/bomberman-course/3-create-ctrl-ui.md',
             items: [
               {
                 text: '创建控制UI',
@@ -281,7 +279,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '创建炸弹预制体',
-            link: '/bomberman-course/6-create-prefab.md',
             items: [
               {
                 text: '放置模型和特效',
@@ -295,7 +292,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '控制释放炸弹',
-            link: '/bomberman-course/8-server-create-boom.md',
             items: [
               {
                 text: '使用服务端创建炸弹',
@@ -309,7 +305,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '运行测试游戏',
-            link: '/bomberman-course/10-test-game.md',
             items: [
               {
                 text: '使用编辑器模拟人多游戏',
