@@ -8,7 +8,7 @@
 
 前两个小节我们讲解了如何创建 UI 文件，接下来我们来讲讲如何使用代码控制这些 UI。
 
-先随便打开一个 UI 文件，进入 UI 编辑器中，点击右上角"导出所有 UI"按钮。
+先打开任意一个 UI 文件，进入 UI 编辑器中，点击右上角"导出所有 UI"按钮。
 
 ![Carnac_ojIKwxjGn8](https://arkimg.ark.online/Carnac_ojIKwxjGn8.webp)
 
