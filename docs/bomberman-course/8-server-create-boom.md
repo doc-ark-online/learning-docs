@@ -93,7 +93,7 @@ export default class GameStart extends Script {
                 // 下一行函数需要填入预制体 assetId ，请在工程内容中右键预制体 获取 工程内容ID//[!code focus] //[!code ++]
                 const bombObj = GameObject.spawn("填入预制体 AssetId");//[!code focus] //[!code ++]
                 // 将炸弹位置设置为玩家位置 //[!code focus] //[!code ++]
-                bombObj.worldTransform.position.set(player.character.localTransform.position);//[!code focus] //[!code ++]
+                bombObj.worldTransform.position = player.character.worldTransform.position;//[!code focus] //[!code ++]
             });//[!code focus] //[!code ++]
         }//[!code focus] //[!code ++]
     }
