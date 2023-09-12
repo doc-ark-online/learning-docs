@@ -35,7 +35,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     sidebar: [
       {
         text: '首页',
-        link: '/index.md',
         collapsible: false,
         collapsed: false,
         items: [
@@ -44,21 +43,16 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/index.md'
           },
           {
-            text: '开始使用',
-            link: '/getting-started/installing-starter.md'
+            text: '了解口袋方舟编辑器',
+            link: '/getting-started/introduction.md'
           }
         ]
       },
       {
         text: '安装使用',
-        link: '/getting-started/introduction.md',
         collapsible: true,
         collapsed: true,
         items: [
-          {
-            text: '了解口袋方舟编辑器',
-            link: '/getting-started/introduction.md'
-          },
           {
             text: '安装与启动',
             link: '/getting-started/installing-starter.md'
@@ -87,7 +81,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '基础概念',
-        link: '/foundational-knowledge/learning-typescript.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -119,7 +112,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '基础入门',
-        link: '/programming-scripting/3d-coordinate-system.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -192,7 +184,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '游戏界面',
-        link: '/game-ui/create-ui.md',
         collapsible: true,
         collapsed: true,
         items: [
@@ -213,7 +204,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       },
       {
         text: '常用代码片段',
-        link: '/code-snippet/jump-area.md',
         collapsible: true,
         collapsed: true,
         items: [
