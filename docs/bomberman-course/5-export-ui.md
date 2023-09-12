@@ -16,7 +16,7 @@
 
 ![UE4_VMnN0QVbDH](https://arkimg.ark.online/UE4_VMnN0QVbDH.webp)
 
-::: tip 关于导出脚本
+::: danger 关于导出脚本
 
 每次导出脚本时都会将之前导出的文件覆盖，所以请不要在导出的脚本中编写任何逻辑。
 

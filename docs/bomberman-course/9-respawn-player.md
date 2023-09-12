@@ -80,7 +80,7 @@ export default class PlayerControls extends Script {
 }
 ```
 
-我们在受伤和复活中函数中，使用`Event.dispatchToLocal` 抛出了一个本地事件，用来通知 UI 脚本当前玩家的血量。接下来我们在血量 UI 脚本中处理这个事件：
+我们在受伤和复活功能的函数中，使用`Event.dispatchToLocal` 抛出了一个本地事件，用来通知 UI 脚本当前玩家的血量。接下来我们在血量 UI 脚本中处理这个事件：
 
 修改 `HPbarUI` 脚本，接收事件并设置血条（进度条）长度，为了让血条可以与我们血量数值对应上，我们需要先将它的最大值设置为与玩家最大血量相同。
 

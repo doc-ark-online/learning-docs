@@ -30,4 +30,4 @@
 
 ![UE4_tpmJkpoSFu](https://arkimg.ark.online/UE4_tpmJkpoSFu.webp)
 
-至此炸弹预制体就搭建好了，下一节我们将会创建炸弹预制体来控制它。
+至此炸弹预制体就搭建好了，下一节我们将会通过炸弹预制体来创建和控制炸弹。

@@ -47,7 +47,7 @@ export default class CtrlUI extends CtrlUI_Generate {
 	 */ //[!code focus] //[!code ++]
 	private onClickAttackBtn() { //[!code focus] //[!code ++]
 		if (this.timer == 0) { //[!code focus] //[!code ++]
-			//重置倒计时为 1000 //[!code focus] //[!code ++]
+			//重置倒计时为 1000  设置1秒的释放炸弹CD //[!code focus] //[!code ++]
 			this.timer = 1000; //[!code focus] //[!code ++]
 			//通知服务器玩家释放了炸弹 //[!code focus] //[!code ++]
 			Event.dispatchToServer("Event_Bomb"); //[!code focus] //[!code ++]
@@ -91,7 +91,7 @@ export default class GameStart extends Script {
             // player 参数为发送这个事件来的客户端玩家 //[!code focus] //[!code ++]
             Event.addClientListener("Event_Bomb", (player: Player) => {//[!code focus] //[!code ++]
                 // 下一行函数需要填入预制体 assetId ，请在工程内容中右键预制体 获取 工程内容ID//[!code focus] //[!code ++]
-                const bombObj = GameObject.spawn("填入预制体 AssetId");//[!code focus] //[!code ++]
+                const bombObj = GameObject.spawn(填入预制体 AssetId);//替换 为项目中预制体资源id//[!code focus] //[!code ++]
                 // 将炸弹位置设置为玩家位置 //[!code focus] //[!code ++]
                 bombObj.worldTransform.position = player.character.worldTransform.position;//[!code focus] //[!code ++]
             });//[!code focus] //[!code ++]
@@ -100,12 +100,12 @@ export default class GameStart extends Script {
 }
 ```
 
-上述代码实现了服务端收到`Event_Bomb` 消息后在发送该消息的玩家的角色位置实例化一个炸弹预制体。
+上述代码实现了以下功能：当服务端收到 `Event_Bomb` 事件时，会在发送该事件的玩家的角色位置实例化一个炸弹预制体。
 
 在使用 `GameObject.spawn` 函数时，我们需要传入预制体的 ID，可以通过在工程内容中右键预制体 --> 复制工程内容 ID 来获取。
 
 ![hIZR1eItOG](https://arkimg.ark.online/hIZR1eItOG.webp)
 
-复制到 ID 后将它填写到上述代码第十九行，函数中。然后保存代码运行即可查看效果了。
+将复制到的 ID 填写到上述`GameStart`代码中第十九行 `GameObject.spawn` 函数的括号中。然后保存代码运行即可查看效果了。
 
 <video controls src='https://arkimg.ark.online/2023-08-08_14-14-44.mp4'></video>
