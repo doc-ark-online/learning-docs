@@ -34,7 +34,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     logo: 'https://wstatic-01-ali.233leyuan.com/xyc/metaverse-docs/kd-logo-black.svg',
     sidebar: [
       {
-        text: 'index',
+        text: '首页',
         link: '/index.md',
         collapsible: false,
         collapsed: false,
