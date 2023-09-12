@@ -61,7 +61,7 @@ export default class BombControl extends Script {
                 // 播放音效
                 const explodeSound = this.gameObject.getChildByName("火炮爆炸") as Sound;
                 explodeSound.play();
-            }, 2000);
+            }, 3000);
         }
     }
 }
