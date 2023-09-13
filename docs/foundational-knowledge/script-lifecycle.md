@@ -8,8 +8,6 @@
 
 更多脚本生命周期见产品文档：[脚本的生命周期](https://docs.ark.online/Scripting/ScriptLifeCycle.html)
 
-<video controls src="https://cdn.233xyx.com/1681114795129_984.mp4"></video>
-
 ## 1. 创建并挂载脚本
 
 在编辑器主界面的下方区域，单击列表中的 “脚本” 选项，然后单击 “新建脚本” 按钮，就可以创建出新的脚本，如图：
@@ -43,21 +41,21 @@
 > 默认会使用 VSCode 打开该脚本，如果不是使用 VSCode 打开的，可以参考论坛的常见问题：[安装和运行常见问题](https://forum.ark.online/forum.php?mod=viewthread&tid=1207)
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {}
+    protected onStart(): void { }
 
     /**
      * 周期函数 每帧执行
-     * 此函数执行需要将 this.useUpdate 赋值为 true
+     * 此函数执行需要将this.useUpdate赋值为true
      * @param dt 当前帧与上一帧的延迟 / 秒
      */
     protected onUpdate(dt: number): void { }
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy(): void {}
+    protected onDestroy(): void { }
 }
 ```
 ---
@@ -65,49 +63,43 @@ export default class PlayerControl extends Core.Script {
 基础结构如下：
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
 }
 ```
 
-* `@Core.Class` ，@expression 这种形式在 TypeScript 为 “装饰器”，`Core.Class` 这个装饰器是用来告诉我们游戏引擎该脚本的一些基本信息，方便游戏引擎获取到该类信息之后做一些处理，比如自动调用类里面的生命周期函数等
+* `@Component` ，@expression 这种形式在 TypeScript 为 “装饰器”，`@Component` 这个装饰器是用来告诉我们游戏引擎该脚本的一些基本信息，方便游戏引擎获取到该类信息之后做一些处理，比如自动调用类里面的生命周期函数等
 * `export default` 是 ts 语法，可以让该类在其他地方被调用（手动创建的类，需要自己手动添加该语句）
-* `class PlayerControl` 定义了类名为 'PlayerControl' ，这个类名需要与文件名保持一致
-* `extends Core.Script` ，使 'PlayerControl' 这个类继承自 `Core.Script` ， `Core.Script` 是编辑器定义的基础类，需要挂载到场景中使用的脚本，都需要继承自该类才可正常使用。
+* `class PlayerControl` 定义了类名为 `PlayerControl` ，这个类名需要与文件名保持一致
+* `extends Script` ，使 `PlayerControl` 这个类继承自 `Script` ， `Script` 是编辑器定义的基础类，需要挂载到场景中使用的脚本，都需要继承自该类才可正常使用。
 
 在上小节，我们把脚本挂载到了游戏对象窗口中，但是该脚本并不一定会成功执行，成功执行该游戏脚本必须有以下几个要求：
 
 1. 首先该脚本中一定包含一个类，并且类名与文件名相同，示例中为 “PlayerControl”。
 2. 该类前要加 export default，设置为默认导出类。
-3. 该类要添加一个 @Core.Class 装饰器
-4. 该类继承自 Core.Script。
+3. 该类要添加一个 `@Component` 装饰器
+4. 该类继承自 Script。
 
 ## 3. 脚本常用生命周期
 
 生命周期代表着一个脚本从激活（Activate）到销毁（Destroy）的全过程，也代表着代码中脚本函数的执行过程与执行顺序，脚本常用的三个生命周期方法分别为 onStart、onUpdate、onDestroy ，如下所示：
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */   //[!code focus]
-    protected onStart(): void { //[!code focus]
-
-    } //[!code focus]
+@Component
+export default class PlayerControl extends Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */ //[!code focus]
+    protected onStart(): void { } //[!code focus]
 
     /** //[!code focus]
      * 周期函数 每帧执行 //[!code focus]
      * 此函数执行需要将 this.useUpdate 赋值为 true //[!code focus]
      * @param dt 当前帧与上一帧的延迟 / 秒 //[!code focus]
      */   //[!code focus]
-    protected onUpdate(dt: number): void {//[!code focus]
-
-    } //[!code focus]
+    protected onUpdate(dt: number): void { }//[!code focus]
 
     /** 脚本被销毁时最后一帧执行完调用此函数 */   //[!code focus]
-    protected onDestroy(): void { //[!code focus]
-
-    } //[!code focus]
+    protected onDestroy(): void { } //[!code focus]
 }
 ```
 * 如代码中注释所说，三个生命周期函数会在不同的阶段调用
@@ -129,35 +121,35 @@ export default class PlayerControl extends Core.Script {
 
 ## 4. 自定义属性
 
-在对象管理器选中我们刚挂载上去的 'PlayerControl' 脚本，属性面板会如下所示：
+在对象管理器选中我们刚挂载上去的 `PlayerControl` 脚本，属性面板会如下所示：
 
 ![image-20230528102425116](https://arkimg.ark.online/image-20230528102425116.webp)
 
-* 'PlayerControl' 的属性面板，可以看到，只有几个基础属性
+* `PlayerControl` 的属性面板，可以看到，只有几个基础属性
 
 下面我们介绍，如何给脚本添加自定义属性，可视化的展示在属性面板中。
 
-1）在 'PlayerControl' 脚本代码中添加一个 string 类型的属性'speed' ，如下所示：
+1）在 `PlayerControl` 脚本代码中添加一个 string 类型的属性'speed' ，如下所示：
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
-    public speed: string = ""	//[!code focus]
+@Component
+export default class PlayerControl extends Script {
+    public speed: string = "";	//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {}
+    protected onStart(): void { }
     //... 省略
 }
 ```
 
 想要该属性可以显示在属性面板中，方便我们后期进行数值配置的话，仅仅定义了属性是不够的！此时只是定义了一个普通的成员变量，可以在脚本的其他函数中使用该变量而已。
 
-2）如果希望在属性面板中可以看到该属性，方便后面直接在属性面板上修改的话，需要该属性的上一行添加一个非常重要的标记 `@Core.Property ()` ，代码如下所示：
+2）如果希望在属性面板中可以看到该属性，方便后面直接在属性面板上修改的话，需要该属性的上一行添加一个非常重要的标记 `@Property ()` ，代码如下所示：
 
 ```typescript
-@Core.Class
+@Component
 export default class PlayerControl extends Core.Script {
-    @Core.Property()//[!code focus]
+    @Property()//[!code focus]
     public speed: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
@@ -165,15 +157,15 @@ export default class PlayerControl extends Core.Script {
     //... 省略
 }
 ```
-* 代码修改后保存，回到编辑器，稍等几秒钟，选择一下其他的物体后，再重新选择 'PlayerControl' ，看看属性面板中已经多了一个`speed` 属性：
+* 代码修改后保存，回到编辑器，稍等几秒钟，选择一下其他的物体后，再重新选择 `PlayerControl` ，看看属性面板中已经多了一个`speed` 属性：
 * ![image-20230528115709196](https://arkimg.ark.online/image-20230528115709196.webp)
 
 但是这里属性名称在脚本中叫做 speed，属性面板中也显示为 speed，可读性很不好，但是又最好不要更改代码里面的变量名称。我们可以给属性添加一个展示名称 “移动速度”，通过设置 `displayName` 的方式来改变展示名称：
 
 ``` ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
-    @Core.Property({ displayName: "移动速度"})	//[!code focus]
+@Component
+export default class PlayerControl extends Script {
+    @Property({ displayName: "移动速度"})	//[!code focus]
     public speed: string = ""
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
@@ -188,19 +180,19 @@ export default class PlayerControl extends Core.Script {
 在上面的代码中，“displayName” 就是一个属性配置，可以配置该属性在属性面板上的显示状态。除了 “displayName” 外，还有一些常用的属性配置，例如 “group” 可以将多个属性分组；capture 则可以为该属性添加一个吸管功能，点击吸管，再点击场景中任何游戏物体，就可以快捷获取到该物体的 guid，十分方便。代码与效果如图：
 
 ``` ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
-    @Core.Property({ displayName: "移动速度", group: "移动设置"})//[!code focus]
+@Component
+export default class PlayerControl extends Script {
+    @Property({ displayName: "移动速度", group: "移动设置"})//[!code focus]
     public speed: string = ""//[!code focus]
 
-    @Core.Property({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
+    @Property({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
     public loopCount: number = 1//[!code focus]
     
-    @Core.Property({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
+    @Property({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
     public objectGuid: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected onStart(): void {this.useUpdate = true;}
+    protected onStart(): void { this.useUpdate = true; }
 
     /**
      * 周期函数 每帧执行
