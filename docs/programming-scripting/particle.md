@@ -45,7 +45,7 @@
 
 这里我们选择“自然特效”里面的火焰特效：
 
-![image-20230602190807789](https://arkimg.ark.online/image-20230602190807789.webp)
+![HfBmp6PXzL41694600354](https://arkimg.ark.online/HfBmp6PXzL41694600354.webp)
 
 可以看到这个特效播放，就是普通的火焰颜色：
 
@@ -63,7 +63,7 @@
 
 ## 4. 动态播放特效
 
-除了直接拖拽使用特效，很多时候我们需要通过脚本态播放特效，代码播放特效也很简单，首先找到一个希望播放的特效，并右键单击特效，选择“复制资源 ID”，如图：
+除了直接拖拽使用特效，很多时候我们需要通过脚本来播放特效，代码播放特效也很简单，首先找到一个希望播放的特效，并右键单击特效，选择“复制资源 ID”，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnT6WAVbLaHsmtpR1u1aTVMe.png)
 
@@ -103,7 +103,7 @@ export default class FXControl extends Script {
 
 想要在代码中更改特效的颜色怎么操作呢？
 
-我们发现上面的 `EffectService` 中并没有能更改特效颜色的函数，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
+我们发现 `EffectService` 中并没有能更改特效颜色的函数，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
 
 ```typescript
 @Component
