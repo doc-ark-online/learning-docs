@@ -1,4 +1,4 @@
-# 日志查看
+# 调试输出与日志查看
 
 :::tip **阅读本文大概需要 3 分钟**
 
@@ -6,9 +6,33 @@
 
 :::
 
-## 1. 编辑器日志
+## 1. 使用代码输出日志
 
-在编辑器调试有戏时，日志会动态输出到主视口下方的显示框中，同时也会保存一份到硬盘中。我们可以在对应的日志输出窗口中右键选中 "打开日志目录" ，来找到硬盘中的日志文件。
+首先，在脚本中，怎么输出一个日志呢？其实非常简单，使用 `console.log()` 函数即可，输出示例如下：
+
+```typescript
+@Component
+export default class PlayerControl extends Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        console.log("这条消息客户端和服务端都会输出");	
+        if(SystemUtil.isServer()){
+            console.log("这条消息服务端会输出");	
+        }
+        if(SystemUtil.isClient()){
+            console.log("这条消息客户端会输出");	
+        }
+    }
+}
+```
+
+那么脚本编写完成，并运行游戏后，输出的日志在哪里查看呢？在编辑器窗口下方就可以看到日志窗口，在日志窗口中就可以看到客户端和服务端的输出内容，如图：
+
+![image-20230528145139561](https://arkimg.ark.online/image-20230528145139561.webp)
+
+## 2. 项目输出的日志文件
+
+在编辑器调试游戏时，日志会动态输出到主视口下方的显示框中，同时也会保存一份到硬盘中。我们可以在对应的日志输出窗口中右键选中 "打开日志目录" ，来找到硬盘中的日志文件。
 
 ![dHzaTQcIQK](https://arkimg.ark.online/dHzaTQcIQK.webp)
 
@@ -22,7 +46,7 @@
 
 ![explorer_Jcep7NrSA0](https://arkimg.ark.online/explorer_Jcep7NrSA0.webp)
 
-## 2. 线上服务端日志
+## 3. 线上服务端日志
 
 游戏发布到线上后，我们可以在创作者后台查看实时日志，来定位服务端问题。
 
@@ -49,7 +73,7 @@
 
 :::
 
-## 3. 线上客户端日志
+## 4. 线上客户端日志
 
 客户端日志与服务端日志查询方式略有不同，因为一个游戏可能会有相当多的用户，他们会在一天中任意时间段上线，所以客户端日志我们会先保存起来以供查阅。
 
@@ -76,3 +100,21 @@
 ![explorer_6Sirbens8f](https://arkimg.ark.online/explorer_6Sirbens8f.webp)
 
 在  `game.js` 文件中找到对应的代码，然后使用文本编辑器在项目中全局搜索，即可定位到真实项目中报错的地方。
+
+## 5. 编辑器日志
+
+有时候我们可能需要看一下编辑器的运行日志，用来排查一些特殊问题。取编辑器运行日志，可以按照前面取项目输出的日志的方法，先打开项目输出的日志目录。
+
+![dHzaTQcIQK](https://arkimg.ark.online/dHzaTQcIQK.webp)
+
+切换到 Saved 文件夹：
+
+![en0ok89Sbj91694593931](https://arkimg.ark.online/en0ok89Sbj91694593931.webp)
+
+在 Saved 文件夹中，找到 log 文件夹：
+
+![tdLG9rip8371694593985](https://arkimg.ark.online/tdLG9rip8371694593985.webp)
+
+打开 log 文件夹之后，里面的 log 文件就是编辑器运行日志。其中包含了项目输出的日志信息、编辑器本身输出的服务器日志 等：
+
+![Grp5Xp6Dcgb1694594061](https://arkimg.ark.online/Grp5Xp6Dcgb1694594061.webp)
