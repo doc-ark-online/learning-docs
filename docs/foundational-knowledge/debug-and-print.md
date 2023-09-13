@@ -13,16 +13,16 @@
 首先，在脚本中，怎么输出一个日志呢？其实非常简单，使用 `console.log()` 函数即可，输出示例如下：
 
 ``` ts
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
-        console.log("这条消息客户端和服务端都会输出")	//[!code focus]
+        console.log("这条消息客户端和服务端都会输出");	//[!code focus]
         if(SystemUtil.isServer()){
-            console.log("这条消息服务端会输出")	//[!code focus]
+            console.log("这条消息服务端会输出");	//[!code focus]
         }
         if(SystemUtil.isClient()){
-            console.log("这条消息客户端会输出")	//[!code focus]
+            console.log("这条消息客户端会输出");	//[!code focus]
         }
     }
 }

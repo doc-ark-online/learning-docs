@@ -39,7 +39,7 @@
 
 首先，双击桌面上已经安装完成的 “口袋方舟编辑器” 图标即可打开应用，之后我们就要通过该应用管理与运行我们的 Editor 编辑器了。
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnzKtl8MvwTRJdcM5qSq0P2e.png)
+![logo](https://arkimg.ark.online/logo.jpg)
 
 ::: warning 注意
 
@@ -49,17 +49,17 @@
 
 ::: warning 注意
 
-如果双击运行后提示需要安装.Net Core，在弹出的页面或 [.NET Core](https://dotnet.microsoft.com/zh-cn/download/dotnet/3.1) 安装 x64 位版本即可
+如果双击运行后提示需要安装 .Net Core，在弹出的页面或 [.NET Core](https://dotnet.microsoft.com/zh-cn/download/dotnet/3.1) 安装 x64 位版本即可
 
 :::
 
-首次运行该应用，会提示指定 Editor 的存放目录，单击选择路径（<strong> 推荐安装到固态硬盘 </strong><strong>，机械硬盘安装会较慢，并且目前解压没有进度条展示安装进度 </strong>），如图：
+首次运行该应用，会提示指定 Editor 的存放目录，单击选择路径 **（推荐安装到固态硬盘,机械硬盘安装会较慢。）**，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnByNqfJCCpSQ6y1WsREZk2d.png)
+![](https://arkimg.ark.online/uCegAJqwNT81694507897.webp)
 
-选择路径时候注意，切记路径中不要包含中文、空格，也不能将 Editor 的路径放到 Launcher 路径下，例如可以选择路径 “D:\Editor”，路径选择完成后，会开始自动加载进度下载 Editor 到路径中，如图：
+选择路径时候注意，切记路径中**不要包含中文、空格，也不能将 Editor 的路径放到 Launcher 路径下**，例如可以选择路径 “D:\Editor”，路径选择完成后，会开始自动加载进度下载 Editor 到路径中，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnOal7UqsyI3Rk1bvOMaYlqd.png)
+![](https://arkimg.ark.online/vHmDzhGjOV61694507321.webp)
 
 进度完成后，安装完成，Editor 会自动运行起来，后续使用直接通过双击桌面上的 “口袋方舟编辑器” 启动 Editor 即可。
 

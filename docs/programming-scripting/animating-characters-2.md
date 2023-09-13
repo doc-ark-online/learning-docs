@@ -198,6 +198,9 @@ enum StanceBlendMode {
 有时有需求会停止二级姿态，只需要将 loadStance 获取到的对象留着，后面需要停止时直接调用它的`stop`函数即可停止播放二级姿态。如：
 
 ```typescript
+// 设置基础姿态为 119836 (写实-男性-基础姿态)
+const stance = Player.localPlayer.character.loadStance("119836");
+// 停止二级姿态
 subStance.stop()
 ```
 

@@ -12,7 +12,7 @@
 
 在编辑器中，为我们提供了十分丰富的成品特效，如图：
 
-![image-20230602173357227](https://arkimg.ark.online/image-20230602173357227.webp)
+![](https://arkimg.ark.online/20230913-173851.webp)
 
 ## 2. 使用特效
 
@@ -24,10 +24,10 @@
 
 这个是因为我们特效的属性，默认只播放一次的原因。在对象管理器选中刚拖到场景里面的特效，属性面板里面往下翻一翻。
 
-* 找到“自动启用”，勾选上。代表游戏运行时会自动开始播放该特效。
+* 找到“启用”，勾选上。代表游戏运行时会自动开始播放该特效。
 * 找到“循环”单选框，将它勾选上。代表会循环播放该特效。
 
-![image-20230602185524094](https://arkimg.ark.online/image-20230602185524094.webp)
+![%rf140](https://arkimg.ark.online/%rf140.webp)
 
 再看一下效果：
 
@@ -45,11 +45,11 @@
 
 这里我们选择“自然特效”里面的火焰特效：
 
-![image-20230602190807789](https://arkimg.ark.online/image-20230602190807789.webp)
+![HfBmp6PXzL41694600354](https://arkimg.ark.online/HfBmp6PXzL41694600354.webp)
 
 可以看到这个特效播放，就是普通的火焰颜色：
 
-![image-20230602190928346](https://arkimg.ark.online/image-20230602190928346.webp)
+![g8DPe2GmhEf1694599354](https://arkimg.ark.online/g8DPe2GmhEf1694599354.webp)
 
 假设我们的场景是幽灵场景，需要的火焰颜色是冷色系的，那么我们需要调整一下特效换色的属性，如图所示：
 
@@ -57,13 +57,13 @@
 
 * 点击红色圆圈部分的小图标，会弹出来一个取色器，选择对应颜色后点击确认即可。
 
-![image-20230602191725960](https://arkimg.ark.online/image-20230602191725960.webp)
+![gn1uv9mY5e41694599443](https://arkimg.ark.online/gn1uv9mY5e41694599443.webp)
 
 这里我们可以看到，火焰的颜色已经改为浅蓝色了。
 
 ## 4. 动态播放特效
 
-除了直接拖拽使用特效，很多时候我们需要通过脚本态播放特效，代码播放特效也很简单，首先找到一个希望播放的特效，并右键单击特效，选择“复制资源 ID”，如图：
+除了直接拖拽使用特效，很多时候我们需要通过脚本来播放特效，代码播放特效也很简单，首先找到一个希望播放的特效，并右键单击特效，选择“复制资源 ID”，如图：
 
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnT6WAVbLaHsmtpR1u1aTVMe.png)
 
@@ -103,7 +103,7 @@ export default class FXControl extends Script {
 
 想要在代码中更改特效的颜色怎么操作呢？
 
-我们发现上面的 `EffectService` 中并没有能更改特效颜色的函数，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
+我们发现 `EffectService` 中并没有能更改特效颜色的函数，因为 `EffectService` 只是为了方便特效播放封装的简易服务。想要进行更细节的特效控制，就还需要获取到特效对象来进行操作，代码如下：
 
 ```typescript
 @Component
@@ -144,6 +144,6 @@ export default class FXControl extends Script {
 
 资源库中，每个特效资源的右上角都有一个 + 号按钮，点击后会弹出一个预览窗口，这时在编辑器中就可以预览特效了。该功能为我们省去了将特效拖入场景看效果的时间。
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn6viST9RdrwBMFUbBVuD9qc.gif)
+<video controls src="https://arkimg.ark.online/7615132843496.mp4"> </video>
 
 更多信息参考：[产品手册-特效](https://docs.ark.online/GameplayObjects/Effects.html)

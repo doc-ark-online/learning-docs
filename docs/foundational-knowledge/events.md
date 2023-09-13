@@ -8,10 +8,10 @@
 
 对联机游戏的概念有所了解之后，我们知道代码会在两个端执行，一个是客户端，一个是在服务端。所以通信方式可以归类为以下几种：
 
-* `客户端` -> `客户端`
-* **服务端** -> **服务端**
-* `客户端` -> **服务端**
-* **服务端** -> `客户端`
+* **客户端** --> **客户端**
+* **服务端** --> **服务端**
+* **客户端** --> **服务端**
+* **服务端** --> **客户端**
 
 本章节将详细介绍上面这几种场景，使用事件方式来通信。
 
@@ -36,8 +36,8 @@
 * 双击打开脚本，在 onStart 函数中，判断客户端环境后，添加一个延时代码，5 秒后发送一个事件：
 
 ```typescript
-@Core.Class
-export default class GameStart extends Core.Script {
+@Component
+export default class GameStart extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -46,23 +46,9 @@ export default class GameStart extends Core.Script {
             setTimeout(() => {	//[!code focus]
                 // 发送本地事件，事件名我们可以随便自定义，但是要保证发送方和接收方的事件名一致，否则接收不到事件	//[!code focus]
                 // 这里我们定义事件名为"client_local_event_test"	//[!code focus]
-                Events.dispatchLocal("client_local_event_test")	//[!code focus]
+                Event.dispatchToLocal("client_local_event_test")	//[!code focus]
             }, 5000);	//[!code focus]
         }	//[!code focus]
-    }
-
-    /**
-     * 周期函数 每帧执行
-     * 此函数执行需要将 this.useUpdate 赋值为 true
-     * @param dt 当前帧与上一帧的延迟 / 秒
-     */
-    protected onUpdate(dt: number): void {
-
-    }
-
-    /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy(): void {
-
     }
 }
 ```
@@ -78,36 +64,22 @@ export default class GameStart extends Core.Script {
 * 这里我们就不新建一个脚本了，打开之前我们操作的 `PlayerControl` 脚本（如果之前没有创建，就创建一个然后挂载到场景中），在 `onStart` 函数中添加判断客户端的代码，编写监听 `client_local_event_test` 事件的代码，在接收事件后打印日志，示例如下：
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         if (SystemUtil.isClient()) {	//[!code focus]
             // 在客户端，监听 client_local_event_test 事件	//[!code focus]
-            Events.addLocalListener("client_local_event_test", () => {	//[!code focus]
+            Event.addLocalListener("client_local_event_test", () => {	//[!code focus]
                 console.log("收到了来自 GameStart 的客户端本地事件");	//[!code focus]
             });	//[!code focus]
         }	//[!code focus]
     }
-
-    /**
-     * 周期函数 每帧执行
-     * 此函数执行需要将 this.useUpdate 赋值为 true
-     * @param dt 当前帧与上一帧的延迟 / 秒
-     */
-    protected onUpdate(dt: number): void {
-
-    }
-
-    /** 脚本被销毁时最后一帧执行完调用此函数 */
-    protected onDestroy(): void {
-
-    }
 }
 ```
 
-> 代码中，`() =>{} `的形式是 ts 语法中的匿名函数，在大括号中写其他想要执行的代码即可。这个是无参数的情况。
+> 代码中，`() => {} `的形式是 TypeScript 语法中的匿名函数，在大括号中写其他想要执行的代码即可。这个是无参数的情况。
 >
 > 有参数时，假设有一个 string 类型的参数，就会变成这样 `(param: string) => {}`，下面的小节里面还会单独介绍带参数的事件发送和接收。
 >
@@ -131,42 +103,42 @@ export default class PlayerControl extends Core.Script {
 
 * 修改发送事件的脚本，打开 `GameStart` 脚本，更改发送事件那行代码，在最后加上一个参数：
 
-* > 这里为了演示方便，把暂时没有用的 **onUpdate、onDestroy 两个函数删除**了
+* > 这里为了演示方便，把暂时没有用的 **onUpdate、onDestroy 两个函数删除** 了
 
 ```typescript
-  @Core.Class
-  export default class GameStart extends Core.Script {
-  
-      /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-      protected onStart(): void {
-          if(SystemUtil.isClient()){
-              // 判断环境是客户端，延时 5 秒后发送一个事件
-              setTimeout(() => {
-                  // 发送本地事件，事件名我们可以随便自定义，但是要保证发送方和接收方的事件名一致，否则接收不到事件
-                  // 这里我们定义事件名为"client_local_event_test"
-                  Events.dispatchLocal("client_local_event_test", "参数 01")	//[!code focus]
-              }, 5000);
-          }
-      }
-  }
+@Component
+export default class GameStart extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if(SystemUtil.isClient()){
+            // 判断环境是客户端，延时 5 秒后发送一个事件
+            setTimeout(() => {
+                // 发送本地事件，事件名我们可以随便自定义，但是要保证发送方和接收方的事件名一致，否则接收不到事件
+                // 这里我们定义事件名为"client_local_event_test"
+                Event.dispatchToLocal("client_local_event_test", "参数 01")	//[!code focus]
+            }, 5000);
+        }
+    }
+}
 ```
 
 * 修改接收事件的脚本 `PlayerControl` ，多接收一个参数，并打印出来，代码如下：
 
 ```typescript
-  @Core.Class
-  export default class PlayerControl extends Core.Script {
-  
-      /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-      protected onStart(): void {
-          if (SystemUtil.isClient()) {
-              // 在客户端，监听 client_local_event_test 事件
-              Events.addLocalListener("client_local_event_test", (param: string) => {	//[!code focus]
-                  console.log("收到了来自 GameStart 的客户端本地事件", param);	//[!code focus]
-              });
-          }
-      }
-  }
+@Component
+export default class PlayerControl extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            // 在客户端，监听 client_local_event_test 事件
+            Event.addLocalListener("client_local_event_test", (param: string) => {	//[!code focus]
+                console.log("收到了来自 GameStart 的客户端本地事件", param);	//[!code focus]
+            });
+        }
+    }
+}
 ```
 
 * 点击运行，过 5 秒之后可以看到客户端日志窗口的打印日志，如下：
@@ -177,8 +149,8 @@ export default class PlayerControl extends Core.Script {
 
 可以看到其实核心就两个部分：
 
-1. 发送事件：`Events.dispatchLocal(eventName)`
-2. 接收事件：`Events.addLocalListener(eventName, callback);`
+1. 发送事件：`Event.dispatchToLocal(eventName)`
+2. 接收事件：`Event.addLocalListener(eventName, callback);`
 
 如果对 TS 语法已经有一些基础的情况下，其实都非常简单。
 
@@ -193,8 +165,8 @@ export default class PlayerControl extends Core.Script {
 先改动一下发送事件方的 `GameStart` 脚本，在原有的发送本地事件代码下面，添加**客户端发送事件到服务端**的代码，事件名先定义为 `ClientToServer` ，顺便携带一个字符串参数'口袋方舟 666'，示例如下：
 
 ```typescript
-@Core.Class
-export default class GameStart extends Core.Script {
+@Component
+export default class GameStart extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -203,10 +175,10 @@ export default class GameStart extends Core.Script {
             setTimeout(() => {
                 // 发送本地事件，事件名我们可以随便自定义，但是要保证发送方和接收方的事件名一致，否则接收不到事件
                 // 这里我们定义事件名为"client_local_event_test"
-                Events.dispatchLocal("client_local_event_test", "参数 01");
+                Event.dispatchToLocal("client_local_event_test", "参数 01");
 
                 // 发送事件到服务端(因为上面我们已经判断了这里是客户端的环境，所以不用再判断是否是客户端了)//[!code focus]
-                Events.dispatchToServer("ClientToServer", "口袋方舟 666");//[!code focus]
+                Event.dispatchToServer("ClientToServer", "口袋方舟 666");//[!code focus]
             }, 5000);
         }
     }
@@ -216,22 +188,22 @@ export default class GameStart extends Core.Script {
 保存代码改动，然后再打开接收事件的脚本 `PlayerControl` ，添加在服务端接收 `ClientToServer` 事件的函数：
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         if (SystemUtil.isClient()) {
             // 在客户端，监听 client_local_event_test 事件
-            Events.addLocalListener("client_local_event_test", (param: string) => {
+            Event.addLocalListener("client_local_event_test", (param: string) => {
                 console.log("收到了来自 GameStart 的客户端本地事件", param);
             });
         }
 
         if (SystemUtil.isServer()) {//[!code focus]
             // 判断是服务端环境，监听 ClientToServer 事件//[!code focus]
-            Events.addClientListener("ClientToServer", (player: Gameplay.Player, param1: string) => {//[!code focus]
-                console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.getUserId(), param1);//[!code focus]
+            Event.addClientListener("ClientToServer", (player: Player, param1: string) => {//[!code focus]
+                console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.userId, param1);//[!code focus]
             });//[!code focus]
         }//[!code focus]
     }
@@ -240,19 +212,19 @@ export default class PlayerControl extends Core.Script {
 
 对于这段代码，有部分和之前本地通信有比较大的区别，能看懂的话可以直接去看下一小节，这里准备再详细介绍一下接收到的参数列表这部分；
 
-* 重要的是 `addClientListener` 函数的第二个参数 `(player: Gameplay.Player, param1: string)=>{}`
-* 上面章节里面我们知道，接收参数时，发送的是什么参数，接收方就是什么参数，但是这里为什么会多一个 `Gameplay.Player` 类型的参数出来呢？
+* 重要的是 `addClientListener` 函数的第二个参数 `(player: Player, param1: string)=>{}`
+* 上面章节里面我们知道，接收参数时，发送的是什么参数，接收方就是什么参数，但是这里为什么会多一个 `Player` 类型的参数出来呢？
   * 这里我们就需要了解客户端和服务端的一些关系：一个服务端会同时对接多个客户端。
   * 那客户端发送事件过来的时候，我怎么知道是哪个客户端发送的消息呢？所以在这个事件内部就封装好了，是谁发送过来的事件，就把对应的 Player 对象传递过来。
-  * 所以，所有的**客户端发往服务端的事件**，默认**第一个参数都是 `Gameplay.Player` 对象**
+  * 所以，所有的**客户端发往服务端的事件**，默认**第一个参数都是 `Player` 对象**
 * 运行起来之后，通过服务端的日志窗口可以看到，已经收到了客户端发来的消息，并且成功打印了用户的 id 和传递过来的参数，如图：
 
 ![image-20230530142340946](https://arkimg.ark.online/image-20230530142340946.webp)
 
 ### 总结
 
-* `Events.dispatchToServer`  发送事件除了函数名不一样以外，其他使用方式和本地事件是一致的
-* `Events.addClientListener` 需要注意的是 callback 里面第一个参数为 player 对象，其他没有什么变化
+* `Event.dispatchToServer`  发送事件除了函数名不一样以外，其他使用方式和本地事件是一致的
+* `Event.addClientListener` 需要注意的是 callback 里面第一个参数为 player 对象，其他没有什么变化
 
 ## 3. 服务端发消息给客户端
 
@@ -269,7 +241,7 @@ export default class PlayerControl extends Core.Script {
 
 > 如果没有安装插件，可以参考帖子：[一键搜索 API 文档插件的安装使用](https://forum.ark.online/forum.php?mod=viewthread&tid=1657&page=1&extra=#pid5242)
 
-![image-20230530145827963](https://arkimg.ark.online/image-20230530145827963.webp)
+![ua8EI7lbn1b1694597009](D:\教程图片缓存\ua8EI7lbn1b1694597009.webp)
 
 搜索结果如图所示，我们先看看“服务器发送事件给指定客户端”，点击该条目跳转到 API 文档的详细介绍页面，如图所示：
 
@@ -288,44 +260,44 @@ export default class PlayerControl extends Core.Script {
   > **为什么要获取第一个 Player**：实际游戏项目中，一般情况是有客户端用户上线时， 给对应的客户端发送一个事件，或者有客户端发送事件给服务端后，服务端回复该用户一个事件。这两种场景都能获取到对应的 player 对象，在我们这次功能演示中，为了不引入过多的复杂逻辑导致理解问题，就只取第一 player 来发送事件即可。
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         if (SystemUtil.isClient()) {
             // 在客户端，监听 client_local_event_test 事件
-            Events.addLocalListener("client_local_event_test", (param: string) => {
+            Event.addLocalListener("client_local_event_test", (param: string) => {
                 console.log("收到了来自 GameStart 的客户端本地事件", param);
             });
 
             // 监听服务端发送到客户端的事件//[!code focus]
-            Events.addServerListener("ServerToClient", (str1, num2, str3) => {//[!code focus]
+            Event.addServerListener("ServerToClient", (str1, num2, str3) => {//[!code focus]
                 console.log("收到了服务端发送过来的消息", str1, num2, str3);//[!code focus]
             });//[!code focus]
         }
 
         if (SystemUtil.isServer()) {
             // 判断是服务端环境，监听 ClientToServer 事件
-            Events.addClientListener("ClientToServer", (player: Gameplay.Player, param1: string) => {
+            Event.addClientListener("ClientToServer", (player: Player, param1: string) => {
                 console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.getUserId(), param1);
             });
 
             setTimeout(() => {//[!code focus]
                 // 5 秒后，给第一个客户端发送一个事件//[!code focus]
-                let player = Gameplay.getAllPlayers()[0];//[!code focus]
-                Events.dispatchToClient(player, "ServerToClient", "我是服务端发送给客户端的消息", 666, "我是第三个参数");//[!code focus]
+                let player = Player.getAllPlayers()[0];//[!code focus]
+                Event.dispatchToClient(player, "ServerToClient", "我是服务端发送给客户端的消息", 666, "我是第三个参数");//[!code focus]
             }, 5000);//[!code focus]
         }
     }
 }
 ```
 
-* `Gameplay.getAllPlayers()` 这个函数就是只能在服务端调用，获取当前房间的所有 Player 对象，返回的是个 Player 列表
+* `Player.getAllPlayers()` 这个函数就是只能在服务端调用，获取当前房间的所有 Player 对象，返回的是个 Player 列表
 
-* `Gameplay.getAllPlayers()[0]` 就是获取数组里面第一个 Player 对象
+* `Player.getAllPlayers()[0]` 就是获取数组里面第一个 Player 对象
 
-* `Events.dispatchToClient` 发送事件时，携带了 3 个数据，所以接收方也需要接收三个数据，接收到之后就打印出来
+* `Event.dispatchToClient` 发送事件时，携带了 3 个数据，所以接收方也需要接收三个数据，接收到之后就打印出来
 
 点击运行后，等几秒，可以看到客户端的日志窗口中，输出了服务端发送过去的几个参数：
 
@@ -338,32 +310,32 @@ export default class PlayerControl extends Core.Script {
 上面演示了发送消息给指定客户端，这里的发送消息给所有客户端其实区别不大，就是不需要传 player 参数了，把刚才的 `PlayerControl` 脚本改造一下，①去掉刚才获取所有 player 对象的代码，②发送事件的函数换成 `dispatchToAllClient` 。事件名不用改动，那么接收事件的地方也不用改动。③传输的数据也稍微改一下证明我们代码生效了，代码如下：
 
 ```typescript
-@Core.Class
-export default class PlayerControl extends Core.Script {
+@Component
+export default class PlayerControl extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         if (SystemUtil.isClient()) {
             // 在客户端，监听 client_local_event_test 事件
-            Events.addLocalListener("client_local_event_test", (param: string) => {
+            Event.addLocalListener("client_local_event_test", (param: string) => {
                 console.log("收到了来自 GameStart 的客户端本地事件", param);
             });
 
             // 监听服务端发送到客户端的事件
-            Events.addServerListener("ServerToClient", (str1, num2, str3) => {
+            Event.addServerListener("ServerToClient", (str1, num2, str3) => {
                 console.log("收到了服务端发送过来的消息", str1, num2, str3);
             });
         }
 
         if (SystemUtil.isServer()) {
             // 判断是服务端环境，监听 ClientToServer 事件
-            Events.addClientListener("ClientToServer", (player: Gameplay.Player, param1: string) => {
-                console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.getUserId(), param1);
+            Event.addClientListener("ClientToServer", (player: Player, param1: string) => {
+                console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.userId, param1);
             });
 
             setTimeout(() => {
                 // 5 秒后，给所有客户端发送事件
-                Events.dispatchToAllClient("ServerToClient", "服务端通知所有客户端", 888, "我是第三个参数啊");//[!code focus]
+                Event.dispatchToAllClient("ServerToClient", "服务端通知所有客户端", 888, "我是第三个参数啊");//[!code focus]
             }, 5000);
         }
     }
@@ -376,12 +348,12 @@ export default class PlayerControl extends Core.Script {
 
 ### 总结
 
-* `Events.dispatchToClient(player, eventName, params...)`  服务端发送事件给指定客户端，除了第一个参数要传递 player 对象外，其他并无区别
-* `Events.addServerListener` 添加服务端发送给客户端的事件监听，使用方式和本地事件一致，在客户端调用即可
-* `Events.dispatchToAllClient(eventName, params)` 服务端发送事件给所有客户端，一般使用场景是在展示一些公共事件的时候使用，使用方式和普通事件也并无区别
+* `Event.dispatchToClient(player, eventName, params...)`  服务端发送事件给指定客户端，除了第一个参数要传递 player 对象外，其他并无区别
+* `Event.addServerListener` 添加服务端发送给客户端的事件监听，使用方式和本地事件一致，在客户端调用即可
+* `Event.dispatchToAllClient(eventName, params)` 服务端发送事件给所有客户端，一般使用场景是在展示一些公共事件的时候使用，使用方式和普通事件也并无区别
 * 添加事件监听和指定客户端的完全一致，无其他区别
 
-## 4. 扩展-@Core.Function
+## 4. 扩展 @RemoteFunction
 
 上面已经讲完了事件通信的使用方式，这里再扩展一种在同一个脚本中，双端互相调用的方式。
 
@@ -392,8 +364,8 @@ export default class PlayerControl extends Core.Script {
 新创建一个函数，命名为 `callFuncDataToServer` ，接收一个 string 类型的参数用来传递数据，代码如下：
 
 ```typescript
-@Core.Class
-export default class RPCFunctionDemo extends Core.Script {
+@Component
+export default class RPCFunctionDemo extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -406,20 +378,20 @@ export default class RPCFunctionDemo extends Core.Script {
 }
 ```
 
-添加一个用来双端通信的装饰器：`@Core.Function()` ，这个方式能通信的最核心的点就是这个装饰器，其他函数命名、参数个数等都不影响。
+添加一个用来双端通信的装饰器：`@RemoteFunction()` ，这个方式能通信的最核心的点就是这个装饰器，其他函数命名、参数个数等都不影响。
 
-该装饰器接收一个数组参数，决定这个函数体的内容运行在哪个环境，一共有 `Core.Server` 、 `Core.Client` 、 `Core.Multicast` 三种类型，这里我们是想要客户端调用，调用后的代码运行在服务端，所以使用 `Core.Server` 类型，代码如下：
+该装饰器接收一个数组参数，决定这个函数体的内容运行在哪个环境，一共有 `Server` 、 `Client` 、 `Multicast` 三种类型，这里我们是想要客户端调用，调用后的代码运行在服务端，所以使用 `Server` 类型，代码如下：
 
 ```typescript
-@Core.Class
-export default class RPCFunctionDemo extends Core.Script {
+@Component
+export default class RPCFunctionDemo extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
 
     }
 
-    @Core.Function(Core.Server)//[!code focus]
+    @RemoteFunction(Server)//[!code focus]
     public callFuncDataToServer(str: string) {
         console.log("我在服务端，是客户端调用的", str, SystemUtil.isServer());
     }
@@ -429,8 +401,8 @@ export default class RPCFunctionDemo extends Core.Script {
 写好函数后，就该调用了，咱们这里依然还是在 onStart 函数里面判断客户端环境，然后调用该函数，代码如下：
 
 ```typescript
-@Core.Class
-export default class RPCFunctionDemo extends Core.Script {
+@Component
+export default class RPCFunctionDemo extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -440,7 +412,7 @@ export default class RPCFunctionDemo extends Core.Script {
         }//[!code focus]
     }
 
-    @Core.Function(Core.Server)
+    @RemoteFunction(Server)
     public callFuncDataToServer(str: string) {
         console.log("我在服务端，是客户端调用的", str, SystemUtil.isServer());
     }
@@ -458,8 +430,8 @@ export default class RPCFunctionDemo extends Core.Script {
 同时也要注意，服务端启动的时候，客户端可能还没有启动，所以一样是需要在服务端延时 5 秒后再进行调用，指定客户端单播和广播给所有客户端的代码示例如下：
 
 ```typescript
-@Core.Class
-export default class RPCFunctionDemo extends Core.Script {
+@Component
+export default class RPCFunctionDemo extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -474,22 +446,22 @@ export default class RPCFunctionDemo extends Core.Script {
                 // 广播给所有客户端//[!code focus]
                 this.callFuncDataToAllClient("广播数据");//[!code focus]
                 // 调用指定客户端//[!code focus]
-                this.callFuncDataToClient(Gameplay.getAllPlayers()[0], "单播数据");//[!code focus]
+                this.callFuncDataToClient(Player.getAllPlayers()[0], "单播数据");//[!code focus]
             }, 5000);//[!code focus]
         }//[!code focus]
     }
 
-    @Core.Function(Core.Server)
+    @RemoteFunction(Server)
     public callFuncDataToServer(str: string) {
         console.log("我在服务端，是客户端调用的", str, SystemUtil.isServer());
     }
 
-    @Core.Function(Core.Client)//[!code focus]
-    public callFuncDataToClient(player: Gameplay.Player, str: string) {//[!code focus]
+    @RemoteFunction(Client)//[!code focus]
+    public callFuncDataToClient(player: Player, str: string) {//[!code focus]
         console.log("我在客户端，是服务端调用的", str, SystemUtil.isClient());//[!code focus]
     }//[!code focus]
 
-    @Core.Function(Core.Client, Core.Multicast)//[!code focus]
+    @RemoteFunction(Client, Multicast)//[!code focus]
     public callFuncDataToAllClient(str: string) {//[!code focus]
         console.log("我在客户端，是服务端广播给所有客户端的", str, SystemUtil.isClient());//[!code focus]
     }//[!code focus]
@@ -498,7 +470,7 @@ export default class RPCFunctionDemo extends Core.Script {
 
 * 如代码所示，我们新增了两个函数，分别是用于服务端调用指定客户端的函数和广播所有客户端的函数
 * 调用指定客户端要传递一个 player 对象，和事件通信章节是一致的
-* 广播所有客户端时，参数不仅仅是只有一个 `Core.Multicast` ，而是 `Core.Client, Core.Multicast` 两个都包含的
+* 广播所有客户端时，参数不仅仅是只有一个 `Multicast` ，而是 `Client, Multicast` 两个都包含的
 * 也需要注意，我们测试的时候，服务端需要延时几秒后再调用客户端
 
 在客户端打印的日志如下：
