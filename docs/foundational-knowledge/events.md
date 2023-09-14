@@ -241,7 +241,7 @@ export default class PlayerControl extends Script {
 
 > 如果没有安装插件，可以参考帖子：[一键搜索 API 文档插件的安装使用](https://forum.ark.online/forum.php?mod=viewthread&tid=1657&page=1&extra=#pid5242)
 
-![ua8EI7lbn1b1694597009](D:\教程图片缓存\ua8EI7lbn1b1694597009.webp)
+![ua8EI7lbn1b1694597009](https://arkimg.ark.online/ua8EI7lbn1b1694597009.webp)
 
 搜索结果如图所示，我们先看看“服务器发送事件给指定客户端”，点击该条目跳转到 API 文档的详细介绍页面，如图所示：
 
