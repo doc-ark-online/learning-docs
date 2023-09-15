@@ -44,7 +44,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '了解口袋方舟编辑器',
-            link: '/getting-started/introduction.md'
+            link: '/OverView/introduction.md'
           }
         ]
       },
@@ -55,27 +55,23 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         items: [
           {
             text: '安装与启动',
-            link: '/getting-started/installing-starter.md'
+            link: '/Getting-Started/installing-starter.md'
           },
           {
-            text: 'VSCode安装',
-            link: '/getting-started/installing-code-editor.md'
+            text: 'VSCode 安装',
+            link: '/Getting-Started/installing-code-editor.md'
           },
           {
             text: '编辑器界面',
-            link: '/getting-started/editor-main-ui.md'
+            link: '/Getting-Started/editor-main-ui.md'
           },
           {
             text: '编辑器基本操作',
-            link: '/getting-started/editor-starter.md'
+            link: '/Getting-Started/editor-starter.md'
           },
           {
             text: '导入第三方项目',
-            link: '/getting-started/import-project.md'
-          },
-          {
-            text: '游戏发布&更新&测试',
-            link: '/getting-started/releasing.md'
+            link: '/Getting-Started/import-project.md'
           }
         ]
       },
@@ -86,120 +82,144 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         items: [
           {
             text: 'TypeScript学习',
-            link: '/foundational-knowledge/learning-typescript.md'
+            link: '/Basic-Learning/learning-typescript.md'
           },
           {
-            text: '客户端与服务端',
-            link: '/foundational-knowledge/client-and-server.md'
+            text: '空工程结构介绍',
+            link: '/Basic-Learning/blank-project.md'
           },
           {
-            text: '脚本执行逻辑',
-            link: '/foundational-knowledge/script-lifecycle.md'
+            text: '角色与摄像机',
+            link: '/Basic-Learning/player-and-character.md'
           },
           {
-            text: '调试与输出',
-            link: '/foundational-knowledge/debug-and-print.md'
-          },
-          {
-            text: '事件通信',
-            link: '/foundational-knowledge/events.md'
+            text: '脚本',
+            link: '/Basic-Learning/script-lifecycle.md'
           },
           {
             text: '日志查看',
-            link: '/foundational-knowledge/checklog.md'
+            link: '/Basic-Learning/checklog.md'
           }
         ]
       },
       {
-        text: '基础入门',
+        text: '必学逻辑',
         collapsible: true,
         collapsed: true,
         items: [
           {
-            text: '3D坐标系',
-            link: '/programming-scripting/3d-coordinate-system.md'
+            text: '游戏对象',
+            link: '/Core-Learning/gameobject.md'
           },
           {
-            text: '特效',
-            link: '/programming-scripting/particle.md'
+            text: '控制游戏对象',
+            link: '/Core-Learning/controlling-objects.md'
           },
-          { text: '音效', link: '/programming-scripting/sound.md' },
           {
-            text: '初生点',
-            link: '/programming-scripting/player-start.md'
+            text: '触发检测',
+            link: '/Core-Learning/trigger.md'
           },
           {
             text: '角色动画',
-            link: '/programming-scripting/animating-characters-2.md'
-          },
-          {
-            text: '游戏物体的使用',
-            link: '/programming-scripting/gameobject.md'
-          },
-          {
-            text: '游戏物体父子级',
-            link: '/programming-scripting/layers.md'
-          },
-          {
-            text: '玩家与角色',
-            link: '/programming-scripting/player-and-character.md'
-          },
-          {
-            text: '角色编辑器',
-            link: '/programming-scripting/character-editor.md'
-          },
-          {
-            text: '触发器',
-            link: '/programming-scripting/trigger.md'
-          },
-          {
-            text: '预制体',
-            link: '/programming-scripting/prefab.md'
-          },
-          {
-            text: '摄像机',
-            link: '/programming-scripting/camera.md'
-          },
-          {
-            text: '数据持久化',
-            link: '/programming-scripting/data-storage.md'
-          },
-          {
-            text: '冲量与冲量对象',
-            link: '/programming-scripting/impulse.md'
-          },
-          {
-            text: '交互物',
-            link: '/programming-scripting/interactors.md'
-          },
-          {
-            text: '射线检测',
-            link: '/programming-scripting/line-trace.md'
-          },
-          {
-            text: '运动器',
-            link: '/programming-scripting/physicsSports.md'
+            link: '/Core-Learning/animating-characters.md'
           }
         ]
       },
       {
-        text: '游戏界面',
+        text: '常用功能',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '创建UI', link: '/game-ui/create-ui.md' },
-          { text: '图片', link: '/game-ui/image.md' },
-          { text: '文本', link: '/game-ui/text.md' },
-          { text: '按钮', link: '/game-ui/button.md' },
-          { text: '容器', link: '/game-ui/container.md' },
-          { text: '快速布局', link: '/game-ui/quick-layout.md' },
-          { text: 'UI自适应对齐', link: '/game-ui/auto-layout.md' },
-          { text: 'UI显示/隐藏', link: '/game-ui/visibility.md' },
-          { text: '输入框', link: '/game-ui/text-input.md' },
-          { text: '进度条', link: '/game-ui/progress-bar.md' },
-          { text: '滚动框', link: '/game-ui/scroll-view.md' },
-          { text: '加载图', link: '/game-ui/loading-img.md' },
-          { text: '摇杆', link: '/game-ui/joystick.md' }
+          {
+            text: 'UI 使用',
+            link: '/Common-Functions/user-interface.md'
+          },
+          {
+            text: '预制体',
+            link: '/Common-Functions/prefab.md'
+          },
+          {
+            text: '特效',
+            link: '/Common-Functions/particle.md'
+          },
+          {
+            text: '音效',
+            link: '/Common-Functions/sound.md'
+          },
+          {
+            text: '查询检测',
+            link: '/Common-Functions/query.md'
+          },
+          {
+            text: '换装',
+            link: '/Common-Functions/clothes.md'
+          },
+          {
+            text: '角色编辑器',
+            link: '/Common-Functions/character-editor.md'
+          }
+        ]
+      },
+      {
+        text: '网络功能',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '服务端与客户端',
+            link: '/Online-Gaming/client-and-server.md'
+          },
+          {
+            text: '事件通信',
+            link: '/Online-Gaming/events.md'
+          },
+          {
+            text: 'RPC 与 属性同步',
+            link: '/Online-Gaming/property-rpc.md'
+          },
+          {
+            text: '使用数据中心存储数据',
+            link: '/Online-Gaming/data-storage.md'
+          }
+        ]
+      },
+      {
+        text: '进阶功能',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: 'Tween 动画',
+            link: '/Masters-Road/tween.md'
+          },
+          {
+            text: '摄像机',
+            link: '/Masters-Road/camera.md'
+          },
+          {
+            text: '模块管理',
+            link: '/Masters-Road/module.md'
+          },
+          {
+            text: 'IAA',
+            link: '/Masters-Road/advertising.md'
+          },
+          {
+            text: '自定义属性',
+            link: '/Masters-Road/custom-property.md'
+          },
+          {
+            text: '冲量',
+            link: '/Masters-Road/impulse.md'
+          },
+          {
+            text: '交互物',
+            link: '/Masters-Road/interactors.md'
+          },
+          {
+            text: '寻路',
+            link: '/Masters-Road/navigation.md'
+          }
         ]
       },
       {
@@ -207,7 +227,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '跳跃区', link: '/code-snippet/jump-area.md' },
+          {
+            text: '跳跃区',
+            link: '/code-snippet/jump-area.md'
+          },
           {
             text: '变速区',
             link: '/code-snippet/change-speed-area.md'
@@ -228,7 +251,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             text: '消失地板',
             link: '/code-snippet/vanishing-block.md'
           },
-          { text: '传送区', link: '/code-snippet/portal.md' }
+          {
+            text: '传送区',
+            link: '/code-snippet/portal.md'
+          }
         ]
       },
       {
