@@ -16,6 +16,8 @@
 
 :::
 
+**预制体下载：** https://arkimg.ark.online/%E6%B2%99%E6%BB%A9%E7%AF%AE%E7%90%83%E5%9C%BA.zip
+
 打开工程后，在下方 **①工程内容 --> ② 选中预制体 --> ③ 导入预制体**，导入一个我们下载好的场景预制体。
 
 ![UE4_YeCVVxAdOs](https://arkimg.ark.online/UE4_YeCVVxAdOs.webp)
