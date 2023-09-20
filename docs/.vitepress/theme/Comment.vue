@@ -15,8 +15,8 @@ const init = () => {
       id: location.origin + location.pathname,
       repo: 'docs-comment',
       owner: 'prodigytech-doc',
-      clientID: '3f32809087fa6bab81d7',
-      clientSecret: 'a17c96a33f24d9ae1140824fd60202b1a1906057',
+      clientID: '28d83eba645956ddd8d7',
+      clientSecret: '2633cedb6cbb7c237d0e6097a01e8f198339da25',
       admin: ['Metaworld2023'],
       labels: ['GitTalk'],
       createIssueManually: true
