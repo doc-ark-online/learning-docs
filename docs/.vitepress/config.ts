@@ -448,29 +448,62 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '第一节：搭建场景',
             items: [
-              { text: '创建项目', link: '/tycoon-course/Lesson2/2.1create-project.md' },
-              { text: '搭建场景', link: '/tycoon-course/Lesson3/3.1make-scene.md' }
+              {
+                text: '创建项目',
+                link: '/tycoon-course/Lesson2/2.1create-project.md'
+              },
+              {
+                text: '搭建场景',
+                link: '/tycoon-course/Lesson3/3.1make-scene.md'
+              }
             ]
           },
           {
             text: '第二节：实现游戏逻辑',
             items: [
-              { text: '制作购买按钮', link: '/tycoon-course/Lesson4/4.1buy-button.md' },
-              { text: '显示可购买物品功能', link: '/tycoon-course/Lesson4/4.2buy-item.md' },
-              { text: '优化显示效果', link: '/tycoon-course/Lesson4/4.3optimization.md' },
-              { text: '实现购买按钮上金币显示', link: '/tycoon-course/Lesson4/4.4show-gold.md' },
-              { text: '实现购买建筑功能', link: '/tycoon-course/Lesson4/4.5buy-build.md' },
-              { text: '实现邮箱产出金币功能', link: '/tycoon-course/Lesson4/4.6email-item.md' },
-              { text: '存储玩家数据功能', link: '/tycoon-course/Lesson4/4.7player-data.md' }
+              {
+                text: '制作购买按钮',
+                link: '/tycoon-course/Lesson4/4.1buy-button.md'
+              },
+              {
+                text: '显示可购买物品功能',
+                link: '/tycoon-course/Lesson4/4.2buy-item.md'
+              },
+              {
+                text: '优化显示效果',
+                link: '/tycoon-course/Lesson4/4.3optimization.md'
+              },
+              {
+                text: '实现购买按钮上金币显示',
+                link: '/tycoon-course/Lesson4/4.4show-gold.md'
+              },
+              {
+                text: '实现购买建筑功能',
+                link: '/tycoon-course/Lesson4/4.5buy-build.md'
+              },
+              {
+                text: '实现邮箱产出金币功能',
+                link: '/tycoon-course/Lesson4/4.6email-item.md'
+              },
+              {
+                text: '存储玩家数据功能',
+                link: '/tycoon-course/Lesson4/4.7player-data.md'
+              }
             ]
           },
           {
             text: '第三节：实现联机家园系统',
             items: [
-              { text: '实现家园系统', link: '/tycoon-course/Lesson5/5.1home-system.md' },
-              { text: '运行测试游戏', link: '/tycoon-course/Lesson5/5.2test-project.md' }
+              {
+                text: '实现家园系统',
+                link: '/tycoon-course/Lesson5/5.1home-system.md'
+              },
+              {
+                text: '运行测试游戏',
+                link: '/tycoon-course/Lesson5/5.2test-project.md'
+              }
             ]
-          },
+          }
         ]
       },
       {
@@ -479,17 +512,47 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsible: true,
         collapsed: true,
         items: [
-          { text: '1.游戏展示', link: '/monster-course/1.game-presentation.md' },
-          { text: '2.场景搭建', link: '/monster-course/2.scene-construction.md' },
-          { text: '3.战斗开始&战斗结束', link: '/monster-course/3.battle-begins&battle-ends.md' },
+          {
+            text: '1.游戏展示',
+            link: '/monster-course/1.game-presentation.md'
+          },
+          {
+            text: '2.场景搭建',
+            link: '/monster-course/2.scene-construction.md'
+          },
+          {
+            text: '3.战斗开始&战斗结束',
+            link: '/monster-course/3.battle-begins&battle-ends.md'
+          },
           { text: '4.创建怪物', link: '/monster-course/4.create-monster.md' },
-          { text: '5.制作怪物配置表', link: '/monster-course/5.create-monster-configuration-sheet.md' },
-          { text: '6.怪物移动&怪物攻击', link: '/monster-course/6.monster-move&monster-attack.md' },
-          { text: '7.攻击怪物&刷怪点', link: '/monster-course/7.attack-monster&spawn-point.md' },
-          { text: '8.战斗闭环&表现优化', link: '/monster-course/8.combat-closed-loop&performance-optimization.md' },
-          { text: '9.武器系统之近战武器', link: '/monster-course/9.closein-weapons-for-weapon-systems.md' },
-          { text: '10.武器系统之远程武器', link: '/monster-course/10.remote-weapons-for-weapon-systems.md' },
-          { text: '11.完善逻辑&游戏优化思路', link: '/monster-course/11.perfect-logic&game-optimization-ideas.md' },
+          {
+            text: '5.制作怪物配置表',
+            link: '/monster-course/5.create-monster-configuration-sheet.md'
+          },
+          {
+            text: '6.怪物移动&怪物攻击',
+            link: '/monster-course/6.monster-move&monster-attack.md'
+          },
+          {
+            text: '7.攻击怪物&刷怪点',
+            link: '/monster-course/7.attack-monster&spawn-point.md'
+          },
+          {
+            text: '8.战斗闭环&表现优化',
+            link: '/monster-course/8.combat-closed-loop&performance-optimization.md'
+          },
+          {
+            text: '9.武器系统之近战武器',
+            link: '/monster-course/9.closein-weapons-for-weapon-systems.md'
+          },
+          {
+            text: '10.武器系统之远程武器',
+            link: '/monster-course/10.remote-weapons-for-weapon-systems.md'
+          },
+          {
+            text: '11.完善逻辑&游戏优化思路',
+            link: '/monster-course/11.perfect-logic&game-optimization-ideas.md'
+          }
         ]
       },
       {
@@ -499,115 +562,217 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text: '第一节：环境配置', link: '/ArtResource-course/001-Environment-configuration.md'
+            text: '第一节：环境配置',
+            link: '/ArtResource-course/001-Environment-configuration.md'
           },
           {
             text: '第二节：3D角色制作流程',
             link: '/ArtResource-course/Character/0-0-0-3D-character-production-process.md',
             items: [
-              { text: '角色分类', link: '/ArtResource-course/Character/1-1-0-Role-Classification.md' },
               {
-                text: '模型规范', link: '/ArtResource-course/Character/2-0-0-Model-Specification.md',
-                items: [
-                  {
-                    text: '1. 基础人形形象', link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md',
-                    items: [
-                      { text: '1.1 基础PBR贴图', link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md' },
-                    ],
-                  },
-                  {
-                    text: '2. 高级人形形象', link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md',
-                    items: [
-                      {
-                        text: '2.1 二次元风格', link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md',
-                        items: [
-                          { text: '服装制作规范', link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md' },
-                          { text: '头发制作规范', link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md' },
-                        ],
-                      },
-                      { text: '2.2 通用制作规范', link: '/ArtResource-course/Character/2-2-2-general-specification.md' },
-                    ],
-                  },
-                  {
-                    text: '3. 资源基础规格', link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md',
-                    items: [
-                      { text: '3.1 通用命名', link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md' },
-                      { text: '3.2 资源编号', link: '/ArtResource-course/Character/2-3-2-resource-number.md' },
-                    ],
-                  },
-                ],
+                text: '角色分类',
+                link: '/ArtResource-course/Character/1-1-0-Role-Classification.md'
               },
               {
-                text: '角色绑定', link: '/ArtResource-course/Character/3-0-0-Riginng.md',
+                text: '模型规范',
+                link: '/ArtResource-course/Character/2-0-0-Model-Specification.md',
                 items: [
-                  { text: '1. 基础人形形象', link: '/ArtResource-course/Character/3-1-0-Basic-Human.md' },
                   {
-                    text: '2. 高级人形形象', link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md',
+                    text: '1. 基础人形形象',
+                    link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md',
                     items: [
                       {
-                        text: '2.1 基础动态服装部件', link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md',
-                        items: [
-                          { text: ' 服装接缝处权重规范', link: '/ArtResource-course/Character/3-2-2-Clothing-Weight-Specification.md' },
-                        ],
-                      },
-                      { text: '2.2 高级动态服装部件', link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md' },
-                    ],
+                        text: '1.1 基础PBR贴图',
+                        link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md'
+                      }
+                    ]
                   },
-                ],
+                  {
+                    text: '2. 高级人形形象',
+                    link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md',
+                    items: [
+                      {
+                        text: '2.1 二次元风格',
+                        link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md',
+                        items: [
+                          {
+                            text: '服装制作规范',
+                            link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md'
+                          },
+                          {
+                            text: '头发制作规范',
+                            link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md'
+                          }
+                        ]
+                      },
+                      {
+                        text: '2.2 通用制作规范',
+                        link: '/ArtResource-course/Character/2-2-2-general-specification.md'
+                      }
+                    ]
+                  },
+                  {
+                    text: '3. 资源基础规格',
+                    link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md',
+                    items: [
+                      {
+                        text: '3.1 通用命名',
+                        link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md'
+                      },
+                      {
+                        text: '3.2 资源编号',
+                        link: '/ArtResource-course/Character/2-3-2-resource-number.md'
+                      }
+                    ]
+                  }
+                ]
               },
-              { text: '角色导出', link: '/ArtResource-course/Character/4-0-0-Riginng-Export.md' },
-              { text: '资源提交', link: '/ArtResource-course/Character/100-Resource-Submission.md' },
-            ],
+              {
+                text: '角色绑定',
+                link: '/ArtResource-course/Character/3-0-0-Riginng.md',
+                items: [
+                  {
+                    text: '1. 基础人形形象',
+                    link: '/ArtResource-course/Character/3-1-0-Basic-Human.md'
+                  },
+                  {
+                    text: '2. 高级人形形象',
+                    link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md',
+                    items: [
+                      {
+                        text: '2.1 基础动态服装部件',
+                        link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md',
+                        items: [
+                          {
+                            text: ' 服装接缝处权重规范',
+                            link: '/ArtResource-course/Character/3-2-2-Clothing-Weight-Specification.md'
+                          }
+                        ]
+                      },
+                      {
+                        text: '2.2 高级动态服装部件',
+                        link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                text: '角色导出',
+                link: '/ArtResource-course/Character/4-0-0-Riginng-Export.md'
+              },
+              {
+                text: '资源提交',
+                link: '/ArtResource-course/Character/100-Resource-Submission.md'
+              }
+            ]
           },
           {
             text: '第三节：3D动画制作流程',
             link: '/ArtResource-course/Animation/0-Amimation-Process.md',
             items: [
               {
-                text: '动画制作', link: '/ArtResource-course/Animation/1-Amimation-production.md',
+                text: '动画制作',
+                link: '/ArtResource-course/Animation/1-Amimation-production.md',
                 items: [
-                  { text: '1. 人形动画', link: '/ArtResource-course/Animation/2-Human-Amimation.md' },
-                ],
+                  {
+                    text: '1. 人形动画',
+                    link: '/ArtResource-course/Animation/2-Human-Amimation.md'
+                  }
+                ]
               },
-              { text: '动画导出', link: '/ArtResource-course/Animation/4-Amimation-Export.md' },
-              { text: '资源提交', link: '/ArtResource-course/Animation/5-Resource-Submission.md' },
-            ],
+              {
+                text: '动画导出',
+                link: '/ArtResource-course/Animation/4-Amimation-Export.md'
+              },
+              {
+                text: '资源提交',
+                link: '/ArtResource-course/Animation/5-Resource-Submission.md'
+              }
+            ]
           },
           {
-            text: '第四节：3D场景/道具资源制作流程', link: '/ArtResource-course/Scene/0-0-Scene-process.md',
+            text: '第四节：3D场景/道具资源制作流程',
+            link: '/ArtResource-course/Scene/0-0-Scene-process.md',
             items: [
               {
-                text: '资源规范', link: '/ArtResource-course/Scene/0-resource-specification.md',
+                text: '资源规范',
+                link: '/ArtResource-course/Scene/0-resource-specification.md',
                 items: [
-                  { text: '1. 命名规范', link: '/ArtResource-course/Scene/1-Naming-Conventions.md' },
-                  { text: '2. 模型规范', link: '/ArtResource-course/Scene/2-model-specification.md' },
-                  { text: '3. 面数推荐', link: '/ArtResource-course/Scene/3-face-recommended.md' },
-                  { text: '4. UV规范', link: '/ArtResource-course/Scene/4-UV-specification.md' },
-                  { text: '5. 贴图规范', link: '/ArtResource-course/Scene/5-texture-specification.md' },
-                  { text: '6. LOD规范', link: '/ArtResource-course/Scene/5-U-LOD.md' },
-                  { text: '7. FBX导出设置', link: '/ArtResource-course/Scene/6-FBX-export-settings.md' },
-                ],
+                  {
+                    text: '1. 命名规范',
+                    link: '/ArtResource-course/Scene/1-Naming-Conventions.md'
+                  },
+                  {
+                    text: '2. 模型规范',
+                    link: '/ArtResource-course/Scene/2-model-specification.md'
+                  },
+                  {
+                    text: '3. 面数推荐',
+                    link: '/ArtResource-course/Scene/3-face-recommended.md'
+                  },
+                  {
+                    text: '4. UV规范',
+                    link: '/ArtResource-course/Scene/4-UV-specification.md'
+                  },
+                  {
+                    text: '5. 贴图规范',
+                    link: '/ArtResource-course/Scene/5-texture-specification.md'
+                  },
+                  {
+                    text: '6. LOD规范',
+                    link: '/ArtResource-course/Scene/5-U-LOD.md'
+                  },
+                  {
+                    text: '7. FBX导出设置',
+                    link: '/ArtResource-course/Scene/6-FBX-export-settings.md'
+                  }
+                ]
               },
-              { text: '资源提交', link: '/ArtResource-course/Scene/16-export-engine.md' },
+              {
+                text: '资源提交',
+                link: '/ArtResource-course/Scene/16-export-engine.md'
+              },
               {
                 text: '相关资产链接',
                 items: [
-                  { text: '1. 开发者ID', link: '/ArtResource-course/Scene/DeveloperID.md' },
-                  { text: '2. 分类', link: '/ArtResource-course/Scene/Classification.md' },
-                  { text: '3. 风格', link: '/ArtResource-course/Scene/artistic-style.md' },
-                ],
-              },
-            ],
+                  {
+                    text: '1. 开发者ID',
+                    link: '/ArtResource-course/Scene/DeveloperID.md'
+                  },
+                  {
+                    text: '2. 分类',
+                    link: '/ArtResource-course/Scene/Classification.md'
+                  },
+                  {
+                    text: '3. 风格',
+                    link: '/ArtResource-course/Scene/artistic-style.md'
+                  }
+                ]
+              }
+            ]
           },
           {
             text: '第五节：UI制作流程',
             items: [
-              { text: '基础规范', link: '/ArtResource-course/UI/UITex-BaseRule.md' },
-              { text: '去重标准', link: '/ArtResource-course/UI/UITex-BaseRule02.md' },
-              { text: '质量规范', link: '/ArtResource-course/UI/UITex-BaseRule03.md' },
-              { text: '编辑器配置', link: '/ArtResource-course/UI/UITex-BaseRule04.md' },
+              {
+                text: '基础规范',
+                link: '/ArtResource-course/UI/UITex-BaseRule.md'
+              },
+              {
+                text: '去重标准',
+                link: '/ArtResource-course/UI/UITex-BaseRule02.md'
+              },
+              {
+                text: '质量规范',
+                link: '/ArtResource-course/UI/UITex-BaseRule03.md'
+              },
+              {
+                text: '编辑器配置',
+                link: '/ArtResource-course/UI/UITex-BaseRule04.md'
+              }
             ]
-          },
+          }
         ]
       }
     ],
