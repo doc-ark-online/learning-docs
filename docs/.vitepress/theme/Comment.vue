@@ -18,7 +18,7 @@ const init = () => {
       owner: 'prodigytech-doc',
       clientID: '28d83eba645956ddd8d7',
       clientSecret: '2633cedb6cbb7c237d0e6097a01e8f198339da25',
-      admin: ['Metaworld2023'],
+      admin: ['Metaworld2023', 'xuxchao'],
       labels: ['GitTalk'],
       createIssueManually: true
     })
