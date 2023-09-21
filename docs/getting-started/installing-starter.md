@@ -8,16 +8,14 @@
 
 口袋方舟编辑器由两部分组成，分别是 Launcher 与 Editor。Launcher 主要负责管理 Editor 的版本、更新等内容，Editor 就是我们的游戏编辑器，我们的开发都是在 Editor 中进行。
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV18P4y1z7gu&vd_source=c94089b4804c1edb7b67c4629d433f6b&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ## 1. 下载与安装
 
 ### 1.1 注册账号
-访问[口袋方舟](https://creator.ark.online/)点击"**开始创作**"，完成注册信息填写，下载 launcher
+① 访问[口袋方舟](https://creator.ark.online/)点击 **"登录/注册"** 按钮。根据提示，完成注册信息填写。
 
-![](https://cdn.233xyx.com/athena/online/7c8dfdb553ee48659c72e6a750038419_13136921.webp)
-<p align="center"> （进入网页点击左下角开始创作，完成注册信息填写） </p>
+② 完成注册后点击 **“下载编辑器”** 按钮，来下载我们的启动器。
 
+![d7ee6565-8187-4f4a-a682-9494b338a9b2](https://arkimg.ark.online/d7ee6565-8187-4f4a-a682-9494b338a9b2.jpg)
 
 ### 1.2 安装 Launcher
 
