@@ -2,11 +2,9 @@
 
 ::: tip 阅读本文大概需要 6 分钟。
 
-作为一款编辑器，怎么能没有亮点功能？？学习成本？开发资源？网络交互？接下来就让我们详细的看一下口袋方舟有哪些特色功能。
+作为一款编辑器，怎么能没有亮点功能？学习成本？开发资源？网络交互？接下来就让我们详细的看一下口袋方舟有哪些特色功能。
 
 :::
-
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=1BM411q7V9&vd_source=bccefedf3b12bbbde01e51432ed7ebca&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 ## 1. 口袋方舟是什么
 
