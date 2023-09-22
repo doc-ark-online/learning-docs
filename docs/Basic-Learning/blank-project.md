@@ -34,6 +34,8 @@
 
 ![b299cf89-cdde-4e52-861f-eccc12ba4804](https://arkimg.ark.online/b299cf89-cdde-4e52-861f-eccc12ba4804.webp)
 
+关于 UI 文件、UI 控件等详细介绍与使用请查阅产品手册：[创建游戏界面 (UI) | 产品手册 ](https://docs.ark.online/UI/CreatingUserInterface(UI).html#如何创建游戏界面)
+
 ## 5.工程文件夹介绍
 
 ![2efc4e86-0766-494e-9f68-268cfd91bc5b](https://arkimg.ark.online/2efc4e86-0766-494e-9f68-268cfd91bc5b.webp)
