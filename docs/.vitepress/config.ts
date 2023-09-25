@@ -89,7 +89,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Basic-Learning/blank-project.md'
           },
           {
-            text: '角色与摄像机',
+            text: '玩家角色与摄像机',
             link: '/Basic-Learning/player-and-character.md'
           },
           {

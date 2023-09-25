@@ -1,28 +1,62 @@
 # 游戏对象
 
-::: tip 阅读本文大概需要 7 分钟。
+::: tip 阅读本文大概需要 10 分钟。
 
-在游戏开发中，常常需要将资源库中的物体摆放到场景，那么除了直接拖拽到场景的方式，也常常需要使用脚本动态生成游戏物体。接下来我们就来了解下游戏物体的创建与使用以及常用属性。
+在编辑器资源库中，提供了美术对象用来搭建游戏场景、游戏功能对象用来实现常见游戏逻辑。它们都是游戏对象的一种，本章节我们就来学习游戏对象，以及常见用法。
 
 ::: 
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=948268391&bvid=BV1Qs4y1x74M&cid=978207163&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+## 1. 三维坐标系
 
-## 1. 游戏物体常用属性
+在学习游戏对象之前，我们先来了解一下口袋方舟中的坐标系。在中学的几何学中，大家应该已经了解 2D 坐标系，也就是大家熟知的二维笛卡尔坐标系，该坐标系从原点（0,0）开始，向右伸出一条横轴，为 x 轴的正方向；向上伸出一条纵轴，为 y 轴的正方向，如图：
 
-首先我们从编辑器的“本地资源库”中，拖拽一个静态模型到场景当中，这里拖拽了一个正方体到场景中，如图：
+![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn1JPA6HN7SwDi1kyEPxSTFb.png)
 
-![](https://arkimg.ark.online/image-20230723172017928.png)
+在游戏开发中，编辑 3D 场景时，只有两个坐标就无法定位到某个物体的具体位置了，所以引入 3D 坐标系来完成场景中每个物体的定位。
+
+那么 3D 坐标系是如何定位一个物体，除了原来的 x、y 轴以外，还会新增一个轴向为 z 轴（可以理解为，把上面的 2D 坐标系倒下来放桌子上，然后在(0, 0)点位置再加一个垂直的轴-Z 轴。
+
+在我们编辑器中，3D 坐标系如下图所示：
+
+![image-20230602153538281](https://arkimg.ark.online/image-20230602153538281.webp)
+
+左右方向是 X 轴（红色），前后方向是 Y 轴（绿色 ），上下方向是 Z 轴（蓝色）
+
+* 基于坐标(0, 0, 0)点，如图所示，X 轴向右是正方向是变大，Y 轴向后是正方向是变大，Z 轴向上是正方向是变大。
+* 所以，我们想让一个物体向正前方移动应该是**减少**Y 的值；向右移动是**增加**X 的值；向下移动是**减少**Z 的值。
+
+在编辑器中，视角是会随时变化的，视角变化后当前世界的坐标轴是什么方向就不确定了，这个时候可以通过主视口的左下角这里，查看当前的坐标系信息，这里是会随着你视角转动而实时变化的，如图所示：
+
+![image-20230602161738454](https://arkimg.ark.online/image-20230602161738454.webp)
+
+除了主视口-左下角的信息以外，选中物体时，展示的拖拽箭头，其实也是一样的能体现坐标信息：
+
+![image-20230602161920015](https://arkimg.ark.online/image-20230602161920015.webp)
+
+这两个位置都符合默认设置：红色是 X 轴，绿色是 Y 轴，蓝色是 Z 轴，箭头方向为正方向！
+
+## 2. 游戏对象及常用属性
+
+游戏对象包含了游戏功能对象和美术对象两大块：
+
+- 美术对象：提供了搭建场景所必须的物体，如静态模型、特效、音效等，使用它们可以快速搭建游戏场景。
+- 游戏功能对象：封装了常见游戏功能逻辑，比如触发器、运动器等，用来快速实现常见游戏功能。
+
+![b9efb6b9-879c-4d08-94c9-2cbeb74e9373](https://arkimg.ark.online/b9efb6b9-879c-4d08-94c9-2cbeb74e9373.webp)
+
+接下来我们从从编辑器的**资源库**中，拖拽一个静态模型到场景中，这里拖拽了一个正方体到场景中，如图：
+
+![0160e409-c53b-4ec5-830a-61ba9115a1e2](https://arkimg.ark.online/0160e409-c53b-4ec5-830a-61ba9115a1e2.webp)
 
 然后我们可以看到，属性面板中会显示出该游戏物体的相关属性，并且可以很方便的进行修改设置，这里我们把常用的属性列出来，如图：
 
 **基础属性：**
 
-Name：示例为“正方体”，我们可以在这里修改物体的名称，修改名称后，回车确定修改。
+Name：示例为 **“正方体”** ，我们可以在这里修改物体的名称，修改名称后，回车确定修改。
 
-Guid：在场景中的每个物体，都有一个唯一的Guid，我们可以通过Guid来查找对应的物体。
+GameObjectId：在场景中的每个物体，都有一个唯一的 Id，我们可以通过 GameObjectId 来查找对应的物体。
 
-网络状态：网络运行环境，具体运行环境的区别可以查看 [客户端与服务端](https://learning.ark.online/md/2.2.html)
+网络状态：网络运行环境，具体运行环境的区别可以查看 [网络同步原理和结构 | 产品手册](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
 
 Tag：标签，默认为空，这里可以填写字符串生成标签，一般标签用来标识或区分游戏物体。
 
@@ -30,7 +64,7 @@ Tag：标签，默认为空，这里可以填写字符串生成标签，一般�
 
 **变换：**
 
-变换：在这里可以修改物体三个轴向的位置、旋转和缩放，但是这里可以看到显示的都是相对数值，什么是相对数值呢？具体可以查看该小节：[游戏物体父子级](https://learning.ark.online/md/3.7.html)
+变换：在这里可以修改物体三个轴向的位置、旋转和缩放，但是这里可以看到显示的都是相对坐标，什么是相对坐标呢？具体可以查看下一章节。
 
 ![image-20230723172904353](https://arkimg.ark.online/image-20230723172904353.png)
 
@@ -46,86 +80,87 @@ Tag：标签，默认为空，这里可以填写字符串生成标签，一般�
 
 ![image-20230723173533264](https://arkimg.ark.online/image-20230723173533264.png)
 
-## 2. 脚本动态创建游戏物体
+## 3. 什么是父子级关系
 
-游戏开发中，我们常常需要通过脚本动态的进行游戏物体的创建，这里我们选择一个圆柱（GUID：7671）进行动态创建。
+首先，我们在游戏编辑器的“资源库”中选两个游戏物体并拖拽到游戏场景中，这里将一个正方体和圆锥拖拽到场景中，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcntJVFk5ZtPaLS3tcdaY4Xxb.png)
+![17b68004-c741-400e-9065-6755c08ab2a3](https://arkimg.ark.online/17b68004-c741-400e-9065-6755c08ab2a3.webp)
 
-创建并在场景当中挂载一个脚本，脚本代码如下：
+在编辑器“对象管理器”窗口中，鼠标单击选中圆锥，然后将圆锥拖拽到正方体上，如视频：
 
-```ts
+<video controls ="" src="https://arkimg.ark.online/c01tiJPpKpTjIoc1.mp4"></video>
+
+这时候，正方体与圆锥便形成了一个父子关系，之后锥体便会跟随正方体进行移动等操作，如视频：
+
+<video controls="" src="https://arkimg.ark.online/qHfBV4rU3sMPODLM.mp4"></video>
+
+::: warning 注意 
+
+编辑器中，我们常用[空锚点](https://docs.ark.online/GameplayObjects/Anchor.html)作为顶层父节点
+
+**文件夹**、**Group (打组)** 只能用来管理，不能用它来进行父子结点获取。
+
+:::
+
+### 3.1. 相对位置
+
+选中圆锥，我们在“属性面板”中可以看到，目前显示的位置为“相对位置”，那么这里的相对指的是什么呢？我们在这里点击小三角，发现除了“相对位置”，我们还可以设置“绝对位置”，并且切换显示方式后， X、Y、Z 三个轴的坐标也发生了变化，如图：
+
+![](https://cdn.233xyx.com/1681130643237_135.gif)
+
+那么这里的“相对位置”就是指当前物体相对于父物体的偏移位置，类似于现实世界中，你这样描述你的位置：我在你东边 10 米远，然后南边 5 米远，这就是我对于你的相对位置。
+
+而“绝对位置”指的就是当前物体在游戏场景中的所在位置，类似于现实世界中的经纬度，无论你怎样跟其他人描述你的相对位置，但你的绝对位置经纬度是不会变的。
+
+除了位置以外，旋转和缩放同样也有相对与绝对两种显示方式。
+
+## 4. 使用脚本获取游戏对象
+
+刚刚我们已经学会了如何拖动一个游戏物体到场景上，现在我们来学习如何使用脚本来获取这个物体，要使用脚本获取物体需要分两种情况：
+
+1. 获取脚本自身挂载到的物体。
+2. 获取场景上其它物体。
+
+### 4.1 获取脚本挂载的物体
+
+对于脚本自身挂载到的物体，在代码中可以直接使用 `this.gameObject` 获取，并且可以使用 `getChildren` 方法来获取该物体下的子物体。
+
+```typescript
 @Component
-export default class PlayerControl extends Script {
-
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected async onStart(): Promise<void> {
-        //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
-        if (SystemUtil.isServer()) {
-            //创建圆柱模型
-            let object = await GameObject.asyncSpawn("7671")
-            //设置模型位置
-            object.worldTransform.position = Vector.zero
-            //5 秒后
-            setTimeout(() => {
-                //销毁该物体
-                object.destroy()
-            }, 5000);
-        }
+export default class Test extends Script {
+    protected onStart(): void {
+        // 使用 this.gameObject 获取自身挂载的物体 //[!code focus]
+        console.log(this.gameObject.name); //[!code focus]
+  
+        // 获取子物体列表 //[!code focus]
+        const children = this.gameObject.getChildren(); //[!code focus]
+        console.log("拥有子物体个数:", children.length); //[!code focus]
     }
 }
 ```
 
-运行游戏，可以看到该物体被动态创建出来，5 秒过后会自动销毁，如图：
+### 4.2 获取场景上其它物体
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcniGvCIowojlMfcO9qkN0Tmc.png)
+获取场景上的其它物体，我们可以使用 `findGameObjectById` 函数，通过物体的 GameObjectId 来动态查找：
 
-除了普通物体，特效、声音、预设体等都可以使用该脚本方式动态创建出来。
+::: warning GameObjectId 相关
 
-创建一个特效/声音，无需其他客户端同步显示，那么只需要在客户端编写全部逻辑。
+每个项目中，物体的 GameObjectId 都不一样，查找时需要注意将下列代码中的 Id 修改为自己本项目物体的的 ID
 
-创建一个普通物体，如果需要其他客户端都同步显示，那么需要在服务端进行创建与销毁操作，而对物体的移动、旋转修改等操作也可以在客户端修改，会自动同步所有客户端显示，具体客户端与服务端查看：[客户端与服务端](https://learning.ark.online/md/2.2.html)
+:::
 
-## 3. 更改物体位置
-
-```ts
+```typescript
 @Component
-export default class PlayerControl extends Script {
-
+export default class Test extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected async onStart(): Promise<void> {
-        //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
+    protected onStart() {
         if (SystemUtil.isServer()) {
-            //创建圆柱模型
-            let object = await GameObject.asyncSpawn("7671")
-            //设置模型位置到 Vector(500,500,100)的位置
-            object.worldTransform.position = new Vector(500, 500, 100)
+            // 通过立方体的 GameObjectId 找到立方体 //[!code focus]
+            const object = GameObject.findGameObjectById("1EB0BD86D97D7EAD"); //[!code focus]
+            // 获取立方体有几个子物体（当前只有一个圆锥体）
+            console.log("子物体个数:" + object.getChildren().length);
         }
     }
 }
 ```
-
-## 4. 更改物体颜色
-
-有时候我们需要对游戏物体的颜色进行修改，主要是去修改物体的材质。
-
-因为我们并不能直接对物体的颜色进行修改，我们要理解一件事，物体的显示是基于材质的，而我们只能对材质进行颜色的修改，例如我们可以创建一个红色的材质，然后将这个材质应用于椅子、窗户等物体，那么我们就会拥有一个红色的椅子和一个红色的窗户了。
-
-那么我们来创建一个材质，选择需要更改颜色的物体，在属性中单击该按钮，如图：
-
-![image-20230723184716188](https://arkimg.ark.online/image-20230723184716188.png)
-
-这时候会在重新弹出一个材质编辑窗口，我们在这里选择"BaseColor"，然后就可以通过"颜色"选项修改材质的基础颜色，修改好颜色后，点击"确认"，最后再进行保存。
-
-![image-20230723185641626](https://arkimg.ark.online/image-20230723185641626.png)
-
-保存后，回到主界面，就可以看到场景上的方块颜色发生改变了
-
-![image-20230723185834673](https://arkimg.ark.online/image-20230723185834673.png)
-
-
-
-如果其他物体也想改成红色，那么直接使用我们这个材质就可以了，如图：
-
-![image-20230723185931634](https://arkimg.ark.online/image-20230723185931634.png)
 
