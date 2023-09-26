@@ -189,12 +189,28 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text: 'Tween 动画',
-            link: '/Masters-Road/tween.md'
+            text: '使用运动器移动对象',
+            link: '/Masters-Road/physicsSports.md'
+          },
+          {
+            text: '交互物',
+            link: '/Masters-Road/interactors.md'
           },
           {
             text: '摄像机',
             link: '/Masters-Road/camera.md'
+          },
+          {
+            text: '自定义属性',
+            link: '/Masters-Road/custom-property.md'
+          },
+          {
+            text: '冲量与冲量对象',
+            link: '/Masters-Road/impulse.md'
+          },
+          {
+            text: 'Tween 动画',
+            link: '/Masters-Road/tween.md'
           },
           {
             text: '模块管理',
@@ -203,18 +219,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: 'IAA',
             link: '/Masters-Road/advertising.md'
-          },
-          {
-            text: '自定义属性',
-            link: '/Masters-Road/custom-property.md'
-          },
-          {
-            text: '冲量',
-            link: '/Masters-Road/impulse.md'
-          },
-          {
-            text: '交互物',
-            link: '/Masters-Road/interactors.md'
           },
           {
             text: '寻路',
