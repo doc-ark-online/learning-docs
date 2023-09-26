@@ -8,8 +8,6 @@
 
 了解更多本节内容见产品文档：[音效](https://docs.ark.online/GameplayObjects/SoundEffect.html)
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=778363922&bvid=BV17y4y197Ee&cid=978207053&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ## 1. 什么是音效
 
 这里的音效包含：音乐和音效。音乐通常指持续时间比较长的声音，例如游戏在每个场景中都会循环播放的背景音乐；音效通常指瞬间的声音效果，例如脚步声、射击声、碰撞声等。编辑器中将音效分为 **2D 音效**（全局音效，类似把音箱放在人的身上，人不管在哪里都是听到一样的声音大小）和 **3D 音效**（空间化，类似把音箱放到地上固定，人走远声音就变小，近点声音就变大）。

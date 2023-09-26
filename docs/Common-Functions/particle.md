@@ -6,8 +6,6 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=948268924&bvid=BV1Qs4y1x7vi&cid=978207244&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ## 1.  粒子特效
 
 在编辑器中，为我们提供了十分丰富的成品特效，如图：
