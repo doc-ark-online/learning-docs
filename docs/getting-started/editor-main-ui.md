@@ -8,8 +8,6 @@
 
 参照产品手册：[主编辑器各窗口操作](https://docs.ark.online/Editor/EditorWindowsOperation.html)
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV14P4y1z7wk&vd_source=c94089b4804c1edb7b67c4629d433f6b&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ![image-20230518191914129](https://arkimg.ark.online/image-20230518191914129.webp)
 
 * 编辑器主界面可分为 7 个区域：菜单栏、工具栏、本地资源库、主视口、工程内容、对象管理器、属性面板

@@ -8,9 +8,7 @@
 
 口袋方舟编辑器使用的语言是 TypeScript 来编写游戏脚本。
 
-支持 TypeScript 语言的编辑器有 VisualStudioCode（以下简称 VSCode）是比较轻量级的，也是使用人数较多的一款编辑器，教程中均以该编辑器进行演示。
-
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?bvid=BV1pA411k761&vd_source=c94089b4804c1edb7b67c4629d433f6b&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+支持 TypeScript 语言的编辑器有 Visual Studio Code（以下简称 VSCode）是比较轻量级的，也是使用人数较多的一款编辑器，教程中均以该编辑器进行演示。
 
 ## 1.VSCode 下载与安装
 
@@ -68,22 +66,8 @@
 >
 > 更多使用信息可以参考帖子：[一键搜索 API 文档插件安装使用](https://forum.ark.online/forum.php?mod=viewthread&tid=1657&page=1&extra=#pid5242)
 
-安装下列必要插件，增加对 TS 的支持，插件安装完成后，别忘了重启编辑器哦！
+安装下列必要插件，扩展 VSCode 对于 TypeScript 语言的支持，插件安装完成后别忘了重启 VSCode.
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnl8JSTPC0xuIDV6J5t35f3g.png)
+![adec3eb5-fffb-46fd-be91-b9df09a77360](https://arkimg.ark.online/adec3eb5-fffb-46fd-be91-b9df09a77360.webp)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnRQjUaYwoRrDZKwTk0vezec.png)
-
-推荐安装插件，可以选择自己需要进行安装：
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnkcHBjnTPiNEC36CreIKRGb.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnulHFEhyy1DFo8FzBhHtQOe.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn8l0GZmdxYGoyjNuruDF40e.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnuRV4Hq9YvyomyrsQRsnRDb.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnxft4w8JVxZk0gXxCknEIke.png)
-
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnjng4QIGnIws7RC7GsGHk9f.png)
+![13d7409d-6a86-40a6-ba16-a6deb6053a7e](https://arkimg.ark.online/13d7409d-6a86-40a6-ba16-a6deb6053a7e.webp)
