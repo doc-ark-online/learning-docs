@@ -48,45 +48,79 @@ export default class AssetExample extends Script {
 
 ![b9c78123-72e3-43d5-8834-052ed621d5dc](https://arkimg.ark.online/b9c78123-72e3-43d5-8834-052ed621d5dc.webp)
 
-创建并在场景当中挂载一个脚本，脚本代码如下：
+创建并在场景当中挂载一个脚本，脚本代码如下。这里我们主要使用 `GameObject.asyncSpawn` 对资源进行了异步创建操作。
+
+创建游戏对象还可以使用同步创建函数 `GameObject.spawn` 函数。
 
 ```typescript
 @Component
-export default class PlayerControl extends Script {
-
+export default class GameStart extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected async onStart(): Promise<void> {
         //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
         if (SystemUtil.isServer()) {
             //创建圆柱模型
-            let object = await GameObject.asyncSpawn("7671")
-            //设置模型位置
-            object.worldTransform.position = Vector.zero
-            //5 秒后
-            setTimeout(() => {
-                //销毁该物体
-                object.destroy()
-            }, 3000);
+            GameObject.asyncSpawn("197397");
         }
     }
 }
 ```
 
-运行游戏，可以看到该物体被动态创建出来，5 秒过后会自动销毁
+运行游戏，可以看到该物体被动态创建出来了。
 
-除了普通物体，特效、声音、预设体等都可以使用该脚本方式动态创建出来。
+除了模型，特效、声音、预设体等都可以使用该脚本方式动态创建出来。
 
-创建一个特效/声音，无需其他客户端同步显示，那么只需要在客户端编写全部逻辑。
-
-创建一个普通物体，如果需要其他客户端都同步显示，那么需要在服务端进行创建与销毁操作，而对物体的移动、旋转修改等操作也可以在客户端修改，会自动同步所有客户端显示。
-
-## 3. 更改游戏对象变换属性
+## 3. 更改游戏对象属性
 
 上文中我们在常见属性中讲到了游戏对象的变换属性，这个属性决定了游戏对象的位置、旋转、缩放。游戏开发中，我们经常需要修改这个属性用以实现各类游戏功能，举个例子，我们可以通过在每一帧调整小球的缩放、位置和旋转参数，来实现一个弹跳移动的小球。这种频繁的属性修改是游戏开发中常见且重要的操作之一。
 
-除去直接在对象管理器中修改以外，我们还可以使用代码或运动器来动态修改物体的变换。
+### 3.1 将游戏对象转为指定类型
 
-### 3.1 使用代码修改对象变换
+在上一章节中我们讲过，编辑器中所有的物体都继承自游戏对象基类（GameObject），使用 `GameObject.spawn` 函数创建出来的对象默认类型为 GameObject 类型，如果我们想要使用某些专属于某个类型对象的函数，就需要手动指定创建出来的游戏对象的类型了。
+
+比如 `Model` 类型才可以设置碰撞属性、`Trigger` 类型才可以设置进入触发器事件。
+
+在TypeScript中，`as` 关键字用于类型断言。它允许我们手动设置变量的数据类型，并防止编译器自行推断它。类型断言通常用于将任何类型视为特定类型，例如我们将生成出的游戏对象（圆柱体），转换为 Model 类型：
+
+```typescript
+@Component
+export default class Test extends Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected async onStart(): Promise<void> {
+        //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
+        if (SystemUtil.isServer()) {
+            //创建圆柱模型 //[!code focus]
+            const cylinder = GameObject.spawn("197397") as Model; //[!code focus] //[!code ++]
+            //转换为模型后就可以设置模型的碰撞了 //[!code focus]
+            cylinder.setCollision(CollisionStatus.Off); //[!code focus]
+        }
+    }
+}
+```
+
+上文中只是演示了 `as` 的一种转换方式，我们通常声明一个新的变量，然后将转换后的游戏对象赋值给它：
+
+```typescript
+@Component
+export default class Test extends Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected async onStart(): Promise<void> {
+        //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
+        if (SystemUtil.isServer()) {
+            //创建游戏对象
+            const gameObject = GameObject.spawn("197397"); //[!code focus]
+            //声明一个变量 将游戏对象转换为模型类型  //[!code focus]
+            const cylinder = gameObject as Model; //[!code focus]//[!code ++]
+            //转换为模型后就可以设置模型的碰撞了 //[!code focus]
+            cylinder.setCollision(CollisionStatus.Off); //[!code focus]
+        }
+    }
+}
+```
+
+### 3.2 使用代码修改对象变换
+
+除了直接在对象管理器中修改以外，我们还可以使用代码或运动器来动态修改物体的变换。
 
 位置（Position）：变换属性中的位置确定了游戏对象在游戏世界中的空间坐标。
 
@@ -116,7 +150,7 @@ export default class TransformExp extends Script {
 }
 ```
 
-### 3.2 使用运动器修改对象变换
+### 3.3 使用运动器修改对象变换
 
 实现简单的运动如直线运动、简谐运动、圆周运动等，我们可以无需代码直接使用编辑器封装好的 **运动功能对象：运动器** 来实现。
 
