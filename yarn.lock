@@ -2749,10 +2749,10 @@ metaapp-pandora-sdk@^5.0.2:
     promise-polyfill "^8.2.0"
     whatwg-fetch "^3.5.0"
 
-metaapp-prodigytech-doc-theme@^2.1.7:
-  version "2.1.7"
-  resolved "https://api-web-registry.metaapp.cn/metaapp-prodigytech-doc-theme/-/metaapp-prodigytech-doc-theme-2.1.7.tgz#787302d138ce3a222cf45e4629ec4134a7835f9d"
-  integrity sha512-5QKOzVg28s8wb0pAvE+0YLu81HwGnG1fjiho5KNa0Zq6rJdp/WX274ka+WJts2wR/ibADw3qNCYDGuDEMff/lg==
+metaapp-prodigytech-doc-theme@^2.1.9:
+  version "2.1.9"
+  resolved "https://api-web-registry.metaapp.cn/metaapp-prodigytech-doc-theme/-/metaapp-prodigytech-doc-theme-2.1.9.tgz#7248eb7db62d65e523eca39889a352b5591c1fef"
+  integrity sha512-l5EPVoXMmXt8jjpDEgpaQnBJZ8cgbvBzg8k4g35FCa8lMgoIBg1pmV5v0RUpEq4uHvlqN3h3YjR5zeF2SoGNhA==
   dependencies:
     "@docsearch/css" "^3.3.0"
     "@docsearch/js" "^3.3.0"
@@ -2767,6 +2767,7 @@ metaapp-prodigytech-doc-theme@^2.1.7:
     shiki "^0.12.1"
     viewerjs "^1.11.3"
     vite "^4.0.2"
+    vitepress-plugin-codeblocks-fold "^1.2.27"
     vue "^3.2.45"
 
 metaapp-simple-pandora-sdk@^1.0.13:
