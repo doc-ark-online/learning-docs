@@ -1,16 +1,14 @@
-# 角色编辑器
+# 角色编辑器与换装
 
-::: tip 做游戏最缺什么？素材和角色？编辑器除了提供免费的海量素材资源库外，也提供了角色编辑器，轻松设置几下就可以出现一个优质角色，让你的游戏千人千面，不再为了资源而发愁！
+::: tip 做游戏最缺什么？素材和角色？编辑器除了提供免费的海量素材资源库外，也提供了角色编辑器，轻松设置几下就可以出现一个优质角色，对于游戏来说这是是非常重要的，它能够让玩家更好地体验到游戏的魅力，提升用户粘性，同时也有助于提高游戏的水准和玩家的沉浸感。
 
 :::
 
-了解更多本节内容见产品文档：[角色编辑工具](https://docs.ark.online/Editor/CharacterEditor.html)
-
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src=" https://player.bilibili.com/player.html?aid=435814758&bvid=BV1z3411R7Y2&cid=978221145&page=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+了解更多本节内容见产品文档：[角色形象与换装 | 产品手册](https://docs.ark.online/Role/AppearanceAndReplacement.html#角色形象介绍)
 
 ## 1. 角色编辑器的使用
 
-首先，在“对象管理器”面板中选中“Player”，也就是我们的主角，然后在属性面板中，单击“编辑玩家形象”按钮，如图：
+首先，在 **对象管理器** 面板中选中 **Player**，也就是我们的玩家角色，然后在属性面板中，单击“编辑玩家形象”按钮，如图：
 
 ![image-20230725162612188](https://arkimg.ark.online/image-20230725162612188.png)
 
@@ -38,7 +36,7 @@
 
 ![image-20230725163101398](https://arkimg.ark.online/image-20230725163101398.png)
 
-### 1.4化妆相关
+### 1.4 化妆相关
 
 在身体修改界面中，可以看到包括肤色、口红、贴花等各种设置，可以让你轻松的给角色进行化妆，如图：
 
@@ -60,9 +58,42 @@
 
 ![image-20230725164710059](https://arkimg.ark.online/image-20230725164710059.png)
 
+### 1.6 装备挂件
+
+除了换衣服和发型外，我们还可以将静态模型、特效、预制体等资源附着于角色指定位置，附着上去的资源我们称之为 **挂件**  ，默认的附着位置称之为 **插槽**。通过调整挂件与插槽的偏移，可以让挂件效果更加完美。
+
+在实际游戏中，玩家身上的翅膀、帽子、手中的武器等，都可以使用挂件系统来实现。接下来将会演示如何给玩家戴上一顶帽子：
+
+![8d3b94d0-3fc3-4237-b9ab-639d28cdb906](https://arkimg.ark.online/8d3b94d0-3fc3-4237-b9ab-639d28cdb906.webp)
+
+1. 在角色编辑器属性中，点击**挂件**。
+2. 因为是要添加帽子，所以选中**头部相关设置**。
+3. 在头发属性中点击添加按钮，添加一个挂件。
+4. 然后将左侧资源库中的帽子拖入进去，并且调节到合适位置与大小。
+
+这样我们帽子挂件就设置好了，如果想要让挂件默认在角色上显示我们还需要一些额外的设置：
+
+![8f81f9ea-5884-41b4-8a39-cbe9ef9d3acb](https://arkimg.ark.online/8f81f9ea-5884-41b4-8a39-cbe9ef9d3acb.webp)
+
+在角色编辑器右上角的**设置**中将**默认显示挂件**勾选上，这样在游戏运行后使用了这套装扮的角色就会将挂件显示出来了。
+
+::: tip 挂件的优先加载
+
+编辑器所有需要动态生成的资源都需要优先加载，挂件也不例外，我们需要将挂载的模型、特效等资源拖入优先加载中。
+
+:::
+
+### 1.7 切换整套服装配饰
+
+在资源库中，有许多美术同学搭配好的服装数据供我们使用：
+
+![1ef2d38d-f7d8-4d1f-bcac-266b0f9bdd41](https://arkimg.ark.online/1ef2d38d-f7d8-4d1f-bcac-266b0f9bdd41.webp)
+
+在资源库中找到 **角色/NPC** 选项，选中它后我们就可以看到许多成套的搭配了，将需要的直接拖到角色编辑器的主视口中这样就可以应用整套角色数据了。
+
 ## 2. 保存与加载角色形象数据
 
-在角色编辑器中，我们通过“另存为”会将当前角色的搭配数据存到本地，本节我们就来尝试下在脚本中动态的加载搭配数据吧！
+在角色编辑器中，我们通过 **另存为** 会将当前角色的搭配数据与挂件数据存到本地，本节我们就来尝试下在脚本中动态的加载搭配数据吧！
 
 ### 2.1 应用捏人数据
 
@@ -112,7 +143,13 @@
 
   创建一个脚本挂载到场景中，编写脚本代码如下：
 
-```ts
+::: tip 关于 setDescription 函数
+
+这个函数可以直接传入 1.7 小节中资源库中整套装扮的 assetId 也可以直接换装。
+
+:::
+
+```typescript
 @Component
 export default class PlayerControl extends Script {
 
@@ -120,13 +157,10 @@ export default class PlayerControl extends Script {
     protected onStart(): void {
         //只有在客户端中才能获取该客户端对应的玩家 
         if (SystemUtil.isClient()) {
-            //异步获取当前客户端对应的玩家对象
-            Player.asyncGetLocalPlayer().then((player) => {
-                setTimeout(() => {
-                    //5 秒后进行换装操作,这里的参数就粘贴我们在上一小节中最后复制的角色资源 ID
-                    player.character.setDescription(["012D5D934581C29E3BEDADB2A754E019"])
-                }, 5000);
-            })
+            setTimeout(() => {
+                //5 秒后进行换装操作,这里的参数就粘贴我们在上一小节中最后复制的角色资源 ID
+                Player.localPlayer.character.setDescription(["012D5D934581C29E3BEDADB2A754E019"])
+            }, 5000);
         }
     }
 }
@@ -135,8 +169,6 @@ export default class PlayerControl extends Script {
 运行游戏，5 秒后主角就会动态使用我们的数据了，如图：
 
 ![img](https://arkimg.ark.online/20230725173213_rec_.gif)
-
-
 
 ### 2.4 NPC 加载角色形象数据
 
