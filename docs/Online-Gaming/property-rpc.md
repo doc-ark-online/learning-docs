@@ -132,5 +132,46 @@ Replicated 只接受在双端的脚本中使用，因为修改 Replicated 的值
 
 :::
 
+接下来我将会举一个例子，通过打印日志来演示 属性同步的执行方式。
 
+创建一个名为 `ReplicatedTest` 的脚本并将它拖到场景中：
 
+![556ed469-35a0-4d46-84c6-25dfee1c1ed0](https://arkimg.ark.online/556ed469-35a0-4d46-84c6-25dfee1c1ed0.webp)
+
+复制下列代码到脚本中。
+
+```typescript
+@Component
+export default class ReplicatedTest extends Script {
+
+    // 对 time 对象开启属性同步
+    @Property({ replicated: true, onChanged: "onTimeValueChange" })
+    private time: number = 0;
+
+    protected onStart(): void {
+
+        // 属性同步的对象的值只有在服务端修改才会自动同步
+        if (SystemUtil.isServer()) {
+            // 每秒给 time 加1
+            TimeUtil.setInterval(() => {
+                this.time = this.time + 1;
+            }, 1);
+        }
+    }
+
+    // 属性同步对象的值被改变回调,这个函数将会在客户端执行
+    private onTimeValueChange(): void {
+        console.log("接收到的值:" + this.time);
+    }
+}
+```
+
+代码中我们声明了一个 number 类型的变量 time ，并给它加上装饰器 `@Property` 接着将 `replicated` 设置为 true 表示该变量将会使用属性同步功能。
+
+`onChanged` 参数需要传递一个字符串进去，该字符串表示的是，属性同步对象的值被改变时，触发的**回调函数的函数名**。这里要注意函数名的大小写字母，不能传递错误。
+
+代码编写完毕后切回还编辑器，运行单个客户端，观察日志输出中的结果：
+
+![4fca2f66-e5bd-4322-ab3c-70d2282079fa](https://arkimg.ark.online/4fca2f66-e5bd-4322-ab3c-70d2282079fa.webp)
+
+因为回调函数只会在客户端执行，所以我们打开客户端日志输出窗口观察程序执行结果，在客户端1 的日志输出窗口中，我们可以看到每秒钟都会接受到一次值被改变的输出。
