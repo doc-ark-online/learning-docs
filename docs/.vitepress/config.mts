@@ -151,11 +151,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Common-Functions/query.md'
           },
           {
-            text: '换装',
-            link: '/Common-Functions/clothes.md'
-          },
-          {
-            text: '角色编辑器',
+            text: '角色编辑器与换装',
             link: '/Common-Functions/character-editor.md'
           }
         ]
