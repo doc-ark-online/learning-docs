@@ -46,8 +46,8 @@ false：角色质量参与冲量运算
 **测试代码**
 
 ```ts
-@Core.Class
-export default class PlayerAddImpulse extends Core.Script {
+@Component
+export default class PlayerAddImpulse extends Script {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -58,30 +58,30 @@ export default class PlayerAddImpulse extends Core.Script {
     private bindTriggerHandle() {
 
         // 不在服务器运行，直接结束
-        if (!Util.SystemUtil.isServer()) {
+        if (!SystemUtil.isServer()) {
             return;
         }
 
         // 触发器 GUID 每个项目都不一样，请在自己项目中复制指定的物体 GUID
-        let boxTriggerGuid = '3D1907A8405F99356C4CA699543258C8';
+        const boxTriggerGuid = '3D1907A8405F99356C4CA699543258C8';
 
         // 异步查询碰撞区域
-        Core.GameObject.asyncFind(boxTriggerGuid).then((triggerGo: Core.GameObject) => {
+        GameObject.asyncFindGameObjectById(boxTriggerGuid).then((triggerGo: GameObject) => {
             // 将查询到的 GameObject 转为 trigger
-            let triggerBox = triggerGo as Gameplay.Trigger;
+            const triggerBox = triggerGo as Trigger;
             // 添加进入碰撞区域监听
-            triggerBox.onEnter.add((joinGo: Core.GameObject) => {
+            triggerBox.onEnter.add((joinGo: GameObject) => {
 
                 // 判断进入碰撞区域的对象是否为角色
-                if (!(joinGo instanceof Gameplay.Character)) {
+                if (!(joinGo instanceof Character)) {
                     // 不是角色，停止执行
                     return;
                 }
                 // 进入的对象转为角色类
-                let char = joinGo as Gameplay.Character;
+                const char = joinGo as Character;
                 // 给角色一个向上的冲量
                 // addImpulse 该函数只能在服务端运行
-                char.addImpulse(Type.Vector.up.multiply(100000), false);
+                char.addImpulse(Vector.up.multiply(100000), false);
 
             })
         })
