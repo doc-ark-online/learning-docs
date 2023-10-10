@@ -68,7 +68,17 @@ export default class GameStart extends Script {
 
 运行游戏，可以看到该物体被动态创建出来了。
 
-除了模型，特效、声音、预设体等都可以使用该脚本方式动态创建出来。
+::: danger Spawn 资源注意事项
+
+双端预制体只能在服务端创建，客户端预制体只能在客户端创建。
+
+普通资源在服务端创建后为双端物体，在客户端创建为单端物体。
+
+关于游戏对象的网络类型会在后续章节介绍，这里只需要大概了解即可。[客户端与服务端 | 教程 (ark.online)](https://learning.ark.online/Online-Gaming/client-and-server.html)
+
+:::
+
+除了模型，特效、声音、预制体等都可以使用该脚本方式动态创建出来。
 
 ## 3. 更改游戏对象属性
 
