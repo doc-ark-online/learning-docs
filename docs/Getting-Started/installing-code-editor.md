@@ -34,13 +34,13 @@
 
 如果没有提示，可以使用以下步骤安装中文语言包：
 
-1. 打开 VSCode，在主界面按下组合键 “Ctrl+Shift+P”，在弹出窗口中输入 “ ” 并选择该项，如图：
+1. 打开 VSCode，在主界面按下组合键 “Ctrl+Shift+P” (或直接点击最上方输入框选 Show and Run Commands)，在弹出窗口中输入 “Configure Display Language” 并选择该项，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnydX1fKKLC3hCdfatlBovnh.png)
+![169ed6aa-f35d-4ba7-8de3-fe9bf31bfb13](https://arkimg.ark.online/169ed6aa-f35d-4ba7-8de3-fe9bf31bfb13.webp)
 
 2. 选择后会出现新的语言选择列表，选择 “zh-cn” 即可，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcn65OJkzrOScR0J5mc4kVEme.png)
+![c140e77c-73f7-430d-b8db-290e84acf1a4](https://arkimg.ark.online/c140e77c-73f7-430d-b8db-290e84acf1a4.webp)
 
 3. 重启 VSCode 即可完成设置
 
