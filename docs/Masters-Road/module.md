@@ -71,7 +71,7 @@ export class MyModuleS extends ModuleS<MyModuleC, MyModuleData>{
 
 客户端模块包含的生命周期函数如下图所示：
 
-> ![image-20231011111910023](C:\Users\10674\AppData\Roaming\Typora\typora-user-images\image-20231011111910023.png)
+> ![image-20231011111910023](https://arkimg.ark.online/image-20231011111910023.webp)
 >
 > - onAwake：模块被创建（注册）时执行
 > - onStart：模块启动时执行
@@ -83,7 +83,7 @@ export class MyModuleS extends ModuleS<MyModuleC, MyModuleData>{
 
 服务端模块包含的生命周期函数如下图所示
 
-> ![image-20231011112745691](C:\Users\10674\AppData\Roaming\Typora\typora-user-images\image-20231011112745691.png)
+> ![image-20231011112745691](https://arkimg.ark.online/image-20231011112745691.webp)
 >
 > - onAwake：模块被创建（注册）时执行
 > - onStart：模块启动时执行
