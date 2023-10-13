@@ -8,8 +8,6 @@
 
 更多网络相关查看产品文档：[网络同步原理和结构](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
 
-<video controls src="https://cdn.233xyx.com/1681114091719_118.mp4"/>
-
 ![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnM7fx4TyFOXUdZK62JZrXIR.png)
 
 ## 1. 传统游戏服务端 Server
