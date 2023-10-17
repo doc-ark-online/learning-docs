@@ -390,14 +390,12 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         items: [
           {
             text: '第一节：搭建场景',
-            link: '/tycoon-course/2.1make-scene.md',
             items: [
               { text: '搭建场景', link: '/tycoon-course/2.1make-scene.md' }
             ]
           },
           {
             text: '第二节：实现游戏逻辑',
-            link: '/tycoon-course/3.1buy-button.md',
             items: [
               { text: '制作购买按钮', link: '/tycoon-course/3.1buy-button.md' },
               { text: '显示可购买物品功能', link: '/tycoon-course/3.2buy-item.md' },
@@ -410,7 +408,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '第三节：实现联机家园系统',
-            link: '/tycoon-course/4.1home-system.md',
             items: [
               { text: '实现家园系统(1)', link: '/tycoon-course/4.1home-system.md' },
               { text: '实现家园系统(2)', link: '/tycoon-course/4.2home-system2.md' },
