@@ -430,7 +430,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           { text: '6.成长系统UI', link: '/monster-course/6.growth-system-UI.md' },
           { text: '7.攻击力升级', link: '/monster-course/7.attack-power-upgrade.md' },
           { text: '8.存储数据', link: '/monster-course/8.save-data.md' },
-          { text: '9.排行榜', link: '/monster-course/9.ranking-list.md' },
         ]
       }
     ],
