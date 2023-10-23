@@ -2,41 +2,51 @@
 
 ::: tip 阅读本文大概需要 10 分钟。
 
-游戏开发中，我们常常需要进行射线检测，也就是从一点发射一条射线，然后检测射线碰撞到的物体，除了射线检测外还有一些其他类型的检测，本小节就来一起看一下吧。
+游戏开发中，我们常常需要进行检测。比如在射击游戏中判断子弹是否击中了敌人、炸药爆炸时一定范围内是否有物体等，本章节我们就一起来学习一下射线检测与范围检测。
 
 :::
 
-## 1. 检测
+## 1. 射线检测
 
-**什么是检测**
+### 2.1 什么是射线检测
 
-检测是判断物体或者方向的一种方法，可以方便我们开发者获取需要位置的物体。
+射线检测（Raycasting）是一种常见的**碰撞检测技术**，用于判断投射出的射线是否与场景中的物体相交，并获取相交点的信息。射线检测通常用于识别物体之间的碰撞、计算物体之间的交点或确定可视性等任务。例如玩家与环境的交互、射击游戏中的子弹轨迹计算、物体拾取等。
 
-**检测什么用（应用场景）**
+在编辑器中提供了多种射线检测的类型，根据类型的不同我们发射出的射线形状不同，开发者需要自行选择合适的射线类型以更好的适配游戏。
 
-玩家释放技能；检测前方的怪物受到伤害；判断玩家前方物体位置的距离；获取前方（区域，范围等内）的物体。
+因为射线检测依赖于碰撞信息，所以关闭碰撞的对象使用射线检测是无法检测到的，如果要让某些物体不被射线检测到，可以尝试将它们的碰撞设为关闭。
 
-**检测类型**
+### 2.2 检测类型
 
-1. 射线检测
-2. 胶囊体范围检测
-3. 球形范围检测
-4. 矩形范围检测
+1. 线段检测 (QueryUtil.lineTrace)
+2. 球体范围检测 (QueryUtil.sphereTrace)
+3. 盒体范围检测 (QueryUtil.boxTrace)
+4. 胶囊体范围检测 (QueryUtil.capsuleTrace)
 
-## 2. 射线检测
+### 2.3 在代码中使用射线检测
 
-**是什么**
+射线检测会从开始位置到结束位置发射一条或多条射线，会将沿途的物体以 HitResult 数组的形式传出。
 
-射线检测是从开始位置到结束位置发射一条射线，会将沿途的物体以 HitResult 数组的形式传出
+这里我使用最常见的射线检测，也就是 lineTrace 线段检测，作为示例：
 
-**怎么用**
+```typescript
+@Component
+export default class Test extends Script {
 
-```ts
-/** 向角色前方进行射线检测 */
-private async lineTraceByCharacter() {
-    if (SystemUtil.isClient()) {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            InputUtil.onKeyDown(Keys.F1, () => {
+                this.lineTraceByCharacter();
+            })
+        }
+    }
+
+    /** 向角色前方进行射线检测 */
+    private async lineTraceByCharacter() {
+
         // 获取当前玩家 
-        let player = Player.localPlayer
+        const player = Player.localPlayer;
         // 获取玩家角色位置
         const playerPos = player.character.worldTransform.position;
         // 获取玩家当前朝向
@@ -44,145 +54,84 @@ private async lineTraceByCharacter() {
 
         // 进行射线检测
         const results = QueryUtil.lineTrace(playerPos, playerPos.clone().add(front.multiply(1000)), true, true);
-
+        // 遍历检测到的物体
         for (let res of results) {
+            // 排除检测到玩家
             if (res.gameObject instanceof Character) continue;
-            console.log("碰撞点在这里")
-            console.log(res.location)
+            console.log("碰撞点在这里", res.position);
             //这里尝试播放一个火焰特效方便观看
-            EffectService.playAtPosition("4330", res.location)
+            EffectService.playAtPosition("4330", res.position);
         }
     }
+
 }
 ```
 
-**示例**
+<video controls="" src="https://arkimg.ark.online/536phdsqczVBmihW.mp4"></video>
 
-![射线检测预览](https://arkimg.ark.online/%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B%E9%A2%84%E8%A7%88.gif)
+## 2. 范围检测
 
+### 2.1 什么是范围检测
 
+与射线检测类似，范围检测（Overlap Testing）也是一种常见的碰撞检测技术，用于判断物体之间的重叠关系。范围检测通常使用物体的碰撞体积来检测物体之间的重叠，它主要关注碰撞体积的位置和尺寸，而**不考虑其旋转**。可以用于检测玩家与物体的接触、触发区域的进入与离开等场景。
 
-## 3. 胶囊体范围检测
+在编辑器中我们同样提供了多种检测类型，因为线段与物体只有相交关系而不会重叠，所以在范围检测中是没有线段类型的。
 
-**是什么**
+:::tip 关于性能
 
-生成一个胶囊体形状的覆盖检测器，给定一个中心点，然后输入半径和高度。会将覆盖到的 GameObject 用数组的形式传出。
+因为范围检测仅仅计算物体间是否重叠，返回值较少。性能相对于射线检测要好一点，对于仅需要考虑物体间是否重叠的场景，我们应该优先考虑使用范围检测。
 
-**怎么用**
+:::
 
-```ts
-/** 向角色前方进行胶囊体范围检测 */
-private async capsuleOverlapByCharacter() {
-    if (SystemUtil.isClient()) {
+### 2.2 检测类型
+
+1. 盒体范围检测 (QueryUtil.boxOverlap)
+2. 球体范围检测 (QueryUtil.sphereOverlap)
+3. 胶囊体范围检测 (QueryUtil.capsuleOverlap)
+
+### 2.3 在代码中使用范围检测
+
+范围检测会在指定的范围生成检测区域，将检测到的游戏对象以数值形式返回。
+
+这里我使用常见的球体范围检测作为演示：
+
+```typescript
+@Component
+export default class Test extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if (SystemUtil.isClient()) {
+            InputUtil.onKeyDown(Keys.F1, () => {
+                this.overlapByCharacter();
+            })
+        }
+    }
+
+    /** 向角色周围 150 距离进行检测 */
+    private async overlapByCharacter() {
+
         // 获取当前玩家 
-        let player = Player.localPlayer
+        const player = Player.localPlayer;
         // 获取玩家角色位置
         const playerPos = player.character.worldTransform.position;
-        // 获取玩家当前朝向
-        const front = player.character.localTransform.getForwardVector();
-        // 胶囊体的中心点位置
-        const center = playerPos.clone().add(front.multiply(500))
-        // 半径
-        const radius = 50;
-        // 高度
-        const height = 80;
-
-        // 进行胶囊体范围检测
-        const objs = QueryUtil.capsuleOverlap(center, radius, height, true);
-
-        for (let obj of objs) {
-            if (obj instanceof Character) continue;
-            console.log("碰撞点在这里")
-            console.log(obj.worldTransform.position)
-            //这里尝试播放一个火焰特效方便观看
-            EffectService.playAtPosition("4330", obj.worldTransform.position)
+        // 进行射线检测
+        const goArray = QueryUtil.sphereOverlap(playerPos, 150, true);
+        // 遍历检测到的对象并输出对象名
+        for (let go of goArray) {
+            // 如果是玩家就不输出
+            if (go instanceof Character) continue;
+            console.log("范围中物体名字:", go.name);
         }
     }
+
 }
 ```
 
-**示例**
+<video controls="" src="https://arkimg.ark.online/6s2gsqcdihW.mp4"></video>
 
-![胶囊体检测预览](https://arkimg.ark.online/%E8%83%B6%E5%9B%8A%E4%BD%93%E6%A3%80%E6%B5%8B%E9%A2%84%E8%A7%88.gif)
+最终输出结果为：
 
-## 4. 球形范围检测
+![52fc3b28-d943-446d-bd53-caddafc51259](https://arkimg.ark.online/52fc3b28-d943-446d-bd53-caddafc51259.webp)
 
-**是什么**
-
-生成一个球形的覆盖检测器，给定一个中心点，然后输入半径。会将覆盖到的 GameObject 用数组的形式传出。
-
-**怎么用**
-
-```ts
-/** 向角色前方进行球形范围检测 */
-private async sphereOverlapByCharacter() {
-    if (SystemUtil.isClient()) {
-        // 获取当前玩家 
-        let player = Player.localPlayer
-        // 获取玩家角色位置
-        const playerPos = player.character.worldTransform.position;
-        // 获取玩家当前朝向
-        const front = player.character.localTransform.getForwardVector();
-        // 球形的中心点位置
-        const center = playerPos.clone().add(front.multiply(500))
-        // 半径
-        const radius = 50;
-
-        // 进行球形范围检测
-        const objs = QueryUtil.sphereOverlap(center, radius, true);
-
-        for (let obj of objs) {
-            if (obj instanceof Character) continue;
-            console.log("碰撞点在这里")
-            console.log(obj.worldTransform.position)
-            //这里尝试播放一个火焰特效方便观看
-            EffectService.playAtPosition("4330", obj.worldTransform.position)
-        }
-    }
-}
-```
-
-**示例**
-
-![球形检测预览](https://arkimg.ark.online/%E7%90%83%E5%BD%A2%E6%A3%80%E6%B5%8B%E9%A2%84%E8%A7%88.gif)
-
-## 5.矩形范围检测
-
-**是什么**
-
-生成一个矩形的覆盖检测器，给定一个中心点，然后传入矩形的长宽高。会将覆盖到的 GameObject 用数组的形式传出。
-
-**怎么用**
-
-```ts
-/** 向角色前方进行矩形范围检测 */
-private async boxOverlapByCharacter() {
-    if (SystemUtil.isClient()) {
-        // 获取当前玩家 
-        let player = Player.localPlayer
-        // 获取玩家角色位置
-        const playerPos = player.character.localTransform.position;
-        // 获取玩家当前朝向
-        const front = player.character.localTransform.getForwardVector();
-        // 矩形的中心点位置
-        const boxCenter = playerPos.clone().add(front.multiply(500))
-        // 矩形的长宽高
-        const boxSize = new Vector(50, 50, 50)
-
-        // 进行矩形范围检测
-        const objs = QueryUtil.boxOverlap(boxCenter, boxSize, true);
-
-        for (let obj of objs) {
-            if (obj instanceof Character) continue;
-            console.log("碰撞点在这里")
-            console.log(obj.worldTransform.position)
-            //这里尝试播放一个火焰特效方便观看
-            EffectService.playAtPosition("4330", obj.worldTransform.position)
-        }
-    }
-}
-```
-
-**示例**
-
-![矩形检测预览](https://arkimg.ark.online/%E7%9F%A9%E5%BD%A2%E6%A3%80%E6%B5%8B%E9%A2%84%E8%A7%88.gif)
+可以看到，这里除了角色我们手动跳过了，其它所有范围内的物体都被检测到了包括角色脚下的地板。
