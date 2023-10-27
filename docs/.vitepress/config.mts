@@ -696,36 +696,36 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       }
     ],
-    algolia: {
-      appId: 'I2PHYUBLCN',
-      apiKey: '62ee775311415d26549e0e30fef5aa38',
-      indexName: 'api-docs_prodigytech',
-      project: {
-        active: 'learning-docs',
-        arr: [
-          {
-            key: 'learning-docs',
-            facetFilters: ['tags:learning-docs'],
-            name: '教程'
-          },
-          {
-            key: 'product-docs',
-            facetFilters: ['tags:product-docs'],
-            name: '产品手册'
-          },
-          {
-            key: 'api-docs',
-            facetFilters: ['tags:api-docs'],
-            name: 'API'
-          },
-          {
-            name: '论坛',
-            url: 'https://forum.ark.online/search.php?searchsubmit=yes&mod=forum&srchtxt='
-          }
-        ]
-      },
-      searchPage: 'https://search.ark.online/#/search'
-    },
+    // algolia: {
+    //   appId: 'I2PHYUBLCN',
+    //   apiKey: '62ee775311415d26549e0e30fef5aa38',
+    //   indexName: 'api-docs_prodigytech',
+    //   project: {
+    //     active: 'learning-docs',
+    //     arr: [
+    //       {
+    //         key: 'learning-docs',
+    //         facetFilters: ['tags:learning-docs'],
+    //         name: '教程'
+    //       },
+    //       {
+    //         key: 'product-docs',
+    //         facetFilters: ['tags:product-docs'],
+    //         name: '产品手册'
+    //       },
+    //       {
+    //         key: 'api-docs',
+    //         facetFilters: ['tags:api-docs'],
+    //         name: 'API'
+    //       },
+    //       {
+    //         name: '论坛',
+    //         url: 'https://forum.ark.online/search.php?searchsubmit=yes&mod=forum&srchtxt='
+    //       }
+    //     ]
+    //   },
+    //   searchPage: 'https://search.ark.online/#/search'
+    // },
     pandora: {
       type: 'learning'
     },
