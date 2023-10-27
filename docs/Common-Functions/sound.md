@@ -6,7 +6,7 @@
 
 :::
 
-了解更多本节内容见产品文档：[音效](https://docs.ark.online/GameplayObjects/SoundEffect.html)
+了解更多本节内容见产品文档：[音效 | 产品手册 (ark.online)](https://docs.ark.online/GameplayObjects/SoundEffect.html)
 
 ## 1. 什么是音效
 

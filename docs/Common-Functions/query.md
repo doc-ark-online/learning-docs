@@ -6,6 +6,8 @@
 
 :::
 
+关于本章介绍的 API 我们可以在 API 文档中查询详细示例：[QueryUtil | API (ark.online)](https://api-docs.ark.online/classes/mw.QueryUtil.html)
+
 ## 1. 射线检测
 
 ### 2.1 什么是射线检测
