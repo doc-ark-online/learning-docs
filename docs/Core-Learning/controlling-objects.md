@@ -176,7 +176,7 @@ export default class TransformExp extends Script {
 
 ![3d3a8a38-391a-466a-844d-cd388a428c97](https://arkimg.ark.online/3d3a8a38-391a-466a-844d-cd388a428c97.webp)
 
-关于运动器详细教程可以查阅：[运动器教程](https://learning.ark.online/Masters-Road/physicsSports.html)
+关于运动器详细教程可以查阅：[运动器教程](../Masters-Road/physicsSports.md)
 
 ## 4. 更改游戏对象颜色
 
