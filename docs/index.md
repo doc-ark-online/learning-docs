@@ -4,32 +4,33 @@
 
 [产品文档](https://docs.ark.online/)会详细描述每个功能模块的全部功能，方便开发者用到什么查什么。
 [教程文档](https://learning.ark.online/)则拥有较强的上下文关系与系统性，方便萌新按顺序从安装编辑器开始学习到可以制作自己的游戏项目。
-所以推荐首先跟随[教程文档](https://learning.ark.online/)完成学习，然后在开发自己的游戏项目过程中，遇到问题后，搜索查找[产品文档](https://docs.ark.online/)来解决对应问题。
+所以推荐首先跟随[教程文档](https://learning.ark.online/)完成学习，然后在开发自己的游戏项目过程中，遇到问题后，搜索查找对应的[产品文档](https://docs.ark.online/)来解决对应问题。
 
-## [安装使用](https://learning.ark.online/main-course/getting-started/introduction.html)
+## [安装使用](/Getting-Started/installing-starter.md)
 
-学习一款编辑器，首先要了解编辑器有哪些特色功能，并且安装到自己的电脑设备上，接下来，首个章节就让我们一起进入口袋方舟的世界吧！
+学习编辑器第一步就是将它安装到自己的设备上，本章将会带领大家学习口袋方舟以及代码编辑器的安装方式。安装完成后还会带领大家学习编辑器的基础操作、导入项目等操作，帮助大家快速上手编辑器。
 
-## [脚本通信](https://learning.ark.online/main-course/foundational-knowledge/learning-typescript.html)
+## [基础概念](/Basic-Learning/learning-typescript.md)
 
-口袋方舟编辑器选择 TypeScript 作为开发语言可以说在编程语言学习上降低了大量的学习成本，使用一到两天时间就可以完成 TypeScript 语言的学习。
+在游戏开发中，掌握编辑器基础概念是非常重要的。在本章节中我们将会介绍 TypeScript 语言的学习路径、默认空项目的结构、玩家角色与摄像机功能、如何在编辑器中使用脚本、如何查看游戏运行日志等内容。通过这些内容的学习，我们可以更好地理解游戏开发的基础知识，为进一步深入口袋方舟编辑器打下基础。
 
-## [基础入门](https://learning.ark.online/main-course/programming-scripting/3d-coordinate-system.html)
+## [必学逻辑](/Core-Learning/gameobject.md)
 
-口袋方舟编辑器提供了大量的成品功能与模块，通过本章节快速上手编辑器核心功能，掌握游戏开发所需的必备知识。
+学习完基础概念之后，大家已经对编辑器有一定了解了。在本章节我们将会介绍口袋方舟编辑器中的游戏对象，包括用于效果的美术对象、用于快速搭建游戏逻辑的游戏功能对象；介绍完对象的基本概念后将会介绍如何使用游戏对象，包括在编辑器中直接使用和使用代码动态修改；除了游戏对象在本章节还会介绍如何让角色播放动作、姿态，让我们的游戏角色更佳生动。
 
-## [跳一跳小游戏](https://learning.ark.online/main-course/games-jump-jump-game/create-project.html)
+## [常用功能](Common-Functions/user-interface.md)
 
-终于要开发自己的首个多人联机小游戏了，让我们一起跟随教程完成有趣的跳一跳吧！（学习时可以尝试使用不同资源去做，尝试搭建属于自己的跳一跳）
+在本章节将会介绍游戏开发中常用的功能模块，比如 UI 、预制体、特效、音效等功能。通过这些功能的学习和实践，我们可以更加高效地创建游戏项目，并在开发过程中实现更丰富、更有趣的交互和体验。这些功能将帮助您逐步掌握游戏编辑器的核心操作，为成为一名优秀的游戏开发者打下坚实的基础。
 
-## [游戏界面](https://learning.ark.online/main-course/game-ui/create-ui.html)
+## [网络功能](/Online-Gaming/client-and-server.md)
 
-本章节展示了编辑器的基础界面功能教程，更多功能可以查阅[产品手册-用户界面](https://docs.ark.online/UI/CreatingUserInterface(UI).html)。
+在本章节将会介绍在口袋方舟中游戏对象的网络状态以及它们之间的区别。通过本章节的内容我们可以学到在客户端如何与服务端进行通讯、单双端对象的异同、玩家存档功能实现。这些功能可以帮助我们实现各式网络游戏。
 
-## [常用代码片段](https://learning.ark.online/main-course/code-snippet/jump-area.html)
+## [进阶功能](/Masters-Road/physicsSports.md)
 
-为了方便大家可以快速无代码的做出自己的游戏，通过一些常用的代码片段，快速上手游戏开发。
+学完上述所有功能后相信大家对于使用口袋方舟编辑器开发小型游戏已经是游刃有余了。本章节将会介绍编辑器中的进阶功能，这些功能会比之前学习的功能更加复杂，但是通过这些功能我们可以实现出更多复杂的游戏逻辑，使游戏更加出彩。
 
-## [炸弹人小游戏](https://learning.ark.online/main-course/games-bomber-game/create-project.html)
+## [常用代码片段](/code-snippet/jump-area.md)
 
-我们准备了一个炸弹人小游戏示例模板，只需要跟随教程去学习模板，你也可以快速创建出属于自己的游戏！
+在本章节，我们提供了部分功能最常见代码实现并且附上了相关的运行截图，方便大家快速学习某个功能。
+

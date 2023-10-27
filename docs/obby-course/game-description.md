@@ -16,9 +16,7 @@
 
 
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="https://player.bilibili.com/player.html?aid=573927757&bvid=BV1sz4y1x7w4&cid=1209554300&page=1" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 祝您学习愉快！
 
-## 完整 Demo 下载
-https://arkimg.ark.online/ObbyCourse.rar
+## 完整Demo下载
+https://arkimg.ark.online/%E9%97%AF%E5%85%B3%E5%B0%8F%E6%B8%B8%E6%88%8F.rar
