@@ -6,7 +6,7 @@
 
 :::
 
-参照产品手册：[主编辑器各窗口操作](https://docs.ark.online/Editor/EditorWindowsOperation.html)
+参照产品手册：[主编辑器各窗口操作 | 产品手册 (ark.online)](https://docs.ark.online/Editor/EditorWindowsOperation.html)
 
 ![05571e78-c3de-4a74-a262-54be102a22e1](https://arkimg.ark.online/05571e78-c3de-4a74-a262-54be102a22e1.webp)
 
