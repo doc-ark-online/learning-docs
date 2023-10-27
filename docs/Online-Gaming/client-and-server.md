@@ -6,6 +6,8 @@
 
 :::
 
+关于本章节更多内容可以查阅产品手册：[网络同步原理和结构 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
+
 ## 1. 客户端与服务端的关系
 
 ![d2797cf2-6ba5-48eb-9efb-734fa62ea186](https://arkimg.ark.online/d2797cf2-6ba5-48eb-9efb-734fa62ea186.webp)

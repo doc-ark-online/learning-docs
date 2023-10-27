@@ -6,7 +6,7 @@
 
 :::
 
-更多数据持久化见产品文档：[数据存储](https://docs.ark.online/Scripting/DataStorage.html)
+更多数据持久化见产品文档：[数据存储与共享 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/DataStorage.html)
 
 ## 1. 通用数据持久化
 
