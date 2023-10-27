@@ -8,7 +8,7 @@
 
 ## 1. 导入项目
 
-[闯关小游戏教程点击下载](https://learning.ark.online/obby-course/game-description.html) 
+[闯关小游戏教程点击下载](../obby-course/game-description.md) 
 
 这里以闯关小游戏为例，我们下载好项目压缩包之后解压。将解压出来的文件夹，放入自己编辑器目录下的项目文件夹，那么怎么找自己的项目文件夹呢？
 

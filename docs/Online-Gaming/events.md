@@ -17,7 +17,7 @@
 
 :::
 
-本文会讲解部分网络通信的信息，更多网络相关查看产品文档：[网络同步原理和结构](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
+本文会讲解部分网络通信的信息，更多网络相关查看产品文档：[事件系统（EventSystem） | 产品手册 (ark.online)](https://docs.ark.online/Scripting/TheEventSystem.html)
 
 ## 1. 本地事件
 

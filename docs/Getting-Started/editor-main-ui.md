@@ -6,7 +6,7 @@
 
 :::
 
-参照产品手册：[主编辑器各窗口操作](https://docs.ark.online/Editor/EditorWindowsOperation.html)
+参照产品手册：[主编辑器各窗口操作 | 产品手册 (ark.online)](https://docs.ark.online/Editor/EditorWindowsOperation.html)
 
 ![05571e78-c3de-4a74-a262-54be102a22e1](https://arkimg.ark.online/05571e78-c3de-4a74-a262-54be102a22e1.webp)
 
@@ -130,7 +130,7 @@
 
 ## 6. 对象管理器
 
-“对象管理器” 窗口包含了当前游戏场景包含的所有内容，可以在这里对每一项内容进行修改名称、复制、粘贴、删除等操作，还可以查看每项的运行环境，具体可见 [客户端与服务端](https://learning.ark.online/md/2.2.html) ，如图：
+“对象管理器” 窗口包含了当前游戏场景包含的所有内容，可以在这里对每一项内容进行修改名称、复制、粘贴、删除等操作，还可以查看每项的运行环境，具体可见 [客户端与服务端](../Online-Gaming/client-and-server.md) ，如图：
 
 ![image-20230518202021824](https://arkimg.ark.online/image-20230518202021824.webp)
 

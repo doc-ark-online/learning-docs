@@ -41,7 +41,7 @@
 
 ::: warning 注意
 
-如果双击运行后提示缺少 Visual C++ Runtime，需要先下载并安装一下 [VC++ 运行库](http://www.winwin7.com/soft/15951.html)
+如果双击运行后提示缺少 Visual C++ Runtime，需要先下载并安装一下 [Visual C++ 可再发行程序包下载](https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 
 :::
 

@@ -6,6 +6,8 @@
 
 :::
 
+产考产品手册：[主编辑器各窗口操作 | 产品手册 (ark.online)](https://docs.ark.online/Editor/EditorWindowsOperation.html)
+
 ## 1. 主视口摄像机操作
 
 摄像机角度：在主视口中，按住鼠标右键拖动鼠标，可以操作主视口的摄像机进行旋转。

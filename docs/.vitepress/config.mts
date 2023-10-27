@@ -215,10 +215,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: 'IAA',
             link: '/Masters-Road/advertising.md'
-          },
-          {
-            text: '寻路',
-            link: '/Masters-Road/navigation.md'
           }
         ]
       },

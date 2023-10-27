@@ -6,6 +6,8 @@
 
 :::
 
+了解更多关于本章节内容见产品手册：[特效 | 产品手册 (ark.online)](https://docs.ark.online/GameplayObjects/Effects.html)
+
 ## 1.  粒子特效
 
 在编辑器中，为我们提供了十分丰富的成品特效，如图：

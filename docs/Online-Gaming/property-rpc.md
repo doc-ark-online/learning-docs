@@ -6,6 +6,8 @@
 
 :::
 
+关于本章节更多详细内容可以查阅产品手册：[网络同步原理和结构 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
+
 ## 1. RPC 介绍与使用
 
 ### 1.1 什么是 RPC
