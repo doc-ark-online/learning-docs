@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=620313767&bvid=BV1k84y1X7K9&cid=1316738140&p=9&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 本节的脚本，我们要实现如下功能：
 
 1. 接收服务端传回来的被击中事件，并且给 UI 脚本抛出一个本地事件，让血条减少。

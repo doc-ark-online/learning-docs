@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=620313767&bvid=BV1k84y1X7K9&cid=1316736390&p=4&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 参考上一小节内容，我们创建一个名为 `HpUI` 的 UI 文件。
 
 ![Carnac_mAWat5JNst](https://arkimg.ark.online/Carnac_mAWat5JNst.webp)
