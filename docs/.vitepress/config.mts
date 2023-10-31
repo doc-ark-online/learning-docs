@@ -468,7 +468,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         ]
       },
       {
-        text: '美术资源制作教程',
+        text: '制作美术资源',
         link: '/ArtResource-course/000-PGC.md',
         collapsible: true,
         collapsed: true,
@@ -491,84 +491,68 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 text: '模型规范',
                 link: '/ArtResource-course/Character/2-0-0-Model-Specification.md',
                 items: [
-                  {
+                    {
                     text: '1. 基础人形形象',
                     link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md',
-                    items: [
-                      {
-                        text: '1.1 基础PBR贴图',
-                        link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md'
-                      }
-                    ]
-                  },
-                  {
+                    },
+                    {
+                    text: '1.1 基础PBR贴图',
+                    link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md'
+                    },
+                    {
                     text: '2. 高级人形形象',
                     link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md',
-                    items: [
-                      {
-                        text: '2.1 二次元风格',
-                        link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md',
-                        items: [
-                          {
-                            text: '服装制作规范',
-                            link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md'
-                          },
-                          {
-                            text: '头发制作规范',
-                            link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md'
-                          }
-                        ]
-                      },
-                      {
-                        text: '2.2 通用制作规范',
-                        link: '/ArtResource-course/Character/2-2-2-general-specification.md'
-                      }
-                    ]
-                  },
-                  {
+                    },
+                    {
+                    text: '2.1 二次元风格',
+                    link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md',
+                    },
+                    {
+                    text: '服装制作规范',
+                    link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md'
+                    },
+                    {
+                    text: '头发制作规范',
+                    link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md'
+                    },
+                    {
+                    text: '2.2 通用制作规范',
+                    link: '/ArtResource-course/Character/2-2-2-general-specification.md'
+                    },
+                    {
                     text: '3. 资源基础规格',
                     link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md',
-                    items: [
-                      {
-                        text: '3.1 通用命名',
-                        link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md'
-                      },
-                      {
-                        text: '3.2 资源编号',
-                        link: '/ArtResource-course/Character/2-3-2-resource-number.md'
-                      }
-                    ]
-                  }
+                    },
+                    {
+                    text: '3.1 通用命名',
+                    link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md'
+                    },
+                    {
+                    text: '3.2 资源编号',
+                    link: '/ArtResource-course/Character/2-3-2-resource-number.md'
+                    }
                 ]
               },
               {
                 text: '角色绑定',
                 link: '/ArtResource-course/Character/3-0-0-Riginng.md',
                 items: [
-                  {
+                    {
                     text: '1. 基础人形形象',
                     link: '/ArtResource-course/Character/3-1-0-Basic-Human.md'
-                  },
-                  {
+                    },
+                    {
                     text: '2. 高级人形形象',
                     link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md',
-                    items: [
-                      {
-                        text: '2.1 基础动态服装部件',
-                        link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md',
-                        items: [
-                          {
-                            text: ' 服装接缝处权重规范',
-                            link: '/ArtResource-course/Character/3-2-2-Clothing-Weight-Specification.md'
-                          }
-                        ]
-                      },
-                      {
-                        text: '2.2 高级动态服装部件',
-                        link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md'
-                      }
-                    ]
-                  }
+                    },
+                    {
+                    text: '2.1 基础动态服装部件',
+                    link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md',
+                    },
+                    {
+                    text: '2.2 高级动态服装部件',
+                    link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md'
+                    }
                 ]
               },
               {
@@ -752,7 +736,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     outline: [2, 3],
     editLink: {
       pattern:
-        'https://github.com/prodigytech-doc/learning-docs/tree/release-025/docs/:path',
+        'https://github.com/prodigytech-doc/learning-docs/tree/main/docs/:path',
       text: '编辑'
     },
     socialLinks: [
