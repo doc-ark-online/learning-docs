@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=620313767&bvid=BV1k84y1X7K9&cid=1316738302&p=7&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 在工程内容中创建炸弹脚本，命名为`BombControl`:
 
 ![UE4_IzxwmTsr4j](https://arkimg.ark.online/UE4_IzxwmTsr4j.webp)

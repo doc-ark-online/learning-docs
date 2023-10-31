@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=620313767&bvid=BV1k84y1X7K9&cid=1316738318&p=8&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 在前几章我们制作了控制 UI，并使用导出脚本功能，将所有 UI 导出了对应的脚本文件。之后我们使用脚本添加了跳跃按钮与攻击按钮的点事件响应，本章节我们要给攻击按钮事件加上对应的逻辑。
 
 打开 `CtrlUI 脚本` ，我们来添加一个释放炸弹的函数，要实现如下功能：

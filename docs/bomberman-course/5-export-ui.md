@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=620313767&bvid=BV1k84y1X7K9&cid=1316736396&p=5&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 前两个小节我们讲解了如何创建 UI 文件，接下来我们来讲讲如何使用代码控制这些 UI。
 
 先打开任意一个 UI 文件，进入 UI 编辑器中，点击右上角"导出所有 UI"按钮。
