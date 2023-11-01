@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317930916&p=9&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 ## 1. 使用代码输出日志
 
 首先，在脚本中，怎么输出一个日志呢？其实非常简单，使用 `console.log()` 函数即可，输出示例如下：

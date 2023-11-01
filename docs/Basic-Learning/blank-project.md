@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317927656&p=6&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 ## 1. 初生点
 
 空工程创建好之后，使用编辑器打开。我们可以在主视口中看到一个  **①胶囊体形状的线框**，这个就是初生点，在对象管理器中我们可以看到它的图标像是一个小旗帜一样。

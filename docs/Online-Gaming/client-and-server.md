@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317943485&p=20&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 关于本章节更多内容可以查阅产品手册：[网络同步原理和结构 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
 
 ## 1. 客户端与服务端的关系

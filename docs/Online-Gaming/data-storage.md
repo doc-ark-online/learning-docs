@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317949529&p=23&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 更多数据持久化见产品文档：[数据存储与共享 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/DataStorage.html)
 
 ## 1.存取「一个」数据
