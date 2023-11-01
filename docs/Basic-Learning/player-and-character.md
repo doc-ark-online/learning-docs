@@ -6,6 +6,8 @@
 
 :::
 
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317928041&p=7&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 ## 1. 玩家
 
 首先我们要理解什么是玩家，当用户进入游戏后，服务端会自动生成一个玩家对象给用户。每个用户都有一个与之对应的玩家对象，在游戏中，玩家是控制的主体，而角色是玩家在游戏世界中的具体化身。用户自己的这个玩家对象我们称之为 **本地玩家(local Player)** 。

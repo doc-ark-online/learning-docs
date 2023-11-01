@@ -1,5 +1,13 @@
 # 修改游戏对象
 
+::: tip 阅读本文大概需要 15 分钟。
+
+上一章节介绍了口袋方舟中的游戏对象，本章节我们就来学习一下如何控制、修改它们吧！
+
+:::
+
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317932283&p=11&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 ## 1. 优先加载与动态下载
 
 在口袋方舟编辑器中，资源库中所有对象全部存储在云端（也就是服务器上）。只有当我们使用的时候编辑器才会将它下载下来，这样不但节约了开发者打包项目的时间，同时也减少了游戏包体大小，加快了游戏进入速度，减少用户在等待时间流失。
