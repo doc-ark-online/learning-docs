@@ -54,3 +54,79 @@ export default class CameraControl extends Script {
 ```
 
 <video controls src="https://cdn.233xyx.com/1681124470620_938.mp4"></video>
+
+
+
+## 3. 多摄像机的运用
+
+除了世界对象中默认存在的Camera，我们还可以通过从资源库的**游戏功能对象**中找到**摄像机**，可以直接将其拖到主视口中生成摄像机对象。
+
+![image-20231030165926872](https://arkimg.ark.online/image-20231030165926872.webp)
+
+我们可以使用`Camera.switch`在多个相机之间进行切换,实现一些有趣的玩法，首先将摄像机拖至场景中，调整好位置，如图：
+
+![image-20231031113025568](https://arkimg.ark.online/image-20231031113025568.webp)
+
+调整好每个摄像机的参数，示例中调整了摄像机碰撞和使用控制器旋转，如图：
+
+![image-20231031131624637](https://arkimg.ark.online/image-20231031131624637.webp)
+
+随后编写脚本，ChangeCamera，脚本内容如下：
+
+```typescript
+@Component
+export default class ChangeCamera extends Script {
+    
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+
+        console.log("start");
+        if (SystemUtil.isClient()) {
+            this.initCamera();
+        }
+    }
+    /**
+     * 初始化摄像机
+     */
+    private async initCamera() {
+
+        //获取场景中的摄像机
+        let camera_1 = await GameObject.asyncFindGameObjectById("174DB24A") as Camera;
+        let camera_2 = await GameObject.asyncFindGameObjectById("29F62ED8") as Camera;
+
+        //获取角色初始摄像机
+        let camera_Default = Camera.currentCamera;
+
+        //添加按键方法，按下"1"键切换一号摄像机
+        InputUtil.onKeyDown(Keys.One, () => {
+            Camera.switch(camera_1, 1, CameraSwitchBlendFunction.EaseInOut,5)
+        })
+
+        //添加按键方法，按下"2"键切换二号摄像机
+        InputUtil.onKeyDown(Keys.Two, () => {
+            Camera.switch(camera_2, 1, CameraSwitchBlendFunction.EaseInOut, 5)
+        })
+
+        //添加按键方法，按下"3"键切换回初始摄像机
+        InputUtil.onKeyDown(Keys.Three, () => {
+            Camera.switch(camera_Default,0)
+        })
+    }
+}
+```
+
+将`ChangeCamera`脚本拖入场景，运行游戏按键"1,2,3"就可以自由切换相机了：
+
+<video controls src="https://arkimg.ark.online/027MoreCamera1.mp4"></video>
+
+
+
+::: tip TIPS。
+
+- 使用switch切换摄像机时，可以实现瞬间切换到新的摄像机，也可以使用编辑器提供的多种混合效果，完成匀速/变速的运镜效果
+
+- 各个摄像机对象及其弹簧臂的属性值都是独立的，如果想在游戏中实现多种摄像机效果变换时，可以考虑两种制作思路
+  - 如果各种摄像机效果差别不大，我们可以使用同一个摄像机对象，通过修改属性来实现效果的切换
+  - 如果各种摄像机效果差别较大，需要调整较多属性，我们可以创建多个摄像机对象，各个摄像机对象用于实现专门的效果，通过switch接口来实现效果的切换
+
+:::
