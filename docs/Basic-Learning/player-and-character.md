@@ -60,7 +60,7 @@ export default class GameStart extends Script {
 }
 ```
 
-关于角色的详细信息请查阅产品手册：[角色 | 产品手册](https://docs.ark.online/WorldObjects/Characters.html)  ，该文档提供了角色的各种能力使用示例，如角色基本运动、飞行、游泳、下蹲、下落、跳跃、姿态、换装、插槽等。
+关于角色的详细信息请查阅产品手册：[角色基础功能 | 产品手册](https://docs.ark.online/Role/RoleBasicAbility.html) ，该文档提供了角色的各种能力使用示例，如角色基本运动、飞行、游泳、下蹲、下落、跳跃、姿态、换装、插槽等。
 
 ## 3.摄像机
 
