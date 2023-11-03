@@ -143,7 +143,11 @@ export default class Test extends Script {
 
 ### 4.2 获取场景上其它物体
 
-获取场景上的其它物体，我们可以使用 `findGameObjectById` 函数，通过物体的 GameObjectId 来动态查找：
+![7ca8148a-ba4d-4a6f-b34d-16b8f95ba631](https://arkimg.ark.online/7ca8148a-ba4d-4a6f-b34d-16b8f95ba631.webp)
+
+获取场景上的其它物体，我们可以使用 `findGameObjectById` 函数，通过物体的 `GameObjectId` 来动态查找。在现实世界中，我们要找到一个置顶的人可以通过它的身份证号来查找，类似的我们在游戏中查找一个游戏对象也可以通过游戏对象的  `GameObjectId` 来找到它。
+
+ `GameObjectId` 与现实世界中身份证 ID 一样，我们的游戏对象在同个游戏中拥有唯一的 ID，这个 ID 在游戏对象创建时会自动生成，无论怎么修改游戏对象的属性（如修改大小、修改名字）它都不会变。 
 
 ::: warning GameObjectId 相关
 
