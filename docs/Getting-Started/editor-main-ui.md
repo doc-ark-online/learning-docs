@@ -6,7 +6,7 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317926673&p=3&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317926673&p=4&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 参照产品手册：[主编辑器各窗口操作 | 产品手册 (ark.online)](https://docs.ark.online/Editor/EditorWindowsOperation.html)
 
