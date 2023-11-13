@@ -52,17 +52,17 @@ export default class PlayerControl extends Script {
 
 游戏发布到线上后，我们可以在创作者后台查看实时日志，来定位服务端问题。
 
-① 选中游戏服务，在下拉列表中选中房间管理。
+进入开发者后台之后先选中想要查看游戏，将要鼠标位置悬浮在右上角三个小点位置后，点击出现的**管理游戏**按钮或直接点击**游戏图标**进入游戏详情页。
 
-② 在所有线上房间中选中某个房间，点击查看按钮。
+![22c04f7d-5337-4fd3-83d9-1203dff3d28e](https://arkimg.ark.online/22c04f7d-5337-4fd3-83d9-1203dff3d28e.webp)
 
-![msedge_bQcHpQAOef](https://arkimg.ark.online/msedge_bQcHpQAOef.webp)
+① 选中游戏服务，在下拉列表中选中**房间列表**。
 
-③ 选择想要查看的房间状态、时间区间等。
+② 选择想要查看的房间状态、时间区间等。
 
-④ 点击实时日志
+③ 点击实时日志
 
-![msedge_rrmLu5Bx9k](https://arkimg.ark.online/msedge_rrmLu5Bx9k.webp)
+![dc46616e-28ca-4ada-8a4d-348d78e25694](https://arkimg.ark.online/dc46616e-28ca-4ada-8a4d-348d78e25694.webp)
 
 在弹出的窗口中就可以看到该房间服务端实时日志了。
 
@@ -85,17 +85,19 @@ export default class PlayerControl extends Script {
 
 :::
 
-① 在游戏数据下拉框中选中“性能数据”。
+与查看线上服务端日志相同，我们先选中一个需要查看的游戏进入到该游戏的详情页。
+
+① 在游戏数据下拉框中选中**报错数据**。
 
 ② 选择要查阅的时间区间。
 
-③ 对于某个指定游戏，可以点击“详细数据”打开详情页。
+③ 对于某个指定报错，可以点击**查看**按钮打开详情页。
 
-![msedge_bCAJcE5Qqk](https://arkimg.ark.online/msedge_bCAJcE5Qqk.webp)
+![d4bc9e3d-a875-473a-b313-6769de758815](https://arkimg.ark.online/d4bc9e3d-a875-473a-b313-6769de758815.webp)
 
-打开详情后，可以在下方游戏数据中找到崩溃得堆栈详情，这里可以查到错误具体是哪一行代码抛出的。
+打开详情后，可以在下方游戏数据中找到崩溃的堆栈详情，这里可以查到错误具体是哪一个函数抛出的。并且可以查看抛出该错误的客户端使用的引擎版本、手机网络状态等信息。
 
-![msedge_umfSpKRdUp](https://arkimg.ark.online/msedge_umfSpKRdUp.webp)
+![2670bc64-93d5-4a26-ab49-e1f0f605e7d0](https://arkimg.ark.online/2670bc64-93d5-4a26-ab49-e1f0f605e7d0.webp)
 
 这里看到报错都是一个 `game.js` 文件抛出的，这个文件其实就是我们代码编译之后生成的，我们可以在项目的根目录下的`dist` 文件夹中找到它。
 
