@@ -1625,10 +1625,10 @@ digest-header@^1.0.0:
   dependencies:
     utility "^1.17.0"
 
-doc-theme-323@^2.1.16:
-  version "2.1.16"
-  resolved "https://registry.yarnpkg.com/doc-theme-323/-/doc-theme-323-2.1.16.tgz#187a585dd881c1aaccdeaa045bfcccb50bf0182c"
-  integrity sha512-6NZn9/78xbhu05p+/+J8ZuFgLe93HiojqZ+r8ETpf2OqOm+T+PnHYV2Z8yw82X4ImpWsCyCUdrst3KSADoVCVA==
+doc-theme-323@^2.1.17:
+  version "2.1.17"
+  resolved "https://registry.yarnpkg.com/doc-theme-323/-/doc-theme-323-2.1.17.tgz#670e1df91a7b8731375858e9d9ef5d778cc8137a"
+  integrity sha512-e0JcT4DsTBRSF1aTqBTT4kAVDfr7/Vri78Iiff8YIJowfwRfW7vo07tteTHSTC6CIfWyhGq/kRGipt/WD7XrRw==
   dependencies:
     "@docsearch/css" "^3.3.0"
     "@docsearch/js" "^3.3.0"

@@ -27,7 +27,7 @@
     "vue": "^3.2.45"
   },
   "dependencies": {
-    "doc-theme-323": "^2.1.16",
+    "doc-theme-323": "^2.1.17",
     "vitepress": "1.0.0-rc.14"
   }
 }
