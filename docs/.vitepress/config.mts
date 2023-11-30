@@ -35,13 +35,13 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       `
     window.PandoraConfig = {
       base: {
-        index_type: 'wl',
+        index_type: 'cDEwMTE2/wl',
         selfpackagename: 'com.metaverse.creator.api',
       },
       other: {
         appkey: 'cDEwMTE2',
         zone: 'zh',
-        baseUrl: 'https://web-push.bjhuixuan.com'
+        baseUrl: 'https://push.233leyuan.com'
       }
     }
     `
