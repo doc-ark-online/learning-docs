@@ -122,3 +122,27 @@ export default class PlayerControl extends Script {
 打开 log 文件夹之后，里面的 log 文件就是编辑器运行日志。其中包含了项目输出的日志信息、编辑器本身输出的服务器日志 等：
 
 ![Grp5Xp6Dcgb1694594061](https://arkimg.ark.online/Grp5Xp6Dcgb1694594061.webp)
+
+## 6. 编辑器崩溃日志
+
+有时由于各种原因，编辑器出现了闪退或无法正常启动等问题时，编辑器会自动生成一个崩溃信息文件夹（也就是 Crash 文件夹），其中存放了一些编辑器日志信息（无用户敏感信息）。
+
+创作者们可以将该文件夹压缩成 zip 、7z 等压缩文件格式，在论坛上联系官方技术支持人员获取解决方案。([论坛问题反馈板块地址](https://forum.ark.online/forum.php?mod=forumdisplay&fid=27))
+
+崩溃日志文件夹可以使用下属方式找到：
+
+找到编辑器安装位置，也就是 `MetaApp` 文件夹（这个文件夹是在安装时由用户自行选择的，如果用户没有自定义的话它会在某个硬盘的根目录，可以挨个寻找）
+
+![MetaApp文件夹](https://arkimg.ark.online/5037179b-df74-43b9-900a-f0ae2c4070fe.webp)
+
+找到 `MetaApp` 文件夹后打开它依次进入 `\Editor_Win64\MetaWorldSaved\Saved\Crashes` 文件夹，在 `Crashes` 文件夹中就可以看到所有崩溃日志信息的文件夹了：
+
+![崩溃日志文件夹](https://arkimg.ark.online/1ebce903-b290-4740-bab4-6212c552232a.webp)
+
+接下来可以按照时间排序，选中最近的一个文件夹使用压缩软件将它压缩好，发送到论坛即可~
+
+::: tip 关于压缩软件
+
+如果不懂什么是压缩软件，或者不会操作。也可以先在论坛与我们取得联系描述问题，后续技术支持同事会协助获取日志。
+
+:::
