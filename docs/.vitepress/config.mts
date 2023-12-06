@@ -1,4 +1,4 @@
-import type { DefaultTheme } from 'metaapp-prodigytech-doc-theme'
+import type { DefaultTheme } from 'doc-theme-323'
 import { defineConfigWithTheme } from 'vitepress'
 
 export const sidebar: DefaultTheme.Config['sidebar'] = [
@@ -27,6 +27,29 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       {
         rel: 'icon',
         href: 'https://wstatic-01-ali.233leyuan.com/xyc/metaverse-docs/tab-logo.png'
+      }
+    ],
+    [
+      'script',
+      {},
+      `
+    window.PandoraConfig = {
+      base: {
+        index_type: 'cDEwMTE2/wl',
+        selfpackagename: 'com.metaverse.creator.api',
+      },
+      other: {
+        appkey: 'cDEwMTE2',
+        zone: 'zh',
+        baseUrl: 'https://push.233leyuan.com'
+      }
+    }
+    `
+    ],
+    [
+      'script',
+      {
+        src: 'https://wstatic-01-ali.233leyuan.com/common/pandora/5.2.4/pandora_sdk.min.js'
       }
     ]
   ],
@@ -494,68 +517,68 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 text: '模型规范',
                 link: '/ArtResource-course/Character/2-0-0-Model-Specification.md',
                 items: [
-                    {
+                  {
                     text: '1. 基础人形形象',
-                    link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md',
-                    },
-                    {
+                    link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md'
+                  },
+                  {
                     text: '1.1 基础PBR贴图',
                     link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md'
-                    },
-                    {
+                  },
+                  {
                     text: '2. 高级人形形象',
-                    link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md',
-                    },
-                    {
+                    link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md'
+                  },
+                  {
                     text: '2.1 二次元风格',
-                    link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md',
-                    },
-                    {
+                    link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md'
+                  },
+                  {
                     text: '服装制作规范',
                     link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md'
-                    },
-                    {
+                  },
+                  {
                     text: '头发制作规范',
                     link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md'
-                    },
-                    {
+                  },
+                  {
                     text: '2.2 通用制作规范',
                     link: '/ArtResource-course/Character/2-2-2-general-specification.md'
-                    },
-                    {
+                  },
+                  {
                     text: '3. 资源基础规格',
-                    link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md',
-                    },
-                    {
+                    link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md'
+                  },
+                  {
                     text: '3.1 通用命名',
                     link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md'
-                    },
-                    {
+                  },
+                  {
                     text: '3.2 资源编号',
                     link: '/ArtResource-course/Character/2-3-2-resource-number.md'
-                    }
+                  }
                 ]
               },
               {
                 text: '角色绑定',
                 link: '/ArtResource-course/Character/3-0-0-Riginng.md',
                 items: [
-                    {
+                  {
                     text: '1. 基础人形形象',
                     link: '/ArtResource-course/Character/3-1-0-Basic-Human.md'
-                    },
-                    {
+                  },
+                  {
                     text: '2. 高级人形形象',
-                    link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md',
-                    },
-                    {
+                    link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md'
+                  },
+                  {
                     text: '2.1 基础动态服装部件',
-                    link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md',
-                    },
-                    {
+                    link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md'
+                  },
+                  {
                     text: '2.2 高级动态服装部件',
                     link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md'
-                    }
+                  }
                 ]
               },
               {
