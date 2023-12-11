@@ -1,6 +1,6 @@
 # 口袋方舟
 
-![教程首页](https://arkimg.ark.online/TutorialDoc1271930.webp)
+![教程首页](https://arkimg.ark.online/TutorialDoc12111024.webp)
 
 [产品文档](https://docs.ark.online/)会详细描述每个功能模块的全部功能，方便开发者用到什么查什么。
 [教程文档](https://learning.ark.online/)则拥有较强的上下文关系与系统性，方便萌新按顺序从安装编辑器开始学习到可以制作自己的游戏项目。
