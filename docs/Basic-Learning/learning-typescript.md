@@ -623,9 +623,104 @@ export default class LearnTS extends Script {
 
 流程控制是编程语言中用于控制程序执行流程的关键字或语句。它们用于根据条件、循环或跳转等逻辑来控制函数的执行顺序。
 
-### 6.1 分支语句
+### 6.1 条件语句 - if
 
-### 6.2 循环语句
+条件语句简单来讲就是根据给定的条件来决定执行哪一段代码。比如在游戏中玩家需要开门，系统需要判断玩家是否拥有钥匙。如果有钥匙就执行打开门的函数，如果没有钥匙就执行提示函数，告诉玩家需要先有钥匙才能开门。
+
+在 TypeScript 中主要用到的条件语句就是 **if** ，它代表只有当某些条件为 true 时才运行某一段代码，它常与 **else** 连用，写在 else 代码块中的会在不满足条件时调用，下图是 if 与 else 连用时的流程图。要注意的是 if 并非必须与 else 一起用，在处理简单逻辑时可以只用 if 。
+
+![799b937e-55e1-47e8-8739-6b8b9fe91c6a](https://arkimg.ark.online/799b937e-55e1-47e8-8739-6b8b9fe91c6a.webp)
+
+下列代码中，展示了在脚本中判断变量 x 是否小于等于 20，如果是就输出“变量小于等于 20”，如果不是就输出“变量大于 20”到日志中。
+
+```typescript
+@Component
+export default class LearnTS extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        // 数字类型变量 x 
+        let x: number = 15;
+        // 使用分支语句
+        if (x <= 20) {
+            console.info("变量小于等于 20");
+        } else {
+            console.info("变量大于 20");
+        }
+    }
+}
+```
+
+### 6.2 循环语句 - for / while
+
+循环语句可以用于重复执行某一段代码，直到满足某个条件为止。在 TypeScript 中主要用到的循环语句有两个，**for** 和 **while**，它们两者功能基本相同，在执行逻辑上略有不同，for 循环可以在每次循环结束后额外执行一次指定的语句，接下来将会详细介绍这两种不同的循环语句：
+
+- for 循环逻辑流程图：
+
+![cfff6b44-d8a4-487c-a77f-ac2ee3694c9d](https://arkimg.ark.online/cfff6b44-d8a4-487c-a77f-ac2ee3694c9d.webp)
+
+下列代码中演示了在编辑器中，将数字数组类型变量 x 的前三个元素输出到日志中:
+
+1. for 循环语句首先使用 let 声明了一个数字类型的变量 index，这个变量在 for 中我们称之为**初始值(initialization)**。
+2. 接下来编写了一段逻辑运算，判断 index 是否小于 3， 如果小于 3 的话就会执行 for 循环下面的代码块中的代码。这段逻辑在 for 循环中称之为**条件(condition)**。
+3. 最后编写了一段数值运算，每次执行后都会给 index 变量的值加上 1。 这个运算操作在 for 循环中称之为**自增(increment )**。
+
+在编辑器中运行后，最终输出三行日志分别为： 1，2，3。
+
+```typescript
+@Component
+export default class LearnTS extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        // 数字数组类型变量 x 
+        let x: number[] = [1, 2, 3, 4];
+        // 定义一个变量 index 并赋值为 0
+        // 判断当 index 小于 3 就执行下列代码块中代码
+        // 每次执行结束后， 就给 index 变量加上 1
+        for (let index: number = 0; index < 3; index++) {
+            // 声明变量赋值为数组当前下标元素
+            let y: number = x[index];
+            // 将当前元素输出
+            console.info(y); 
+        } 
+    }
+}
+```
+
+- while 循环逻辑流程图如下，while 与 for 最大的区别是当它的条件为 true 时会一直执行下去。更合适与基于某个条件进行循环的场景， for 循环更适合于有预先设计好循环次数的场景，当然这不是强制要求创作者们可以按自己的开发习惯选择合适的语句。
+
+![e7a19ebd-f4ab-4b55-9db2-6a1e0294d23d](https://arkimg.ark.online/e7a19ebd-f4ab-4b55-9db2-6a1e0294d23d.webp)
+
+下列代码中演示了在编辑器中循环判断一个数字变量 x 是否为 100，如果 x 是 100 就一直循环，接下来使用 `setTimeout`函数在三秒钟之后将 x 赋值为 0，这时循环将会停止。
+
+```typescript
+@Component
+export default class LearnTS extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        // 数字类型变量 x 
+        let x: number = 100;
+        // 定义 while 循环，如果 x 等于 100 就一直执行输出日志
+        while (x == 100) {
+            console.info("x 为 100 !");
+        }
+        // 三秒之后将要 x 赋值为 0
+        setTimeout(() => {
+            x = 0;
+        }, 3000);
+    }
+}
+```
+
+::: danger 关于循环的错误用法
+
+上述代码在程序运行后会一直执行循环体内的代码，直到三秒之后变量 x 被赋值为 0 才会停止执行循环。如果删除掉 setTimeout 函数，这个循环将会永远执行下去直到程序被关闭。
+
+这种无法自主停下来的循环，在编程领域中称之为“死循环”。在编写循环代码时我们要格外注意死循环的产生(除非是故意的)，因为死循环可能会导致游戏逻辑被阻塞无法正常运行。
+
+:::
 
 ## 7. 扩展学习
 
