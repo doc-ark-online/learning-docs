@@ -9,3 +9,4 @@ test.*
 static
 .static-cdn-lib
 .static-cdn-lib.json
+node_modules(1).7z
