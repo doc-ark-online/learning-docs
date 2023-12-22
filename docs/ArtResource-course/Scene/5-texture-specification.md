@@ -12,11 +12,13 @@
 
 **标准规范贴图：**
 
-![img](https://arkimg.ark.online/1687770071647-6.png)
+1024*1024
+![image-20231222145858440](https://arkimg.ark.online/image-20231222145858440.png)
 
 **长形贴图：**
 
-![img](https://arkimg.ark.online/1687770071646-1.png)
+256*512
+![image-20231222145744899](https://arkimg.ark.online/image-20231222145744899.png)
 
 ## 贴图格式:
 
