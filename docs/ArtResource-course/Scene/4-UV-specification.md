@@ -19,16 +19,18 @@
 ![image-20231222144955039](https://arkimg.ark.online/image-20231222144955039.png)
 
 - **颜色模式**：1u 不需要展开，只需要放 UV 框第一象限里面不同的四个位置。例下图
-  <img src="https://arkimg.ark.online/image-20231222112802477.png" alt="image-20231222112802477" style="zoom: 67%;" /><img src="https://arkimg.ark.online/1-1703222393584-5.jpg" alt="1" style="zoom:67%;" />
+  ![texture](https://arkimg.ark.online/texture.jpg)
 
 [贴图区域样例(点此下载)](https://arkimg.ark.online/texture.tga) 
 
 - **渐变颜色模式：**可以接受出现渐变情况（四区域内上下渐变）。例下图
-  ![image-20231222143735126](https://arkimg.ark.online/image-20231222143735126.png)<img src="https://arkimg.ark.online/%E6%9C%AA%E6%A0%87%E9%A2%98-3.jpg" alt="未标题-3" style="zoom:67%;" />
+  ![texture2](https://arkimg.ark.online/texture2-1703232508440-4.jpg)
 
 [贴图区域样例(点此下载)](https://arkimg.ark.online/texture2.tga) 
 
-此两种模式提供贴图样例仅用于dcc观察，摆放UV。实际lowpoly并不需要贴图（更省性能），在编辑器效果入下图。<img src="https://arkimg.ark.online/image-20231222144451503.png" alt="image-20231222144451503" style="zoom: 33%;" /><img src="https://arkimg.ark.online/%E6%9C%AA%E6%A0%87%E9%A2%98-5.jpg" alt="未标题-5" style="zoom:33%;" />
+此两种模式提供贴图样例仅用于dcc观察，摆放UV。实际lowpoly并不需要贴图（更省性能），在编辑器效果入下图。
+
+![未标题-5](https://arkimg.ark.online/%E6%9C%AA%E6%A0%87%E9%A2%98-5-1703232225889-1.jpg)
 
 **贴图模式：**你可以贴一张你需要的颜色贴图，将你的模型UV放在对应的位置。
 <img src="https://arkimg.ark.online/image-20231222145324975.png" alt="image-20231222145324975" style="zoom:50%;" />
