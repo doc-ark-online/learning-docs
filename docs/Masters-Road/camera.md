@@ -16,7 +16,7 @@
 
 在我们的编辑器中，默认每个场景会存在一个摄像机，该摄像机会自动跟拍我们的玩家角色，所以即便你创建了一个空工程，也会看到游戏画面会随着角色移动而移动。
 
-在我们编辑器的“对象管理器”窗口中，可以看到一个游戏物体叫做 Camera，该游戏物体就是我们当前游戏使用的摄像机了，鼠标单击选中“Camera”，可以看到在属性面板中包含了大量的摄像机设置，可以根据自己的需要进行设置修改，如图：
+在我们编辑器的“对象管理器”窗口中，可以看到一个游戏物体叫做 “Camera”，该游戏物体就是我们当前游戏使用的摄像机了，鼠标单击选中“Camera”，可以看到在属性面板中包含了大量的摄像机设置，可以根据项目的需要对属性参数和设置进行修改，如图：
 
 ![image-20230726105221009](https://arkimg.ark.online/image-20230726105221009.png)
 
@@ -46,7 +46,7 @@ export default class CameraControl extends Script {
         if (SystemUtil.isClient()) {
             // 获取当前摄像机
             let cs = Camera.currentCamera;
-            // 切换摄像机预设
+            // 切换摄像机预设（不同预设只需要更换枚举值即可）
             cs.preset = CameraPreset.FirstPerson
         }
     }
@@ -63,11 +63,11 @@ export default class CameraControl extends Script {
 
 ![image-20231030165926872](https://arkimg.ark.online/image-20231030165926872.webp)
 
-我们可以使用`Camera.switch`在多个相机之间进行切换,实现一些有趣的玩法，首先将摄像机拖至场景中，调整好位置，如图：
+我们可以在脚本中通过使用API `Camera.switch`在多个相机之间进行切换,实现一些有趣的玩法，首先将摄像机拖至场景中，调整好位置，如图：
 
 ![image-20231031113025568](https://arkimg.ark.online/image-20231031113025568.webp)
 
-调整好每个摄像机的参数，示例中调整了摄像机碰撞和使用控制器旋转，如图：
+调整好每个摄像机的参数，下图示例中调整了 “是否有摄像机碰撞” 和 “使用控制器控制摄像机旋转”，如图：
 
 ![image-20231031131624637](https://arkimg.ark.online/image-20231031131624637.webp)
 
@@ -121,7 +121,7 @@ export default class ChangeCamera extends Script {
 
 
 
-::: tip TIPS。
+::: tip Tips：
 
 - 使用switch切换摄像机时，可以实现瞬间切换到新的摄像机，也可以使用编辑器提供的多种混合效果，完成匀速/变速的运镜效果
 
@@ -130,3 +130,84 @@ export default class ChangeCamera extends Script {
   - 如果各种摄像机效果差别较大，需要调整较多属性，我们可以创建多个摄像机对象，各个摄像机对象用于实现专门的效果，通过switch接口来实现效果的切换
 
 :::
+
+本章节将会展示，使用摄像机对象提供的API制作出的各种功能。
+
+## 4. 摄像机的实际应用
+
+### 4.1.看向物体
+
+使用 Camera 对象提供的 [LookAt](https://api-docs.ark.online/classes/mw.Camera.html#lookat) 接口即可实现让摄像机看向一个物体。
+
+```ts
+// 这里的"cat"就是图中的小猫
+Camera.currentCamera.lookAt(cat)
+```
+
+![img](https://arkimg.ark.online/20231201184629_rec_.gif)
+
+### 4.2.旋转延迟
+
+修改 Camera 对象的 [rotationLagEnabled属性](https://api-docs.ark.online/classes/mw.Camera.html#rotationlagenabled) 即可实现让摄像机在旋转时进行平滑移动。
+
+```ts
+// 开启旋转延迟
+Camera.currentCamera.rotationLagEnabled = true
+```
+
+![img](https://arkimg.ark.online/20231201184949_rec_.gif)
+
+### 4.3.锁定目标
+
+锁定目标，即让摄像机持续看向一个物体。
+
+使用 Camera 对象提供的 [lock](https://api-docs.ark.online/classes/mw.Camera.html#lock) 接口即可实现让摄像机锁定一个物体
+
+```ts
+// 相机锁定“cat”
+Camera.currentCamera.lock(cat, { lockInterval: 0, lockSpeed: 0, lockRange: 500, lockDistance: 5000, lockOffset: new Vector(0, 0, 80), bPause: true })
+```
+
+![img](https://arkimg.ark.online/20231201185158_rec_.gif)
+
+### 4.4.固定摄像机
+
+固定摄像机，即切换摄像机的位置模式属性，从而让摄像机固定在一个位置，不再跟随目标移动。（常用来制作观战功能）
+
+修改 Camera 对象的 [positionMode属性](https://api-docs.ark.online/classes/mw.Camera.html#positionmode) 即可实现让摄像机切换位置模式。
+
+```ts
+// 将摄像机位置模式切换为“位置固定”
+Camera.currentCamera.positionMode = CameraPositionMode.PositionFixed
+```
+
+![img](https://arkimg.ark.online/20231201185724_rec_.gif)
+
+### 4.5.切换跟随目标
+
+修改 Camera 对象的 parent 属性 即可实现让摄像机切换跟随目标。
+
+```ts
+// 将摄像机的 parent 修改为 cat
+Camera.currentCamera.parent = cat
+// 注意！ 设置完parent之后，需要重置一下弹簧臂的本地坐标，否则会产生偏移
+Camera.currentCamera.springArm.localTransform.position = Vector.zero
+```
+
+![img](https://arkimg.ark.online/20231201190055_rec_.gif)
+
+### 4.6.摄像机抖动
+
+使用 Camera 对象提供的 [shake](https://api-docs.ark.online/classes/mw.Camera.html#shake) 接口即可实现让摄像机抖动。（抖动参数可以自行设置）
+
+```ts
+Camera.shake({ positionYAmplitude: 1, positionYFrequency: 0.5, positionZAmplitude: 10, positionZFrequency: 5 }, 2)
+```
+
+![img](https://arkimg.ark.online/20231201190247_rec_.gif)
+
+
+
+### 4.7.摄像机的实际应用Demo
+
+https://arkimg.ark.online/%E6%91%84%E5%83%8F%E6%9C%BA.rar
