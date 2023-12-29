@@ -12,13 +12,13 @@
 
 ## 1. 什么是禁行区
 
-编辑器提供了一个“禁行区”的游戏功能对象，在游戏场景中用来控制一片区域对其他对象的通行权限。
+编辑器提供了一个“禁行区”的游戏功能对象，在游戏场景中用来控制一片区域对其他角色的通行权限。
 
-## 2. 创建一个可以阻止玩家出入的障碍物
+## 2. 创建一个可以阻止玩家出入的光门
 
-创建可以阻止玩家出入某个场景的门的最快方法就是使用禁行区。禁行区的创建有两种方式：
+创建可以阻止玩家出入某个场景的门的最快方法就是使用禁行区。
 
-第一种方式，我们可以在“资源库”面板中的“游戏功能对象”中找到“禁行区”。
+首先，我们可以在“资源库”面板中的“游戏功能对象”中找到“禁行区”。
 
 ![image-20231204144759667](https://arkimg.ark.online/image-20231204144759667.png)
 
@@ -26,11 +26,11 @@
 
 ![image-20231206191455812](https://arkimg.ark.online/image-20231206191455812.webp)
 
-可以移动、旋转、缩放这块禁行区到符合游戏需求的形状，就像处理一个模型对象一样。
+可以移动、旋转、缩放这块禁行区到符合游戏需求的形状，就像处理一个静态对象一样。
 
 <video controls src="https://arkimg.ark.online/20231208093236_rec_.mp4"></video>
 
-一般来说禁行区都是附在模型对象上的，来准确传达这片区域是不可通行的。但是整个游戏场景的边界可能不需要模型来表现禁行区，可以根据游戏项目的属性来自行决定。这里举例将静态模型“出入口”（GUID：33514）拖入场景中。
+一般来说禁行区都是附在模型对象上的，来传达这片区域是不可通行的。但是整个游戏场景的边界可能不需要模型来表现禁行区，可以根据游戏项目的属性来自行决定。这里举例将静态模型“出入口”（GUID：33514）拖入场景中。
 
 ![image-20231208104931716](https://arkimg.ark.online/image-20231208104931716.webp)
 
@@ -40,7 +40,7 @@
 
 ## 3. 制作一个通过触发器开关的光门
 
-首先在上面项目的基础上新创建一个正方体，命名为“禁行区开关”。再创建一个触发器和脚本并挂载在这个正方体下。（同时可以在触发器上设置一个世界UI [[UI 使用 | 教程]](https://learning.ark.online/Common-Functions/user-interface.html#_4-世界-ui-3d-ui)）来表现触发器的功能属性。
+首先在上面项目的基础上新创建一个正方体，命名为“禁行区开关”。再创建一个触发器和脚本并挂载在这个正方体下。（同时可以在触发器上设置一个世界 UI [[UI 使用 | 教程]](https://learning.ark.online/Common-Functions/user-interface.html#_4-世界-ui-3d-ui)）来表现触发器的功能属性。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231205163351644.webp" alt="Description of first image">
@@ -48,19 +48,22 @@
 </p>
 
 
-同时我们使用一个粒子特效来表现光门的开启，这里举例选用“光屏” （GUID: 146771）。为了和禁行区同步生成和消失，同样通过脚本来实现粒子特效的动态播放 [特效 | 教程 (ark.online)](https://learning.ark.online/Common-Functions/particle.html#_4-动态播放特效)。
+同时我们使用一个粒子特效粒子特效 [[特效 | 教程](https://learning.ark.online/Common-Functions/particle.html#_4-动态播放特效)] 来表现光门的开启，这里举例选用“光屏” （GUID: 146771）。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231205164536493.webp" alt="Your image description">
 </p>
 
-点击光屏，在光屏的属性面板中将循环勾选，并设置循环次数为0。
+将光屏粒子特效拖入挂载在禁行区下。点击光屏粒子特效，在光屏的属性面板中将循环勾选，并设置循环次数为 0。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231214182952069.webp" alt="Your image description">
 </p>
+右键获取场景中禁行区和光屏特效的对象 ID。
 
-并获取场景中禁行区和光屏特效的对象 ID。
+<p align="center">
+  <img src="https://arkimg.ark.online/image-20231229185830076.webp" alt="Your image description">
+</p>
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231214162618932.webp" alt="Your image description">
@@ -71,7 +74,7 @@
 </p>
 
 
-将下方代码覆盖放入到挂载在触发器的脚本中，将上一步获取到的对象 ID 分别填入 NewScript 中对应的 findGameObjectById("")。
+将下方代码覆盖放入到挂载在触发器的脚本中。其中因为禁行区是通过脚本代码来控制同步生成和消失的，所以的动态播放和关闭也同样需要通过脚本来实现。将上一步获取到的对象 ID 分别填入 NewScript 中对应的 findGameObjectById("")。
 
 ```ts
 @Component
@@ -119,7 +122,7 @@ export default class NewScript extends Script {
 
 ## 3. 为特定玩家角色设置光门的通行权限
 
-在多人游戏中，通行权限通常是根据玩家的阶段或等级、任务完成情况等因素来区别分配的。为了满足这种开发需求，可以通过对禁行区设置特定对象的通行权限，来实现对某个或某些玩家角色是否通行的控制。
+在多人游戏中，通行权限通常是根据玩家的阶段、等级或任务的完成情况等因素来区别分配的。为了满足这种开发需求，可以通过对禁行区设置特定对象的通行权限，来实现对某个或某些玩家角色是否通行的控制。
 
 这里以两个人为例。
 
