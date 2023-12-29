@@ -82,11 +82,11 @@
 
 点击开始（start）按钮或者左上角的圆圈录制按钮。
 
-![image-20231229144949645](E:/Typora%E5%9B%BE%E7%89%87%E6%94%BE%E7%BD%AE%E7%9B%AE%E5%BD%95/image-20231229144949645.png)
+![image-20231229144949645](https://arkimg.ark.online/image-20231229144949645.png)
 
 **三、采样信息的三种视图**
 
-![image-20231229151357998](E:/Typora%E5%9B%BE%E7%89%87%E6%94%BE%E7%BD%AE%E7%9B%AE%E5%BD%95/image-20231229151357998.png)
+![image-20231229151357998](https://arkimg.ark.online/image-20231229151357998.png)
 
 <center>三种视图</center>
 
