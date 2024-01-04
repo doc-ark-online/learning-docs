@@ -16,9 +16,7 @@
 
 ## 2. 创建游泳区域
 
-游泳区域的创建有两种方式：
-
-第一种方式，我们可以在“资源库”面板中的“游戏功能对象”中找到“游泳区域”。
+首先，我们可以在“资源库”面板中的“游戏功能对象”中找到“游泳区域”。
 
 ![image-20231201093112308](https://arkimg.ark.online/image-20231201093112308.webp)
 
@@ -40,17 +38,17 @@
 
 接下来就通过在场景中制作一个游泳池来简单介绍一种设置和表现游泳区域的方式。
 
-首先从静态模型中拖入一个正方体，并将正方体调整为和游泳区域接近一样的大小和位置。这里提供一个通过更改属性面板快捷调整的方法。可以通过对属性面板中变换的位置进行修改使两个物体的绝对缩放和绝对旋转相同。
+首先从静态模型中拖入一个正方体，并将正方体调整为和游泳区域相近的大小和位置。这里提供一个快捷调整的方法，通过对属性面板中变换的位置进行修改使两个物体的绝对缩放和绝对旋转相同。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231208151808067.webp" alt="Your image description">
 </p>
 
-但是因为某些模型的锚点和游泳区域锚点不相同，所以输入相同数值后还需要对模型进行进一步位移调整。
+但是因为某些模型的锚点位置和游泳区域的锚点位置并不相同，所以输入相同数值后还需要对模型进行进一步调整位移。
 
 <video controls src="https://arkimg.ark.online/20231207185102_rec_-convert.mp4"></video>
 
-同时模型是自带碰撞的，我们就没有办法进去到这个正方体里面去游泳了。所以我们要将正方体的碰撞关闭。
+因为模型是自带碰撞的，我们就没有办法进去到这个正方体里面去游泳了。所以我们要将正方体的碰撞关闭。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231201110048174.webp" alt="Your image description">
@@ -59,7 +57,7 @@
 接下来我们就可以在这个刚刚搭建的正方体游泳区域里遨游了。
 <video controls src="https://arkimg.ark.online/20231207185653_rec_.mp4"></video>
 
-但是这个正方体看着很单调，没有水体的感觉。我们需要在这个正方体上添加一个水体材质。这里选用 GUID：235876 的水基础材质做示例。将水基础材质直接拖入正方体的材质资源当中。
+这时这个正方体看着很单调，没有水体的感觉。我们需要在这个正方体上添加一个水体材质。这里选用 AssetId：235876 的水基础材质做示例。将水基础材质直接拖入正方体的材质资源当中。
 
 ![image-20231207185938589](https://arkimg.ark.online/image-20231207185938589.webp)
 
@@ -68,13 +66,19 @@
 
 但是因为水材质是一个半透明材质，所以水下需要有模型对象才能显示应有的美化效果。同时为了在水下潜泳的时候不显的突兀，我们不仅要在水下布置模型，也要在水体的四周搭设模型来塑造氛围感。
 
-TIPS：为了更好的管理游泳区域，我们可以将游泳区域设置为正方体的子节点，以方便同时管理游泳区域和模型。
+::: tip TIPS：
+
+为了更好的管理游泳区域，可以将游泳区域设置为正方体的子节点，以方便同时管理游泳区域和模型。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231204102109145.webp" alt="Your image description">
 </p>
 
-同时将搭建的游泳池模型生成为Group方便管理：
+
+ :::
+
+
+同时将搭建的游泳池模型生成为 Group 方便管理：
 
 ![image-20231213172447842](https://arkimg.ark.online/image-20231213172447842.webp)
 
@@ -93,13 +97,13 @@ TIPS：为了更好的管理游泳区域，我们可以将游泳区域设置为�
 
 ![image-20231213192326197](https://arkimg.ark.online/image-20231213192326197.webp)
 
-新拖入一个正方体并且将这个正方体更名为“启用游泳区域”，创建一个触发器挂载在这个正方体下，再创建一个新的脚本 NewScript 挂载在触发器下。（同时可以在触发器上设置一个世界UI [UI 使用 | 教程](https://learning.ark.online/Common-Functions/user-interface.html#_4-世界-ui-3d-ui) 来表现触发器功能）。
+新拖入一个正方体并且将这个正方体更名为“启用游泳区域”，创建一个触发器挂载在这个正方体下，再创建一个新的脚本 NewScript 挂载在触发器下。（同时可以在触发器上设置一个世界 UI 来可视化触发器的功能）。 [[UI 使用 | 教程]](https://learning.ark.online/Common-Functions/user-interface.html#_4-世界-ui-3d-ui)
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231204111324384.webp" alt="Description of first image">
   <img src="https://arkimg.ark.online/image-20231204110811337.webp" alt="Description of second image">
 </p>
-并获取挂载了游泳区域的正方体的对象 ID。填入 NewScript 中的 findGameObjectById("")。
+获取挂载了游泳区域的正方体的对象 ID。填入 NewScript 中的 findGameObjectById("")。
 
 NewScript 脚本的内容如下：
 
@@ -132,7 +136,7 @@ export default class NewScript extends Script {
 
 ## 5.  在游泳池中如何操作游泳
 
-在游泳区域中，我们可以根据摄像机的方向通过摇杆操控玩家向前游动来控制上浮和下潜，这也与大家接触的大多数3D游戏是一样的逻辑。
+在游泳区域中，我们可以根据摄像机的方向通过摇杆操控玩家向前游动来控制上浮和下潜，这也与大家接触的大多数 3D 游戏是一样的逻辑。
 
 <video controls src="https://arkimg.ark.online/20231207192602_rec_.mp4"></video>
 
