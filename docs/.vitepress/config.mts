@@ -95,7 +95,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '导入第三方项目',
             link: '/Getting-Started/import-project.md'
-          },{
+          }, {
             text: '发布游戏',
             link: '/Getting-Started/publish-game.md'
           }
@@ -223,7 +223,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Masters-Road/camera.md'
           },
           {
-            text: '自定义属性',
+            text: '自定义脚本属性',
             link: '/Masters-Road/custom-property.md'
           },
           {
@@ -239,8 +239,43 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Masters-Road/module.md'
           },
           {
-            text: 'IAA',
+            text: '接入广告',
             link: '/Masters-Road/advertising.md'
+          },
+          {
+            text:'世界UI使用大全',
+            link:"/Masters-Road/worldUI.md"
+          },
+          {
+            text:"使用禁行区制作动态门",
+            link:"/Masters-Road/blockArea.md"
+          },
+          {
+            text:"使用游泳区域制作泳池",
+            link:"/Masters-Road/swimArea.md"
+          },
+          {
+            text:"寻路功能",
+            link:"/Masters-Road/navigation.md"
+          }
+        ]
+      },
+      {
+        text: '性能优化',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text:"性能优化-CPU",
+            link:"/Optimisation/CPU.md"
+          },
+          {
+            text:"性能优化-内存",
+            link:"/Optimisation/Memory.md"
+          },
+          {
+            text:"性能优化-渲染",
+            link:"/Optimisation/Rendering.md"
           }
         ]
       },
