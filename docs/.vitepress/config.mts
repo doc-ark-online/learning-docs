@@ -95,6 +95,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '导入第三方项目',
             link: '/Getting-Started/import-project.md'
+          },{
+            text: '发布游戏',
+            link: '/Getting-Started/publish-game.md'
           }
         ]
       },
