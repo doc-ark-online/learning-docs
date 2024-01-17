@@ -10,6 +10,16 @@
 
 口袋方舟编辑器由两部分组成，分别是 Launcher 与 Editor。Launcher 主要负责管理 Editor 的版本、更新等内容，Editor 就是我们的游戏编辑器，我们的开发都是在 Editor 中进行。
 
+::: tip 安装、运行常见问题 Q&A 
+
+常见问题可以在第一个帖子中查找，遇到编辑器闪退可以按第二个帖子方式设置一下，如果还是不能解决可以在论坛联系我们！
+
+常见安装问题汇总：[【安装和运行常见问题】](https://forum.ark.online/forum.php?mod=viewthread&tid=1207)
+
+切换独立显卡运行编辑器方式：[使用独立显卡运行口袋方舟编辑器设置教程](https://forum.ark.online/forum.php?mod=viewthread&tid=2384&extra=)
+
+:::
+
 ## 1. 下载与安装
 
 ### 1.1 注册账号
