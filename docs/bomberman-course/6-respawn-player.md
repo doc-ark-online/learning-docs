@@ -1,32 +1,34 @@
-# 玩家复活功能
+# 玩家伤害与复活
 
 ::: tip 阅读本文大概需要 15 分钟
 
-本节将会实现玩家死亡与复活的功能。
+本节将会实现玩家受伤与复活的功能。
 
 :::
-
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=620313767&bvid=BV1k84y1X7K9&cid=1316738140&p=9&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 本节的脚本，我们要实现如下功能：
 
 1. 接收服务端传回来的被击中事件，并且给 UI 脚本抛出一个本地事件，让血条减少。
 2. 判断当前玩家剩余的血量，如果血量小于等于零，就让玩家变成布娃娃，在三秒之后返回出生点。
 
-首先创建`PlayerControls`脚本，这个脚本用来处理与玩家角色相关的逻辑：
+首先在“工程内容”面板中，单击“脚本>新建脚本”来创建一个新的脚本并命名为`PlayerControl`，如图：
 
-![UE4-Win64-Debug_fDXeO9ptx2](https://arkimg.ark.online/UE4-Win64-Debug_fDXeO9ptx2.webp)
+![image-20240307165334911](https://arkimg.ark.online/image-20240307165334911.webp)
 
-双击打开`PlayerControls`脚本，填入下列代码：
+同样将其拖拽到`Ground`物体上，如图：
+
+![image-20240307165641015](https://arkimg.ark.online/image-20240307165641015.webp)
+
+双击打开`PlayerControls`脚本，编写代码如下：
 
 ```typescript
 @Component
-export default class PlayerControls extends Script {
+export default class PlayerControl extends Script {
 
     // 默认玩家有 100 点血
     private _currentHP: number = 100;
     // 出生点位置
-    private _spawn:Vector = new Vector(1812, 1000, 240);
+    private _spawn:Vector = new Vector(330, 780, 220);
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -84,24 +86,49 @@ export default class PlayerControls extends Script {
 
 我们在受伤和复活功能的函数中，使用`Event.dispatchToLocal` 抛出了一个本地事件，用来通知 UI 脚本当前玩家的血量。接下来我们在血量 UI 脚本中处理这个事件：
 
-修改 `HPbarUI` 脚本，接收事件并设置血条（进度条）长度，为了让血条可以与我们血量数值对应上，我们需要先将它的最大值设置为与玩家最大血量相同。
+双击打开 `GameUI` 脚本，接收事件并设置血条（进度条）长度，修改代码如下：
 
 ```typescript
-import HpUI_Generate from "./ui-generate/HpUI_generate";
+export default class GameUI extends UIScript {
+	//释放炸弹 cd，主要用来计时并控制 1 秒内允许释放一个炸弹
+	timer: number = 0;
 
-export default class HPbarUI extends HpUI_Generate {
 	protected onStart() {
-		// 设置能否每帧触发onUpdate
+		//设置能否每帧触发onUpdate
 		this.canUpdate = false;
 		this.layer = UILayerMiddle;
-		// 初始化血条 设置最大值为 100 与血量相同 //[!code focus] //[!code ++]
-		this.mHPbar.sliderMaxValue = 100; //[!code focus] //[!code ++]
-		// 设置当前数值为 100 表示满血 //[!code focus] //[!code ++]
-		this.mHPbar.currentValue = 100; //[!code focus] //[!code ++]
-         // 监听血量改变事件 //[!code focus] //[!code ++] 
-		Event.addLocalListener("Event_CurrentHp", (hpNum: number) => { //[!code focus] //[!code ++]
-			this.mHPbar.currentValue = hpNum; //[!code focus] //[!code ++]
-		}); //[!code focus] //[!code ++]
+		//通过路径找到攻击按钮
+		const attackBtn = this.uiWidgetBase.findChildByPath("RootCanvas/mAttackButton") as Button;
+		//为攻击按钮添加事件
+		attackBtn.onClicked.add(() => {
+			this.onClickAttackBtn();
+		});
+		//找到血条
+		const hpBar = this.uiWidgetBase.findChildByPath("RootCanvas/mHPBar") as ProgressBar;
+		//监听血量改变事件 
+		Event.addLocalListener("Event_CurrentHp", (hpNum: number) => { 
+			hpBar.currentValue = hpNum; 
+		}); 
 	}
+
+	//使用炸弹 
+	private onClickAttackBtn() { 
+		if (this.timer == 0) { 
+			//重置倒计时为 1000  设置1秒的释放炸弹CD 
+			this.timer = 1000; 
+			//通知服务器玩家释放了炸弹 
+			Event.dispatchToServer("Event_Bomb");
+ 
+			//开始倒计时 
+			setTimeout(() => { 
+				//倒计时到期后设置时间 
+				this.timer = 0; 
+			}, this.timer); 
+		} 
+	} 
 }
 ```
+
+运行游戏，可以看到，玩家已经可以受到伤害，并拥有自动复活的功能了，如图：
+
+![动画2](https://arkimg.ark.online/%E5%8A%A8%E7%94%BB2.gif)
