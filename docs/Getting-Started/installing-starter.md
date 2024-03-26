@@ -22,14 +22,12 @@
 
 ## 1. 下载与安装
 
-### 1.1 注册账号
-① 访问[口袋方舟](https://creator.ark.online/)点击 **"登录/注册"** 按钮。根据提示，完成注册信息填写。
+### 1.1 下载编辑器启动器
+点击 **“下载编辑器”** 按钮，来下载我们的启动器。
 
-② 完成注册后点击 **“下载编辑器”** 按钮，来下载我们的启动器。
+![a30f6aef-355d-472d-9b6d-538b623f84a0](https://arkimg.ark.online/a30f6aef-355d-472d-9b6d-538b623f84a0.webp)
 
-![d7ee6565-8187-4f4a-a682-9494b338a9b2](https://arkimg.ark.online/d7ee6565-8187-4f4a-a682-9494b338a9b2.jpg)
-
-### 1.2 安装 Launcher
+### 1.2 安装 编辑器启动器 （Launcher） 
 
 ![](https://arkimg.ark.online/learn_1_1_downloadOver.webp)
 
@@ -59,7 +57,7 @@
 
 ::: warning 注意
 
-如果双击运行后提示需要安装 .Net Core，在弹出的页面或 [.NET Core](https://dotnet.microsoft.com/zh-cn/download/dotnet/3.1) 安装 x64 位版本即可
+如果双击运行后提示需要安装 .Net Core，在弹出的页面或 [.NET Core](https://dotnet.microsoft.com/zh-cn/download/dotnet/3.1) 安装 **x64** 位版本即可
 
 :::
 
@@ -97,11 +95,18 @@
 
 双击打开桌面的 “口袋方舟编辑器” 图标，待更新完成后，会显示 Editor 的登陆界面，如图：
 
-![image-20230528150908661](https://arkimg.ark.online/image-20230528150908661.webp)
+![1dbde00d-3d85-4891-8a26-5abf63214f1a](https://arkimg.ark.online/1dbde00d-3d85-4891-8a26-5abf63214f1a.webp)
 
-这时候可以选择两种登录方式，第一种我们可以使用手机上的 [233 乐园](https://www.233leyuan.com/) 进行扫码登录，第二种我们可以输入手机号获取验证码登录（第一次登录会自动注册）。
+这时候可以选择两种登录方式：
 
-登录成功后会进行资源加载，资源加载完成后，就可以开启游戏开发之路了！
+- 第一种我们可以使用手机上的 [233 乐园](https://www.233leyuan.com/) 进行扫码登录。
+- 第二种我们可以输入手机号获取验证码登录（第一次登录会自动注册）。
+
+如果是首次登陆，编辑器会使用浏览器自动弹出注册问卷页面，创作者们根据自身情况选择合适的选项即可。
+
+![50224a54-6349-4f07-b708-5cfdfc833aa4](https://arkimg.ark.online/50224a54-6349-4f07-b708-5cfdfc833aa4.webp)
+
+填写完问卷后就可以正常登陆了，登录成功后会进行资源加载，资源加载完成后，就可以正式开启我们的游戏开发之路了！
 
 ![c4f5fe92-6aab-4bcb-9c2e-16ea1e41062c](https://arkimg.ark.online/c4f5fe92-6aab-4bcb-9c2e-16ea1e41062c.webp)
 
