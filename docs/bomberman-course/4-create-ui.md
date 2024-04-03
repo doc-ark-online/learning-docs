@@ -14,7 +14,7 @@
 
 ![image-20240307101750969](https://arkimg.ark.online/image-20240307101750969.webp)
 
-双击`GameUI` 打开UI编辑器，拖入一个按钮，命名为`mAttackBtn`，并设置位置为（1480，550），如图：
+双击`GameUI` 打开UI编辑器，拖入一个按钮，命名为`mAttackButton`，并设置位置为（1480，550），如图：
 
 ![image-20240307104802067](https://arkimg.ark.online/image-20240307104802067.webp)
 
