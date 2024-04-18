@@ -17,7 +17,7 @@
 | 传送带组件     | [传送带组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=17) | v1.0.0           |
 | 冲量组件       | [冲量组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=18) | v1.0.0           |
 | 传送门组件     | [传送门组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=19) | v1.0.0           |
-| 换装组件       | [换装组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=20) | v1.0.0           |
+| 换装组件       | [换装组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=20) | v1.0.1           |
 | 触发器信号     | [触发器信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=12) | v1.0.0           |
 | 开关信号       | [开关信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=13) | v1.0.0           |
 | 计时器信号     | [计时器信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=15) | v1.0.0           |
@@ -35,7 +35,7 @@
 | 关卡死亡组件   | [关卡死亡组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=29) | v1.0.0           |
 | 关卡排行榜组件 | [关卡排行榜组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=30) | v1.0.0           |
 | 玩家设置组件   | [玩家设置组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=31) | v1.0.0           |
-| 广告组件       | [广告组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=32) | v1.0.0           |
+| 广告组件       | [广告组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=32) | v1.0.1           |
 | 概率信号       | [概率信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=33) | v1.0.0           |
 | 条件信号       | [条件信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=34) | v1.0.0           |
 | 物品检测信号   | [物品检测信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=36) | v1.0.0           |
