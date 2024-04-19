@@ -35,7 +35,7 @@
 | 关卡死亡组件   | [关卡死亡组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=29) | v1.0.0           |
 | 关卡排行榜组件 | [关卡排行榜组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=30) | v1.0.0           |
 | 玩家设置组件   | [玩家设置组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=31) | v1.0.0           |
-| 广告组件       | [广告组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=32) | v1.0.1           |
+| 广告组件       | [广告组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=32) | v1.1.0           |
 | 概率信号       | [概率信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=33) | v1.0.0           |
 | 条件信号       | [条件信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=34) | v1.0.0           |
 | 物品检测信号   | [物品检测信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=36) | v1.0.0           |
