@@ -372,11 +372,11 @@ void 类型是一种特殊的空值，它常用在函数的返回值中，标识
 
 ```typescript
 // 创建一个名为 vector2 的二维向量
-let vectoc2: Vector2 = new Vector2(100, 100);
+let vector2: Vector2 = new Vector2(100, 100);
 // 创建一个名为 vector3 的三维向量
-let vectoc3: Vector = new Vector(100, 100, 100);
+let vector3: Vector = new Vector(100, 100, 100);
 // 创建一个名为 vector4 的四维向量
-let vectoc4: Vector4 = new Vector4(100, 100, 100, 100);
+let vector4: Vector4 = new Vector4(100, 100, 100, 100);
 ```
 
 更多关于 Vector 的内容可以参阅产品手册：[Vector | API (ark.online)](https://api-docs.ark.online/classes/mw.Vector.html)
