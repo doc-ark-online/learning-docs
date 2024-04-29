@@ -14,17 +14,9 @@
   - RGB 主要提供基础颜色变化信息。
     
     ![img](https://arkimg.ark.online/1688449135846-7.png)
-  - User4=颜色贴图 Alpha 通道，提供低画质下光照体积感。
+  - 颜色贴图 Alpha 通道，提供低画质下光照体积感（建议直接使用AO即可）。
     
     ![img](https://arkimg.ark.online/1688449135840-1.png)
-- User4（Alpha）使用所提供的 SP 模板和材质球，放在最上层即可
-- 根据实际需要可以微调叠加值
-
-![img](https://arkimg.ark.online/1688987050495-1.png)
-
-- 可在 User4通道中观察效果
-
-![img](https://arkimg.ark.online/1688449135841-4.png)
 
 ## 法线贴图（N）
 
