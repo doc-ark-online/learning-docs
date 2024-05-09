@@ -22,7 +22,12 @@
 
 ::: warning 注意
 
-如果没有通过 “新建脚本” 按钮来创建脚本，是手动在文件夹或者 VSCode 里面创建的脚本，需要将 class 设置默认导出才会执行 onStart，也就是在 class 关键词前加 `export default` 
+如果没有通过 “新建脚本” 按钮来创建脚本，是手动在文件夹或者 Visual Studio Code 中面创建的脚本需要做一些操作：
+
+1. 将类默认导出，也就是在类名前加上 `export default`。
+2. 给类加上装饰器 `@Component` 。
+
+完成上述操作后这个脚本才可以被挂载到对象上，并且会自动执行生命周期函数。
 
 :::
 
@@ -31,11 +36,18 @@
 
 ![image-20230528090723000](https://arkimg.ark.online/image-20230528090723000.webp)
 
-脚本创建完成后，怎么使用呢？那就需要挂载到游戏对象列表中了，比如这里示例中将脚本拖拽并挂载到了对象列表中，只有挂载到游戏对象窗口中的脚本才会生效并执行脚本中的 onStart 等生命周期方法。
+脚本创建完成后，怎么使用呢？那就需要挂载到游戏对象上了，只有挂载到游戏对象上的脚本才会自动执行脚本中的 `onStart` 等生命周期方法。
 
-![image-20230528092544231](https://arkimg.ark.online/image-20230528092544231.webp)
+1. 点击 “游戏功能对象” 按钮。
+2. 选中 “游戏功能对象” 页签
+3. 找到 “空锚点” 对象，将它拖拽到对象管理器中（或直接拖拽到主视口中）。
+4. 在对象管理器中选中刚刚拖出来的 “空锚点”。
+5. 选中 `PlayerControl` 脚本，鼠标左键长按拖动到 “空锚点” 上
+6. 在 “对象管理器” 中选中 “空锚点” 可以看到属性面板中多了一个脚本组件。
 
-* 如图所示，将 `PlayerControl` 脚本拖拽到对象管理器的 "对象" 下面放开，就完成了脚本的 “挂载” 操作，此时可以在对象管理器中看到该脚本的引用，如③所示。
+![将脚本拖到空锚点](https://arkimg.ark.online/d6ca0f70-db33-4410-a27d-d8966f2ab7a9.webp)
+
+
 
 ## 2. 脚本基础结构
 双击打开脚本，若刚才文件名是 "PlayerContorl" ，那么现在脚本内容应该如下所示：
@@ -60,8 +72,6 @@ export default class PlayerControl extends Script {
     protected onDestroy(): void { }
 }
 ```
----
-
 基础结构如下：
 
 ```typescript
@@ -80,8 +90,8 @@ export default class PlayerControl extends Script {
 
 1. 首先该脚本中一定包含一个类，并且类名与文件名相同，示例中为 `PlayerControl`。
 2. 该类前要加 export default，设置为默认导出类。
-3. 该类要添加一个 `@Component` 装饰器
-4. 该类继承自 Script。
+3. 该类要添加一个 `@Component` 装饰器。
+4. 该类继承自 Script 。
 
 ## 3. 脚本常用生命周期
 
