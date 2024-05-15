@@ -30,7 +30,7 @@
 | 广播UI         | [广播UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=24) | v1.0.0           |
 | 角色修改组件   | [角色修改组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=25) | v1.0.0           |
 | 天空盒组件     | [天空盒组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=26) | v1.0.0           |
-| 关卡核心组件   | [关卡核心组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=27) | v1.1.0           |
+| 关卡核心组件   | [关卡核心组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=27) | v1.2.0           |
 | 关卡存档组件   | [关卡存档组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=28) | v1.0.1           |
 | 关卡死亡组件   | [关卡死亡组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=29) | v1.0.1           |
 | 关卡排行榜组件 | [关卡排行榜组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=30) | v1.0.0           |
