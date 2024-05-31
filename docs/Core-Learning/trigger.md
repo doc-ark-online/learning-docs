@@ -59,7 +59,7 @@ export default class TriggerTest extends Script {
     protected onStart(): void {
         //这里在服务端进行示例
         if (SystemUtil.isServer()) {
-            //通过上面复制的 guid 获取触发器对象
+            //通过上面复制的 GameObjectID 获取触发器对象
             const trigger = GameObject.findGameObjectById("2BFB0766") as Trigger;
             //为触发器绑定 有物体进入时 会触发的监听事件
             trigger.onEnter.add(this.onTriggerEnter);
@@ -106,7 +106,7 @@ export default class TriggerTest extends Script {
     protected onStart(): void {
         //这里在服务端进行示例
         if (SystemUtil.isServer()) {
-            //通过上面复制的 guid 获取触发器对象
+            //通过上面复制的 GameObjectID 获取触发器对象
             const trigger = GameObject.findGameObjectById("2BFB0766") as Trigger
             //通过触发器的方法，传入任意一个物体，就会返回 bool 值，代表该物体是否在触发区域内
             const isIn = trigger.checkInArea(this.gameObject)

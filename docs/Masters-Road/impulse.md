@@ -62,7 +62,7 @@ export default class PlayerAddImpulse extends Script {
             return;
         }
 
-        // 触发器 GUID 每个项目都不一样，请在自己项目中复制指定的物体 GUID
+        // 触发器 GameObjectID 每个项目都不一样，请在自己项目中复制指定的物体 GameObjectID
         const boxTriggerGuid = '3D1907A8405F99356C4CA699543258C8';
 
         // 异步查询碰撞区域
@@ -93,7 +93,7 @@ export default class PlayerAddImpulse extends Script {
 
 ![image-20230723114344818](https://arkimg.ark.online/image-20230723114344818.webp)
 
-① 场景上的触发器，用来检测玩家进入指定区域，测试代码中的触发器 GUID 就是它的。
+① 场景上的触发器，用来检测玩家进入指定区域，测试代码中的触发器 GameObjectID 就是它的。
 
 ② 一个平面静态模型，用来在运行时方便定位触发器位置。
 

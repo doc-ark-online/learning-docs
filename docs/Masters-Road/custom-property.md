@@ -65,7 +65,7 @@ export default class PlayerControl extends Script {
 
 ![image-20230528130326105](https://arkimg.ark.online/image-20230528130326105.webp)
 
-在上面的代码中，“displayName” 就是一个属性配置，可以配置该属性在属性面板上的显示状态。除了 “displayName” 外，还有一些常用的属性配置，例如 “group” 可以将多个属性分组；capture 则可以为该属性添加一个吸管功能，点击吸管，再点击场景中任何游戏物体，就可以快捷获取到该物体的 guid，十分方便。代码与效果如图：
+在上面的代码中，“displayName” 就是一个属性配置，可以配置该属性在属性面板上的显示状态。除了 “displayName” 外，还有一些常用的属性配置，例如 “group” 可以将多个属性分组；capture 则可以为该属性添加一个吸管功能，点击吸管，再点击场景中任何游戏物体，就可以快捷获取到该物体的 GameObjectID，十分方便。代码与效果如图：
 
 ``` ts
 @Component
@@ -76,7 +76,7 @@ export default class PlayerControl extends Script {
     @Property({displayName: "循环次数", group: "循环设置", range: { min: 1, max: 10000} })//[!code focus]
     public loopCount: number = 1//[!code focus]
     
-    @Property({displayName: "操作对象的 guid", capture: true, group: "操作对象"})//[!code focus]
+    @Property({displayName: "操作对象的 GameObjectID", capture: true, group: "操作对象"})//[!code focus]
     public objectGuid: string = ""//[!code focus]
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
