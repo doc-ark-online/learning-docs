@@ -30,7 +30,7 @@
 
 <video controls src="https://arkimg.ark.online/20231208093236_rec_.mp4"></video>
 
-一般来说禁行区都是附在模型对象上的，来传达这片区域是不可通行的。但是整个游戏场景的边界可能不需要模型来表现禁行区，可以根据游戏项目的属性来自行决定。这里举例将静态模型“出入口”（GUID：33514）拖入场景中。
+一般来说禁行区都是附在模型对象上的，来传达这片区域是不可通行的。但是整个游戏场景的边界可能不需要模型来表现禁行区，可以根据游戏项目的属性来自行决定。这里举例将静态模型“出入口”（AssetID：33514）拖入场景中。
 
 ![image-20231208104931716](https://arkimg.ark.online/image-20231208104931716.webp)
 
@@ -48,7 +48,7 @@
 </p>
 
 
-同时我们使用一个粒子特效粒子特效 [[特效 | 教程](https://learning.ark.online/Common-Functions/particle.html#_4-动态播放特效)] 来表现光门的开启，这里举例选用“光屏” （GUID: 146771）。
+同时我们使用一个粒子特效粒子特效 [[特效 | 教程](https://learning.ark.online/Common-Functions/particle.html#_4-动态播放特效)] 来表现光门的开启，这里举例选用“光屏” （AssetID: 146771）。
 
 <p align="center">
   <img src="https://arkimg.ark.online/image-20231205164536493.webp" alt="Your image description">

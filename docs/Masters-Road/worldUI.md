@@ -100,12 +100,12 @@
 
 ![image-20240104142001828](https://arkimg.ark.online/image-20240104142001828.png)
 
-- 步骤2：【代码】复制世界 UI 在场景中的 GUID，通过 GUID 获取到这个世界 UI
+- 步骤2：【代码】复制世界 UI 在场景中的 GameObjectID，通过 GameObjectID 获取到这个世界 UI
 
 ![img](https://ali-forum.ark.online/forum/202303/23/164013mtcfrfjii9199111.png)
 
 ```ts
-// 047B1F70 就是上图中复制的guid
+// 047B1F70 就是上图中复制的GameObjectID
 let worldUI = GameObject.findGameObjectById("047B1F70") as UIWidget
 ```
 
@@ -132,7 +132,7 @@ export default class GameStart extends Script {
   /** 当脚本被实例后，会在第一帧更新前调用此函数 */
   protected onStart(): void {
      if (SystemUtil.isClient()) {
-        // 047B1F70 就是上图中复制的guid
+        // 047B1F70 就是上图中复制 GameObjectID
         let worldUI = GameObject.findGameObjectById("047B1F70") as UIWidget
         // 创建2DUI
         let myUI = mw.createUIByName("NewUI")
