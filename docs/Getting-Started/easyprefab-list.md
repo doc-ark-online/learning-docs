@@ -41,5 +41,5 @@
 | 物品检测信号   | [物品检测信号](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=36) | v1.0.1           |
 | 物品栏组件     | [物品栏组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=35) | v1.0.1           |
 | 可拾取物组件   | [可拾取物组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=37) | v1.0.0           |
-| 对话框UI       | [对话框UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=38) | v1.0.0           |
+| 对话框UI       | [对话框UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=38) | v1.1.0           |
 
