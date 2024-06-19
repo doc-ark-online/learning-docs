@@ -27,7 +27,7 @@
 | 按钮UI         | [按钮UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=22) | v1.1.0           |
 | 消息提示框UI   | [消息提示框UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=23) | v1.0.0           |
 | 选择提示框UI   | [选择提示框UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=7) | v1.0.0           |
-| 广播UI         | [广播UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=24) | v1.0.0           |
+| 广播UI         | [广播UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=24) | v1.0.1           |
 | 角色修改组件   | [角色修改组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=25) | v1.0.0           |
 | 天空盒组件     | [天空盒组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=26) | v1.0.0           |
 | 关卡核心组件   | [关卡核心组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=27) | v1.2.1           |
