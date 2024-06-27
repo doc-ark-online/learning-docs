@@ -6,6 +6,12 @@
 
 :::
 
+:::  info 视频版本 TypeScript 上线 😎
+
+我们在 B 站上传了一套零基础学习 TypeScript 语言的教程，这套教程与本章文本教程略有不同，视频版内容更多、更细，建议各位创作者结合视频一同学习：[口袋方舟 TypeScript 视频教程](https://www.bilibili.com/video/BV1Rz421b7FE/)
+
+:::
+
 ## 前置知识
 
 ### 关于注释
