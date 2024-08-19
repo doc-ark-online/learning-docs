@@ -242,10 +242,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Masters-Road/module.md'
           },
           {
-            text: '接入广告',
-            link: '/Masters-Road/advertising.md'
-          },
-          {
             text:'世界UI使用大全',
             link:"/Masters-Road/worldUI.md"
           },
