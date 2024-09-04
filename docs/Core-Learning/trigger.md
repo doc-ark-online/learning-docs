@@ -43,11 +43,7 @@
 
 这里我们创建一个脚本，命名为 **TriggerTest**，将脚本添加到对象列表中，如图：
 
-![](https://arkimg.ark.online/b811a16a-ff68-4f93-a589-6d31fa9919e3.webp)
-
-右键触发器，在菜单中单击 “复制对象 ID”，将触发器的 `对象ID` 保存下来，如图；
-
-![复制对象id](https://arkimg.ark.online/a72782be-b120-46cc-a691-5d99b4f343c7.webp)
+![image-20240829150338911](https://arkimg.ark.online/image-20240829150338911.webp)
 
 打开脚本编写代码，为触发器添加监听事件，代码如下：
 
@@ -59,8 +55,8 @@ export default class TriggerTest extends Script {
     protected onStart(): void {
         //这里在服务端进行示例
         if (SystemUtil.isServer()) {
-            //通过上面复制的 GameObjectID 获取触发器对象
-            const trigger = GameObject.findGameObjectById("2BFB0766") as Trigger;
+            //通过 this.gameObject 获取触发器对象
+            const trigger = this.gameObject as Trigger;
             //为触发器绑定 有物体进入时 会触发的监听事件
             trigger.onEnter.add(this.onTriggerEnter);
             //为触发器绑定 有物体离开时 会触发的监听事件
@@ -106,8 +102,8 @@ export default class TriggerTest extends Script {
     protected onStart(): void {
         //这里在服务端进行示例
         if (SystemUtil.isServer()) {
-            //通过上面复制的 GameObjectID 获取触发器对象
-            const trigger = GameObject.findGameObjectById("2BFB0766") as Trigger
+            //通过 this.gameObject 获取触发器对象
+        	const trigger = this.gameObject as Trigger;
             //通过触发器的方法，传入任意一个物体，就会返回 bool 值，代表该物体是否在触发区域内
             const isIn = trigger.checkInArea(this.gameObject)
         }
@@ -165,9 +161,9 @@ export default class ModelTouch extends Script {
 
 ![](https://arkimg.ark.online/04f7e4c2-219f-410f-8a00-cb4127f1236a.webp)
 
-然后将刚刚编写好的 **ModelTouch** 脚本拖拽到金币模型下，当作金币模型的子物体：
+然后将刚刚编写好的 **ModelTouch** 脚本拖拽到金币模型下，当作金币模型的挂载脚本：
 
- ![](https://arkimg.ark.online/4497a22d-9765-4e0d-9a01-7964d3c6f610.webp)
+![image-20240829155027204](https://arkimg.ark.online/image-20240829155027204.webp)
 
 运行起来，我们控制玩家角色去触碰金币。就可以看到在碰到的瞬间，金币消失不见了，等玩家离开金币它就又显示出来了。
 

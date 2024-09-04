@@ -162,7 +162,7 @@ export default class Test extends Script {
     protected onStart() {
         if (SystemUtil.isServer()) {
             // 通过立方体的 GameObjectId 找到立方体 //[!code focus]
-            const object = GameObject.findGameObjectById("1EB0BD86D97D7EAD"); //[!code focus]
+            const object = GameObject.findGameObjectById("1EB0BD86D97D7EAD"); //[!code focus]		
             // 获取立方体有几个子物体（当前只有一个圆锥体）
             console.log("子物体个数:" + object.getChildren().length);
         }
