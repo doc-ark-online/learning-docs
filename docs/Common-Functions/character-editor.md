@@ -198,7 +198,7 @@ export default class PlayerControl extends Script {
 
   创建一个脚本，并挂载到人型对象下方，如图：
 
-  ![image-20230725175128590](https://arkimg.ark.online/image-20230725175128590.png)
+  ![image-20240919144333357](https://arkimg.ark.online/image-20240919144333357.webp)
 
   编写脚本如下：
 
@@ -222,3 +222,94 @@ export default class NPCControl extends Script {
 运行游戏，可以看到后面的人型角色已经使用了我们的角色数据，如图：
 
 ![image-20230725180620428](https://arkimg.ark.online/image-20230725180620428.png)
+
+## 3 加载多足形象
+
+### 3.1 角色加载多足形象
+
+- 方法一：在Player属性面板设置多足形象
+
+  在对象管理器中点击 **Player**，在出现的属性面板中找到 **形象设置** - **外观类型**，在下拉列表中选择 **多足形象**。
+
+​	![image-20240919134431895](https://arkimg.ark.online/image-20240919134431895.webp) 
+
+​	在资源库的 **静态模型** - **人物/怪物/动物** 分类中，找到适合的多足形象，并拖动到属性面板的**整体形象**中即可完成加载。
+
+![image-20240919140246387](https://arkimg.ark.online/image-20240919140246387.webp)   
+
+- 方法二：使用代码加载多足角色形象
+
+  在资源库的 **角色/NPC** - **多足形象** 分类中，找到适合的资源，右键复制AssetId。
+
+  ![image-20240919142423808](https://arkimg.ark.online/image-20240919142423808.webp) 
+
+  创建一个脚本挂载到场景中，编写脚本代码如下：
+
+```typescript
+@Component
+export default class PlayerControl extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        //只有在客户端中才能获取该客户端对应的玩家 
+        if (SystemUtil.isClient()) {
+            setTimeout(() => {
+                //5 秒后进行换装操作,这里的参数就粘贴我们刚才复制的多足形象的资源ID
+                Player.localPlayer.character.setDescription(["327748"])
+            }, 5000);
+        }
+    }
+}
+```
+
+运行游戏，5 秒后主角就会动态使用我们的数据了，如图：
+
+![image-20240919142734963](https://arkimg.ark.online/image-20240919142734963.webp) 
+
+::: tip 关于多足形象的动画
+
+多足形象并不像人形形象一样具有基础姿态，所以不会在走、跑、跳的时候做相应的动作。所以在使用多足形象的时候，需要我们自己通过代码逻辑来为多足形象播放动画。更多关于角色动画的详情内哦你如果请查阅[角色姿态与动画 | 教程](./../Core-Learning/animating-characters.html)
+
+:::
+
+### 3.2 NPC加载多足形象
+
+- 方法一：在角色编辑器中加载形象数据
+
+  在当前项目中，向场景中拖拽一个角色，并在角色的属性面板中找到 **形象设置** - **外观类型**，在下拉列表中选择 **多足形象**。
+
+  ![image-20240919143915384](https://arkimg.ark.online/image-20240919143915384.webp)
+
+  接着在资源库的 **静态模型** - **人物/怪物/动物** 分类中，找到适合的多足形象，并拖动到属性面板的**整体形象**中即可完成加载。可以看到，多足形象成功的应用到了NPC身上。
+
+  ![image-20240919144052464](https://arkimg.ark.online/image-20240919144052464.webp)
+
+- 方法二：使用代码给NPC加载角色形象数据
+
+  创建一个脚本，并挂载到人型对象下方，如图：
+
+  ![image-20240919144333357](https://arkimg.ark.online/image-20240919144333357.webp)
+
+  在资源库的 **角色/NPC** - **多足形象** 分类中，找到适合的资源，右键复制AssetId。
+
+  ![image-20240919142423808](https://arkimg.ark.online/image-20240919142423808.webp) 
+
+  编写脚本如下：
+
+```ts
+@Component
+export default class NPCControl extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        //首先获取当前人型对象
+        let npc = this.gameObject as Character
+        //把上面复制的四足形象资源 ID 粘到这里就好
+        npc.setDescription(["327748"]);
+    }
+}
+```
+
+运行游戏，可以看到后面的npc角色已经使用了我们选择的四足形象外观，如图：
+
+![image-20240919144944140](https://arkimg.ark.online/image-20240919144944140.webp) 
