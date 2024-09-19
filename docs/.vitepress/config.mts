@@ -98,9 +98,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           }, {
             text: '发布游戏',
             link: '/Getting-Started/publish-game.md'
-          },{
-            text:'常用预制体下载',
-            link:'/Getting-Started/prefab-list.md'
+          }, {
+            text: '常用预制体下载',
+            link: '/Getting-Started/prefab-list.md'
           }
         ]
       },
@@ -205,6 +205,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '使用数据中心存储数据',
             link: '/Online-Gaming/data-storage.md'
+          },
+          {
+            text: '房间匹配规则',
+            link: '/Online-Gaming/room-matching.md'
           }
         ]
       },
@@ -242,20 +246,20 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Masters-Road/module.md'
           },
           {
-            text:'世界UI使用大全',
-            link:"/Masters-Road/worldUI.md"
+            text: '世界UI使用大全',
+            link: "/Masters-Road/worldUI.md"
           },
           {
-            text:"使用禁行区制作动态门",
-            link:"/Masters-Road/blockArea.md"
+            text: "使用禁行区制作动态门",
+            link: "/Masters-Road/blockArea.md"
           },
           {
-            text:"使用游泳区域制作泳池",
-            link:"/Masters-Road/swimArea.md"
+            text: "使用游泳区域制作泳池",
+            link: "/Masters-Road/swimArea.md"
           },
           {
-            text:"寻路功能",
-            link:"/Masters-Road/navigation.md"
+            text: "寻路功能",
+            link: "/Masters-Road/navigation.md"
           }
         ]
       },
@@ -265,16 +269,16 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text:"性能优化-CPU",
-            link:"/Optimisation/CPU.md"
+            text: "性能优化-CPU",
+            link: "/Optimisation/CPU.md"
           },
           {
-            text:"性能优化-内存",
-            link:"/Optimisation/Memory.md"
+            text: "性能优化-内存",
+            link: "/Optimisation/Memory.md"
           },
           {
-            text:"性能优化-渲染",
-            link:"/Optimisation/Rendering.md"
+            text: "性能优化-渲染",
+            link: "/Optimisation/Rendering.md"
           }
         ]
       },
