@@ -113,11 +113,13 @@
 
 ### 2.2 保存角色形象数据
 
-有时候，我们并不想立刻使用捏好的角色形象，而是喜欢在游戏中的某个时刻，动态的进行角色外观更换，这时候就需要将捏好的数据保存下来，单击“另存为按钮”，在弹出窗口中，选择自己需要保存的数据，示例中只保存了发型、上衣、下衣数据，如图：
+有时候，我们并不想立刻使用捏好的角色形象，而是喜欢在游戏中的某个时刻，动态的进行角色外观更换，这时候就需要将捏好的数据保存下来，单击“另存为按钮”，在弹出窗口中，选择自己需要保存的数据：
 
 ![image-20230725172406582](https://arkimg.ark.online/image-20230725172406582.png)
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcndT459Wz4XK2a5AWOaUi9rd.png)
+保存时可以快捷选择 *完整角色* 和 *套装服饰* 。在预览窗口中可以看到不同角色数据的效果，在这里我们选择套装服饰，这样保存的角色数据中不会有化妆、身体比例等数据。
+
+![](https://arkimg.ark.online/image-20240925102823558.webp)![image-20240925102836234](https://arkimg.ark.online/image-20240925102836234.webp)
 
 单击“保存选中项”后，输入一个当前搭配的名称即可，如图：
 
@@ -131,9 +133,9 @@
 
 ![image-20230725172549083](https://arkimg.ark.online/image-20230725172549083.png)
 
-在“工程内容”窗口中的“角色”选项中，选中我们刚保存的角色数据文件，右键菜单中选择“复制工程内容 ID”即可复制角色数据的 ID，如图：
+在“工程内容”窗口中的“角色”选项中，选中我们刚保存的角色数据文件，右键菜单中选择“复制 Asset ID”即可复制角色数据的 Asset ID，如图：
 
-![](https://wstatic-a1.233leyuan.com/productdocs/static/boxcnb7OBy0D7x5Huzm4QboIhqf.png)
+![](./../../../../mwDoc/media-oversea/image-20240926174031908.png) 
 
 ### 2.3 加载角色形象数据
 
@@ -151,7 +153,7 @@
 
 ::: tip 关于 setDescription 函数
 
-这个函数可以直接传入 1.7 小节中资源库中整套装扮的 assetId 也可以直接换装。
+这个函数可以直接传入 1.7 小节中资源库中整套装扮的 Asset ID 也可以直接换装。
 
 :::
 
@@ -178,7 +180,7 @@ export default class PlayerControl extends Script {
 
 ### 2.4 NPC 加载角色形象数据
 
-除了玩家控制的角色以外，其他角色被称为“NPC”
+除了玩家控制的角色以外，其他角色被称为 “NPC”
 
 - 方法一：在角色编辑器中加载形象数据
 
@@ -190,11 +192,11 @@ export default class PlayerControl extends Script {
 
   ![image-20230725175746066](https://arkimg.ark.online/image-20230725175746066.png)
 
-  可以看到，角色形象数据成功的应用到了NPC身上
+  可以看到，角色形象数据成功的应用到了 NPC 身上
 
   ![image-20230725175836819](https://arkimg.ark.online/image-20230725175836819.png)
 
-- 方法二：使用代码给NPC加载角色形象数据
+- 方法二：使用代码给 NPC 加载角色形象数据
 
   创建一个脚本，并挂载到人型对象下方，如图：
 
@@ -227,7 +229,7 @@ export default class NPCControl extends Script {
 
 ### 3.1 角色加载多足形象
 
-- 方法一：在Player属性面板设置多足形象
+- 方法一：在 Player 属性面板设置多足形象
 
   在对象管理器中点击 **Player**，在出现的属性面板中找到 **形象设置** - **外观类型**，在下拉列表中选择 **多足形象**。
 
@@ -235,11 +237,11 @@ export default class NPCControl extends Script {
 
 ​	在资源库的 **静态模型** - **人物/怪物/动物** 分类中，找到适合的多足形象，并拖动到属性面板的**整体形象**中即可完成加载。
 
-![image-20240919140246387](https://arkimg.ark.online/image-20240919140246387.webp)   
+![image-20240919140246387](https://arkimg.ark.online/image-20240925103800885.webp)   
 
 - 方法二：使用代码加载多足角色形象
 
-  在资源库的 **角色/NPC** - **多足形象** 分类中，找到适合的资源，右键复制AssetId。
+  在资源库的 **角色/NPC** - **多足形象** 分类中，找到适合的资源，右键复制 Asset ID。
 
   ![image-20240919142423808](https://arkimg.ark.online/image-20240919142423808.webp) 
 
@@ -272,7 +274,7 @@ export default class PlayerControl extends Script {
 
 :::
 
-### 3.2 NPC加载多足形象
+### 3.2 NPC 加载多足形象
 
 - 方法一：在角色编辑器中加载形象数据
 
@@ -280,17 +282,17 @@ export default class PlayerControl extends Script {
 
   ![image-20240919143915384](https://arkimg.ark.online/image-20240919143915384.webp)
 
-  接着在资源库的 **静态模型** - **人物/怪物/动物** 分类中，找到适合的多足形象，并拖动到属性面板的**整体形象**中即可完成加载。可以看到，多足形象成功的应用到了NPC身上。
+  接着在资源库的 **静态模型** - **人物/怪物/动物** 分类中，找到适合的多足形象，并拖动到属性面板的**整体形象**中即可完成加载。可以看到，多足形象成功的应用到了 NPC 身上。
 
-  ![image-20240919144052464](https://arkimg.ark.online/image-20240919144052464.webp)
+  ![image-20240919144052464](https://arkimg.ark.online/image-20240919144052464-1.webp)
 
-- 方法二：使用代码给NPC加载角色形象数据
+- 方法二：使用代码给 NPC 加载角色形象数据
 
   创建一个脚本，并挂载到人型对象下方，如图：
 
   ![image-20240919144333357](https://arkimg.ark.online/image-20240919144333357.webp)
 
-  在资源库的 **角色/NPC** - **多足形象** 分类中，找到适合的资源，右键复制AssetId。
+  在资源库的 **角色/NPC** - **多足形象** 分类中，找到适合的资源，右键复制 Asset ID。
 
   ![image-20240919142423808](https://arkimg.ark.online/image-20240919142423808.webp) 
 
@@ -310,6 +312,6 @@ export default class NPCControl extends Script {
 }
 ```
 
-运行游戏，可以看到后面的npc角色已经使用了我们选择的四足形象外观，如图：
+运行游戏，可以看到后面的 NPC 角色已经使用了我们选择的四足形象外观，如图：
 
 ![image-20240919144944140](https://arkimg.ark.online/image-20240919144944140.webp) 
