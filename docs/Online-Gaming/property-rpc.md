@@ -22,21 +22,23 @@ RPC 函数非常有用，可允许客户端或服务器通过网络连接相互�
 
 ### 1.2 使用 RPC 函数
 
-要将一个函数声明为 RPC 函数，我们需要将 `Server`、`Client` 或 `Multicast` 关键字添加函数的  `@RemoteFunction` 装饰器参数中，它们代表函数在哪一个端执行。
+要将一个函数声明为 RPC 函数，我们需要将 `Server`、`Client` 或 `Multicast` 等关键字添加函数的  `@RemoteFunction` 装饰器参数中，它们代表函数在哪一个端执行。
 
 RPC 方式能通信的最核心的点就是这个装饰器，函数命名、参数个数等都不影响。
 
-| 参数      | 意义                                   |
-| --------- | -------------------------------------- |
-| Server    | 代表该函数在服务端执行。               |
-| Client    | 代表该函数在指定的玩家的客户端中执行。 |
-| Multicast | 代表该函数在所有玩家的客户端中执行。   |
+| <div style="width:100px">参数</div> | 意义                                                         |
+| ----------------------------------- | ------------------------------------------------------------ |
+| Server                              | 代表该函数在服务端执行。                                     |
+| Client                              | 代表该函数在指定的玩家的客户端中执行。                       |
+| Multicast                           | 代表该函数在所有玩家的客户端中执行。                         |
+| Result                              | 代表该函数支持返回值。**需注意仅异步函数支持**。             |
+| Unreliable                          | 代表该函数为不可靠通信。可以用于不要求可靠性的通信，来减少延迟和网络流量和压力，避免由于 RPC 溢出导致断线重连。 |
 
 接下来我将会举一个例子，通过打印日志来演示 RPC 函数的执行方式。
 
 创建一个名为 `RPCTest` 的脚本，并拖到场景中：
 
-![65b9c19d-d59b-4bf6-b27d-b0e32676598e](https://arkimg.ark.online/65b9c19d-d59b-4bf6-b27d-b0e32676598e.webp)
+![65b9c19d-d59b-4bf6-b27d-b0e32676598e](https://arkimg.ark.online/image-20240918110130816.webp)
 
 打开脚本，填入下列代码：
 
@@ -129,7 +131,7 @@ export default class RPCTest extends Script {
 
 属性同步是可靠的，这意味着客户端的值最终都将会与服务端上的值相同，需要注意的是属性同步的频率是固定的，如果在服务端高频修改可能不会将每次修改后的值同步到客户端，例如一个整数的值快速从1 变成 10，然后又变成了 20，客户端最终将会接收到 20，而且客户端不一定会知道这个值曾经是 10。
 
-::: danger
+::: danger 注意
 
 请不要在客户端上修改被标记了属性同步的对象，这样会导致该对象的值与服务端不同，直到下一次同步为止。
 
@@ -137,7 +139,7 @@ export default class RPCTest extends Script {
 
 ### 2.2 使用属性同步
 
-Replicated只在网络环境为双端且继承 `Script` 的脚本里生效
+Replicated 只在网络环境为双端且继承 `Script` 的脚本里生效
 
 Replicated 只接受在双端的脚本中使用，因为修改 Replicated 的值必须在服务端进行，而 Replicated 值修改的回调函数必须在客户端调用，故单端脚本作为Replicated 的生命周期不完整，不能使用。
 
@@ -151,7 +153,7 @@ Replicated 只接受在双端的脚本中使用，因为修改 Replicated 的值
 
 创建一个名为 `ReplicatedTest` 的脚本并将它拖到场景中：
 
-![556ed469-35a0-4d46-84c6-25dfee1c1ed0](https://arkimg.ark.online/556ed469-35a0-4d46-84c6-25dfee1c1ed0.webp)
+![556ed469-35a0-4d46-84c6-25dfee1c1ed0](https://arkimg.ark.online/image-20240918105932944.webp)
 
 复制下列代码到脚本中。
 
@@ -189,4 +191,79 @@ export default class ReplicatedTest extends Script {
 
 ![4fca2f66-e5bd-4322-ab3c-70d2282079fa](https://arkimg.ark.online/4fca2f66-e5bd-4322-ab3c-70d2282079fa.webp)
 
-因为回调函数只会在客户端执行，所以我们打开客户端日志输出窗口观察程序执行结果，在客户端1 的日志输出窗口中，我们可以看到每秒钟都会接受到一次值被改变的输出。
+因为回调函数只会在客户端执行，所以我们打开客户端日志输出窗口观察程序执行结果，在客户端 1 的日志输出窗口中，我们可以看到每秒钟都会接受到一次值被改变的输出。
+
+### 2.3 指定客户端进行属性同步
+
+在上面的示例中，对于继承了 `Script` 的脚本中的 replicated 属性，在服务端修改时，会同步到每一个客户端并触发回调函数。如果存在一些只有玩家自身才会关注的属性，比如玩家自身的闯关倒计时，就不需要同步到所有客户端。这时，可以使用另一种方法单独同步属性给对应玩家。
+
+指定客户端与同步到所有客户端的 replicated 只有一点不同，指定客户端的 replicated 需要在继承 `PlayerState` 的脚本里生效。
+
+接下来我将会举一个例子，通过打印日志来演示指定客户端属性同步的执行方式。
+
+创建一个名为 `PlayerStateTest` 的脚本并复制下列代码到脚本中。
+
+``` typescript
+// 这个脚本继承的是PlayerState而非Script
+@Component
+export default class PlayerStateTest extends PlayerState {
+
+    // 对limitTime对象开启属性同步
+    @Property({ replicated: true, onChanged: "onLimitTimeChanged" })
+    private limitTime: number = 0;
+
+    // 记录定时器ID，用于停止定时器
+    private intervalId: number;
+
+    protected onStart(): void {
+        if (SystemUtil.isServer()) {
+            // 属性同步的对象的值只有在服务端修改才会自动同步
+            this.startCount();
+        }
+    }
+
+    startCount() {
+        this.limitTime = 10;
+        this.intervalId = TimeUtil.setInterval(() => {
+            this.limitTime -= 1;
+            if (this.limitTime <= 0) {
+                TimeUtil.clearInterval(this.intervalId);
+            }
+        }, 1)
+    }
+
+    // 属性同步对象的值被改变回调,这个函数将会在客户端执行
+    onLimitTimeChanged() {
+        console.log("接收到的值:" + this.limitTime);
+    }
+}
+```
+
+代码中我们声明了一个 number 类型的变量 `limitTime`，并给它加上装饰器 `@Property` 接着将 `replicated` 设置为 true 表示该变量将会使用属性同步功能。
+
+`onChanged` 参数需要传递一个字符串进去，该字符串表示的是，属性同步对象的值被改变时，触发的**回调函数的函数名**。这里要注意函数名的大小写字母，不能传递错误。
+
+在创建好代码之后，每个玩家连接到服务端后会自动给每个玩家创建 `PlayerStateTest` 实例。先后运行两个客户端，观察日志中的输出结果。
+
+![image-20240918105400125](https://arkimg.ark.online/image-20240918105400125.webp)
+
+由于每个客户端的进入时间不同，所以每个 `PlayerStateTest` 开始执行的时间不同。每个客户端收到对应的同步属性的值的时间也不同。
+
+此外，还可以通过通过 `Player.getPlayerState()` 拿到指定玩家的数据同步类的实例：
+
+``` typescript
+// 服务端获取
+// 通过player，获取到TestPlayerState对应PlayerState实例对象
+let instance = player.getPlayerState(PlayerStateTest);
+// 调用实例中的方法，方法中的属性改变仅同步给player对应的客户端
+instance.startCount();
+
+// 客户端获取
+let instance = Player.localPlayer.getPlayerState(PlayerStateTest);
+```
+
+::: danger 注意
+
+在每个客户端，只会为这个客户端的 player 创建一份 `PlayerState` 实例，所以在客户端无法获取其他玩家的 `PlayerState` 实例。
+
+:::
