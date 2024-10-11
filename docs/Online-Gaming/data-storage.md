@@ -176,7 +176,7 @@ const data = (await DataStorage.asyncGetData("Player1")).data;
 console.log("取出了数据 ", data["roleName"], data["level"]);
 ```
 
-## 4. 数据存储相关的限制
+## 4. 在线数据存储相关的限制
 
 在永久存储数据时，由于要和 手机端 提供的服务器进行交互，为了避免服务器承受过大的压力，所以存储数据在大小和频率上都做了相关限制。
 
@@ -255,3 +255,64 @@ DataCenterC.getData(BagData)
 
 https://forum.ark.online/forum.php?mod=viewthread&tid=1875
 
+
+
+## 6. 【简易】数据的本地存储 
+
+储存在本地的数据只有客户端本地可以调用，可以方便我们存储一些本地用到的不重要等数据，比如音量大小等，它一个有三个接口
+
+```TypeScript
+declare namespace mw {
+    
+    class DataStorage {
+        
+        //设置本地数据
+        static asyncSetLocalData(key: string, value: any): Promise<DataStorageResultCode>;
+        
+        //获取本地数据
+        static asyncGetLocalData(key: string): Promise<DataStorageResult>;
+        
+        //删除本地数据
+        static asyncRemoveLocalData(key: string): Promise<DataStorageResultCode>;
+    
+    }
+}
+```
+
+
+
+使用示例：
+
+```typescript
+@Component
+export default class GameStart extends Script {
+
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected async onStart(): Promise<void> {
+
+        // 本地客户端存储数据
+        if (SystemUtil.isClient()) {
+            // 存数据
+            DataStorage.asyncSetLocalData("name", "星空");
+
+            // 取数据
+            let result = await DataStorage.asyncGetLocalData("name");
+            // 将获取到的数据打印出来
+            console.log(result.data);
+        }
+    }
+}
+```
+
+![image-20240920173042373](https://arkimg.ark.online/image-20240920173042373.webp)
+
+
+
+::: tip
+
+- **本地容量限制：5MB**
+- 由于本地存储将数据存储在本地，所以不受在线数据存储的有效存储间隔（6s）限制，可以频繁设置
+
+- 由于在 Editor 内运行测试时，每个客户端会读取同一个路径的数据，所以建议在本地命名存档 key 的时候也加上相关的玩家标识。例如 {userId}_{dataName} 
+
+:::

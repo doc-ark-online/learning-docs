@@ -148,4 +148,27 @@ export default class FXControl extends Script {
 
 <video controls src="https://arkimg.ark.online/7615132843496.mp4"> </video>
 
+## 6. 粒子发射器
+
+通过粒子发射器我们可以制作我们想要的一些独特的效果，在游戏功能对象下可以找到粒子发射器，拖入到场景中即可使用。
+
+![image-20240924182037975](https://arkimg.ark.online/image-20240924182037975.png)
+
+找到粒子特效的属性面板，找到贴图，在资源库里面找到贴图的特效资源，选择一个雪花资源，将它拖到属性面板的贴图里面：
+
+![image-20240924182855250](https://arkimg.ark.online/image-20240924182855250.png)
+
+然后找到粒子发射器的发射器属性，将范围设置为（500，500，50），再把它给旋转180度，使雪花往下飘散，如此简单我们就得到了一片雪景。
+
+<video controls="" src="https://arkimg.ark.online/%E7%89%B9%E6%95%881.mp4"></video>
+
+运行一下，发现雪景效果非常好，当然你也可以发挥你的创意把特效贴图换成花瓣等等资源，做出更好看的景色！
+
+<video controls="" src="https://arkimg.ark.online/%E7%89%B9%E6%95%882.mp4"></video>
+
+更多好看特效参考：[花瓣飘落特效小教程](https://forum.ark.online/forum.php?mod=viewthread&tid=2855)
+
+更多信息参考：[产品手册-粒子发射器](https://docs.ark.online/GameplayObjects/ParticleEmitter.html#_1-什么是粒子发射器)
+
 更多信息参考：[产品手册-特效](https://docs.ark.online/GameplayObjects/Effects.html)
+
