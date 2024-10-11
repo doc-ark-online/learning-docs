@@ -55,15 +55,17 @@ export default class GameStart extends Script {
 }
 ```
 
-* 代码改完，我们把 `GameStart` 脚本挂载到场景下，依然和之前操作一样，拖拽到对象管理器的"对象"下面即可
+* 代码改完，我们把 `GameStart` 脚本挂载到场景中的空锚点下，空锚点在游戏功能对象里面拖动到对象中（或者是场景里面）即可。
 
-![image-20230529131702333](https://arkimg.ark.online/image-20230529131702333.webp)
+![image-20241009142600394](https://arkimg.ark.online/image-20241009142600394.png)
+
+![image-20241009142447628](https://arkimg.ark.online/image-20241009142447628.png)
 
 * 现在我们在 `GameStart` 脚本中，发送了一个名为 `client_local_event_test` 的事件，下面我们在另外一个脚本中接收事件，并调用其他函数处理业务逻辑
 
 ### 接收本地事件-客户端
 
-* 这里我们就不新建一个脚本了，打开之前我们操作的 `PlayerControl` 脚本（如果之前没有创建，就创建一个然后挂载到场景中），在 `onStart` 函数中添加判断客户端的代码，编写监听 `client_local_event_test` 事件的代码，在接收事件后打印日志，示例如下：
+* 这里我们就不新建一个脚本了，打开之前我们操作的 `PlayerControl` 脚本（如果之前没有创建，就创建一个然后挂载到到 Ground 或者新建一个空锚点上），在 `onStart` 函数中添加判断客户端的代码，编写监听 `client_local_event_test` 事件的代码，在接收事件后打印日志，示例如下：
 
 ```typescript
 @Component
@@ -91,7 +93,7 @@ export default class PlayerControl extends Script {
 
   > 如果没有打印，可排查下 `PlayerControl` 脚本是不是也挂载到场景中的，如果没有则需要挂载
 
-![image-20230529132126018](https://arkimg.ark.online/image-20230529132126018.webp)
+![image-20241009140900738](https://arkimg.ark.online/image-20241009140900738.png)
 
 我们演示了 A 脚本，如何使用事件通信让 B 脚本执行一段代码
 
@@ -145,7 +147,7 @@ export default class PlayerControl extends Script {
 
 * 点击运行，过 5 秒之后可以看到客户端日志窗口的打印日志，如下：
 
-![image-20230529135600380](https://arkimg.ark.online/image-20230529135600380.webp)
+![image-20241009144734821](https://arkimg.ark.online/image-20241009144734821.png)
 
 ### 总结
 
@@ -156,7 +158,7 @@ export default class PlayerControl extends Script {
 
 如果对 TS 语法已经有一些基础的情况下，其实都非常简单。
 
-对 TS 基础掌握不是很够的情况，难点也主要是“如何将匿名函数作为参数传给函数”，这个就需要再多看一下类似代码，就能很好的理解了。
+对 TS 基础掌握不是很够的情况，难点也主要是“如何将匿名函数作为参数传给函数”，这个就需要再多看一下类似代码，就能很好的理解了，也可以到官网看视频教程进行学习：[口袋工坊零基础系列课程一：TypeScript](https://www.bilibili.com/video/BV1Rz421b7FE/?p=10&vd_source=905991618647bfc2328cd64777b1809d)
 
 ## 2. 客户端发消息给服务端
 
@@ -221,7 +223,7 @@ export default class PlayerControl extends Script {
   * 所以，所有的**客户端发往服务端的事件**，默认**第一个参数都是 `Player` 对象**
 * 运行起来之后，通过服务端的日志窗口可以看到，已经收到了客户端发来的消息，并且成功打印了用户的 id 和传递过来的参数，如图：
 
-![image-20230530142340946](https://arkimg.ark.online/image-20230530142340946.webp)
+![image-20241009144838466](https://arkimg.ark.online/image-20241009144838466.png)
 
 ### 总结
 
@@ -282,7 +284,7 @@ export default class PlayerControl extends Script {
         if (SystemUtil.isServer()) {
             // 判断是服务端环境，监听 ClientToServer 事件
             Event.addClientListener("ClientToServer", (player: Player, param1: string) => {
-                console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.getUserId(), param1);
+                console.log("收到了来自 GameStart 客户端发送给服务端的事件", player.playerId(), param1);
             });
 
             setTimeout(() => {//[!code focus]
@@ -303,7 +305,7 @@ export default class PlayerControl extends Script {
 
 点击运行后，等几秒，可以看到客户端的日志窗口中，输出了服务端发送过去的几个参数：
 
-![image-20230530160716142](https://arkimg.ark.online/image-20230530160716142.webp)
+![image-20241009145301129](https://arkimg.ark.online/image-20241009145301129.png)
 
 * 如图所示，客户端的日志窗口中成功打印了服务端发送过来的数据
 
@@ -346,7 +348,7 @@ export default class PlayerControl extends Script {
 
 代码保存后，回到编辑器点击运行，客户端的日志窗口输出结果如下：
 
-![image-20230530161249860](https://arkimg.ark.online/image-20230530161249860.webp)
+![image-20241009160938682](https://arkimg.ark.online/image-20241009160938682.png)
 
 ### 总结
 
@@ -354,3 +356,72 @@ export default class PlayerControl extends Script {
 * `Event.addServerListener` 添加服务端发送给客户端的事件监听，使用方式和本地事件一致，在客户端调用即可
 * `Event.dispatchToAllClient(eventName, params)` 服务端发送事件给所有客户端，一般使用场景是在展示一些公共事件的时候使用，使用方式和普通事件也并无区别
 * 添加事件监听和指定客户端的完全一致，无其他区别
+
+
+
+## 4. 不可靠通信
+
+不可靠通信手段适用于短暂事件，包括仅在短时间内生效的效果，或用于复制不断变化的数据。如果这些事件丢失，则不会重新发送。这可能会减少延迟和网络流量和压力，避免可靠栈溢出。
+
+### 4.1不可靠事件
+
+**UnReliableEvent 不可靠事件通信**包括：
+
+- 从一个客户端指向服务器：`Event.dispatchToServerUnreliable()`
+- 从服务器指向特定客户端：`Event.dispatchToClientUnreliable()`
+- 从服务器指向所有客户端：`Event.dispatchToAllClientUnreliable()`
+
+下列示例代码展示在服务端分别使用可靠事件和不可靠事件向客户端广播一个打印命令。打印的值是在服务端累加计算。通过前端挂起操作对二者进行测试，其中不可靠事件前端打印的值可能就不连续，而可靠事件前端打印则为连续值。
+
+```TypeScript
+@Component
+export default class NewScript extends Script {
+
+    index: number = 0;
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected onStart(): void {
+        if(SystemUtil.isServer()) {
+            this.useUpdate = true;
+        }
+        if(SystemUtil.isClient()) {
+            Event.addServerListener("Print", (val) => {
+                console.log("val " + val);
+            });
+        }
+    }
+
+    /**
+     * 周期函数 每帧执行
+     * 此函数执行需要将this.useUpdate赋值为true
+     * @param dt 当前帧与上一帧的延迟 / 秒
+     */
+    protected onUpdate(dt: number): void {
+
+        if(SystemUtil.isServer()) {
+            
+            // 不可靠通信
+            // Event.dispatchToAllClientUnreliable("Print", this.index);
+            
+            // 可靠通信
+            Event.dispatchToAllClient("Print", this.index);
+
+            this.index += 1;
+        }
+    }
+}
+```
+
+可靠通讯的数据则必定连续，不可靠通讯则根据通讯延迟和网络流量和压力可能出现丢失。
+
+![image-20240924181049927](https://arkimg.ark.online/image-20240924181049927.png)
+
+### 4.1不可靠事件 
+
+**UnreliableRemoteFunction 不可靠函数**，同不可靠事件一样，口袋方舟也存在不可靠函数。新增 Unreliable 标签，当 RemoteFunction 标签中存在 Unreliable 时该函数为不可靠函数。调用方法如下所示：
+
+```TypeScript
+@RemoteFunction(Client, Multicast, Unreliable)
+print(val: number) {
+    console.log("val " + val);
+}
+```
