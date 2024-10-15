@@ -185,7 +185,7 @@ export default class Navigator extends Script {
 }
 ```
 
- 运行进入游戏，按下“1”键，可以看到我们人物到这个导航区域的边缘就停下来开始跳舞了。
+ 运行进入游戏，按下“1”键，可以看到我们人物到这个导航区域的边缘就停下来开始跳舞了。  
 
 ![image-20241009190718672](https://arkimg.ark.online/image-20241009190718672.png)
 
