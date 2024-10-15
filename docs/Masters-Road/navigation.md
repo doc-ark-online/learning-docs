@@ -28,7 +28,7 @@
 
 ::: warning 注意
 
-**建议每个场景中的寻路区域范围保持在2100 \* 2100 \* 100以内,防止因寻路区域过大会造成寻路区域失效的情况。**
+**建议每个场景中的寻路区域范围保持在2100 \* 2100 \* 100以内,防止因寻路区域过大造成寻路区域失效的情况。**
 
 **请勿修改寻路区域属性面板中的旋转属性,以免出现寻路计算异常情况。**
 
@@ -42,7 +42,7 @@
 
 #### 使用`navigateTo`寻路到指定地点
 
-调整好寻路区域后，就可以使用 `navigateTo` API，让寻路区域中的角色自动向目标位置移动，同时可以加入寻路成功的逻辑，新建寻路脚本，将脚本拖入场景并且设置为双端脚本，编写脚本如下：
+调整好寻路区域后，就可以使用 `navigateTo` API，让寻路区域中的角色自动向目标位置移动，同时可以加入寻路成功的逻辑，新建寻路脚本，将脚本拖入场景挂载到Ground下，并且设置为双端脚本，编写脚本如下：
 
 ```typescript
 @Component
@@ -138,4 +138,77 @@ export default class Follow extends Script {
 
 :::
 
+
+
+## 4. 寻路区域参数设置
+
+寻路区域的详细设置在工具栏的设置里面
+
+![image-20241009184407428](https://arkimg.ark.online/image-20241009184407428.png)
+
+![image-20241009184559030](https://arkimg.ark.online/image-20241009184559030.png)
+
+将鼠标悬浮在每个条目上就可以看见它的解释含义
+
+![image-20241009185356507](https://arkimg.ark.online/image-20241009185356507.png)
+
+:::tip TIPS
+
+**如果角色无法上楼梯或者通过某个门口，请检查对应胶囊体半径高度和不可跨越高度哦！**
+
+:::
+
+
+
+## 5. 寻路链接逻辑对象
+
+使用寻路链接可将两块分离的寻路区域链接起来，这样就可以跨寻路区域进行寻路导航了。
+
+1. 调整好寻路区域，使用 `navigateTo`  API ，实现一个让人物跳下高台，从一个寻路区域自动向另一个导航寻路区域移动，同时可以加入寻路成功的逻辑，新建寻路脚本 GameStart ，将脚本拖入场景挂载到 Ground 下，并且设置为双端脚本，编写脚本如下：
+
+```typescript
+@Component
+export default class Navigator extends Script {
+    protected onStart(): void {
+        InputUtil.onKeyDown(Keys.One, () => {
+            //按下“1”，自身角色将寻路至（0,1200,296）位置
+            Navigation.navigateTo(Player.localPlayer.character,new Vector(0,1200,0),0,()=>{
+              //角色到达位置后将播放一段动画
+              Player.localPlayer.character.loadAnimation("122750").play();
+            })
+        })
+        InputUtil.onKeyDown(Keys.Two,()=>{
+            //按下“2”，自身角色将停止寻路
+            Navigation.stopNavigateTo(Player.localPlayer.character)
+        })
+    }
+}
+```
+
+ 运行进入游戏，按下“1”键，可以看到我们人物到这个导航区域的边缘就停下来开始跳舞了。
+
+![image-20241009190718672](https://arkimg.ark.online/image-20241009190718672.png)
+
+<video controls src="https://arkimg.ark.online/%E5%AF%BC%E8%88%AA11.mp4"></video>
+
+2. 我们点击游戏功能对象，拖拽一个寻路链接到2个寻路区域中间，设置好直到寻路连接出现线段显示连接好后我们再运行游戏，可以看到我们成功的跳下了平台并且跨过了2个导航区域。
+
+![image-20241009190953827](https://arkimg.ark.online/image-20241009190953827.png)
+
+<video controls src="https://arkimg.ark.online/%E5%AF%BC%E8%88%AA12.mp4"></video>
+
+
+
+::: warning 注意
+
+1. 寻路链接只能在同 tile 或者相邻的两个 tile 中生效，可以在【设置】-【寻路】中显示/关闭 tile 信息
+2. 寻路链接目前只支持 Navigation.navigateTo() ，暂不支持 Navigation.follow() 
+3. 如果要实现寻路链接跨上平台需要在合适的地方放上触发器让玩家跳起来就可以了
+
+:::
+
+
+
 教程小Demo：https://arkimg.ark.online/naviga.rar
+
+寻路链接小Demo：https://arkimg.ark.online/navigaLink.rar
