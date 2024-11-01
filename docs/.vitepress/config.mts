@@ -501,7 +501,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text: '第一节：环境配置',
+            text: '第一节：DCC环境配置',
             link: '/ArtResource-course/001-Environment-configuration.md'
           },
           {
@@ -515,111 +515,117 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/ArtResource-course/Character/1-1-0-Role-Classification.md'
               },
               {
-                text: '模型规范',
-                link: '/ArtResource-course/Character/2-0-0-Model-Specification.md',
+                text: '命名规范',
+                link: '/ArtResource-course/Character/2-1-0-Namepolicy.md',
+              },
+              {
+                text: '角色/NPC/多足',
+                link: '/ArtResource-course/Character/2-2-0-CharacterProduction.md',
                 items: [
                   {
-                    text: '1. 基础人形形象',
-                    link: '/ArtResource-course/Character/2-1-0-basic-human-figure.md'
+                    text: '模型规范',
+                    link: '/ArtResource-course/Character/2-2-1-Character-modelling.md'
                   },
                   {
-                    text: '1.1 基础PBR贴图',
-                    link: '/ArtResource-course/Character/2-1-1-Basic-PBR-textures.md'
+                    text: '贴图规范',
+                    link: '/ArtResource-course/Character/2-2-2-Character-Texture.md'
                   },
                   {
-                    text: '2. 高级人形形象',
-                    link: '/ArtResource-course/Character/2-2-0-Advanced-human-image.md'
+                    text: '模型绑定',
+                    link: '/ArtResource-course/Character/2-2-3-Character-Riging.md'
                   },
                   {
-                    text: '2.1 二次元风格',
-                    link: '/ArtResource-course/Character/2-2-1-Cartoon-style.md'
-                  },
-                  {
-                    text: '服装制作规范',
-                    link: '/ArtResource-course/Character/2-2-1-Garment-Production-Specifications.md'
-                  },
-                  {
-                    text: '头发制作规范',
-                    link: '/ArtResource-course/Character/2-2-1-hair-making-specification.md'
-                  },
-                  {
-                    text: '2.2 通用制作规范',
-                    link: '/ArtResource-course/Character/2-2-2-general-specification.md'
-                  },
-                  {
-                    text: '3. 资源基础规格',
-                    link: '/ArtResource-course/Character/2-3-0-Resource-Base-Specification.md'
-                  },
-                  {
-                    text: '3.1 通用命名',
-                    link: '/ArtResource-course/Character/2-3-1-common-nomenclature.md'
-                  },
-                  {
-                    text: '3.2 资源编号',
-                    link: '/ArtResource-course/Character/2-3-2-resource-number.md'
+                    text: '角色导出',
+                    link: '/ArtResource-course/Character/2-2-4-Character-Export.md'
                   }
                 ]
               },
               {
-                text: '角色绑定',
-                link: '/ArtResource-course/Character/3-0-0-Riginng.md',
+                text: '服装发型',
+                link: '/ArtResource-course/Character/2-3-0-Clothing-Hair-production.md',
                 items: [
                   {
-                    text: '1. 基础人形形象',
-                    link: '/ArtResource-course/Character/3-1-0-Basic-Human.md'
+                    text: '局外与局内',
+                    link: '/ArtResource-course/Character/2-3-1-Clothing-Hair-Rule.md'
                   },
                   {
-                    text: '2. 高级人形形象',
-                    link: '/ArtResource-course/Character/3-2-0-Advanced-Human.md'
+                    text: '模型规范',
+                    link: '/ArtResource-course/Character/2-3-2-Clothing-Hair-Modelling.md'
                   },
                   {
-                    text: '2.1 基础动态服装部件',
-                    link: '/ArtResource-course/Character/3-2-1-Basic-Dynamic-Component.md'
+                    text: '贴图规范',
+                    link: '/ArtResource-course/Character/2-3-3-Clothing-Hair-Texture.md'
                   },
                   {
-                    text: '2.2 高级动态服装部件',
-                    link: '/ArtResource-course/Character/3-2-3-Advanced-Dynamic-Component.md'
+                    text: '绑定基础介绍',
+                    link: '/ArtResource-course/Character/2-3-4-Clothing-Hair-RigingRule.md'
+                  },
+                  {
+                    text: '模型绑定',
+                    link: '/ArtResource-course/Character/2-3-5-Clothing-Hair-Riging.md'
+                  },
+                  {
+                    text: '资源导出',
+                    link: '/ArtResource-course/Character/2-3-6-Clothing-Hair-Export.md'
                   }
                 ]
               },
               {
-                text: '角色导出',
-                link: '/ArtResource-course/Character/4-0-0-Riginng-Export.md'
+                text: '妆容制作',
+                link: '/ArtResource-course/Character/2-4-0-MakeupProdction.md'
               },
               {
-                text: '资源提交',
-                link: '/ArtResource-course/Character/100-Resource-Submission.md'
+                text: '编辑器捏模/套装制作及上传',
+                link: '/ArtResource-course/Character/2-5-0-EditorSuitNCharacter-Upload.md'
               }
             ]
           },
           {
             text: '第三节：3D动画制作流程',
-            link: '/ArtResource-course/Animation/0-Amimation-Process.md',
+            link: '/ArtResource-course/Animation/0-0-0-3D-Animation.md',
             collapsible: true,
             collapsed: true,
             items: [
               {
-                text: '动画制作',
-                link: '/ArtResource-course/Animation/1-Amimation-production.md',
+                text: '动画分类',
+                link: '/ArtResource-course/Animation/1-0-0-Animation-Classification.md'
+              },
+              {
+                text: '命名规范',
+                link: '/ArtResource-course/Animation/2-0-0-Namepolicy.md'
+              },
+              {
+                text: '角色/NPC/多足动画',
+                link: '/ArtResource-course/Animation/3-1-0-Character-Animation.md',
                 items: [
                   {
-                    text: '1. 人形动画',
-                    link: '/ArtResource-course/Animation/2-Human-Amimation.md'
+                    text: '动画制作',
+                    link: '/ArtResource-course/Animation/3-1-1-Character-MakingAnimation.md'
+                  },
+                  {
+                    text: '动画导出',
+                    link: '/ArtResource-course/Animation/3-1-2-Character-AnimationExport.md'
                   }
                 ]
               },
               {
-                text: '动画导出',
-                link: '/ArtResource-course/Animation/4-Amimation-Export.md'
-              },
-              {
-                text: '资源提交',
-                link: '/ArtResource-course/Animation/5-Resource-Submission.md'
+                text: '角色装扮资源动画',
+                link: '/ArtResource-course/Animation/4-1-0-Cloting-Animation.md',
+                items: [
+                  {
+                    text: '动画制作',
+                    link: '/ArtResource-course/Animation/4-2-1-Cloting-MakingAnimation.md'
+                  },
+                  {
+                    text: '动画导出',
+                    link: '/ArtResource-course/Animation/4-2-2-Cloting-AnimationExport.md'
+                  }
+                ]
               }
             ]
           },
           {
-            text: '第四节：3D场景/道具资源制作流程',
+            text: '第四节：3D场景/道具/挂件/手持物制作流程',
             link: '/ArtResource-course/Scene/0-0-Scene-process.md',
             collapsible: true,
             collapsed: true,
@@ -629,60 +635,96 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/ArtResource-course/Scene/0-resource-specification.md',
                 items: [
                   {
-                    text: '1. 命名规范',
-                    link: '/ArtResource-course/Scene/1-Naming-Conventions.md'
-                  },
-                  {
-                    text: '2. 模型规范',
+                    text: '模型规范',
                     link: '/ArtResource-course/Scene/2-model-specification.md'
                   },
                   {
-                    text: '3. 面数推荐',
+                    text: '面数推荐',
                     link: '/ArtResource-course/Scene/3-face-recommended.md'
                   },
                   {
-                    text: '4. UV规范',
+                    text: 'UV规范',
                     link: '/ArtResource-course/Scene/4-UV-specification.md'
                   },
                   {
-                    text: '5. 贴图规范',
+                    text: '贴图规范',
                     link: '/ArtResource-course/Scene/5-texture-specification.md'
                   },
                   {
-                    text: '6. LOD规范',
+                    text: 'LOD规范',
                     link: '/ArtResource-course/Scene/5-U-LOD.md'
                   },
                   {
-                    text: '7. FBX导出设置',
+                    text: 'FBX导出设置',
                     link: '/ArtResource-course/Scene/6-FBX-export-settings.md'
                   }
                 ]
               },
               {
-                text: '资源提交',
-                link: '/ArtResource-course/Scene/16-export-engine.md'
-              },
-              {
-                text: '相关资产链接',
+                text: '编辑器材质实战',
+                link: '/ArtResource-course/Scene/17-0-Material-Practice.md',
                 items: [
                   {
-                    text: '1. 开发者ID',
-                    link: '/ArtResource-course/Scene/DeveloperID.md'
+                    text: 'PBR基础效果',
+                    link: '/ArtResource-course/Scene/17-1-1PBR-Basic-Effects.md'
                   },
                   {
-                    text: '2. 分类',
-                    link: '/ArtResource-course/Scene/Classification.md'
+                    text: 'PBR高级效果',
+                    link: '/ArtResource-course/Scene/17-1-2PPBR-Advanced-Effects.md'
                   },
                   {
-                    text: '3. 风格',
-                    link: '/ArtResource-course/Scene/artistic-style.md'
+                    text: '透明/半透明效果',
+                    link: '/ArtResource-course/Scene/17-1-3Transparent.md'
+                  },
+                  {
+                    text: '纹理坐标与世界坐标',
+                    link: '/ArtResource-course/Scene/17-1-4World-Coordinates.md'
+                  },
+                  {
+                    text: '贴图位移应用',
+                    link: '/ArtResource-course/Scene/17-1-5Map-displacement.md'
+                  },
+                  {
+                    text: '贴花应用',
+                    link: '/ArtResource-course/Scene/17-1-6Decals.md'
+                  },
+                  {
+                    text: '呼吸灯/自发光',
+                    link: '/ArtResource-course/Scene/17-1-7Breathing-Lamp.md'
+                  },
+                  {
+                    text: '植物制作',
+                    link: '/ArtResource-course/Scene/17-1-8plant.md'
+                  },
+                  {
+                    text: '次表面',
+                    link: '/ArtResource-course/Scene/17-1-9Subsurface.md'
+                  },
+                  {
+                    text: '果冻',
+                    link: '/ArtResource-course/Scene/18-1-1jelly.md'
+                  },
+                  {
+                    text: '水晶城堡',
+                    link: '/ArtResource-course/Scene/18-1-2Crystal-Castles.md'
                   }
                 ]
               }
             ]
           },
           {
-            text: '第五节：UI制作流程',
+            text: '第六节：特效制作流程',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '3D特效制作实例',
+                link: '/ArtResource-course/Effect/000-Effect.md'
+              }
+            ]
+            },
+          {
+            text: '第七节：UI制作流程',
             collapsible: true,
             collapsed: true,
             items: [
@@ -701,6 +743,60 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
               {
                 text: '编辑器配置',
                 link: '/ArtResource-course/UI/UITex-BaseRule04.md'
+              },
+              {
+                text: '商品icon制作教程',
+                items: [
+                  {
+                   text: '服装、发型',
+                   link: '/ArtResource-course/UI/UITex-clothNhairicon.md'
+                  },
+                  {
+                   text: '妆容',
+                   link: '/ArtResource-course/UI/UITex-makeupicon.md'
+                  },
+               ]   
+              }
+            ]
+            },
+            {
+            text: '第八节：口袋方舟资源导入上传',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '服装部件/角色NPC/多足/自定义骨骼模型动画导入上传',
+                link: '/ArtResource-course/Upload/0-0-Role.md',
+                 items: [
+                  {
+                    text: '角色NPC/多足/自定义骨骼',
+                    link: '/ArtResource-course/Upload/0-1-Role-NPC-.md'
+                  },
+                  {
+                    text: '服装资源',
+                    link: '/ArtResource-course/Upload/0-2-clothing.md'
+                  },
+                  {
+                    text: '动画资源',
+                    link: '/ArtResource-course/Upload/0-3-Animation.md'
+                  },
+                  {
+                    text: '上传工具设置预览功能',
+                    link: '/ArtResource-course/Upload/0-4-Upload.md'
+                  },
+                  {
+                    text: '骨骼模型/动画上传注意事项',
+                    link: '/ArtResource-course/Upload/0-5-Notice.md'
+                  }
+                ]
+              },
+              {
+                text: '3D场景/道具/挂件/手持物导入上传',
+                link: '/ArtResource-course/Upload/1-StaticModel.md'
+              },
+              {
+                text: 'UI导入上传',
+                link: '/ArtResource-course/Upload/2-UI.md'
               }
             ]
           }
