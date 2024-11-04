@@ -6,8 +6,7 @@
 
 :::
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=322817180&bvid=BV1qw411q7ba&cid=1327553444&p=2&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?isOutside=true&aid=1051868547&bvid=BV17H4y1s7Bv&cid=26611878625&p=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
 口袋方舟编辑器由两部分组成，分别是 Launcher 与 Editor。Launcher 主要负责管理 Editor 的版本、更新等内容，Editor 就是我们的游戏编辑器，我们的开发都是在 Editor 中进行。
 
