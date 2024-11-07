@@ -38,10 +38,7 @@
   
   ![img](https://arkimg.ark.online/1690947563589-4.png)
   
-  3.选中模型 Create New Set,创建新的 LOD 集，做完这一步就可以导出 FBX 准备导入 UE。
+  3.选中模型 Create New Set,创建新的 LOD 集，做完这一步就可以导出 FBX 准备导入编辑器，编辑器会根据命名识别你是否制作了LOD。如果错误命名编辑器会自动生成LOD。
   
   ![img](https://arkimg.ark.online/1690947563590-5.png)
   
-  4.导入 UE 的时候确保勾选上了 Import Mesh LODs，如下图。导入后重新设置 LOD、碰撞。
-  
-  ![img](https://arkimg.ark.online/1690947563590-6.png)
