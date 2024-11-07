@@ -100,7 +100,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Getting-Started/publish-game.md'
           }, {
             text: '常用预制体下载',
-            link: '/Getting-Started/prefab-list.md'
+            link: '/Getting-Started/easyprefab-list.md'
           }
         ]
       },
