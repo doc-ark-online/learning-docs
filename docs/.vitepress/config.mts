@@ -707,6 +707,30 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                   {
                     text: '水晶城堡',
                     link: '/ArtResource-course/Scene/18-1-2Crystal-Castles.md'
+                  },
+                  {
+                    text: 'LED闪烁屏',
+                    link: '/ArtResource-course/Scene/19-1-1shanshuo.md'
+                  },
+                  {
+                    text: '马赛克闪烁图案',
+                    link: '/ArtResource-course/Scene/19-1-2mashaikeshansuo.md'
+                  },
+                  {
+                    text: 'LED马赛克屏',
+                    link: '/ArtResource-course/Scene/19-1-3mashaike.md'
+                  },
+                  {
+                    text: '翻页',
+                    link: '/ArtResource-course/Scene/19-1-4fanye.md'
+                  },
+                  {
+                    text: '动画GIF效果',
+                    link: '/ArtResource-course/Scene/19-1-5GIF.md'
+                  },
+                  {
+                    text: '故障效果',
+                    link: '/ArtResource-course/Scene/19-1-6guzhang.md'
                   }
                 ]
               }
