@@ -27,7 +27,7 @@ export default class GameUI extends UIScript {
 		//通过路径找到攻击按钮
 		const attackBtn = this.uiWidgetBase.findChildByPath("RootCanvas/mAttackButton") as Button;
 		//为攻击按钮添加事件
-		attackBtn.onClicked.add(() => {
+		attackBtn.onPressed.add(() => {
 			this.onClickAttackBtn();
 		});
 	}
