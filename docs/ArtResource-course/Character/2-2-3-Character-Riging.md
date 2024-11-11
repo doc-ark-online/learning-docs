@@ -27,8 +27,49 @@
 ### 自定义骨骼：
 
 - 支持基于模型造型搭建任意骨骼，自由度高
+
 - 单个骨骼模型资源骨骼数量不能超过75根
+
 - 不支持素材库中通用人形/多足下的动画
+
+- 自定义骨骼命名为特定名称时，游戏中可以通过代码`attachToSlot()`将物体挂载到骨骼模型对应骨骼上，参考[Character - attachtoslot | API](https://api-docs.ark.online/classes/mw.Character.html#attachtoslot)。下面为骨骼名称与非人形对象插槽类型对照表：
+
+  | 骨骼名称           | 插槽枚举值 | 插槽类型(NonHumanoidSlotType) | 说明                 |
+  | ------------------ | ---------- | ----------------------------- | -------------------- |
+  | Root               | 0          | Root                          | 根节点               |
+  | Spine_03           | 1          | Chest                         | 胸腔                 |
+  | Spine_02           | 2          | UpperSpine                    | 上脊柱               |
+  | Spine_01           | 3          | LowerSpine                    | 下脊柱               |
+  | Neck_01            | 4          | Neck                          | 脖子                 |
+  | Head               | 5          | Head                          | 头部                 |
+  | Hand_L             | 6          | FrontalLeftFoot               | 左前脚               |
+  | Hand_R             | 7          | FrontalRightFoot              | 右前脚               |
+  | Foot_L             | 8          | RearLeftFoot                  | 左后脚               |
+  | Foot_R             | 9          | RearRightFoot                 | 右后脚               |
+  | Tail_01            | 10         | Tail                          | 尾巴                 |
+  | Human_Hand_R01     | 11         | RightHand                     | 类人型手臂右手01     |
+  | Human_Hand_L01     | 12         | LeftHand                      | 类人型手臂左手01     |
+  | Human_Head         | 13         | HumanoidHead                  | 类人型头部           |
+  | Human_Spine_04     | 14         | HumanoidChest                 | 类人型多足怪胸腔位置 |
+  | Fins_UP_01         | 15         | DorsalFin                     | 上表面鱼鳍01         |
+  | Fins_L_01          | 16         | LeftFin                       | 左边鱼鳍01           |
+  | Fins_R_01          | 17         | RightFin                      | 右边鱼鳍01           |
+  | Wing_UpperArm_R_01 | 18         | RightWing                     | 右翼翅膀01           |
+  | Wing_UpperArm_L_01 | 19         | LeftWing                      | 左翼翅膀01           |
+  | Foot_R01           | 20         | ExtraRightFoot1               | 多足右脚01           |
+  | Foot_R02           | 21         | ExtraRightFoot2               | 多足右脚02           |
+  | Foot_R03           | 22         | ExtraRightFoot3               | 多足右脚03           |
+  | Foot_R04           | 23         | ExtraRightFoot4               | 多足右脚04           |
+  | Foot_L01           | 24         | ExtraLeftFoot1                | 多足左脚01           |
+  | Foot_L02           | 25         | ExtraLeftFoot2                | 多足左脚02           |
+  | Foot_L03           | 26         | ExtraLeftFoot3                | 多足左脚03           |
+  | Foot_L04           | 27         | ExtraLeftFoot4                | 多足左脚04           |
+  | Mouth              | 28         | Mouth                         | 嘴巴                 |
+  | Eye_R              | 29         | RightEye                      | 右眼                 |
+  | Eye_L              | 30         | LeftEye                       | 左眼                 |
+  | Head_Auxiliary_01  | 31         | Crest                         | 冠                   |
+
+  
 
 ## 骨骼核对表：
 
