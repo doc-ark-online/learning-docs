@@ -104,6 +104,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },{
             text:'星火开发者快速入门指南',
             link:'/Getting-Started/developer-guide.md'
+          },{
+            text:'星火编辑器与口袋方舟编辑器常用API对比',
+            link:'/Getting-Started/developer-api-compare.md'
           }
         ]
       },
