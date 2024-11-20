@@ -206,7 +206,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Online-Gaming/property-rpc.md'
           },
           {
-            text: '使用数据中心存储数据',
+            text: '数据存储与同步',
             link: '/Online-Gaming/data-storage.md'
           },
           {
