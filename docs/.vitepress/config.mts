@@ -81,7 +81,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Getting-Started/installing-starter.md'
           },
           {
-            text: 'VSCode 安装',
+            text: 'VSCode安装',
             link: '/Getting-Started/installing-code-editor.md'
           },
           {
@@ -89,7 +89,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Getting-Started/editor-main-ui.md'
           },
           {
-            text: '编辑器基本操作',
+            text: '编辑器基础操作',
             link: '/Getting-Started/editor-starter.md'
           },
           {
@@ -132,7 +132,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Basic-Learning/script-lifecycle.md'
           },
           {
-            text: '日志查看',
+            text: '日志输出与查看',
             link: '/Basic-Learning/checklog.md'
           }
         ]
@@ -147,7 +147,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Core-Learning/gameobject.md'
           },
           {
-            text: '控制游戏对象',
+            text: '修改游戏对象',
             link: '/Core-Learning/controlling-objects.md'
           },
           {
@@ -197,7 +197,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text: '服务端与客户端',
+            text: '客户端与服务端',
             link: '/Online-Gaming/client-and-server.md'
           },
           {
@@ -205,11 +205,11 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Online-Gaming/events.md'
           },
           {
-            text: 'RPC 与 属性同步',
+            text: 'RPC与属性同步',
             link: '/Online-Gaming/property-rpc.md'
           },
           {
-            text: '使用数据中心存储数据',
+            text: '数据存储与同步',
             link: '/Online-Gaming/data-storage.md'
           },
           {
@@ -244,7 +244,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Masters-Road/impulse.md'
           },
           {
-            text: 'Tween 动画',
+            text: 'Tween动画',
             link: '/Masters-Road/tween.md'
           },
           {
