@@ -93,7 +93,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Getting-Started/editor-starter.md'
           },
           {
-            text: '导入第三方项目',
+            text: '导入项目或资源',
             link: '/Getting-Started/import-project.md'
           }, {
             text: '发布游戏',
