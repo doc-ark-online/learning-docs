@@ -1,9 +1,11 @@
-# 3D 角色制作流程
+# 3D角色制作流程
 
-![image-20230720143543622](https://arkimg.ark.online/image-20230720143543622.png)
+![img](https://arkimg.ark.online/1730276928971-1.png)
 
-# [角色分类](./1-1-0-Role-Classification) 
+## 模型制作基础规范：
 
-# [模型规范](./2-0-0-Model-Specification) 
-
-# [角色绑定](./3-0-0-Riginng)
+- 软件：
+  - 建议使用：Maya，3ds Max，Blender，ZBrush，Substance Painter等DCC软件
+- 单位：
+  - Maya，3ds Max，Blender中，软件单位都需要设置为厘米（cm）
+- 角色道具，挂件，武器等独立静态物体，参考——3D场景/道具制作流程

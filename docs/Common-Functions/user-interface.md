@@ -126,7 +126,7 @@ export default class TestUI extends TestUI_Generate {
         this.canUpdate = false;
         this.layer = UILayerMiddle;
         //点击按钮输出日志//[!code focus]
-        this.myButton.onClicked.add(()=>{//[!code focus]
+        this.myButton.onPressed.add(()=>{//[!code focus]
             console.log("按钮被点击"); //[!code focus]
         });	//[!code focus]
     }
