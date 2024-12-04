@@ -51,7 +51,7 @@ PS+3DS MAX预览方式
 
 PSD文件模板：
 
-[点击下载：妆容PSD模板](https://arkimg.ark.online/%E5%A6%86%E5%AE%B9PSD%E6%A8%A1%E6%9D%BF.zip)
+[点击下载：妆容PSD模板](https://arkimg.ark.online/PSD%E5%A6%86%E5%AE%B9%E6%A8%A1%E6%9D%BF.rar)
 
 <video controls src="https://arkimg.ark.online/PS%E7%94%BB%E5%A6%86%E5%AE%B9.mp4" />
 
