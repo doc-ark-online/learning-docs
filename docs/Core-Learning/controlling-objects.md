@@ -62,13 +62,13 @@ export default class GameStart extends Script {
 
 :::
 
-### 1.1 使用预加载资源
+### 2.1 使用预加载资源
 
 使用预加载相当简单，只要将需要加载的资源拖动到对象管理器的 **预加载** 下即可。如视频，这里我将正方体拖到预加载中：
 
 <video controls="" src="https://arkimg.ark.online/GYlITlOl5tEjVgzS.mp4"></video>
 
-### 1.2 使用代码动态下载
+### 2.2 使用代码动态下载
 
 我们可以在合适的时机使用函数`AssetUtil.assetLoaded` 对资源进行判断，检查资源是否已经被下载到本地，如果没有就使用函数 `AssetUtil.asyncDownloadAsset` 来对资源进行下载：
 
