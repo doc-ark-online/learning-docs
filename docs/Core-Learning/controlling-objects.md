@@ -6,29 +6,65 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317932283&p=12&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?isOutside=true&aid=322817180&bvid=BV1qw411q7ba&cid=1327558816&p=12&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
 
-## 1. 优先加载与动态下载
+## 1. 脚本动态创建游戏对象
+
+游戏开发中，我们常常需要通过脚本动态的进行游戏对象的创建，这里我们选择一个正方体(Id: 360262)进行动态创建。
+
+![f03575c7-57b0-4cef-a54d-861c250b27f5](https://arkimg.ark.online/f03575c7-57b0-4cef-a54d-861c250b27f5.webp)
+
+创建并在场景当中挂载一个脚本，脚本代码如下。这里我们主要使用 `GameObject.asyncSpawn` 函数对资源进行了异步创建：
+
+```typescript
+@Component
+export default class GameStart extends Script {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    protected async onStart(): Promise<void> {
+        //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
+        if (SystemUtil.isServer()) {
+            //创建圆柱模型
+            GameObject.asyncSpawn("360262");
+        }
+    }
+}
+```
+
+运行游戏，可以看到该物体被动态创建出来了。
+
+::: danger Spawn 资源注意事项
+
+双端预制体只能在服务端创建会自动同步给所有客户端，客户端预制体只能在客户端创建不会同步给其他客户端。
+
+普通资源在服务端创建后为双端物体，在客户端创建为单端物体。
+
+关于游戏对象的网络类型会在后续章节介绍，这里只需要大概了解即可。[客户端与服务端 | 教程 (ark.online)](https://learning.ark.online/Online-Gaming/client-and-server.html)
+
+:::
+
+除了模型，特效、声音、预制体等都可以使用该脚本方式动态创建出来。
+
+## 2. 预加载与动态下载
 
 在口袋方舟编辑器中，资源库中所有对象全部存储在云端（也就是服务器上）。只有当我们使用它的时候编辑器才会下载它到本地，这样不但节约了开发者打包项目的时间，而且减少了游戏包体大小。
 
 因为这个设计，**所有动态生成的资源（摆放在场景中的不需要），全部都会先下载然后再生成( AsyncSpawn 函数)**，下载操作是编辑器自动进行的，因为下载需要一定的时间，所以有些资源会在第一次使用的时延后一点时间才生成出来。
 
-如果游戏中存在一些在玩家刚刚进入游戏就马上要生成、不能接受第一次延迟出现的对象，比如玩家手中的道具、玩家释放的技能特效等，我们就可以将它们放在 优先加载列表中，在这个列表中的游戏对象会在打开游戏过程中进行下载，且必须要等这些资源下载完毕后，才会进入游戏。所以会略微减慢游戏启动速度。
+如果游戏中存在一些在玩家刚刚进入游戏就马上要生成、不能接受第一次延迟出现的对象，比如玩家手中的道具、玩家释放的技能特效等，我们就可以将它们放在 预加载列表中，在这个列表中的游戏对象会在打开游戏过程中进行下载，且必须要等这些资源下载完毕后，才会进入游戏。所以会略微减慢游戏启动速度。
 
-所以优先加载中的资源太多会使游戏启动变慢，增加进入游戏的时长，对于什么资源要放进去开发者需要仔细斟酌。
+所以预加载中的资源太多会使游戏启动变慢，增加进入游戏的时长，对于什么资源要放进去开发者需要仔细斟酌。
 
 关于动态加载资源详情可以查阅产品手册：[使用与动态加载资源 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/UsingandDynamicallyLoadingResources.html)
 
-::: warning 关于优先加载
+::: warning 关于预加载
 
-优先加载中的资源太多会显著加大游戏进入时长，对于什么资源要放进去开发者需要仔细斟酌。
+预加载中的资源太多会显著加大游戏进入时长，对于什么资源要放进去开发者需要仔细斟酌。
 
 :::
 
-### 1.1 使用优先加载
+### 1.1 使用预加载资源
 
-使用优先加载相当简单，只要将需要加载的资源拖动到对象管理器的 **优先加载** 下即可。如视频，这里我将正方体拖到优先加载中：
+使用预加载相当简单，只要将需要加载的资源拖动到对象管理器的 **预加载** 下即可。如视频，这里我将正方体拖到预加载中：
 
 <video controls="" src="https://arkimg.ark.online/GYlITlOl5tEjVgzS.mp4"></video>
 
@@ -41,7 +77,7 @@
 export default class AssetExample extends Script {
 
     protected onStart(): void {
-        const cubeAssetId = "197386";
+        const cubeAssetId = "360262";
         if (AssetUtil.assetLoaded(cubeAssetId)) { //[!code focus]
             console.log("正方体资源已经下载！");
         } else {
@@ -53,44 +89,6 @@ export default class AssetExample extends Script {
     }
 }
 ```
-
-## 2. 脚本动态创建游戏对象
-
-游戏开发中，我们常常需要通过脚本动态的进行游戏对象的创建，这里我们选择一个正方体（asset Id: 197386）进行动态创建。
-
-![b9c78123-72e3-43d5-8834-052ed621d5dc](https://arkimg.ark.online/b9c78123-72e3-43d5-8834-052ed621d5dc.webp)
-
-创建并在场景当中挂载一个脚本，脚本代码如下。这里我们主要使用 `GameObject.asyncSpawn` 对资源进行了异步创建操作。
-
-创建游戏对象，还可以使用同步创建函数 `GameObject.spawn` 函数，要注意的是使用同步函数编辑器将不会自动下载资源，需要手动调用下载函数或是将物体拖拽到优先加载中。
-
-```typescript
-@Component
-export default class GameStart extends Script {
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    protected async onStart(): Promise<void> {
-        //这里创建一个双端的圆柱，所以我们需要在服务端创建，所有客户端也会自动同步创建
-        if (SystemUtil.isServer()) {
-            //创建圆柱模型
-            GameObject.asyncSpawn("197397");
-        }
-    }
-}
-```
-
-运行游戏，可以看到该物体被动态创建出来了。
-
-::: danger Spawn 资源注意事项
-
-双端预制体只能在服务端创建，客户端预制体只能在客户端创建。
-
-普通资源在服务端创建后为双端物体，在客户端创建为单端物体。
-
-关于游戏对象的网络类型会在后续章节介绍，这里只需要大概了解即可。[客户端与服务端 | 教程 (ark.online)](https://learning.ark.online/Online-Gaming/client-and-server.html)
-
-:::
-
-除了模型，特效、声音、预制体等都可以使用该脚本方式动态创建出来。
 
 ## 3. 更改游戏对象属性
 
