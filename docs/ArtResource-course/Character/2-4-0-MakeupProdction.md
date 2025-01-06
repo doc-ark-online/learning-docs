@@ -8,18 +8,7 @@
 ## 尺寸和格式：
 
 - 花纹贴图尺寸为256*256
-- TGA格式24位
-
-## 命名格式参考：
-
-| 妆容 |               命名参考               |
-| :--: | :----------------------------------: |
-| 眉毛 |  T_Cartoon_ 性别_ EyeBrow_资源编号   |
-| 睫毛 | T_Cartoon_ 性别_ Eyelash_D_资源编号  |
-| 瞳孔 |   T_Cartoon_ 性别_ Eye_D_资源编号    |
-| 唇妆 | T_Cartoon_ 性别_ LipMakeup_资源编号  |
-| 面妆 | T_Cartoon_ 性别_ FaceMakeup_资源编号 |
-| 眼妆 | T_Cartoon_ 性别_ EyeMakeup_资源编号  |
+- TGA格式32位
 
 ## 制作方式（一）
 
