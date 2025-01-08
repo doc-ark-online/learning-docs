@@ -744,8 +744,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
           {
             text: '背景商品制作流程',
-            collapsible: true,
-            collapsed: true,
             link: '/ArtResource-course/Background/000-background.md'
           },
           {
@@ -758,7 +756,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/ArtResource-course/Effect/000-Effect.md'
               }
             ]
-            },
+          },
           {
             text: 'UI制作流程',
             collapsible: true,
@@ -829,10 +827,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
               {
                 text: '3D场景/道具/挂件/手持物导入上传',
                 link: '/ArtResource-course/Upload/1-StaticModel.md'
-              },
-              {
-                text: '3D背景商品制作与上传',
-                link: '/ArtResource-course/Background/000-background.md'
               },
               {
                 text: 'UI导入上传',
