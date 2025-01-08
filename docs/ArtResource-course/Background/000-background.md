@@ -65,7 +65,7 @@
 
 模型可以替换，用圆柱体，正方体均可，或者用模型挡住四周无穿帮即可。资源制作大小在提供的范围内可适当放大范围，但不能缩小。![image-20250108175318499](https://arkimg.ark.online/image-20250108175318499.png)
 
-本地制作好之后上传到编辑器可查看[静态模型上传](./../1-StaticModel)
+本地制作好之后上传到编辑器可查看[静态模型上传](./../Upload/1-StaticModel)
 
 ## 背景预制体上传：
 
@@ -81,7 +81,7 @@
 
 同样用到上面timeline里面的场景监视器，截一张图制作256*256的正方形，格式要求png，通过上传ui。
 
-ui上传教程：[UI导入上传](./../2-UI)
+ui上传教程：[UI导入上传](./../Upload/2-UI)
 <img src="https://arkimg.ark.online/ffb659a1-5f98-44cc-8a62-d751ec140cf7.png" style="zoom:33%;" /><img src="https://arkimg.ark.online/001-1735630094907-23.png" alt="001" style="zoom:50%;" /><img src="https://arkimg.ark.online/002-1735630104443-25.png" alt="002" style="zoom:50%;" /><img src="https://arkimg.ark.online/003.png" alt="003" style="zoom:50%;" />
 
 上传完成之后一样去官网查看Assetld
