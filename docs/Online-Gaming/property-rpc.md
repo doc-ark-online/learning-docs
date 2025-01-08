@@ -5,9 +5,6 @@
 在网络游戏中服务端与客户端之间需要频繁通讯，之前我们已经介绍了事件通信，本章节我将会再介绍两种客户端与服务端的通讯方式：RPC 与 属性同步。
 
 :::
-
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317947763&p=23&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 关于本章节更多详细内容可以查阅产品手册：[网络同步原理和结构 | 产品手册 (ark.online)](https://docs.ark.online/Scripting/NetworkSynchronizationStructureandMechanics.html)
 
 ## 1. RPC 介绍与使用
@@ -139,9 +136,10 @@ export default class RPCTest extends Script {
 
 ### 2.2 使用属性同步
 
-Replicated 只在网络环境为双端且继承 `Script` 的脚本里生效
+使用前提：
 
-Replicated 只接受在双端的脚本中使用，因为修改 Replicated 的值必须在服务端进行，而 Replicated 值修改的回调函数必须在客户端调用，故单端脚本作为Replicated 的生命周期不完整，不能使用。
+- Replicated 只在网络环境为双端且继承 `Script` 的脚本里生效。
+- Replicated 只接受在双端的脚本中使用，因为修改 Replicated 的值必须在服务端进行，而 Replicated 值修改的回调函数必须在客户端调用，故单端脚本作为Replicated 的生命周期不完整，不能使用。
 
 ::: tip 关于支持同步的类型
 
@@ -193,13 +191,30 @@ export default class ReplicatedTest extends Script {
 
 因为回调函数只会在客户端执行，所以我们打开客户端日志输出窗口观察程序执行结果，在客户端 1 的日志输出窗口中，我们可以看到每秒钟都会接受到一次值被改变的输出。
 
-### 2.3 指定客户端进行属性同步
+### 2.3 自定义类使用同步
 
-在上面的示例中，对于继承了 `Script` 的脚本中的 replicated 属性，在服务端修改时，会同步到每一个客户端并触发回调函数。如果存在一些只有玩家自身才会关注的属性，比如玩家自身的闯关倒计时，就不需要同步到所有客户端。这时，可以使用另一种方法单独同步属性给对应玩家。
+实际开发中常常会用一个类来描述某个物体的所有数据，属性同步也 RPC 也支持同步一个指定的可序列化的类。
 
-指定客户端与同步到所有客户端的 replicated 只有一点不同，指定客户端的 replicated 需要在继承 `PlayerState` 的脚本里生效。
+- 要同步的类需要用 `@Serializable` 装饰器进行装饰。
+- 要同步的类的成员变量需要是**基础类型**并且使用`@Property({ replicated: true })`装饰器标记。
 
-接下来我将会举一个例子，通过打印日志来演示指定客户端属性同步的执行方式。
+```typescript
+@Serializable
+class TestPlayerData {
+    @Property({ replicated: true })
+    public name: string;
+    @Property({ replicated: true })
+    public age: number;
+}
+```
+
+### 2.4 指定客户端进行属性同步
+
+在上述示例中，针对继承自 `Script` 的脚本中的 `replicated` 属性，当其在服务端进行修改时，将会自动同步至所有客户端，并触发相应的回调函数。然而，对于那些仅与单个玩家相关的属性，例如玩家的个人闯关倒计时，这种全局同步就显得不必要。针对这种情况，我们可以采用另一种方法，仅将该属性单独同步给对应的玩家，以优化数据传输和处理效率。
+
+对于指定客户端的属性同步与广播至所有客户端的 `replicated` 属性同步，两者之间仅存在细微的差异。具体来说，要实现指定客户端的属性同步，需要在继承自 `PlayerState` 的脚本中进行操作。
+
+下面，我将提供一个示例，通过日志打印的方式来展示如何执行指定客户端属性的同步过程。
 
 创建一个名为 `PlayerStateTest` 的脚本并复制下列代码到脚本中。
 
