@@ -825,6 +825,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/ArtResource-course/Upload/1-StaticModel.md'
               },
               {
+                text: '3D背景商品制作与上传',
+                link: '/ArtResource-course/Background/000-background.md'
+              },
+              {
                 text: 'UI导入上传',
                 link: '/ArtResource-course/Upload/2-UI.md'
               }
