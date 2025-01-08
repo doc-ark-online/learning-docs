@@ -507,11 +507,11 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
         collapsed: true,
         items: [
           {
-            text: '第一节：DCC环境配置',
+            text: 'DCC环境配置',
             link: '/ArtResource-course/001-Environment-configuration.md'
           },
           {
-            text: '第二节：3D角色制作流程',
+            text: '3D角色制作流程',
             link: '/ArtResource-course/Character/0-0-0-3D-character-production-process.md',
             collapsible: true,
             collapsed: true,
@@ -587,7 +587,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第三节：3D动画制作流程',
+            text: '3D动画制作流程',
             link: '/ArtResource-course/Animation/0-0-0-3D-Animation.md',
             collapsible: true,
             collapsed: true,
@@ -631,7 +631,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第四节：3D场景/道具/挂件/手持物制作流程',
+            text: '3D场景/道具/挂件/手持物制作流程',
             link: '/ArtResource-course/Scene/0-0-Scene-process.md',
             collapsible: true,
             collapsed: true,
@@ -743,7 +743,13 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
           },
           {
-            text: '第六节：特效制作流程',
+            text: '背景商品制作流程',
+            collapsible: true,
+            collapsed: true,
+            link: '/ArtResource-course/Background/000-background.md'
+          },
+          {
+            text: '特效制作流程',
             collapsible: true,
             collapsed: true,
             items: [
@@ -754,7 +760,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
             },
           {
-            text: '第七节：UI制作流程',
+            text: 'UI制作流程',
             collapsible: true,
             collapsed: true,
             items: [
@@ -790,7 +796,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             ]
             },
             {
-            text: '第八节：口袋方舟资源导入上传',
+            text: '口袋方舟资源导入上传',
             collapsible: true,
             collapsed: true,
             items: [
