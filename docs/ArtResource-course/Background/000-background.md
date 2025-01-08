@@ -16,7 +16,7 @@
 
 7. 角色站立位置必须是（0,0,0），若必要有凸起模型，凸起位置必须是在（0,0,0）。
 
-8. 场景最小范围为600X600X600/cm的box（附件点击下载正方体.fbx）制作的场景可以超出这个范围，但不能小于这个范围。
+8. 场景最小范围为600X600X600/cm的box（ [box点击下载](https://arkimg.ark.online/background-box.rar) ）制作的场景可以超出这个范围，但不能小于这个范围。
 
 ![img](https://arkimg.ark.online/1735545213066-1.png)
 
@@ -26,7 +26,7 @@
 
 在max里面打了两个摄像机，与角编工程基本一致，制作时候可以用做参考。
 
- [背景.3DS_MAX（点击下载）](https://arkimg.ark.online/Beijing.rar) 
+ [背景.3DS_MAX（点击下载）](https://arkimg.ark.online/background.rar) 
 
 ![beijnshangpin1](https://arkimg.ark.online/beijnshangpin1.png)
 
