@@ -101,12 +101,12 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           }, {
             text: '常用预制体下载',
             link: '/Getting-Started/easyprefab-list.md'
-          },{
-            text:'星火开发者快速入门指南',
-            link:'/Getting-Started/developer-guide.md'
-          },{
-            text:'星火编辑器与口袋方舟编辑器常用API对比',
-            link:'/Getting-Started/developer-api-compare.md'
+          }, {
+            text: '星火开发者快速入门指南',
+            link: '/Getting-Started/developer-guide.md'
+          }, {
+            text: '星火编辑器与口袋方舟编辑器常用API对比',
+            link: '/Getting-Started/developer-api-compare.md'
           }
         ]
       },
@@ -782,18 +782,18 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 text: '商品icon制作教程',
                 items: [
                   {
-                   text: '服装、发型',
-                   link: '/ArtResource-course/UI/UITex-clothNhairicon.md'
+                    text: '服装、发型',
+                    link: '/ArtResource-course/UI/UITex-clothNhairicon.md'
                   },
                   {
-                   text: '妆容',
-                   link: '/ArtResource-course/UI/UITex-makeupicon.md'
+                    text: '妆容',
+                    link: '/ArtResource-course/UI/UITex-makeupicon.md'
                   },
-               ]   
+                ]
               }
             ]
-            },
-            {
+          },
+          {
             text: '口袋方舟资源导入上传',
             collapsible: true,
             collapsed: true,
@@ -801,7 +801,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
               {
                 text: '服装部件/角色NPC/多足/自定义骨骼模型动画导入上传',
                 link: '/ArtResource-course/Upload/0-0-Role.md',
-                 items: [
+                items: [
                   {
                     text: '角色NPC/多足/自定义骨骼',
                     link: '/ArtResource-course/Upload/0-1-Role-NPC-.md'
@@ -834,6 +834,169 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
               }
             ]
           }
+        ]
+      },
+      {
+        text: '商品制作教程',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '商品分类简介',
+            link: '/ProductMaking-Guide/1_0_0_Introduction-to-Product-Classification.md'
+          },
+          {
+            text: '开始制作商品',
+            link: '/ProductMaking-Guide/2_0_0_Start-making-products.md'
+          },
+          {
+            text: '软件环境配置',
+            link: '/ProductMaking-Guide/3_0_0_Software-environment-configuration.md'
+          },
+          {
+            text: '头发',
+            link: '/ProductMaking-Guide/4_0_0_Hair.md',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '头发模型制作',
+                link: '/ProductMaking-Guide/4_1_0_Hair-model.md'
+              },
+              {
+                text: '头发绑定',
+                link: '/ProductMaking-Guide/4_2_0_Hair-binding.md',
+              },
+              {
+                text: '头发材质',
+                link: '/ProductMaking-Guide/4_3_0_Hair-Material.md',
+              },
+              {
+                text: '头发商品上传',
+                link: '/ProductMaking-Guide/4_4_0_Hair-upload.md',
+              }
+            ]
+          },
+          {
+            text: '服装',
+            link: '/ProductMaking-Guide/5_0_0_Clothing.md',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '服装模型制作',
+                link: '/ProductMaking-Guide/5_1_0_Clothing-model.md'
+              },
+              {
+                text: '服装绑定',
+                link: '/ProductMaking-Guide/5_2_0_Clothing-binding.md'
+              },
+              {
+                text: '服装材质',
+                link: '/ProductMaking-Guide/5_3_0_Clothing-material.md'
+              },
+              {
+                text: '服装商品上传',
+                link: '/ProductMaking-Guide/5_4_0_Clothing-upload.md'
+              }
+            ]
+          },
+          {
+            text: '套装',
+            link: '/ProductMaking-Guide/6_0_0_Suit.md'
+          },
+          {
+            text: '饰品',
+            link: '/ProductMaking-Guide/7_0_0_Accessories.md',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '静态饰品模型',
+                link: '/ProductMaking-Guide/7_1_0_Static-accessories-model.md'
+              },
+              {
+                text: '静态饰品上传',
+                link: '/ProductMaking-Guide/7_2_0_Static-accessories-upload.md'
+              },
+              {
+                text: '静态饰品商品分类配置',
+                link: '/ProductMaking-Guide/7_3_0_Static-accessories-mounting-configuration.md'
+              },
+              {
+                text: '静态饰品&背景材质配置',
+                link: '/ProductMaking-Guide/7_4_0_Material-Practice.md',
+                collapsible: true,
+                collapsed: true,
+                items: [
+                  {
+                    text: 'PBR基础效果',
+                    link: '/ProductMaking-Guide/7_4_1_PBR-Basic-Effects.md'
+                  },
+                  {
+                    text: 'PBR高级效果',
+                    link: '/ProductMaking-Guide/7_4_2_PBR-Advanced-Effects.md'
+                  },
+                  {
+                    text: '透明/半透明效果',
+                    link: '/ProductMaking-Guide/7_4_3_Transparent.md'
+                  },
+                  {
+                    text: '呼吸灯/自发光',
+                    link: '/ProductMaking-Guide/7_4_4_Breathing-Lamp.md'
+                  }
+                ]
+              },
+              {
+                text: '动态饰品模型',
+                link: '/ProductMaking-Guide/7_5_0_Dynamic-accessories-model.md'
+              },
+              {
+                text: '动态饰品绑定',
+                link: '/ProductMaking-Guide/7_6_0_Dynamic-accessories-binding.md'
+              },
+              {
+                text: '动态饰品上传',
+                link: '/ProductMaking-Guide/7_7_0_Dynamic-accessories-upload.md'
+              },
+              {
+                text: '动态饰品商品分类配置',
+                link: '/ProductMaking-Guide/7_8_0_Dynamic-accessories-mounting-configuration.md'
+              }
+            ]
+          },
+          {
+            text: '背景',
+            link: '/ProductMaking-Guide/8_0_0_Background-products.md'
+          },
+          {
+            text: '眼睛/眉毛/妆容制作',
+            link: '/ProductMaking-Guide/9_0_0_Makeup.md'
+          },
+          {
+            text: '全妆',
+            link: '/ProductMaking-Guide/10_0_0_Complete-makeup.md'
+          },
+          {
+            text: '商品Icon',
+            link: '/ProductMaking-Guide/11_0_0_Product-icon-production.md',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '服装&发型',
+                link: '/ProductMaking-Guide/11_1_0_Clothing-hair-icon.md'
+              },
+              {
+                text: '妆容',
+                link: '/ProductMaking-Guide/11_2_0_Makeup-icon.md'
+              },
+              {
+                text: 'UI导入上传',
+                link: '/ProductMaking-Guide/11_5_0_UI-Import-Upload.md'
+              }
+            ]
+          },
         ]
       }
     ],
