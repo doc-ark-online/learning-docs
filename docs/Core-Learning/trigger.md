@@ -6,7 +6,8 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317932514&p=13&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?isOutside=true&aid=322817180&bvid=BV1qw411q7ba&cid=1327563510&p=13&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
+
 
 关于触发器使用见产品文档：[触发器](https://docs.ark.online/GameplayObjects/Trigger.html)
 
@@ -117,11 +118,23 @@ export default class TriggerTest extends Script {
 
 ![](https://arkimg.ark.online/99a0dc6f-c5f4-4568-bdbd-c2cae5a63503.webp)
 
+::: warning 注意
+
+触发器修改为球体时，其缩放属性的各个分量必须为相同值，球体触发器暂不支持不规则形状。
+
+:::
+
 ## 2. 使用静态模型自身触发检测
 
 有时候我们需要让物体自身就可以进行触发检测，比如制作拾取物品时。这时就可以使用**静态模型**本身的触发事件`onTouch` 与 `onTouchEnd` 来进行检测：
 
 ### 2.1 添加进入与离开事件
+
+::: warning 注意
+
+模型如果为球体时，其缩放属性的各个分量必须为相同值，球体暂不支持不规则形状。
+
+:::
 
 新建一个脚本文件命名为 ModelTouch 将下文代码复制进去。这段代码实现了玩家碰到挂载脚本的物体后就将这个物体隐藏，玩家离开这个物体之后物体重新显示。
 
