@@ -978,6 +978,30 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/ProductMaking-Guide/10_0_0_Complete-makeup.md'
           },
           {
+            text: '特殊形象',
+            link: '/ProductMaking-Guide/12_0_0_PiTao.md',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '模型',
+                link: '/ProductMaking-Guide/12_1_0_PiTao-model.md'
+              },
+              {
+                text: '绑定',
+                link: '/ProductMaking-Guide/12_2_0_PiTao-Skin.md'
+              },
+              {
+                text: '材质',
+                link: '/ProductMaking-Guide/12_3_0_PiTao-Material.md'
+              },
+              {
+                text: '上传',
+                link: '/ProductMaking-Guide/12_4_0_PiTao-upload.md'
+              }
+            ]
+          },
+          {
             text: '商品Icon',
             link: '/ProductMaking-Guide/11_0_0_Product-icon-production.md',
             collapsible: true,
