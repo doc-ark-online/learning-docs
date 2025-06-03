@@ -102,6 +102,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             text: '常用预制体下载',
             link: '/Getting-Started/easyprefab-list.md'
           }, {
+            text: '口袋方舟创作者等级体系',
+            link: '/Getting-Started/develloperLevel.md'
+          }, {
             text: '星火开发者快速入门指南',
             link: '/Getting-Started/developer-guide.md'
           }, {
