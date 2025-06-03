@@ -103,7 +103,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Getting-Started/easyprefab-list.md'
           }, {
             text: '口袋方舟创作者等级体系',
-            link: '/Getting-Started/develloperLevel.md'
+            link: '/Getting-Started/developerLevel.md'
           }, {
             text: '星火开发者快速入门指南',
             link: '/Getting-Started/developer-guide.md'
