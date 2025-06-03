@@ -2,7 +2,7 @@
 
 ![img](https://arkimg.ark.online/1748936709043-1.webp)
 
-### **任务填报链接：**https://meta.feishu.cn/share/base/form/shrcnnRNvP4dj2m9QuqXMmms7V3
+### [任务填报链接](https://meta.feishu.cn/share/base/form/shrcnnRNvP4dj2m9QuqXMmms7V3)
 
 ### 什么是口袋方舟创作等级
 
@@ -77,7 +77,7 @@
 
 在完成某项任务后，可以点击下方的问卷链接，进入**问卷填写页面**。填写创作者账号，选中已完成的任务并填写相关链接（如游戏分享链接、视频链接、帖子链接等），分开填写或是一次性集中填写都可以。
 
-**问卷链接：**https://meta.feishu.cn/share/base/form/shrcnnRNvP4dj2m9QuqXMmms7V3
+[问卷链接](https://meta.feishu.cn/share/base/form/shrcnnRNvP4dj2m9QuqXMmms7V3)
 
 1. **每两周**进行一次汇总统计，计算每位创作者应获得的经验点与派对币总数量。
 2. 将统计结果在口袋方舟论坛进行公示，公示期**3天内**，创作者如有异议可及时提出，运营进行复核和处理。
