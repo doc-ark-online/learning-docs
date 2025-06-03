@@ -86,8 +86,8 @@
 
 ### 5.附录
 
-***[分享评级体系](https://meta.feishu.cn/docx/JyuWdod7AoHkR1xS8awcbx7XnfU?from=from_copylink)***
+***[分享评级体系](https://learning.ark.online/Getting-Started/sharedRate.html)***
 
-***[游戏评级体系](https://meta.feishu.cn/docx/VjKTdh1WkoUObTx11m0c7GC5nPf?from=from_copylink)***
+***[游戏评级体系](https://learning.ark.online/Getting-Started/gameRate.html)***
 
-***[布道评级体系](https://meta.feishu.cn/docx/DAAPdrRArojVAKxAVz0cqznAnFe?from=from_copylink)***
+***[布道评级体系](https://learning.ark.online/Getting-Started/Evangelist.html)***
