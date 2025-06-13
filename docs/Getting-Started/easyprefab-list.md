@@ -44,4 +44,3 @@
 | 物品栏组件     | [物品栏组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=35) |
 | 可拾取物组件   | [可拾取物组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=37) |
 | 对话框UI       | [对话框UI](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=38) |
-| NPC组件        | [NPC组件](https://forum.ark.online/plugin.php?id=one_market&action=item&sid=121) |
