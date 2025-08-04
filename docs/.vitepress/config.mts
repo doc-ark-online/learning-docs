@@ -102,6 +102,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             text: '常用预制体下载',
             link: '/Getting-Started/easyprefab-list.md'
           }, {
+            text: '口袋方舟创作者等级体系',
+            link: '/Getting-Started/developerLevel.md'
+          }, {
             text: '星火开发者快速入门指南',
             link: '/Getting-Started/developer-guide.md'
           }, {
@@ -976,6 +979,30 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             text: '全妆',
             link: '/ProductMaking-Guide/10_0_0_Complete-makeup.md'
+          },
+          {
+            text: '特殊形象',
+            link: '/ProductMaking-Guide/12_0_0_PiTao.md',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '模型',
+                link: '/ProductMaking-Guide/12_1_0_PiTao-model.md'
+              },
+              {
+                text: '绑定',
+                link: '/ProductMaking-Guide/12_2_0_PiTao-Skin.md'
+              },
+              {
+                text: '材质',
+                link: '/ProductMaking-Guide/12_3_0_PiTao-Material.md'
+              },
+              {
+                text: '上传',
+                link: '/ProductMaking-Guide/12_4_0_PiTao-upload.md'
+              }
+            ]
           },
           {
             text: '商品Icon',

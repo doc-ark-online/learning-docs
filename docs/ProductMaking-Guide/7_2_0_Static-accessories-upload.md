@@ -55,7 +55,7 @@
 
 ![img](https://arkimg.ark.online/1739959532159-11.png)
 
-官网-传作者中心-资源-我的资源
+官网-创作者中心-资源-我的资源
 
 ![img](https://arkimg.ark.online/1739959532159-12.png)
 
