@@ -6,8 +6,6 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?isOutside=true&aid=322817180&bvid=BV1qw411q7ba&cid=1327554016&p=6&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ## 1. 导入项目
 
 [闯关小游戏教程点击下载](../obby-course/game-description.md) 

@@ -2,8 +2,6 @@
 
 ::: tip 小提示
 
-下列预制体配套全套视频教程 ！可以进入 bilibili 观看学习: [口袋方舟教程合集](https://space.bilibili.com/3537113119197710/channel/collectiondetail?sid=2451975)
-
 下列只是列出了官方维护的部分预制体，可以进入[预制体 - 口袋方舟论坛](https://forum.ark.online/plugin.php?id=one_market&action=list&aid=2)页面查看所有官方&第三方创作者们贡献的预制体
 
 :::
