@@ -62,7 +62,7 @@
 
 ### 素材格式限制
 
-:::tip注意
+:::tip
 
 **图片素材格式限制**
 
@@ -92,7 +92,7 @@
 
 <img src="https://arkimg.ark.online/1755845968868-13.webp" alt="img" style="zoom:50%;" />
 
-成功上传后，可以在**[创作者后台](https://portal.ark.online/#/admin/home)->资源->我的资源** 处查看当前审核情况，当创作者后台的状态栏变为“可使用”时，就可以在工程中使用你上传的资源了
+成功上传后，可以在[创作者后台](https://portal.ark.online/#/admin/home)->资源->我的资源 处查看当前审核情况，当创作者后台的状态栏变为“可使用”时，就可以在工程中使用你上传的资源了
 
 <img src="https://arkimg.ark.online/1755845968868-14.webp" alt="img" style="zoom:50%;" />
 
@@ -130,7 +130,7 @@
 
 ### 剧情文本输入
 
-**详情请见：[[手把手教程\] 0基础小白快速做出互动剧情游戏！](https://meta.feishu.cn/wiki/DvqxwjedOisCE5kczXwcn6minpd)**
+**详情请见：[‌﻿‍⁠‬⁠‬‬‬‬‬‬‍⁠⁠‌‍‌⁠‬﻿‍‬【进阶】AVG游戏，视觉小说模块制作互动剧情](https://meta.feishu.cn/wiki/DvqxwjedOisCE5kczXwcn6minpd)**
 
 **新增剧情(章节)**
 
