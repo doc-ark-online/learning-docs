@@ -6,8 +6,6 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?isOutside=true&aid=322817180&bvid=BV1qw411q7ba&cid=1327558816&p=12&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ## 1. 脚本动态创建游戏对象
 
 游戏开发中，我们常常需要通过脚本动态的进行游戏对象的创建，这里我们选择一个正方体(Id: 360262)进行动态创建。

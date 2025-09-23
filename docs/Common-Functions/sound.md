@@ -6,8 +6,6 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1317940823&p=18&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 了解更多本节内容见产品文档：[音效 | 产品手册 (ark.online)](https://docs.ark.online/GameplayObjects/SoundEffect.html)
 
 ## 1. 什么是音效

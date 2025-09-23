@@ -6,8 +6,6 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?aid=322817180&bvid=BV1qw411q7ba&cid=1323376815&p=1&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 ## 1. 口袋方舟是什么
 
 口袋方舟编辑器是一款易于上手的游戏编辑器，相对于传统游戏引擎在开发游戏时需要在技术层与业务层上从零开发来编写对应功能，口袋方舟编辑器提供了大量的成品功能与模块，甚至内置了角色编辑器让你轻松拥有成千上万属于自己的角色而不用考虑建模问题，让开发者只需要关注业务层的实现，就可以制作出一款非常优质的游戏。

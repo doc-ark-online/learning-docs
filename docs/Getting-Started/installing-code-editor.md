@@ -6,8 +6,6 @@
 
 :::
 
-<iframe sandbox="allow-scripts allow-downloads allow-same-origin allow-popups allow-presentation allow-forms" frameborder="0" draggable="false" allowfullscreen="" allow="encrypted-media;" referrerpolicy="" aha-samesite="" class="iframe-loaded" src="//player.bilibili.com/player.html?isOutside=true&aid=322817180&bvid=BV1qw411q7ba&cid=1327553561&p=3&autoplay=0" style="border-radius: 7px; width: 100%; height: 360px;"></iframe>
-
 口袋方舟的编辑器采用 TypeScript 作为编写游戏脚本的语言，在众多支持TypeScript的编辑器中，Visual Studio Code（简称VSCode）因其轻量级特性和广泛的用户基础而备受青睐。本教程将使用VSCode作为示范编辑器进行操作讲解。
 
 ## 1.VSCode 下载与安装
