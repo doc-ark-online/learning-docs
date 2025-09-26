@@ -13,9 +13,17 @@
 - 检查单位设置，统一设置为厘米。
 - 支持对骨骼进行旋转、缩放、位移，注意缩放后需要进行归1处理。
 
+### 标准骨骼导入设置
+
+#### 导入标准骨骼FBX设置，不同3D软件导入设置不同，需按下列设置保证FBX骨骼朝向正确。
+
+<img src="https://arkimg.ark.online/%E5%AF%BC%E5%85%A5FBX.png"/>
+
 ### 绑定基础设置
 
-设置模型顶点受骨骼影响限制，参考下图设置，模型顶点受骨骼影响数需≤4。![img](https://arkimg.ark.online/BDGF-1740537613695-4.png)
+设置模型顶点受骨骼影响限制，参考下图设置，模型顶点受骨骼影响数需≤4。
+
+![img](https://arkimg.ark.online/1753839898183-1.jpeg)
 
 ### 开始蒙皮
 
@@ -44,7 +52,8 @@
 - 轴向:Up Axis:Z-up,类型：Type:Binary
 
 - 动画面板不勾选:Animation
-  - ######  3dsMAX:
+
+- ######  3dsMAX:
 
 ![img](https://arkimg.ark.online/1748253428085-4.png)
 
@@ -54,5 +63,5 @@
 
 - ######  Blender:
 
-![img](https://arkimg.ark.online/1748253428085-7.png)
+![img](https://arkimg.ark.online/1753786839103-1.png)
 

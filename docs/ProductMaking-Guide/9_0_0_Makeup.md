@@ -2,7 +2,7 @@
 
 ## 可创作范围：
 
-- 眉毛，睫毛，瞳孔，唇妆，面妆，眼妆。
+- 眉毛，睫毛，瞳孔，瞳孔贴花，唇妆，面妆，眼妆。
 - 可作为角编的商品上架，制作商品缩略图可以提升商品的预览效果[商品icon制作教程](./11_0_0_Product-icon-production)
 
 ## 大小和格式：
@@ -41,11 +41,17 @@ PS+3D软件预览方式(此处已3ds max为例)
 
 首先下载提供的裸模以及下面的妆容模板PhotoShop文件。
 
-[点击下载PSD妆容文件](https://arkimg.ark.online/PSD%E5%A6%86%E5%AE%B9%E6%A8%A1%E6%9D%BF.rar)
+[点击下载PSD妆容文件](https://arkimg.ark.online/PSD%E5%A6%86%E5%AE%B9%E6%A8%A1%E6%9D%BF03.rar)
 
 <video controls src="https://arkimg.ark.online/PS%E7%94%BB%E5%A6%86%E5%AE%B9.mp4" />
 
+视频中以睫毛为例，同理下载PSD妆容模版参考去制作对应妆容贴图，遵循模版范围即可。（瞳孔贴花无特定范围，模版中给出的范围为建议范围）
+
 ## 效果预览:
+
+根据制作的商品，上传前可在口袋方舟预览效果
+
+![img](https://arkimg.ark.online/1753253059158-1.jpeg)
 
 <video controls src="https://arkimg.ark.online/%E5%A6%86%E5%AE%B9%E9%A2%84%E8%A7%88.mp4" />
 

@@ -2,7 +2,13 @@
 
 ### 绑定基础设置
 
-#### 设置模型顶点受骨骼影响限制，参考下图设置，模型顶点受骨骼影响数需≤4。![BDGF](https://arkimg.ark.online/BDGF-1740537573458-2.png)
+#### 导入标准骨骼FBX设置，不同3D软件导入设置不同，需按下列设置保证FBX骨骼朝向正确。
+
+<img src="https://arkimg.ark.online/%E5%AF%BC%E5%85%A5FBX.png"/>
+
+#### 设置模型顶点受骨骼影响限制，参考下图设置，模型顶点受骨骼影响数需≤4。
+
+![img](https://arkimg.ark.online/1753786520773-1.jpeg)
 
 ### 头发动态骨骼
 
@@ -97,4 +103,4 @@
 
 ###### Blender：
 
-![img](https://arkimg.ark.online/1740380832620-6.png)
+![img](https://arkimg.ark.online/1753253285464-1.png)

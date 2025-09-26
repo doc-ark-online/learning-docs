@@ -109,7 +109,7 @@
 |     鞋子     |  ClothShoes  | ClothShoes_Mask |
 |    连体衣    |  ClothUpper  | ClothUpper_Mask |
 
-- 错误命名可能导致材质表现错乱。
+- 错误命名可能导致材质表现错乱，无法换色等情况。
 - 例如：当把衣服材质命名为Body,上传时会被自动识别为裸模，并且赋予裸模材质不可更改
 
 ![img](https://arkimg.ark.online/1739959235641-7.png)
