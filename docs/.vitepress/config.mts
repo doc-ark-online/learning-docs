@@ -108,6 +108,9 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             text: '橙光开发者快速入门指南',
             link: '/Getting-Started/developer66RPG-guide.md'
           }, {
+            text: '文游创作者美术稿件获取渠道',
+            link: '/Getting-Started/ArtAssetRegulations.md'
+          }, {
             text: '星火开发者快速入门指南',
             link: '/Getting-Started/developer-guide.md'
           }, {
