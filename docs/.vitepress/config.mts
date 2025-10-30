@@ -1032,6 +1032,44 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           },
         ]
       }
+      {
+        text: '商品后台上架教程',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '商品上架介绍',
+            link: '/CommidityListing/CommidityUpload.md'
+          },
+          {
+            text: '商品分类选择',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              {
+                text: '服装类',
+                link: '/CommidityListing/ClothCommidity.md'
+              },
+              {
+                text: '饰品类',
+                link: '/CommidityListing/AccessoriesCommidity.md'
+              },
+              {
+                text: '妆容类',
+                link: '/CommidityListing/MakeupCommidity.md'
+              },
+              {
+                text: '组合商品类',
+                link: '/CommidityListing/SuitCommidity.md'
+              },
+              {
+                text: '其他类',
+                link: '/CommidityListing/OtherCommidity.md'
+              }
+            ]
+          }
+        ]
+      }
     ],
     algolia: {
       appId: 'I2PHYUBLCN',
