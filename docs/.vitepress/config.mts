@@ -179,6 +179,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/Common-Functions/user-interface.md'
           },
           {
+            text: 'UI 对齐',
+            link: '/Common-Functions/UIalign.md'
+          },
+          {
             text: '预制体',
             link: '/Common-Functions/prefab.md'
           },
