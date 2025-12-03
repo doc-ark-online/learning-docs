@@ -28,8 +28,7 @@
 
 ![img](https://arkimg.ark.online/1739960303900-5.png)
 
-## 提交
+## 上架
 
-在资源中心找到assetId和导出的商品分类文件一起提交给运营同学。
+[饰品类 | 教程](https://learning.ark.online/CommidityListing/AccessoriesCommidity.html)
 
-![img](https://arkimg.ark.online/1739960303900-6-1740039756108-1.png)

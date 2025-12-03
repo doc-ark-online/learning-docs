@@ -56,11 +56,9 @@
 
 ![img](https://arkimg.ark.online/1740043023342-15.png)
 
-## 提交：
+## 上架：
 
-联系对应运营提供导出的.asset文件和静态模型资源的Assetld。
-
-![img](https://arkimg.ark.online/1740043023342-16.png)
+[饰品类 | 教程](https://learning.ark.online/CommidityListing/AccessoriesCommidity.html)
 
 **注意：**
 
