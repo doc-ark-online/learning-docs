@@ -26,8 +26,4 @@
 ![img](https://arkimg.ark.online/1739959375469-2.png)
 
 ## 提交:
-
-- 可以在创作者中心-资源-我的资源，中查看资源状态。资源不需要公开
-- 提交角色数据,以及角色数据的Assetld给运营同学
-
-![img](https://arkimg.ark.online/1739959375468-1.png)
+[组合商品制作教程](https://learning.ark.online/CommidityListing/SuitCommidity.html)
