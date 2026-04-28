@@ -1009,6 +1009,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/ProductMaking-Guide/12_3_0_PiTao-Material.md'
               },
               {
+                text: '预览',
+                link: '/ProductMaking-Guide/PiTao-Review.md'
+              },
+              {
                 text: '上传',
                 link: '/ProductMaking-Guide/12_4_0_PiTao-upload.md'
               }
