@@ -57,9 +57,13 @@ PS+3D软件预览方式(此处已3ds max为例)
 
 ### 写实妆容预览：
 
-使用模板文件中的写实角色文件进行预览和制作Icon图，找到妆容模板文件夹中的RealisticrMakeupCheckRole.asset
+使用模板文件中的写实角色文件进行预览和制作Icon图，找到妆容模板文件夹中的.asset文件。
 
-![image-20260115170509159](https://arkimg.ark.online/image-20260115170509159.png)
+MaleRealisticrMakeupCheckRole.asset为写实男性妆容预览文件
+
+RealisticrMakeupCheckRole.asset为写实女性妆容预览文件。
+
+![image-20260721100552858](https://arkimg.ark.online/image-20260721100552858.png)
 
 导入预览文件
 
