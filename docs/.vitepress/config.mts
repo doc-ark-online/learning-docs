@@ -975,6 +975,14 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
               {
                 text: '动态饰品商品分类配置',
                 link: '/ProductMaking-Guide/7_8_0_Dynamic-accessories-mounting-configuration.md'
+              },
+              {
+                text: '面部绘制挂件模型',
+                link: '/ProductMaking-Guide/EditablefaceModel.md'
+              },
+              {
+                text: '面部绘制饰品上传',
+                link: '/ProductMaking-Guide/EditablefaceUpload.md'
               }
             ]
           },
