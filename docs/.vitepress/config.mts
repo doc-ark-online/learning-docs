@@ -336,519 +336,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           }
         ]
       },
-      {
-        text: '炸弹人小游戏',
-        link: '/bomberman-course/0-description.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: '创建工程并导入场景',
-            link: '/bomberman-course/1-create-project.md'
-          },
-          {
-            text: '添加空气墙',
-            link: '/bomberman-course/2-add-Point.md'
-          },
-          {
-            text: '创建炸弹预制体',
-            link: '/bomberman-course/3-create-prefab.md'
-          },
-          {
-            text: '创建控制 UI',
-            link: '/bomberman-course/4-create-ui.md'
-          },
-          {
-            text: '服务端创建炸弹',
-            link: '/bomberman-course/5-server-create-boom.md'
-          },
-          {
-            text: '玩家伤害与复活',
-            link: '/bomberman-course/6-respawn-player.md'
-          },
-          {
-            text: '运行测试游戏',
-            link: '/bomberman-course/7-test-game.md'
-          }
-        ]
-      },
-      {
-        text: '闯关小游戏',
-        link: '/obby-course/game-description.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: '1.初始设置',
-            link: '/obby-course/1.initial-setting.md'
-          },
-          {
-            text: '2.场景搭建',
-            link: '/obby-course/2.scene-construction.md'
-          },
-          {
-            text: '3.死亡复活',
-            link: '/obby-course/3.death-and-resurrection.md'
-          },
-          {
-            text: '4.检查点',
-            link: '/obby-course/4.check-point.md'
-          },
-          {
-            text: '5.终点胜利',
-            link: '/obby-course/5.destination.md'
-          },
-          {
-            text: '6.游戏UI',
-            link: '/obby-course/6.game-ui.md'
-          },
-          {
-            text: '7.辅助功能',
-            link: '/obby-course/7.helper.md'
-          },
-          {
-            text: '8.关卡拓展',
-            link: '/obby-course/8.expansion-level.md'
-          },
-          {
-            text: '9.游戏存档',
-            link: '/obby-course/9.saved-game.md'
-          },
-          {
-            text: '10.排行榜',
-            link: '/obby-course/10.rangking-list.md'
-          },
-          {
-            text: '11.发布游戏',
-            link: '/obby-course/11.release-game.md'
-          }
-        ]
-      },
-      {
-        text: '大亨小游戏',
-        link: '/tycoon-course/1.1game-description.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: '第一节：搭建场景',
-            items: [
-              { text: '搭建场景', link: '/tycoon-course/2.1make-scene.md' }
-            ]
-          },
-          {
-            text: '第二节：实现游戏逻辑',
-            items: [
-              { text: '制作购买按钮', link: '/tycoon-course/3.1buy-button.md' },
-              {
-                text: '显示可购买物品功能',
-                link: '/tycoon-course/3.2buy-item.md'
-              },
-              {
-                text: '优化显示效果',
-                link: '/tycoon-course/3.3optimization.md'
-              },
-              {
-                text: '实现购买按钮上金币显示',
-                link: '/tycoon-course/3.4show-gold.md'
-              },
-              {
-                text: '实现购买建筑功能',
-                link: '/tycoon-course/3.5buy-build.md'
-              },
-              {
-                text: '实现邮箱产出金币功能',
-                link: '/tycoon-course/3.6email-item.md'
-              },
-              {
-                text: '存储玩家数据功能',
-                link: '/tycoon-course/3.7player-data.md'
-              }
-            ]
-          },
-          {
-            text: '第三节：实现联机家园系统',
-            items: [
-              {
-                text: '实现家园系统(1)',
-                link: '/tycoon-course/4.1home-system.md'
-              },
-              {
-                text: '实现家园系统(2)',
-                link: '/tycoon-course/4.2home-system2.md'
-              },
-              {
-                text: '运行测试游戏',
-                link: '/tycoon-course/4.2test-project.md'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        text: '打怪小游戏',
-        link: '/monster-course/game-description.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: '1.场景搭建',
-            link: '/monster-course/1.scene-construction.md'
-          },
-          { text: '2.制作怪物', link: '/monster-course/2.monster-making.md' },
-          {
-            text: '3.更新怪物血量',
-            link: '/monster-course/3.update-monster-hp.md'
-          },
-          { text: '4.攻击怪物', link: '/monster-course/4.attack-monster.md' },
-          { text: '5.攻击反馈', link: '/monster-course/5.attack-feedback.md' },
-          {
-            text: '6.成长系统UI',
-            link: '/monster-course/6.growth-system-UI.md'
-          },
-          {
-            text: '7.攻击力升级',
-            link: '/monster-course/7.attack-power-upgrade.md'
-          },
-          { text: '8.存储数据', link: '/monster-course/8.save-data.md' }
-        ]
-      },
-      {
-        text: '制作美术资源',
-        link: '/ArtResource-course/000-PGC.md',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          {
-            text: 'DCC环境配置',
-            link: '/ArtResource-course/001-Environment-configuration.md'
-          },
-          {
-            text: '3D角色制作流程',
-            link: '/ArtResource-course/Character/0-0-0-3D-character-production-process.md',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              {
-                text: '角色分类',
-                link: '/ArtResource-course/Character/1-1-0-Role-Classification.md'
-              },
-              {
-                text: '命名规范',
-                link: '/ArtResource-course/Character/2-1-0-Namepolicy.md',
-              },
-              {
-                text: '角色/NPC/多足',
-                link: '/ArtResource-course/Character/2-2-0-CharacterProduction.md',
-                items: [
-                  {
-                    text: '模型规范',
-                    link: '/ArtResource-course/Character/2-2-1-Character-modelling.md'
-                  },
-                  {
-                    text: '贴图规范',
-                    link: '/ArtResource-course/Character/2-2-2-Character-Texture.md'
-                  },
-                  {
-                    text: '模型绑定',
-                    link: '/ArtResource-course/Character/2-2-3-Character-Riging.md'
-                  },
-                  {
-                    text: '角色导出',
-                    link: '/ArtResource-course/Character/2-2-4-Character-Export.md'
-                  }
-                ]
-              },
-              {
-                text: '服装发型',
-                link: '/ArtResource-course/Character/2-3-0-Clothing-Hair-production.md',
-                items: [
-                  {
-                    text: '局外与局内',
-                    link: '/ArtResource-course/Character/2-3-1-Clothing-Hair-Rule.md'
-                  },
-                  {
-                    text: '模型规范',
-                    link: '/ArtResource-course/Character/2-3-2-Clothing-Hair-Modelling.md'
-                  },
-                  {
-                    text: '贴图规范',
-                    link: '/ArtResource-course/Character/2-3-3-Clothing-Hair-Texture.md'
-                  },
-                  {
-                    text: '绑定基础介绍',
-                    link: '/ArtResource-course/Character/2-3-4-Clothing-Hair-RigingRule.md'
-                  },
-                  {
-                    text: '模型绑定',
-                    link: '/ArtResource-course/Character/2-3-5-Clothing-Hair-Riging.md'
-                  },
-                  {
-                    text: '资源导出',
-                    link: '/ArtResource-course/Character/2-3-6-Clothing-Hair-Export.md'
-                  }
-                ]
-              },
-              {
-                text: '妆容制作',
-                link: '/ArtResource-course/Character/2-4-0-MakeupProdction.md'
-              },
-              {
-                text: '编辑器捏模/套装制作及上传',
-                link: '/ArtResource-course/Character/2-5-0-EditorSuitNCharacter-Upload.md'
-              }
-            ]
-          },
-          {
-            text: '3D动画制作流程',
-            link: '/ArtResource-course/Animation/0-0-0-3D-Animation.md',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              {
-                text: '动画分类',
-                link: '/ArtResource-course/Animation/1-0-0-Animation-Classification.md'
-              },
-              {
-                text: '命名规范',
-                link: '/ArtResource-course/Animation/2-0-0-Namepolicy.md'
-              },
-              {
-                text: '角色/NPC/多足动画',
-                link: '/ArtResource-course/Animation/3-1-0-Character-Animation.md',
-                items: [
-                  {
-                    text: '动画制作',
-                    link: '/ArtResource-course/Animation/3-1-1-Character-MakingAnimation.md'
-                  },
-                  {
-                    text: '动画导出',
-                    link: '/ArtResource-course/Animation/3-1-2-Character-AnimationExport.md'
-                  }
-                ]
-              },
-              {
-                text: '角色装扮资源动画',
-                link: '/ArtResource-course/Animation/4-1-0-Cloting-Animation.md',
-                items: [
-                  {
-                    text: '动画制作',
-                    link: '/ArtResource-course/Animation/4-2-1-Cloting-MakingAnimation.md'
-                  },
-                  {
-                    text: '动画导出',
-                    link: '/ArtResource-course/Animation/4-2-2-Cloting-AnimationExport.md'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            text: '3D场景/道具/挂件/手持物制作流程',
-            link: '/ArtResource-course/Scene/0-0-Scene-process.md',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              {
-                text: '资源规范',
-                link: '/ArtResource-course/Scene/0-resource-specification.md',
-                items: [
-                  {
-                    text: '模型规范',
-                    link: '/ArtResource-course/Scene/2-model-specification.md'
-                  },
-                  {
-                    text: '面数推荐',
-                    link: '/ArtResource-course/Scene/3-face-recommended.md'
-                  },
-                  {
-                    text: 'UV规范',
-                    link: '/ArtResource-course/Scene/4-UV-specification.md'
-                  },
-                  {
-                    text: '贴图规范',
-                    link: '/ArtResource-course/Scene/5-texture-specification.md'
-                  },
-                  {
-                    text: 'LOD规范',
-                    link: '/ArtResource-course/Scene/5-U-LOD.md'
-                  },
-                  {
-                    text: 'FBX导出设置',
-                    link: '/ArtResource-course/Scene/6-FBX-export-settings.md'
-                  }
-                ]
-              },
-              {
-                text: '编辑器材质实战',
-                link: '/ArtResource-course/Scene/17-0-Material-Practice.md',
-                items: [
-                  {
-                    text: 'PBR基础效果',
-                    link: '/ArtResource-course/Scene/17-1-1PBR-Basic-Effects.md'
-                  },
-                  {
-                    text: 'PBR高级效果',
-                    link: '/ArtResource-course/Scene/17-1-2PPBR-Advanced-Effects.md'
-                  },
-                  {
-                    text: '透明/半透明效果',
-                    link: '/ArtResource-course/Scene/17-1-3Transparent.md'
-                  },
-                  {
-                    text: '纹理坐标与世界坐标',
-                    link: '/ArtResource-course/Scene/17-1-4World-Coordinates.md'
-                  },
-                  {
-                    text: '贴图位移应用',
-                    link: '/ArtResource-course/Scene/17-1-5Map-displacement.md'
-                  },
-                  {
-                    text: '贴花应用',
-                    link: '/ArtResource-course/Scene/17-1-6Decals.md'
-                  },
-                  {
-                    text: '呼吸灯/自发光',
-                    link: '/ArtResource-course/Scene/17-1-7Breathing-Lamp.md'
-                  },
-                  {
-                    text: '植物制作',
-                    link: '/ArtResource-course/Scene/17-1-8plant.md'
-                  },
-                  {
-                    text: '次表面',
-                    link: '/ArtResource-course/Scene/17-1-9Subsurface.md'
-                  },
-                  {
-                    text: '果冻',
-                    link: '/ArtResource-course/Scene/18-1-1jelly.md'
-                  },
-                  {
-                    text: '水晶城堡',
-                    link: '/ArtResource-course/Scene/18-1-2Crystal-Castles.md'
-                  },
-                  {
-                    text: 'LED闪烁屏',
-                    link: '/ArtResource-course/Scene/19-1-1shanshuo.md'
-                  },
-                  {
-                    text: '马赛克闪烁图案',
-                    link: '/ArtResource-course/Scene/19-1-2mashaikeshansuo.md'
-                  },
-                  {
-                    text: 'LED马赛克屏',
-                    link: '/ArtResource-course/Scene/19-1-3mashaike.md'
-                  },
-                  {
-                    text: '翻页',
-                    link: '/ArtResource-course/Scene/19-1-4fanye.md'
-                  },
-                  {
-                    text: '动画GIF效果',
-                    link: '/ArtResource-course/Scene/19-1-5GIF.md'
-                  },
-                  {
-                    text: '故障效果',
-                    link: '/ArtResource-course/Scene/19-1-6guzhang.md'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            text: '背景商品制作流程',
-            link: '/ArtResource-course/Background/000-background.md'
-          },
-          {
-            text: '特效制作流程',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              {
-                text: '3D特效制作实例',
-                link: '/ArtResource-course/Effect/000-Effect.md'
-              }
-            ]
-          },
-          {
-            text: 'UI制作流程',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              {
-                text: '基础规范',
-                link: '/ArtResource-course/UI/UITex-BaseRule.md'
-              },
-              {
-                text: '去重标准',
-                link: '/ArtResource-course/UI/UITex-BaseRule02.md'
-              },
-              {
-                text: '质量规范',
-                link: '/ArtResource-course/UI/UITex-BaseRule03.md'
-              },
-              {
-                text: '编辑器配置',
-                link: '/ArtResource-course/UI/UITex-BaseRule04.md'
-              },
-              {
-                text: '商品icon制作教程',
-                items: [
-                  {
-                    text: '服装、发型',
-                    link: '/ArtResource-course/UI/UITex-clothNhairicon.md'
-                  },
-                  {
-                    text: '妆容',
-                    link: '/ArtResource-course/UI/UITex-makeupicon.md'
-                  },
-                ]
-              }
-            ]
-          },
-          {
-            text: '口袋方舟资源导入上传',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              {
-                text: '服装部件/角色NPC/多足/自定义骨骼模型动画导入上传',
-                link: '/ArtResource-course/Upload/0-0-Role.md',
-                items: [
-                  {
-                    text: '角色NPC/多足/自定义骨骼',
-                    link: '/ArtResource-course/Upload/0-1-Role-NPC-.md'
-                  },
-                  {
-                    text: '服装资源',
-                    link: '/ArtResource-course/Upload/0-2-clothing.md'
-                  },
-                  {
-                    text: '动画资源',
-                    link: '/ArtResource-course/Upload/0-3-Animation.md'
-                  },
-                  {
-                    text: '上传工具设置预览功能',
-                    link: '/ArtResource-course/Upload/0-4-Upload.md'
-                  },
-                  {
-                    text: '骨骼模型/动画上传注意事项',
-                    link: '/ArtResource-course/Upload/0-5-Notice.md'
-                  }
-                ]
-              },
-              {
-                text: '3D场景/道具/挂件/手持物导入上传',
-                link: '/ArtResource-course/Upload/1-StaticModel.md'
-              },
-              {
-                text: 'UI导入上传',
-                link: '/ArtResource-course/Upload/2-UI.md'
-              }
-            ]
-          }
-        ]
-      },
+
       {
         text: '商品制作教程',
         collapsible: true,
@@ -1171,3 +659,517 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   lineNumbers: true
 }
 })
+
+// {
+//   text: '炸弹人小游戏',
+//   link: '/bomberman-course/0-description.md',
+//   collapsible: true,
+//   collapsed: true,
+//   items: [
+//     {
+//       text: '创建工程并导入场景',
+//       link: '/bomberman-course/1-create-project.md'
+//     },
+//     {
+//       text: '添加空气墙',
+//       link: '/bomberman-course/2-add-Point.md'
+//     },
+//     {
+//       text: '创建炸弹预制体',
+//       link: '/bomberman-course/3-create-prefab.md'
+//     },
+//     {
+//       text: '创建控制 UI',
+//       link: '/bomberman-course/4-create-ui.md'
+//     },
+//     {
+//       text: '服务端创建炸弹',
+//       link: '/bomberman-course/5-server-create-boom.md'
+//     },
+//     {
+//       text: '玩家伤害与复活',
+//       link: '/bomberman-course/6-respawn-player.md'
+//     },
+//     {
+//       text: '运行测试游戏',
+//       link: '/bomberman-course/7-test-game.md'
+//     }
+//   ]
+// },
+// {
+//   text: '闯关小游戏',
+//   link: '/obby-course/game-description.md',
+//   collapsible: true,
+//   collapsed: true,
+//   items: [
+//     {
+//       text: '1.初始设置',
+//       link: '/obby-course/1.initial-setting.md'
+//     },
+//     {
+//       text: '2.场景搭建',
+//       link: '/obby-course/2.scene-construction.md'
+//     },
+//     {
+//       text: '3.死亡复活',
+//       link: '/obby-course/3.death-and-resurrection.md'
+//     },
+//     {
+//       text: '4.检查点',
+//       link: '/obby-course/4.check-point.md'
+//     },
+//     {
+//       text: '5.终点胜利',
+//       link: '/obby-course/5.destination.md'
+//     },
+//     {
+//       text: '6.游戏UI',
+//       link: '/obby-course/6.game-ui.md'
+//     },
+//     {
+//       text: '7.辅助功能',
+//       link: '/obby-course/7.helper.md'
+//     },
+//     {
+//       text: '8.关卡拓展',
+//       link: '/obby-course/8.expansion-level.md'
+//     },
+//     {
+//       text: '9.游戏存档',
+//       link: '/obby-course/9.saved-game.md'
+//     },
+//     {
+//       text: '10.排行榜',
+//       link: '/obby-course/10.rangking-list.md'
+//     },
+//     {
+//       text: '11.发布游戏',
+//       link: '/obby-course/11.release-game.md'
+//     }
+//   ]
+// },
+// {
+//   text: '大亨小游戏',
+//   link: '/tycoon-course/1.1game-description.md',
+//   collapsible: true,
+//   collapsed: true,
+//   items: [
+//     {
+//       text: '第一节：搭建场景',
+//       items: [
+//         { text: '搭建场景', link: '/tycoon-course/2.1make-scene.md' }
+//       ]
+//     },
+//     {
+//       text: '第二节：实现游戏逻辑',
+//       items: [
+//         { text: '制作购买按钮', link: '/tycoon-course/3.1buy-button.md' },
+//         {
+//           text: '显示可购买物品功能',
+//           link: '/tycoon-course/3.2buy-item.md'
+//         },
+//         {
+//           text: '优化显示效果',
+//           link: '/tycoon-course/3.3optimization.md'
+//         },
+//         {
+//           text: '实现购买按钮上金币显示',
+//           link: '/tycoon-course/3.4show-gold.md'
+//         },
+//         {
+//           text: '实现购买建筑功能',
+//           link: '/tycoon-course/3.5buy-build.md'
+//         },
+//         {
+//           text: '实现邮箱产出金币功能',
+//           link: '/tycoon-course/3.6email-item.md'
+//         },
+//         {
+//           text: '存储玩家数据功能',
+//           link: '/tycoon-course/3.7player-data.md'
+//         }
+//       ]
+//     },
+//     {
+//       text: '第三节：实现联机家园系统',
+//       items: [
+//         {
+//           text: '实现家园系统(1)',
+//           link: '/tycoon-course/4.1home-system.md'
+//         },
+//         {
+//           text: '实现家园系统(2)',
+//           link: '/tycoon-course/4.2home-system2.md'
+//         },
+//         {
+//           text: '运行测试游戏',
+//           link: '/tycoon-course/4.2test-project.md'
+//         }
+//       ]
+//     }
+//   ]
+// },
+// {
+//   text: '打怪小游戏',
+//   link: '/monster-course/game-description.md',
+//   collapsible: true,
+//   collapsed: true,
+//   items: [
+//     {
+//       text: '1.场景搭建',
+//       link: '/monster-course/1.scene-construction.md'
+//     },
+//     { text: '2.制作怪物', link: '/monster-course/2.monster-making.md' },
+//     {
+//       text: '3.更新怪物血量',
+//       link: '/monster-course/3.update-monster-hp.md'
+//     },
+//     { text: '4.攻击怪物', link: '/monster-course/4.attack-monster.md' },
+//     { text: '5.攻击反馈', link: '/monster-course/5.attack-feedback.md' },
+//     {
+//       text: '6.成长系统UI',
+//       link: '/monster-course/6.growth-system-UI.md'
+//     },
+//     {
+//       text: '7.攻击力升级',
+//       link: '/monster-course/7.attack-power-upgrade.md'
+//     },
+//     { text: '8.存储数据', link: '/monster-course/8.save-data.md' }
+//   ]
+// },
+// {
+//   text: '制作美术资源',
+//   link: '/ArtResource-course/000-PGC.md',
+//   collapsible: true,
+//   collapsed: true,
+//   items: [
+//     {
+//       text: 'DCC环境配置',
+//       link: '/ArtResource-course/001-Environment-configuration.md'
+//     },
+//     {
+//       text: '3D角色制作流程',
+//       link: '/ArtResource-course/Character/0-0-0-3D-character-production-process.md',
+//       collapsible: true,
+//       collapsed: true,
+//       items: [
+//         {
+//           text: '角色分类',
+//           link: '/ArtResource-course/Character/1-1-0-Role-Classification.md'
+//         },
+//         {
+//           text: '命名规范',
+//           link: '/ArtResource-course/Character/2-1-0-Namepolicy.md',
+//         },
+//         {
+//           text: '角色/NPC/多足',
+//           link: '/ArtResource-course/Character/2-2-0-CharacterProduction.md',
+//           items: [
+//             {
+//               text: '模型规范',
+//               link: '/ArtResource-course/Character/2-2-1-Character-modelling.md'
+//             },
+//             {
+//               text: '贴图规范',
+//               link: '/ArtResource-course/Character/2-2-2-Character-Texture.md'
+//             },
+//             {
+//               text: '模型绑定',
+//               link: '/ArtResource-course/Character/2-2-3-Character-Riging.md'
+//             },
+//             {
+//               text: '角色导出',
+//               link: '/ArtResource-course/Character/2-2-4-Character-Export.md'
+//             }
+//           ]
+//         },
+//         {
+//           text: '服装发型',
+//           link: '/ArtResource-course/Character/2-3-0-Clothing-Hair-production.md',
+//           items: [
+//             {
+//               text: '局外与局内',
+//               link: '/ArtResource-course/Character/2-3-1-Clothing-Hair-Rule.md'
+//             },
+//             {
+//               text: '模型规范',
+//               link: '/ArtResource-course/Character/2-3-2-Clothing-Hair-Modelling.md'
+//             },
+//             {
+//               text: '贴图规范',
+//               link: '/ArtResource-course/Character/2-3-3-Clothing-Hair-Texture.md'
+//             },
+//             {
+//               text: '绑定基础介绍',
+//               link: '/ArtResource-course/Character/2-3-4-Clothing-Hair-RigingRule.md'
+//             },
+//             {
+//               text: '模型绑定',
+//               link: '/ArtResource-course/Character/2-3-5-Clothing-Hair-Riging.md'
+//             },
+//             {
+//               text: '资源导出',
+//               link: '/ArtResource-course/Character/2-3-6-Clothing-Hair-Export.md'
+//             }
+//           ]
+//         },
+//         {
+//           text: '妆容制作',
+//           link: '/ArtResource-course/Character/2-4-0-MakeupProdction.md'
+//         },
+//         {
+//           text: '编辑器捏模/套装制作及上传',
+//           link: '/ArtResource-course/Character/2-5-0-EditorSuitNCharacter-Upload.md'
+//         }
+//       ]
+//     },
+//     {
+//       text: '3D动画制作流程',
+//       link: '/ArtResource-course/Animation/0-0-0-3D-Animation.md',
+//       collapsible: true,
+//       collapsed: true,
+//       items: [
+//         {
+//           text: '动画分类',
+//           link: '/ArtResource-course/Animation/1-0-0-Animation-Classification.md'
+//         },
+//         {
+//           text: '命名规范',
+//           link: '/ArtResource-course/Animation/2-0-0-Namepolicy.md'
+//         },
+//         {
+//           text: '角色/NPC/多足动画',
+//           link: '/ArtResource-course/Animation/3-1-0-Character-Animation.md',
+//           items: [
+//             {
+//               text: '动画制作',
+//               link: '/ArtResource-course/Animation/3-1-1-Character-MakingAnimation.md'
+//             },
+//             {
+//               text: '动画导出',
+//               link: '/ArtResource-course/Animation/3-1-2-Character-AnimationExport.md'
+//             }
+//           ]
+//         },
+//         {
+//           text: '角色装扮资源动画',
+//           link: '/ArtResource-course/Animation/4-1-0-Cloting-Animation.md',
+//           items: [
+//             {
+//               text: '动画制作',
+//               link: '/ArtResource-course/Animation/4-2-1-Cloting-MakingAnimation.md'
+//             },
+//             {
+//               text: '动画导出',
+//               link: '/ArtResource-course/Animation/4-2-2-Cloting-AnimationExport.md'
+//             }
+//           ]
+//         }
+//       ]
+//     },
+//     {
+//       text: '3D场景/道具/挂件/手持物制作流程',
+//       link: '/ArtResource-course/Scene/0-0-Scene-process.md',
+//       collapsible: true,
+//       collapsed: true,
+//       items: [
+//         {
+//           text: '资源规范',
+//           link: '/ArtResource-course/Scene/0-resource-specification.md',
+//           items: [
+//             {
+//               text: '模型规范',
+//               link: '/ArtResource-course/Scene/2-model-specification.md'
+//             },
+//             {
+//               text: '面数推荐',
+//               link: '/ArtResource-course/Scene/3-face-recommended.md'
+//             },
+//             {
+//               text: 'UV规范',
+//               link: '/ArtResource-course/Scene/4-UV-specification.md'
+//             },
+//             {
+//               text: '贴图规范',
+//               link: '/ArtResource-course/Scene/5-texture-specification.md'
+//             },
+//             {
+//               text: 'LOD规范',
+//               link: '/ArtResource-course/Scene/5-U-LOD.md'
+//             },
+//             {
+//               text: 'FBX导出设置',
+//               link: '/ArtResource-course/Scene/6-FBX-export-settings.md'
+//             }
+//           ]
+//         },
+//         {
+//           text: '编辑器材质实战',
+//           link: '/ArtResource-course/Scene/17-0-Material-Practice.md',
+//           items: [
+//             {
+//               text: 'PBR基础效果',
+//               link: '/ArtResource-course/Scene/17-1-1PBR-Basic-Effects.md'
+//             },
+//             {
+//               text: 'PBR高级效果',
+//               link: '/ArtResource-course/Scene/17-1-2PPBR-Advanced-Effects.md'
+//             },
+//             {
+//               text: '透明/半透明效果',
+//               link: '/ArtResource-course/Scene/17-1-3Transparent.md'
+//             },
+//             {
+//               text: '纹理坐标与世界坐标',
+//               link: '/ArtResource-course/Scene/17-1-4World-Coordinates.md'
+//             },
+//             {
+//               text: '贴图位移应用',
+//               link: '/ArtResource-course/Scene/17-1-5Map-displacement.md'
+//             },
+//             {
+//               text: '贴花应用',
+//               link: '/ArtResource-course/Scene/17-1-6Decals.md'
+//             },
+//             {
+//               text: '呼吸灯/自发光',
+//               link: '/ArtResource-course/Scene/17-1-7Breathing-Lamp.md'
+//             },
+//             {
+//               text: '植物制作',
+//               link: '/ArtResource-course/Scene/17-1-8plant.md'
+//             },
+//             {
+//               text: '次表面',
+//               link: '/ArtResource-course/Scene/17-1-9Subsurface.md'
+//             },
+//             {
+//               text: '果冻',
+//               link: '/ArtResource-course/Scene/18-1-1jelly.md'
+//             },
+//             {
+//               text: '水晶城堡',
+//               link: '/ArtResource-course/Scene/18-1-2Crystal-Castles.md'
+//             },
+//             {
+//               text: 'LED闪烁屏',
+//               link: '/ArtResource-course/Scene/19-1-1shanshuo.md'
+//             },
+//             {
+//               text: '马赛克闪烁图案',
+//               link: '/ArtResource-course/Scene/19-1-2mashaikeshansuo.md'
+//             },
+//             {
+//               text: 'LED马赛克屏',
+//               link: '/ArtResource-course/Scene/19-1-3mashaike.md'
+//             },
+//             {
+//               text: '翻页',
+//               link: '/ArtResource-course/Scene/19-1-4fanye.md'
+//             },
+//             {
+//               text: '动画GIF效果',
+//               link: '/ArtResource-course/Scene/19-1-5GIF.md'
+//             },
+//             {
+//               text: '故障效果',
+//               link: '/ArtResource-course/Scene/19-1-6guzhang.md'
+//             }
+//           ]
+//         }
+//       ]
+//     },
+//     {
+//       text: '背景商品制作流程',
+//       link: '/ArtResource-course/Background/000-background.md'
+//     },
+//     {
+//       text: '特效制作流程',
+//       collapsible: true,
+//       collapsed: true,
+//       items: [
+//         {
+//           text: '3D特效制作实例',
+//           link: '/ArtResource-course/Effect/000-Effect.md'
+//         }
+//       ]
+//     },
+//     {
+//       text: 'UI制作流程',
+//       collapsible: true,
+//       collapsed: true,
+//       items: [
+//         {
+//           text: '基础规范',
+//           link: '/ArtResource-course/UI/UITex-BaseRule.md'
+//         },
+//         {
+//           text: '去重标准',
+//           link: '/ArtResource-course/UI/UITex-BaseRule02.md'
+//         },
+//         {
+//           text: '质量规范',
+//           link: '/ArtResource-course/UI/UITex-BaseRule03.md'
+//         },
+//         {
+//           text: '编辑器配置',
+//           link: '/ArtResource-course/UI/UITex-BaseRule04.md'
+//         },
+//         {
+//           text: '商品icon制作教程',
+//           items: [
+//             {
+//               text: '服装、发型',
+//               link: '/ArtResource-course/UI/UITex-clothNhairicon.md'
+//             },
+//             {
+//               text: '妆容',
+//               link: '/ArtResource-course/UI/UITex-makeupicon.md'
+//             },
+//           ]
+//         }
+//       ]
+//     },
+//     {
+//       text: '口袋方舟资源导入上传',
+//       collapsible: true,
+//       collapsed: true,
+//       items: [
+//         {
+//           text: '服装部件/角色NPC/多足/自定义骨骼模型动画导入上传',
+//           link: '/ArtResource-course/Upload/0-0-Role.md',
+//           items: [
+//             {
+//               text: '角色NPC/多足/自定义骨骼',
+//               link: '/ArtResource-course/Upload/0-1-Role-NPC-.md'
+//             },
+//             {
+//               text: '服装资源',
+//               link: '/ArtResource-course/Upload/0-2-clothing.md'
+//             },
+//             {
+//               text: '动画资源',
+//               link: '/ArtResource-course/Upload/0-3-Animation.md'
+//             },
+//             {
+//               text: '上传工具设置预览功能',
+//               link: '/ArtResource-course/Upload/0-4-Upload.md'
+//             },
+//             {
+//               text: '骨骼模型/动画上传注意事项',
+//               link: '/ArtResource-course/Upload/0-5-Notice.md'
+//             }
+//           ]
+//         },
+//         {
+//           text: '3D场景/道具/挂件/手持物导入上传',
+//           link: '/ArtResource-course/Upload/1-StaticModel.md'
+//         },
+//         {
+//           text: 'UI导入上传',
+//           link: '/ArtResource-course/Upload/2-UI.md'
+//         }
+//       ]
+//     }
+//   ]
+// },
