@@ -8,15 +8,16 @@
 
 - A类商品在获取商品AssetID后，可直接进入创作者后台去提交
 
-| 商品类型 | 游戏内展示                                                   | 类型填写示意图                                               |
-| -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 左手     | <img src="https://arkimg.ark.online/1761803248871-1.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248871-2.webp" alt="img" style="zoom:200%;" /> |
-| 背饰     | <img src="https://arkimg.ark.online/1761803248871-3.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248871-4.webp" alt="img" style="zoom:200%;" /> |
-| 头饰     | <img src="https://arkimg.ark.online/1761803248871-5.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248871-6.webp" alt="img" style="zoom:200%;" /> |
-| 耳饰     | <img src="https://arkimg.ark.online/1761803248871-7.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-8.webp" alt="img" style="zoom:200%;" /> |
-| 面饰     | <img src="https://arkimg.ark.online/1761803248872-9.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-10.webp" alt="img" style="zoom:200%;" /> |
-| 尾饰     | <img src="https://arkimg.ark.online/1761803248872-11.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-12.webp" alt="img" style="zoom:200%;" /> |
-| 肩部     | <img src="https://arkimg.ark.online/1761803248872-13.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-14.webp" alt="img" style="zoom:200%;" /> |
+| 商品类型     | 游戏内展示                                                   | 类型填写示意图                                               |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 左手         | <img src="https://arkimg.ark.online/1761803248871-1.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248871-2.webp" alt="img" style="zoom:200%;" /> |
+| 背饰         | <img src="https://arkimg.ark.online/1761803248871-3.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248871-4.webp" alt="img" style="zoom:200%;" /> |
+| 头饰         | <img src="https://arkimg.ark.online/1761803248871-5.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248871-6.webp" alt="img" style="zoom:200%;" /> |
+| 耳饰         | <img src="https://arkimg.ark.online/1761803248871-7.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-8.webp" alt="img" style="zoom:200%;" /> |
+| 面饰         | <img src="https://arkimg.ark.online/1761803248872-9.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-10.webp" alt="img" style="zoom:200%;" /> |
+| 尾饰         | <img src="https://arkimg.ark.online/1761803248872-11.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-12.webp" alt="img" style="zoom:200%;" /> |
+| 肩部         | <img src="https://arkimg.ark.online/1761803248872-13.webp" alt="img" style="zoom:25%;" /> | <img src="https://arkimg.ark.online/1761803248872-14.webp" alt="img" style="zoom:200%;" /> |
+| 面部绘制挂件 | ![image-20260814152111121](https://arkimg.ark.online/image-20260814152111121.webp) | ![image-20260814153953493](https://arkimg.ark.online/image-20260814153953493-1786693214711-1-1786693217976-3.webp)<br />![image-20260814154016829](https://arkimg.ark.online/image-20260814154016829-1786693217977-4.webp)<br />![image-20260814154030997](https://arkimg.ark.online/image-20260814154030997.webp) |
 
 #### B类：Josn_StaticMesh和特效商品
 
