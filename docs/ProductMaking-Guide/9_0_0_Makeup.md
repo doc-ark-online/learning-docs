@@ -41,7 +41,7 @@ PS+3D软件预览方式(此处已3ds max为例)
 
 首先下载提供的裸模以及下面的妆容模板PhotoShop文件。
 
-[点击下载PSD妆容模板文件](https://arkimg.ark.online/PSD%E5%A6%86%E5%AE%B9%E6%A8%A1%E6%9D%BF04.zip)
+[点击下载PSD妆容模板文件](https://arkimg.ark.online/PSD%E5%A6%86%E5%AE%B9%E6%A8%A1%E6%9D%BF05.zip)
 
 <video controls src="https://arkimg.ark.online/PS%E7%94%BB%E5%A6%86%E5%AE%B9.mp4" />
 
@@ -72,6 +72,16 @@ RealisticrMakeupCheckRole.asset为写实女性妆容预览文件。
 双击打开预览文件，即可根据制作的商品，在口袋方舟预览效果
 
 ![image-20260115171412785](https://arkimg.ark.online/image-20260115171412785.png)
+
+### Q版妆容预览：
+
+角色设定中切换Q版人偶
+
+![img_v3_0214l_93338296-3bf1-4933-957b-caf3365effeg](https://arkimg.ark.online/img_v3_0214l_93338296-3bf1-4933-957b-caf3365effeg.jpg)
+
+选择对应妆容调整项上传资源预览
+
+![img_v3_0214l_1024c260-430c-4b64-bfb3-320e8a9911dg](https://arkimg.ark.online/img_v3_0214l_1024c260-430c-4b64-bfb3-320e8a9911dg.jpg)
 
 ## 上传：
 
