@@ -29,7 +29,7 @@
 
 |            |                         **基础体型**                         |
 | :--------: | :----------------------------------------------------------: |
-| **女性：** | [点击下载女性基础人体](https://arkimg.ark.online/SK_Cartoon_Female_Base000_Show_Skin.rar) |
+| **女性：** | [点击下载女性基础人体](https://arkimg.ark.online/SK_Cartoon_Female_Base000_Show_Skin.zip) |
 | **男性：** | [点击下载男性基础人体](https://arkimg.ark.online/SK_Cartoon_Male_Base000_Show_Skin.rar) |
 | **Q版：**  | [点击下载Q版基础人体](https://arkimg.ark.online/Q%E7%89%88%E8%A3%B8%E6%A8%A1.rar) |
 
