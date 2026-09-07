@@ -487,6 +487,10 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/ProductMaking-Guide/10_0_0_Complete-makeup.md'
           },
           {
+            text: '姿态',
+            link: '/ProductMaking-Guide/zitai.md'
+          },
+          {
             text: '特殊形象',
             link: '/ProductMaking-Guide/12_0_0_PiTao.md',
             collapsible: true,
