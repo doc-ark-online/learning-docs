@@ -12,67 +12,67 @@
 
 通过角色编辑器切换角色的性别，确定性别后，点击进入造物岛
 
-![img](https://arkimg.ark.online/1788761870840-46.jpeg)
+![img](https://arkimg.ark.online/1788761870840-46.webp)
 
 创建一个空白模板如下图
 
-![img](https://arkimg.ark.online/1788761870840-47.png)
+![img](https://arkimg.ark.online/1788761870840-47.webp)
 
 点击左侧上面的更多会出现右侧的功能栏，点击进入动画编辑器就可以开始姿态制作了
 
-![img](https://arkimg.ark.online/1788761870840-48.png)
+![img](https://arkimg.ark.online/1788761870840-48.webp)
 
 ### 动画编辑器界面介绍
 
 包含：主体，手势，表情，对称，基础姿态5个主要编辑项
 
-![img](https://arkimg.ark.online/1788761870840-49.png)
+![img](https://arkimg.ark.online/1788761870840-49.webp)
 
 主体：可以对四肢，躯干，手腕，脚踝等部位进行旋转位移编辑，可以制作出各种pose
 
-![img](https://arkimg.ark.online/1788761870840-50.jpeg)
+![img](https://arkimg.ark.online/1788761870840-50.webp)
 
 手势：独立对手指进行编辑，可以制作出各种手势动作
 
-![img](https://arkimg.ark.online/1788761870840-51.jpeg)
+![img](https://arkimg.ark.online/1788761870840-51.webp)
 
 表情：对表情进行编辑，可以添加各种符合自己喜好的表情以及眉毛、眼、嘴的样式
 
-![img](https://arkimg.ark.online/1788761870840-52.jpeg)
+![img](https://arkimg.ark.online/1788761870840-52.webp)
 
 对称：对动作进行对称复制，和左右翻转
 
-![img](https://arkimg.ark.online/1788761870840-53.jpeg)
+![img](https://arkimg.ark.online/1788761870840-53.webp)
 
 基础姿态：组合各种动作，制作姿态商品
 
-![img](https://arkimg.ark.online/1788761870841-54.jpeg)
+![img](https://arkimg.ark.online/1788761870841-54.webp)
 
 ### 动画编辑
 
 在时间轴中添加多个带动作的关键帧，即可制作动画，
 
-![img](https://arkimg.ark.online/1788761870841-55.png)
+![img](https://arkimg.ark.online/1788761870841-55.webp)
 
 创建多个关键帧后，帧与帧之间会显示时间间隔（如下图）。点击即可手动输入数值，这个数值就是两个关键帧之间过渡动画的时长，可根据实际效果随时调整。调整完点击播放，就能连续预览动画效果，反复微调直到满意为止。
 
-![img](https://arkimg.ark.online/1788761870841-56.png)
+![img](https://arkimg.ark.online/1788761870841-56.webp)
 
 ### 保存上传
 
 注意此处上传的单个动画素材，后续可以通过多个动画素材，制作更完整的姿态商品
 
-![img](https://arkimg.ark.online/1788761870841-57.png)
+![img](https://arkimg.ark.online/1788761870841-57.webp)
 
 做好的动画记得及时保存，避免中途出错要从头再来。保存后的动画可以在右侧草稿栏里重新点击应用。全部完成后需要上传，左上角第二个按钮就是「上传」，取一个方便自己识别的名字，点击确认即可。
 
-![img](https://arkimg.ark.online/1788761870841-58.jpeg)
+![img](https://arkimg.ark.online/1788761870841-58.webp)
 
 ### 姿态制作
 
 点击左侧最下方的「基础姿态」，在右侧「已拥有」里找到刚才上传的动画，点击它会弹出确认框，询问是否应用到当前的基础姿态上，点击确认即可。
 
-![img](https://arkimg.ark.online/1788761870841-59.jpeg)
+![img](https://arkimg.ark.online/1788761870841-59.webp)
 
 ### 工具介绍视频教程:
 
@@ -86,7 +86,7 @@
 
 点击左上角的「上传」，就能把做好的基础姿态上架售卖了。记得选好姿态封面图、设置价格，并勾选「同步到角色编辑商城售卖」，最后点击上传等待审核。审核通过后，就能在 233 换装里看到自己的姿态商品了！
 
-![img](https://arkimg.ark.online/1788761870841-60.jpeg)
+![img](https://arkimg.ark.online/1788761870841-60.webp)
 
 ### 视频教程:
 
