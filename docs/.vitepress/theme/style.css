@@ -1,3 +1,8 @@
 .vp-doc .line-numbers-wrapper {
   overflow: hidden;
 }
+
+/* Image-only Markdown tables use empty header cells for column alignment. */
+.vp-doc table:has(tbody img) thead:not(:has(th:not(:empty))) {
+  display: none;
+}
