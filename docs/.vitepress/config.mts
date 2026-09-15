@@ -1203,4 +1203,4 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
 //       ]
 //     }
 //   ]
-// },
+// }
