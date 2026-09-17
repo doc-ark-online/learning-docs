@@ -355,33 +355,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             link: '/ProductMaking-Guide/3_0_0_Software-environment-configuration.md'
           },
           {
-            text: '樱花校园 3D 角色制作指南',
-            collapsible: true,
-            collapsed: false,
-            items: [
-              {
-                text: '环境准备',
-                link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-1-Environment.md'
-              },
-              {
-                text: '模型制作',
-                link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-2-Modeling.md'
-              },
-              {
-                text: '骨骼绑定',
-                link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-3-Rigging.md'
-              },
-              {
-                text: '引擎配置',
-                link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-4-Engine-Setup.md'
-              },
-              {
-                text: '商品上传',
-                link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-5-Product-Upload.md'
-              }
-            ]
-          },
-          {
             text: '头发',
             link: '/ProductMaking-Guide/4_0_0_Hair.md',
             collapsible: true,
@@ -602,6 +575,33 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
                 link: '/CommidityListing/OtherCommidity.md'
               }
             ]
+          }
+        ]
+      },
+      {
+        text: '樱花校园 3D 角色制作指南',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          {
+            text: '环境准备',
+            link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-1-Environment.md'
+          },
+          {
+            text: '模型制作',
+            link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-2-Modeling.md'
+          },
+          {
+            text: '骨骼绑定',
+            link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-3-Rigging.md'
+          },
+          {
+            text: '引擎配置',
+            link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-4-Engine-Setup.md'
+          },
+          {
+            text: '商品上传',
+            link: '/ProductMaking-Guide/Sakura-Campus-3D-Character-5-Product-Upload.md'
           }
         ]
       }
