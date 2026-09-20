@@ -23,7 +23,7 @@
 
 <video controls src="https://arkimg.ark.online/sakura-campus-3d-guide-20260828-001.mp4"></video>
 
-[下载樱花校园项目工程（ZIP）](https://arkimg.ark.online/sakura-campus-3d-guide-20260828-002.zip)。
+[下载樱花校园项目工程（ZIP）](https://arkimg.ark.online/ssimulator-art-creator_v1.0.7_full.zip)。
 该工程前期可用于观察美术效果，中后期用于验证服装绑定并输出 Prefab 文件。
 
 如果安装 Unity 时没有勾选 Android Build Support 和 iOS Build Support，
